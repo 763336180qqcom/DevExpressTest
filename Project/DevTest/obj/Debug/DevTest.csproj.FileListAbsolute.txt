@@ -306,3 +306,6 @@ E:\GitRepos\DevTest\DevTest\obj\Debug\DevTest.pdb
 E:\Project\DevTest\bin\Debug\DevTest.exe.config
 E:\Project\DevTest\obj\Debug\DevTest.exe
 E:\Project\DevTest\obj\Debug\DevTest.pdb
+E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevTest.exe.config
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.pdb
