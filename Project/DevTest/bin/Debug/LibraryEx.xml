@@ -1,0 +1,1898 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LibraryEx</name>
+    </assembly>
+    <members>
+        <member name="T:LibraryEx.CSecurity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.CSecurity.fnEnCryptString(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str原文"></param>
+            <param name="str公钥"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.fnEnCryptString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str原文"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.fnDeCryptString(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str密文"></param>
+            <param name="str公钥"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.fnDeCryptString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str密文"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.fnMD5EnCrypt(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str原文"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.fnZipByte(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.fnUnZipByte(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.fnUnZipDataSet(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="zipbuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.fnUnZipDataTable(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="zipbuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.fnZipDataSet(System.Data.DataSet)">
+            <summary>
+            </summary>
+            <param name="ds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.fnZipDataSet(System.Data.DataSet,System.Int32@)">
+            <summary>
+            
+            </summary>
+            <param name="ds"></param>
+            <param name="surrogateSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.fnZipDataTable(System.Data.DataTable)">
+            <summary>
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.fnZipDataTable(System.Data.DataTable,System.Int32@)">
+            <summary>
+            
+            </summary>
+            <param name="dt"></param>
+            <param name="surrogateSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.Serialize(System.Object)">
+            <summary>
+            BinaryFormatter.Serialize for all dser2
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.CSerializationBinder.BindToType(System.String,System.String)">
+            <summary>
+            重写这个方法将指定序列化对象绑定到什么类型
+            如果返回null使用默认绑定
+            
+            使用ilMerge合并程序集后，程序集信息保留为主程序集的信息，
+            LibraryEx.dll中的类序列化时记录的程序集信息，在反序列化绑定类时可能找不到程序集名称。
+            比如序列化时LibraryEx.dll未被合并，记录的信息是LibraryEx.dll，而反序列化时LibraryEx.dll是合并到exe中的，找程序集LibraryEx.dll就找不到了，
+            或者序列化时LibraryEx.dll是合并到exe中的，记录的信息就是exe的信息，反序列化时LibraryEx.dll是未被合并的，找exe的程序集也可能找不到，
+            或是找到了exe信息，但此时类是包含在LibraryEx.dll中的，而不是包含在exe程序集中。
+            
+            此处通过对类名是否包含LibraryEx.进行判断，对LibraryEx命名空间下的类，绑定时指定从运行CSecurity类的程序集中寻找，以解决LibraryEx.dll
+            合并后可能产生的上述2种错误。
+            对于其他可能被合并的DLL，需要用到序列化、反序列化自定义类对象时，类定义在LibraryEx中就不会发生问题。
+            </summary>
+        </member>
+        <member name="M:LibraryEx.CSecurity.Deserialize(System.Byte[])">
+            <summary>
+            BinaryFormatter.Deserialize for all dser2
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.dser(System.String)">
+            <summary>
+            登录历史记录List
+            </summary>
+            <param name="serStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.ser(System.Object)">
+            <summary>
+            登录历史记录List
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.dser2(System.String)">
+            <summary>
+            dic自定义信息集
+            </summary>
+            <param name="serStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.ser2(System.Object)">
+            <summary>
+            dic自定义信息集
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.dser3(System.Byte[])">
+            <summary>
+            WebService数据传输
+            </summary>
+            <param name="serBytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.ser3(System.Object)">
+            <summary>
+            WebService数据传输
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.fn画出验证码(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str验证码"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.fn生成随机字符(System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            生成随机字符串
+            </summary>
+            <param name="length">目标字符串的长度</param>
+            <param name="useNum">是否包含数字，1=包含，默认为包含</param>
+            <param name="useLow">是否包含小写字母，1=包含，默认为包含</param>
+            <param name="useUpp">是否包含大写字母，1=包含，默认为包含</param>
+            <param name="useSpe">是否包含特殊字符，1=包含，默认为不包含</param>
+            <param name="custom">要包含的自定义字符，直接输入要包含的字符列表</param>
+            <returns>指定长度的随机字符串</returns>
+        </member>
+        <member name="F:LibraryEx.CSecurity.pstrws公钥">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.CSecurity.WebToken">
+            <summary>
+            访问web网站临时需要的token
+            </summary>
+        </member>
+        <member name="P:LibraryEx.CSecurity.KowaCNToken">
+            <summary>
+            访问kowa.cn网站某些后台数据的临时token，获取后30分钟内有效
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CSecurity.IsKowaCNTokenValid(System.String)">
+            <summary>
+            校验 访问kowa.cn网站某些后台数据的临时token，获取后30分钟内有效
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LibraryEx.CValidate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.CValidate.fnIsNumeric(System.String)">
+            <summary>
+            是否数值
+            </summary>
+            <param name="somestr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CValidate.fnIsPositiveZeroInt(System.String)">
+            <summary>
+            是否非负整数
+            </summary>
+            <param name="somestr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CValidate.fnIsPositiveInt(System.String)">
+            <summary>
+            是否正整数
+            </summary>
+            <param name="somestr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CValidate.fnIsPositiveFloat(System.String)">
+            <summary>
+            是否正浮点数
+            </summary>
+            <param name="somestr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CValidate.fnIsPositiveZeroFloat(System.String)">
+            <summary>
+            是否非负浮点数
+            </summary>
+            <param name="somestr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CValidate.fnIsDate(System.String)">
+            <summary>
+            是否日期
+            </summary>
+            <param name="somestr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.CValidate.fnIsJXC单号(System.String)">
+            <summary>
+            是否JXC单号 两位字母+整形数字，例如 CG10000001 表示采购订单
+            </summary>
+            <param name="somestr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LibraryEx.DataHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.DataHelper.GetDT(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            返回一个DataTable，SqlCommand需要已绑定连接和事务，方法不对连接和事务做任何处理；抛出异常
+            </summary>
+            <param name="cmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DataHelper.GetRow(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            返回一个DataRow，SqlCommand需要已绑定连接和事务，方法不对连接和事务做任何处理；
+            抛出异常
+            如果结果为空返回null
+            </summary>
+            <param name="cmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DataHelper.GetScalar(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            返回第一行第一列，SqlCommand需要已绑定连接和事务，方法不对连接和事务做任何处理；
+            抛出异常
+            </summary>
+            <param name="cmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DataHelper.GetString(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            返回第一行第一列的字符串，SqlCommand需要已绑定连接和事务，方法不对连接和事务做任何处理；可能是NULL；
+            抛出异常
+            </summary>
+            <param name="cmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DataHelper.GetDT(System.Data.SqlClient.SqlCommand,System.String)">
+            <summary>
+            返回一个DataTable，自动控制tran；
+            抛出异常
+            </summary>
+            <param name="cmd"></param>
+            <param name="connectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DataHelper.GetRow(System.Data.SqlClient.SqlCommand,System.String)">
+            <summary>
+            返回一行，自动控制tran；
+            抛出异常
+            </summary>
+            <param name="cmd"></param>
+            <param name="connectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DataHelper.GetScalar(System.Data.SqlClient.SqlCommand,System.String)">
+            <summary>
+            返回第一行第一列，自动控制tran；
+            抛出异常
+            </summary>
+            <param name="cmd"></param>
+            <param name="connectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DataHelper.GetString(System.Data.SqlClient.SqlCommand,System.String)">
+            <summary>
+            返回第一行第一列的字符串，自动控制tran；
+            抛出异常
+            </summary>
+        </member>
+        <member name="M:LibraryEx.DataHelper.Execute(System.Data.SqlClient.SqlCommand,System.String)">
+            <summary>
+            无查询执行，自动控制tran；
+            抛出异常
+            </summary>
+            <param name="cmd"></param>
+            <param name="connectionString"></param>
+        </member>
+        <member name="M:LibraryEx.DataHelper.GetDS(System.Data.SqlClient.SqlCommand,System.String,System.String[])">
+            <summary>
+            返回一个DataSet，按顺序给表名赋值，自动控制tran；
+            抛出异常
+            </summary>
+            <param name="cmd"></param>
+            <param name="connectionString"></param>
+            <param name="tableNames"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LibraryEx.DTHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.DTHelper.fnGetColumnArry(System.Data.DataTable,System.String)">
+            <summary>
+            返回dt指定列的string数组，数组成员可能为null（如果是DBNull.Value则 str[i]=null），dt为null或者无数据 返回string[0]。
+            </summary>
+            <param name="dt"></param>
+            <param name="strField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DTHelper.fnGetColumnDataTable(System.Data.DataTable,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dt"></param>
+            <param name="strFields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DTHelper.fnGetColumnDataTable(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dt"></param>
+            <param name="strFields"></param>
+            <param name="strQueryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DTHelper.fnGetColumnDataStruct(System.Data.DataTable,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dt"></param>
+            <param name="strFields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DTHelper.fnImportDataRows(System.Data.DataTable,System.Data.DataRow[])">
+            <summary>
+            
+            </summary>
+            <param name="dt"></param>
+            <param name="drs"></param>
+        </member>
+        <member name="M:LibraryEx.DTHelper.fnSetTableFieldValue(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dt"></param>
+            <param name="strField"></param>
+            <param name="strValue"></param>
+        </member>
+        <member name="M:LibraryEx.DTHelper.fnDeleteTableByField(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dt"></param>
+            <param name="strField"></param>
+            <param name="strValue"></param>
+        </member>
+        <member name="M:LibraryEx.DTHelper.fnImportExcel(System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="FileName"></param>
+            <param name="hasHeaders"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DTHelper.fnImportExcelNPOI(System.String)">
+            <summary>
+            导入Excel文件到DataSet NPOI版本
+            </summary>
+            <param name="filePath">Excel文件路径,含文件全名</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DTHelper.ToDataTable``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Convert a List{T} to a DataTable.
+            </summary>
+        </member>
+        <member name="M:LibraryEx.DTHelper.ToDataTable``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Convert a IEnumerable{T} to a DataTable.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DTHelper.ConvertTo``1(System.Data.DataTable)">
+            <summary>
+            Convert a Datatable to IList
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="table"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DTHelper.ToJson(System.Data.DataTable)">
+            <summary>
+            DataTable 对象 转换为Json 字符串
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DTHelper.ToDataTable(System.String)">
+            <summary>
+            Json 字符串 转换为 DataTable，返回new DataTable() 或者 带结构的DataTable 或者 带数据行的 DataTable。
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DTHelper.ColAddInt(System.Data.DataRow,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="dr"></param>
+            <param name="field"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:LibraryEx.DTHelper.ColAddDecimal(System.Data.DataRow,System.String,System.Decimal)">
+            <summary>
+            
+            </summary>
+            <param name="dr"></param>
+            <param name="field"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:LibraryEx.DTHelper.ColDecimal(System.Data.DataRow,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dr"></param>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DTHelper.ColInt(System.Data.DataRow,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dr"></param>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.DTHelper.ColEquals(System.Object,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LibraryEx.HashEx">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.HashEx.MD5(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.HashEx.MD5(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.HashEx.SHA1(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.HashEx.SHA1(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.HashEx.test(System.Int32@)">
+            <summary>
+            
+            </summary>
+            <param name="a"></param>
+        </member>
+        <member name="T:LibraryEx.HdInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.HdInfo.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.HdInfo.fn获取本机机器名">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.HdInfo.fn获取本机内网IP">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.HdInfo.fn获取本机MAC地址">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.HdInfo.getHdSerial">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.HdInfo.getHdSerial2">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.HdInfo.test">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:LibraryEx.Ini">
+            <summary>
+            ConfigRefers 的摘要说明。
+            INI文件操作
+            1。读取
+            2。写入
+            </summary>
+        </member>
+        <member name="F:LibraryEx.Ini.FilePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.Ini.#ctor(System.String)">
+            <summary>
+            构造函数初始化文件路径
+            </summary>
+            <param name="filepath">文件路径</param>
+        </member>
+        <member name="M:LibraryEx.Ini.#ctor(System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="filepath"></param>
+            <param name="is绝对路径"></param>
+        </member>
+        <member name="M:LibraryEx.Ini.GetIniString(System.String,System.String)">
+            <summary>
+            获取INI字符串
+            </summary>
+            <param name="firstTitle">第一标题</param>
+            <param name="secondTitle">第二标题</param>
+            <returns>返回字符</returns>
+        </member>
+        <member name="M:LibraryEx.Ini.WriteIniString(System.String,System.String,System.String)">
+            <summary>
+            写入INI字符串
+            </summary>
+            <param name="firstTitle">第一标题</param>
+            <param name="secondTitle">第二标题</param>
+            <param name="content">写入内容</param>
+        </member>
+        <member name="T:LibraryEx.MathCommon">
+             <summary>
+            MathCommon 的摘要说明
+             </summary>
+        </member>
+        <member name="M:LibraryEx.MathCommon.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.MathCommon.Max(System.Int32[])">
+            <summary>
+            
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.Min(System.Int32[])">
+            <summary>
+            
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.ToInt32(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.isInt(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="inStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.isInt(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="inStr"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.isDecimal(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="inStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.isDecimal(System.String,System.Decimal)">
+            <summary>
+            
+            </summary>
+            <param name="inStr"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.getYearMonth(System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.getFirstDay(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str年月"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.getLastDay(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str年月"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.getMonthDiff(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str开始年月"></param>
+            <param name="str结束年月"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.getFirstDay(System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.getLastDay(System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.getMonthDiff(System.DateTime,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="dtS"></param>
+            <param name="dtE"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.mConvertToInt32(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.mConvertToDecimal(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.mConvertToDateTime(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.mConvertToDouble(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.mIsNullDate(System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="dtime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.mIsNullInt32(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.mIsNullDecimal(System.Decimal)">
+            <summary>
+            
+            </summary>
+            <param name="dec"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MathCommon.mIsNullDouble(System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="dbl"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LibraryEx.MsgForm">
+            <summary>
+            内嵌了MsgFormCom类，实现跨进程窗体间的方法调用。
+            被调用的方法必须为public
+            调用和被调用的窗体都要继承MsgForm或其他实现了相同功能的消息类，并设定MsgCallID值（WINAPI.MsgWinID枚举值）
+            可以通过窗体Handle调用，也可以通过MsgCallID来定位
+            通过MsgCallID定位窗体Handle对应关系目前通过窗体间的广播消息来实现
+            广播消息只能发送到顶层窗口，Mdi子窗体是收不到的，只能通过Mdi主窗体转发，
+            因此子窗体要使用MsgCallID来定位的话，主窗体也要继承消息类并设定MsgCallID值
+            
+            窗体的ShowInTaskbar设为false会导致窗体收不到广播消息
+            </summary>
+        </member>
+        <member name="P:LibraryEx.MsgForm.msgCallID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LibraryEx.MsgForm.noReceive">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.MsgForm.COM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.MsgForm.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.MsgForm.DefWndProc(System.Windows.Forms.Message@)">
+            <summary>
+            
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="T:LibraryEx.MsgFormCom">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.MsgFormCom.#ctor(System.Windows.Forms.Form)">
+            <summary>
+            
+            </summary>
+            <param name="form"></param>
+        </member>
+        <member name="F:LibraryEx.MsgFormCom.noReceive">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LibraryEx.MsgFormCom.msgCallID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.MsgFormCom.DefWndProc(System.Windows.Forms.Message@)">
+            <summary>
+            
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="M:LibraryEx.MsgFormCom.SendQuitMsg(System.IntPtr)">
+            <summary>
+            
+            </summary>
+            <param name="handle"></param>
+        </member>
+        <member name="M:LibraryEx.MsgFormCom.WinHandle(LibraryEx.WINAPI.MsgWinID)">
+            <summary>
+            
+            </summary>
+            <param name="msgWinID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MsgFormCom.WinConnected(System.IntPtr)">
+            <summary>
+            
+            </summary>
+            <param name="wHandle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MsgFormCom.WinConnected(LibraryEx.WINAPI.MsgWinID)">
+            <summary>
+            
+            </summary>
+            <param name="msgWinID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MsgFormCom.WinInvokeAndReturn(LibraryEx.WINAPI.MsgWinID,System.String,System.Object[])">
+            <summary>
+            如果除了className和functionName外使用数组作为一个参数，此数组不要用object[]，可以用特定类型数组如int[]，string[]
+            </summary>
+            <param name="msgWinID">指定要调用的窗体ID(在WINAPI中预先定义)</param>
+            <param name="functionName">要调用的方法名</param>
+            <param name="args">参数数组</param>
+        </member>
+        <member name="M:LibraryEx.MsgFormCom.WinInvokeAndReturn(System.IntPtr,System.String,System.Object[])">
+            <summary>
+            如果除了className和functionName外使用数组作为一个参数，此数组不要用object[]，可以用特定类型数组如int[]，string[]
+            </summary>
+            <param name="wHandle">指定要调用的窗体handle</param>
+            <param name="functionName">要调用的方法名</param>
+            <param name="args">参数数组</param>
+        </member>
+        <member name="M:LibraryEx.MsgFormCom.WinInvoke(LibraryEx.WINAPI.MsgWinID,System.String,System.Object[])">
+            <summary>
+            如果除了className和functionName外使用数组作为一个参数，此数组不要用object[]，可以用特定类型数组如int[]，string[]
+            </summary>
+            <param name="msgWinID">指定要调用的窗体ID(在WINAPI中预先定义)</param>
+            <param name="functionName">要调用的方法名</param>
+            <param name="args">参数数组</param>
+        </member>
+        <member name="M:LibraryEx.MsgFormCom.WinInvoke(System.IntPtr,System.String,System.Object[])">
+            <summary>
+            如果除了className和functionName外使用数组作为一个参数，此数组不要用object[]，可以用特定类型数组如int[]，string[]
+            </summary>
+            <param name="wHandle">指定要调用的窗体handle</param>
+            <param name="functionName">要调用的方法名</param>
+            <param name="args">参数数组</param>
+        </member>
+        <member name="M:LibraryEx.MsgFormCom.WinInvokeWithHandle(System.Boolean,System.IntPtr,System.String,System.Object[])">
+            <summary>
+            如果除了className和functionName外使用数组作为一个参数，此数组不要用object[]，可以用特定类型数组如int[]，string[]
+            </summary>
+            <param name="feedBack">是否返回结果</param>
+            <param name="wHandle">指定要调用的窗体handle</param>
+            <param name="functionName">要调用的方法名</param>
+            <param name="args">参数数组</param>
+        </member>
+        <member name="M:LibraryEx.MsgFormCom.GetFeedBackID">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.MsgFormCom.GetCallInfoID">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LibraryEx.NPOIHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ExportDT(System.Data.DataTable,System.String)">
+            <summary>
+            DataTable导出到Excel的MemoryStream
+            </summary>
+            <param name="dtSource">源DataTable</param>
+            <param name="strHeaderText">表头文本</param>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ExportDTI(System.Data.DataTable,System.String,System.IO.FileStream)">
+            <summary>
+            DataTable导出到Excel的MemoryStream
+            </summary>
+            <param name="dtSource">源DataTable</param>
+            <param name="strHeaderText">表头文本</param>
+            <param name="fs">文件流</param>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ExportDTtoExcel(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            DataTable导出到Excel文件
+            </summary>
+            <param name="dtSource">源DataTable</param>
+            <param name="strHeaderText">表头文本</param>
+            <param name="strFileName">保存位置</param>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ImportExceltoDt(System.String)">
+            <summary>
+            读取excel 默认第一行为标头
+            </summary>
+            <param name="strFileName">excel文档路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ImportExceltoDt(System.IO.Stream)">
+            <summary>
+            读取Excel流到DataTable
+            </summary>
+            <param name="stream">Excel流</param>
+            <returns>第一个sheet中的数据</returns>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ImportExceltoDt(System.IO.Stream,System.String,System.Int32)">
+            <summary>
+            读取Excel流到DataTable
+            </summary>
+            <param name="stream">Excel流</param>
+            <param name="sheetName">表单名</param>
+            <param name="HeaderRowIndex">列头所在行号，-1表示没有列头</param>
+            <returns>指定sheet中的数据</returns>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ImportExceltoDs(System.IO.Stream)">
+            <summary>
+            读取Excel流到DataSet
+            </summary>
+            <param name="stream">Excel流</param>
+            <returns>Excel中的数据</returns>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ImportExceltoDs(System.IO.Stream,System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <summary>
+            读取Excel流到DataSet
+            </summary>
+            <param name="stream">Excel流</param>
+            <param name="dict">字典参数，key：sheet名，value：列头所在行号，-1表示没有列头</param>
+            <returns>Excel中的数据</returns>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ImportExceltoDt(System.String,System.String,System.Int32)">
+            <summary>
+            读取excel
+            </summary>
+            <param name="strFileName">excel文件路径</param>
+            <param name="SheetName">需要导出的sheet</param>
+            <param name="HeaderRowIndex">列头所在行号，-1表示没有列头</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ImportExceltoDt(System.String,System.Int32,System.Int32)">
+            <summary>
+            读取excel
+            </summary>
+            <param name="strFileName">excel文件路径</param>
+            <param name="SheetIndex">需要导出的sheet序号</param>
+            <param name="HeaderRowIndex">列头所在行号，-1表示没有列头</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ImportExceltoDt(System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            读取excel
+            </summary>
+            <param name="strFileName">excel文件路径</param>
+            <param name="SheetName">需要导出的sheet</param>
+            <param name="HeaderRowIndex">列头所在行号，-1表示没有列头</param>
+            <param name="needHeader">是否需要表头</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ImportExceltoDt(System.String,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            读取excel
+            </summary>
+            <param name="strFileName">excel文件路径</param>
+            <param name="SheetIndex">需要导出的sheet序号</param>
+            <param name="HeaderRowIndex">列头所在行号，-1表示没有列头</param>
+            <param name="needHeader">是否需要表头</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ImportDt(NPOI.SS.UserModel.ISheet,System.Int32,System.Boolean)">
+            <summary>
+            将制定sheet中的数据导出到datatable中
+            </summary>
+            <param name="sheet">需要导出的sheet</param>
+            <param name="HeaderRowIndex">列头所在行号，-1表示没有列头</param>
+            <param name="needHeader">是否需要表头</param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.InsertSheet(System.String,System.String,System.Data.DataTable)">
+            <summary>
+            
+            </summary>
+            <param name="outputFile"></param>
+            <param name="sheetname"></param>
+            <param name="dt"></param>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.UpdateExcel(System.String,System.String,System.String[],System.Int32,System.Int32)">
+            <summary>
+            更新Excel表格
+            </summary>
+            <param name="outputFile">需更新的excel表格路径</param>
+            <param name="sheetname">sheet名</param>
+            <param name="updateData">需更新的数据</param>
+            <param name="coluid">需更新的列号</param>
+            <param name="rowid">需更新的开始行号</param>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.UpdateExcel(System.String,System.String,System.String[][],System.Int32[],System.Int32)">
+            <summary>
+            更新Excel表格
+            </summary>
+            <param name="outputFile">需更新的excel表格路径</param>
+            <param name="sheetname">sheet名</param>
+            <param name="updateData">需更新的数据</param>
+            <param name="coluids">需更新的列号</param>
+            <param name="rowid">需更新的开始行号</param>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.UpdateExcel(System.String,System.String,System.Double[],System.Int32,System.Int32)">
+            <summary>
+            更新Excel表格
+            </summary>
+            <param name="outputFile">需更新的excel表格路径</param>
+            <param name="sheetname">sheet名</param>
+            <param name="updateData">需更新的数据</param>
+            <param name="coluid">需更新的列号</param>
+            <param name="rowid">需更新的开始行号</param>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.UpdateExcel(System.String,System.String,System.Double[][],System.Int32[],System.Int32)">
+            <summary>
+            更新Excel表格
+            </summary>
+            <param name="outputFile">需更新的excel表格路径</param>
+            <param name="sheetname">sheet名</param>
+            <param name="updateData">需更新的数据</param>
+            <param name="coluids">需更新的列号</param>
+            <param name="rowid">需更新的开始行号</param>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.GetSheetNumber(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="outputFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.GetSheetName(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="outputFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.isNumeric(System.String,System.Double@)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ExportByWeb(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            用于Web导出                                                                                             第一步
+            </summary>
+            <param name="dtSource">源DataTable</param>
+            <param name="strHeaderText">表头文本</param>
+            <param name="strFileName">文件名</param>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.Export(System.Data.DataTable,System.String)">
+            <summary>
+            DataTable导出到Excel的MemoryStream                                                                      第二步
+            </summary>
+            <param name="dtSource">源DataTable</param>
+            <param name="strHeaderText">表头文本</param>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ExportByWeb(System.Data.DataSet,System.String,System.String)">
+            <summary>
+            /注：分浏览器进行编码（IE必须编码，FireFox不能编码，Chrome可编码也可不编码）
+            </summary>
+            <param name="ds"></param>
+            <param name="strHeaderText"></param>
+            <param name="strFileName"></param>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.ExportDataSetToExcel(System.Data.DataSet,System.String)">
+            <summary>
+            由DataSet导出Excel
+            </summary>
+            <param name="sourceDs">要导出数据的DataSet</param>
+            <param name="sheetName">工作表名称</param>
+            <returns>Excel工作表</returns>
+        </member>
+        <member name="M:LibraryEx.NPOIHelper.HasData(System.IO.Stream)">
+            <summary>
+            验证导入的Excel是否有数据
+            </summary>
+            <param name="excelFileStream"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LibraryEx.PinYinHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.PinYinHelper.GetPYChar(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.PinYinHelper.GetPYFull(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.PinYinHelper.GetPYAcronym(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strText"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LibraryEx.RegexHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.RegexHelper.fnGetDateRegex">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.RegexHelper.fnGetTimeRegex">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.RegexHelper.fnGetDateTimeRegex">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.RegexHelper.fnGetEmailRegex">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.RegexHelper.fnGetGUIDRegex">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.RegexHelper.fnGetPositiveDecimalRegex">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.RegexHelper.fnGetDecimalRegex">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.RegexHelper.fnGetPositiveIntRegex">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LibraryEx.SimpleDictionary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.SimpleDictionary.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.SimpleDictionary.Add(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:LibraryEx.SimpleDictionary.Clear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LibraryEx.SimpleDictionary.Item(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.SimpleDictionary.ContainsKey(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.SimpleDictionary.ContainsValue(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.SimpleDictionary.Remove(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LibraryEx.SQLCommon">
+             <summary>
+            SQL辅助类
+             </summary>
+        </member>
+        <member name="M:LibraryEx.SQLCommon.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.SQLCommon.CreateInSqlString(System.String[])">
+            <summary>
+            返回 in ('a','b','',null)；如果数组本身为null或者数组长度为0，只返回 in (null)；已转义单引号
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.SQLCommon.CreateInSqlString(System.Int32[])">
+            <summary>
+            返回 in ('a','b','',null)；如果数组本身为null或者数组长度为0，只返回 in (null)；已转义单引号
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.SQLCommon.CreateInSqlString(System.Data.DataColumn)">
+            <summary>
+            返回 in ('a','b','',null)；如果数组本身为null或者数组长度为0，只返回 in (null)；已转义单引号
+            </summary>
+            <param name="dc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.SQLCommon.CreateNotInSqlString(System.String[])">
+            <summary>
+            返回 not in ('a','b','')；如果数组本身为null或者数组长度为0，抛出异常（将会使sql语句出现意料之外的结果）；已转义单引号
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.SQLCommon.CreateNotInSqlString(System.Data.DataColumn)">
+            <summary>
+            返回 not in ('a','b','')；如果数组本身为null或者数组长度为0，抛出异常（将会使sql语句出现意料之外的结果）；已转义单引号
+            </summary>
+            <param name="dc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.SQLCommon.SetParameter(System.Data.SqlClient.SqlCommand,System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="cmd"></param>
+            <param name="parameterName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:LibraryEx.SQLCommon.Close(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            
+            </summary>
+            <param name="con"></param>
+        </member>
+        <member name="M:LibraryEx.SQLCommon.Close(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+        </member>
+        <member name="M:LibraryEx.SQLCommon.Commit(System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            
+            </summary>
+            <param name="tran"></param>
+        </member>
+        <member name="M:LibraryEx.SQLCommon.Rollback(System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            
+            </summary>
+            <param name="tran"></param>
+        </member>
+        <member name="T:LibraryEx.StringEx">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.StringEx.Cma">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.StringEx.Tag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.StringEx.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.StringEx.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:LibraryEx.StringEx.#ctor(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:LibraryEx.StringEx.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LibraryEx.StringEx.SplitType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.StringEx.SplitType.None">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.StringEx.SplitType.Int">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.StringEx.SplitType.Decimal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.StringEx.SplitToList(System.String,System.Char,System.Boolean,LibraryEx.StringEx.SplitType)">
+            <summary>
+            
+            </summary>
+            <param name="instr"></param>
+            <param name="separator"></param>
+            <param name="removeEmpty"></param>
+            <param name="splitType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.isInt(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="inStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.isInt(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="inStr"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.isDecimal(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="inStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.isDecimal(System.String,System.Decimal)">
+            <summary>
+            
+            </summary>
+            <param name="inStr"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.isDateTime(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="inStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.isDateTime(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="inStr"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.InQuo(System.String)">
+            <summary>
+            返回  return "\"" + value + "\"";
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.InQuo(System.Object)">
+            <summary>
+            返回 "a" 或者 return "\"null\""
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.InSQuo(System.String)">
+            <summary>
+            返回 'a' 或者 return "null"。 如果value本身含有单引号，将会被转义。
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.InSQuo(System.Object)">
+            <summary>
+            返回 'a' 或者 return "null"。 如果value本身含有单引号，将会被转义。
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.IsChinese(System.Char)">
+            <summary>
+            字符是否为汉字
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.getLengthb(System.String)">
+            <summary>
+            获得字节长度
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.getStrLenB(System.String,System.Int32,System.Int32)">
+            <summary>
+            c#的中英文混合字符串截取指定长度,startidx从0开始 by gisoracle@126.com
+            </summary>
+            <param name="str"></param>
+            <param name="startidx"></param>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.isNullOrEmptyString(System.String,System.String)">
+            <summary>
+            类似SQL中的isNull
+            </summary>
+            <param name="str"></param>
+            <param name="strNull"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.isNullString(System.String,System.String)">
+            <summary>
+            类似SQL中的isNull
+            </summary>
+            <param name="str"></param>
+            <param name="strNull"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.isBlankString(System.String)">
+            <summary>
+            是否空白字符，1.IsNullOrWhiteSpace + 2.只有回车或者换行符号 的情况。
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.isStr1ToStr2(System.String,System.String,System.String)">
+            <summary>
+            isStr1ToStr2
+            </summary>
+            <param name="str"></param>
+            <param name="str1"></param>
+            <param name="str2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.HexCharValue(System.Char)">
+            <summary>
+            
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.ExceptionMessage(System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.ArrytoStringSQuo(System.String[])">
+            <summary>
+            返回 'a','b','c',''；此方法方便客户端把数组作为文字展示，不要用于SQL参数传递，服务端请用CreateInSqlString构造in。
+            </summary>
+            <param name="strs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.ArrytoStringQuo(System.String[])">
+            <summary>
+            返回 "a","b","c",""；此方法方便客户端把数组作为文字展示，不要用于SQL参数传递，服务端请用CreateInSqlString构造in。
+            </summary>
+            <param name="strs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.ArrytoString(System.String[])">
+            <summary>
+            返回 a,b,c,, 注意：可能返回连续两个逗号，没有去掉empty；此方法方便客户端把数组作为文字展示，不要用于SQL参数传递，服务端请用CreateInSqlString构造in。
+            </summary>
+            <param name="strs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.fnAsciiToString(System.Int32)">
+            <summary>
+            AscII to String 如果无法转换，抛出异常
+            </summary>
+            <param name="asciiCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.fnStringToAscii(System.String)">
+            <summary>
+            String to AscII 如果无法转换，抛出异常
+            </summary>
+            <param name="character"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.fnDateDiff(System.String,System.String)">
+            <summary>
+            返回 两个string表示的日期之间相隔的天数；初始化日期为2000年第1天，当前日期；抛出异常。
+            </summary>
+            <param name="str1"></param>
+            <param name="str2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.StringEx.fnMonthDiff(System.String,System.String)">
+            <summary>
+            返回 两个string表示的日期之间相隔的月数；初始化日期为2000年第1天，当前日期；抛出异常。
+            </summary>
+            <param name="str1"></param>
+            <param name="str2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LibraryEx.Weather">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.Weather.fnGetWeatherDS">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LibraryEx.WINAPI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:LibraryEx.WINAPI.MsgWinID">
+            <summary>
+            消息调用窗口确定身份的枚举值，原则上一个窗口使用唯一的枚举值
+            为防止版本不同造成的枚举内部值差异，内部值建议显式定义
+            已经定义好的值以后不要改变
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.form0">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.form1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.form2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.form3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.form4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.form5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.KHISClient_frm登录">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.KHISClient_frmMain">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.KHISClient_frm首页">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.KCallCenter_FunctionForm">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.KHISUpdate_updateMain">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.KHISUpdate_FRForm">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.MobileSales_frm登录">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.MobileSales_frmMain">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.MSUpdate_updateMain">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.MsgWinID.MSUpdate_FRForm">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.USER_MSGWIN_REG">
+            <summary>
+            广播到顶层窗口注册的消息值
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.USER_MSGWIN_REG_FB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.USER_MSGWIN_OFF">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.USER_MSGWIN_FBONLY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.HWND_BROADCAST">
+            <summary>
+            表示广播到顶层窗口的handle值
+            </summary>
+        </member>
+        <member name="T:LibraryEx.WINAPI.WIN_MESSAGE">
+            <summary>
+            常用的Windows消息值
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.WIN_MESSAGE.EM_GETLINECOUNT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.WIN_MESSAGE.WM_QUIT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.WIN_MESSAGE.WM_USER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:LibraryEx.WINAPI.CallInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.CallInfo.sender">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.CallInfo.funtionName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.CallInfo.args">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.CallInfo.feedback">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.CallInfo.feedbackID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:LibraryEx.WINAPI.FeedBackInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.FeedBackInfo.feedbackID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.FeedBackInfo.result">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.WINAPI.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)">
+            <summary>
+            
+            </summary>
+            <param name="hWnd"></param>
+            <param name="Msg"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.WINAPI.SendMessage(System.IntPtr,System.Int32,System.IntPtr,LibraryEx.WINAPI.SENDUNICODESTRUCT@)">
+            <summary>
+            
+            </summary>
+            <param name="hWnd"></param>
+            <param name="Msg"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibraryEx.WINAPI.PostMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)">
+            <summary>
+            
+            </summary>
+            <param name="hWnd"></param>
+            <param name="Msg"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LibraryEx.WINAPI.SENDUNICODESTRUCT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.SENDUNICODESTRUCT.dwData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.SENDUNICODESTRUCT.cData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:LibraryEx.WINAPI.SENDUNICODESTRUCT.lpData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibraryEx.WINAPI.SENDUNICODESTRUCT.SetString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:LibraryEx.WINAPI.GetUNICODESTRUCT(System.Windows.Forms.Message)">
+            <summary>
+            
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
