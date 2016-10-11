@@ -5,6 +5,7 @@ using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 using System.Data;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace DevTest
 {
@@ -26,7 +27,15 @@ namespace DevTest
             ci.Value = "12";
             ci.Type = "=";
             cl.Add(ci);
-            DataTable dt = DB.getDt("v合约业务", cl);
+            DataTable dt = null;
+            try
+            {
+              dt  = DB.getDt("v合约业务", cl);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             DataSource = dt;
             gp模块名称.DataBindings.Add("Text", dt, "名称");
         }

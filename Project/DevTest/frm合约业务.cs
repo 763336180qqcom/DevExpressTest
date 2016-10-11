@@ -25,9 +25,14 @@ namespace DevTest
         private void frm合约业务_Load(object sender, EventArgs e)
         {
             StartPosition = FormStartPosition.CenterScreen;
-
-            gc_Hy.DataSource = DB.getDt("v合约业务", null);
-
+            try
+            {
+                gc_Hy.DataSource = DB.getDt("v合约业务", null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             gv_Hy.ExpandAllGroups();
             gv_Hy.BestFitColumns();
 
