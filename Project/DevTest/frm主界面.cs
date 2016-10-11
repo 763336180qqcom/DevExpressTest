@@ -142,12 +142,20 @@ namespace DevTest
                 f.Show();
             }
         }
-
+        DevExpress.XtraReports.UI.ReportPrintTool pt = null;
         private void navBarItem1_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            frmXRP xrp = new frmXRP();
-            DevExpress.XtraReports.UI.ReportPrintTool pt = new DevExpress.XtraReports.UI.ReportPrintTool(xrp);
-            pt.ShowPreview();
+            if (pt == null)
+            {
+                frmXRP xrp = new frmXRP();
+                pt = new DevExpress.XtraReports.UI.ReportPrintTool(xrp);
+                pt.ShowPreview();
+            }
+        }
+
+        private void navBarItem4_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+
         }
     }
 }
