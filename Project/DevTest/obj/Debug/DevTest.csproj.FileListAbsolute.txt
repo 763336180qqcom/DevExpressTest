@@ -480,3 +480,4 @@ E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm新增合约.resource
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.Properties.Resources.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csproj.GenerateResource.Cache
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe.licenses
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmSG.resources

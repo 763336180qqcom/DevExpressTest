@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace DevTest
 {
-    public partial class frmDateEdit : Form
+    public partial class frmDateEdit : XtraForm
     {
 
 

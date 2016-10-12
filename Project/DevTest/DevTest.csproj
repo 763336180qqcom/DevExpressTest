@@ -52,9 +52,6 @@
     <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v15.1.Extensions, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="LibraryEx">
-      <HintPath>..\..\..\DLL\LibraryEx.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -77,6 +74,12 @@
     </Compile>
     <Compile Include="frmDateEdit.Designer.cs">
       <DependentUpon>frmDateEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSG.Designer.cs">
+      <DependentUpon>frmSG.cs</DependentUpon>
     </Compile>
     <Compile Include="frm主界面.cs">
       <SubType>Form</SubType>
@@ -107,6 +110,9 @@
     </Compile>
     <EmbeddedResource Include="frmDateEdit.resx">
       <DependentUpon>frmDateEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSG.resx">
+      <DependentUpon>frmSG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmXRP.resx">
       <DependentUpon>frmXRP.cs</DependentUpon>

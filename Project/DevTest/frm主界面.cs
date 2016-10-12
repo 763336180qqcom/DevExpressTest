@@ -1,5 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.ButtonPanel;
+using DevExpress.XtraPrinting.Preview;
+using DevExpress.XtraReports.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -43,14 +45,8 @@ namespace DevTest
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
 
-            frm合约业务 hyyw = new frm合约业务();
-            if (!(childs.Contains(hyyw.Name)))
-            {
-                childs.Add(hyyw.Name);
-                hyyw.MdiParent = this;
-                hyyw.Show();
-            }
-
+            frm合约业务 f = new frm合约业务();
+            frmShow(f);
         }
 
         private void toolStripMenuItem_Exit_Click(object sender, EventArgs e)
@@ -124,47 +120,49 @@ namespace DevTest
         private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
 
-            frm新增合约 fysr = new frm新增合约();
-            if (!(childs.Contains(fysr.Name)))
-            {
-                childs.Add(fysr.Name);
-                fysr.MdiParent = this;
-                fysr.Show();
-            }
+            frm新增合约 f = new frm新增合约();
+            frmShow(f);
         }
 
         private void navBarItem3_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmDateEdit f = new frmDateEdit();
+            frmShow(f);
+        }
+
+        private PrintPreviewFormEx pv = null;
+        private void navBarItem1_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmXRP xrp = new frmXRP();
+            pv = new ReportPrintTool(xrp).PreviewForm;
+            if (!childs.Contains(pv.Name))
+            {
+                pv.FormClosed += new FormClosedEventHandler(ptClosed);
+                pv.MdiParent = this;
+                pv.Text = "打印预览";
+                childs.Add(pv.Name);
+                xrp.ShowPreview();
+            }
+        }
+        private void ptClosed(object sender, FormClosedEventArgs e)
+        {
+            if (childs.Contains(pv.Name))
+                childs.Remove(pv.Name);
+        }
+        private void navBarItem4_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmSG f=new frmSG();
+            frmShow(f);
+        }
+
+        private void frmShow(XtraForm f)
+        {
             if (!(childs.Contains(f.Name)))
             {
                 childs.Add(f.Name);
                 f.MdiParent = this;
                 f.Show();
             }
-        }
-        frmXRP xrp = null;
-        private void navBarItem1_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            xrp = new frmXRP();
-            if (!childs.Contains(xrp.Name))
-            {
-                DevExpress.XtraReports.UI.ReportPrintTool pt = new DevExpress.XtraReports.UI.ReportPrintTool(xrp);
-                pt.PreviewForm.FormClosed += new FormClosedEventHandler(ptClosed);
-                pt.PreviewForm.MdiParent = this;
-                pt.PreviewForm.Text = "打印预览";
-                pt.ShowPreview();
-                childs.Add(xrp.Name);
-            }
-        }
-        private void ptClosed(object sender, FormClosedEventArgs e)
-        {
-            if (childs.Contains(xrp.Name))
-                childs.Remove(xrp.Name);
-        }
-        private void navBarItem4_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-             ;
         }
     }
 }
