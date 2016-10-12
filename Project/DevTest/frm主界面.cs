@@ -164,7 +164,7 @@ namespace DevTest
         }
         private void navBarItem4_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-
+            ;
         }
     }
 }
