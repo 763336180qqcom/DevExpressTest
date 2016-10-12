@@ -74,7 +74,7 @@ namespace DevTest
 
         private void frm费用收入_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (frm主界面.childs.ContainsKey(Name))
+            if (frm主界面.childs.Contains(Name))
             {
                 frm主界面.childs.Remove(Name);
             }

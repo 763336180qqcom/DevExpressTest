@@ -131,7 +131,7 @@ namespace DevTest
 
         private void frm合约业务_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (frm主界面.childs.ContainsKey(Name))
+            if (frm主界面.childs.Contains(Name))
                 frm主界面.childs.Remove(Name);
         }
 
