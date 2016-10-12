@@ -307,8 +307,6 @@ E:\Project\DevTest\bin\Debug\DevTest.exe.config
 E:\Project\DevTest\obj\Debug\DevTest.exe
 E:\Project\DevTest\obj\Debug\DevTest.pdb
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevTest.exe.config
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.pdb
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevTest.exe
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevTest.pdb
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.Charts.v15.1.Core.dll
@@ -358,7 +356,6 @@ E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.XtraNavBar.v15.1.xml
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.XtraPrinting.v15.1.xml
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.XtraReports.v15.1.xml
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.XtraReports.v15.1.Extensions.xml
-E:\GitRepos\VSProject\Project\DevTest\bin\Debug\LibraryEx.xml
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.XtraTreeList.v15.1.xml
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.XtraRichEdit.v15.1.xml
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.XtraVerticalGrid.v15.1.xml
@@ -471,8 +468,8 @@ E:\GitRepos\VSProject\Project\DevTest\bin\Debug\de\DevExpress.Xpo.v15.1.resource
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\es\DevExpress.Xpo.v15.1.resources.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\ja\DevExpress.Xpo.v15.1.resources.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\ru\DevExpress.Xpo.v15.1.resources.dll
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csprojResolveAssemblyReference.cache
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmDateEdit.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmSG.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmXRP.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm主界面.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm合约业务.resources
@@ -480,4 +477,6 @@ E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm新增合约.resource
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.Properties.Resources.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csproj.GenerateResource.Cache
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe.licenses
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmSG.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.pdb
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csprojResolveAssemblyReference.cache
