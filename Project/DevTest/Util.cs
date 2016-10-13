@@ -13,6 +13,22 @@ namespace DevTest
 {
     class Util
     {
+        public static bool IsDecimal(string str)
+        {
+            decimal d;
+            Decimal.TryParse(str, out d);
+            if (d == 0)
+                return false;
+            return true;
+        }
+        public static bool IsInt(string str)
+        {
+            int i;
+            Int32.TryParse(str,out i);
+            if (i == 0)
+                return false;
+            return true;
+        }
         public static bool IsNumber(string str)
         {
             if (str == null || str.Length == 0)    //验证这个参数是否为空  
@@ -49,7 +65,7 @@ namespace DevTest
             }
         }
 
-        static DXMenuItem CreateCopyCellMenuItem( GridColumn column)
+        static DXMenuItem CreateCopyCellMenuItem(GridColumn column)
         {
             //DXMenuItem copyItem = new DXMenuItem("复制 [" + column.Caption+"]",
             //    new EventHandler(OnCopyCellClick), null);
@@ -71,7 +87,7 @@ namespace DevTest
         static void OnCopyCellClick(object sender, EventArgs e)
         {
             GridColumn col = (GridColumn)((DXMenuItem)sender).Tag;
-           // string filed = col.FieldName;
+            // string filed = col.FieldName;
             Clipboard.SetDataObject(col.View.GetRowCellDisplayText(col.View.FocusedRowHandle, col), true);
         }
         static void OnCopyRowClick(object sender, EventArgs e)

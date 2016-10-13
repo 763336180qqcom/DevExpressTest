@@ -5,23 +5,32 @@ using System.Windows.Forms;
 namespace DevTest
 {
     [Serializable]
-    internal class CustomException : Exception
+    internal class CustomException :ApplicationException
     {
         public CustomException()
         {
+            
         }
-
-        public CustomException(string message) : base(message)
-        {
-                MessageBox.Show(message);
-        }
-
-        public CustomException(string message, Exception innerException) : base(message, innerException)
+        public CustomException(string message)
+            : base(message)
         {
         }
-
-        protected CustomException(SerializationInfo info, StreamingContext context) : base(info, context)
+        public override string Message
         {
+            get
+            {
+                return base.Message + "！";
+            }
+        }
+        public CustomException(string message, Exception innerException)
+            : base(message, innerException)
+        {
+            
+        }
+        protected CustomException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+            
         }
     }
 }

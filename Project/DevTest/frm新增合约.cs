@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Collections;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using DevExpress.XtraEditors.Repository;
 
 namespace DevTest
 {
@@ -23,7 +24,7 @@ namespace DevTest
         {
             InitializeComponent();
         }
-        void cb_state_ParseEditValue(object sender, ConvertEditValueEventArgs e)
+       private  void cb_state_ParseEditValue(object sender, ConvertEditValueEventArgs e)
         {
             e.Value = e.Value.ToString();
             e.Handled = true;
@@ -161,7 +162,7 @@ namespace DevTest
                 Hashtable paraHt_HY = new Hashtable();
                 paraHt_HY.Add("名称", (string)mTempDt_Hy.Rows[rowHandle]["名称"]);
                 paraHt_HY.Add("运营商ID", Convert.ToInt32(mTempDt_Hy.Rows[rowHandle]["运营商ID"]));
-                if (mTempDt_Hy.Rows[rowHandle]["捆绑终端"].ToString().Equals("需要"))
+                if ( mTempDt_Hy.Rows[rowHandle]["捆绑终端"].ToString().Equals("需要"))
                     paraHt_HY.Add("捆绑终端", 1);
                 else
                     paraHt_HY.Add("捆绑终端", 0);
@@ -189,10 +190,6 @@ namespace DevTest
                 paraHt_HY.Add("现金奖励", (decimal)mTempDt_Hy.Rows[rowHandle]["现金奖励"]);
                 paraHt_HY.Add("开始时间", Convert.ToDateTime(mTempDt_Hy.Rows[rowHandle]["开始时间"]));
                 paraHt_HY.Add("结束时间", Convert.ToDateTime(mTempDt_Hy.Rows[rowHandle]["结束时间"]));
-                if (mTempDt_Hy.Rows[rowHandle]["状态"].ToString().Equals("有效"))
-                    paraHt_HY.Add("状态", 1);
-                else
-                    paraHt_HY.Add("状态", 0);
                 List<Hashtable> paraHt_FYS = new List<Hashtable>();
                 for (int i = 0; i < mTempDt_Fy.Rows.Count; i++)
                 {
@@ -203,8 +200,8 @@ namespace DevTest
                             if (mTempDt_Fy.Rows[i]["类别"].Equals("费用"))
                                 paraHt_FY.Add("type", -1);
                             else
-                                paraHt_FY.Add("type", -1);
-                            paraHt_FY.Add("项目名称", (string)mTempDt_Fy.Rows[i]["项目名称"]);
+                                paraHt_FY.Add("type", 1);
+                            paraHt_FY.Add("名称", (string)mTempDt_Fy.Rows[i]["项目名称"]);
                             paraHt_FY.Add("金额", (decimal)mTempDt_Fy.Rows[i]["金额"]);
                             if (mTempDt_Fy.Rows[i]["类别"].Equals("费用"))
                                 paraHt_FY.Add("期数", 1);
@@ -219,7 +216,7 @@ namespace DevTest
                     }
                 }
                 DB.提交合约及费用(paraHt_HY, paraHt_FYS);
-                XtraMessageBox.Show("Office 2013 Dark Gray", "插入成功！");
+                MessageBox.Show("插入成功！");
             }
             catch (Exception ex)
             {

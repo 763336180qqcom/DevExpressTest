@@ -69,17 +69,17 @@
             this.de_end = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.cb_state_hy = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.gv_hy = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn_Name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_kbzd = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_yysId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_yxlh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_dyj = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_zdj = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_mljl = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_xjjl = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_kssj = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_jssj = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.zt_hy_xzhy = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.新增合约_Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.新增合约_kbzd = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.新增合约_yysId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.新增合约_yxlh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.新增合约_dyj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.新增合约_zdj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.新增合约_mljl = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.新增合约_xjjl = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.新增合约_kssj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.新增合约_jssj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.新增合约_zt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gc_hy = new DevExpress.XtraGrid.GridControl();
             this.ce_xz = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_fy)).BeginInit();
@@ -446,9 +446,11 @@
             // ce_kb
             // 
             this.ce_kb.AutoHeight = false;
+            this.ce_kb.DisplayValueChecked = "需要";
+            this.ce_kb.DisplayValueUnchecked = "不需要";
             this.ce_kb.Name = "ce_kb";
-            this.ce_kb.ValueChecked = "需要";
-            this.ce_kb.ValueUnchecked = "不需要";
+            this.ce_kb.ValueChecked = "1";
+            this.ce_kb.ValueUnchecked = "0";
             // 
             // te_yysid
             // 
@@ -458,6 +460,8 @@
             // ce_lh
             // 
             this.ce_lh.AutoHeight = false;
+            this.ce_lh.DisplayValueChecked = "允许";
+            this.ce_lh.DisplayValueUnchecked = "不允许";
             this.ce_lh.Name = "ce_lh";
             this.ce_lh.ValueChecked = 1;
             this.ce_lh.ValueUnchecked = 0;
@@ -504,17 +508,17 @@
             // gv_hy
             // 
             this.gv_hy.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn_Name,
-            this.gridColumn_kbzd,
-            this.gridColumn_yysId,
-            this.gridColumn_yxlh,
-            this.gridColumn_dyj,
-            this.gridColumn_zdj,
-            this.gridColumn_mljl,
-            this.gridColumn_xjjl,
-            this.gridColumn_kssj,
-            this.gridColumn_jssj,
-            this.zt_hy_xzhy});
+            this.新增合约_Name,
+            this.新增合约_kbzd,
+            this.新增合约_yysId,
+            this.新增合约_yxlh,
+            this.新增合约_dyj,
+            this.新增合约_zdj,
+            this.新增合约_mljl,
+            this.新增合约_xjjl,
+            this.新增合约_kssj,
+            this.新增合约_jssj,
+            this.新增合约_zt});
             this.gv_hy.GridControl = this.gc_hy;
             this.gv_hy.IndicatorWidth = 40;
             this.gv_hy.Name = "gv_hy";
@@ -530,166 +534,166 @@
             this.gv_hy.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gv_hy_CellValueChanging);
             this.gv_hy.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gv_hy_MouseDown);
             // 
-            // gridColumn_Name
+            // 新增合约_Name
             // 
-            this.gridColumn_Name.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_Name.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_Name.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_Name.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_Name.Caption = "名称";
-            this.gridColumn_Name.FieldName = "名称";
-            this.gridColumn_Name.Name = "gridColumn_Name";
-            this.gridColumn_Name.Visible = true;
-            this.gridColumn_Name.VisibleIndex = 0;
-            this.gridColumn_Name.Width = 73;
+            this.新增合约_Name.AppearanceCell.Options.UseTextOptions = true;
+            this.新增合约_Name.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_Name.AppearanceHeader.Options.UseTextOptions = true;
+            this.新增合约_Name.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_Name.Caption = "名称";
+            this.新增合约_Name.FieldName = "名称";
+            this.新增合约_Name.Name = "新增合约_Name";
+            this.新增合约_Name.Visible = true;
+            this.新增合约_Name.VisibleIndex = 0;
+            this.新增合约_Name.Width = 73;
             // 
-            // gridColumn_kbzd
+            // 新增合约_kbzd
             // 
-            this.gridColumn_kbzd.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_kbzd.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_kbzd.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_kbzd.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_kbzd.Caption = "捆绑终端";
-            this.gridColumn_kbzd.ColumnEdit = this.ce_kb;
-            this.gridColumn_kbzd.FieldName = "捆绑终端";
-            this.gridColumn_kbzd.Name = "gridColumn_kbzd";
-            this.gridColumn_kbzd.Visible = true;
-            this.gridColumn_kbzd.VisibleIndex = 2;
-            this.gridColumn_kbzd.Width = 70;
+            this.新增合约_kbzd.AppearanceCell.Options.UseTextOptions = true;
+            this.新增合约_kbzd.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_kbzd.AppearanceHeader.Options.UseTextOptions = true;
+            this.新增合约_kbzd.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_kbzd.Caption = "捆绑终端";
+            this.新增合约_kbzd.ColumnEdit = this.ce_kb;
+            this.新增合约_kbzd.FieldName = "捆绑终端";
+            this.新增合约_kbzd.Name = "新增合约_kbzd";
+            this.新增合约_kbzd.Visible = true;
+            this.新增合约_kbzd.VisibleIndex = 2;
+            this.新增合约_kbzd.Width = 70;
             // 
-            // gridColumn_yysId
+            // 新增合约_yysId
             // 
-            this.gridColumn_yysId.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_yysId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_yysId.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_yysId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_yysId.Caption = "运营商ID";
-            this.gridColumn_yysId.FieldName = "运营商ID";
-            this.gridColumn_yysId.Name = "gridColumn_yysId";
-            this.gridColumn_yysId.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.gridColumn_yysId.Visible = true;
-            this.gridColumn_yysId.VisibleIndex = 1;
-            this.gridColumn_yysId.Width = 73;
+            this.新增合约_yysId.AppearanceCell.Options.UseTextOptions = true;
+            this.新增合约_yysId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_yysId.AppearanceHeader.Options.UseTextOptions = true;
+            this.新增合约_yysId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_yysId.Caption = "运营商ID";
+            this.新增合约_yysId.FieldName = "运营商ID";
+            this.新增合约_yysId.Name = "新增合约_yysId";
+            this.新增合约_yysId.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.新增合约_yysId.Visible = true;
+            this.新增合约_yysId.VisibleIndex = 1;
+            this.新增合约_yysId.Width = 73;
             // 
-            // gridColumn_yxlh
+            // 新增合约_yxlh
             // 
-            this.gridColumn_yxlh.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_yxlh.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_yxlh.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_yxlh.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_yxlh.Caption = "允许老号";
-            this.gridColumn_yxlh.ColumnEdit = this.ce_lh;
-            this.gridColumn_yxlh.FieldName = "允许老号";
-            this.gridColumn_yxlh.Name = "gridColumn_yxlh";
-            this.gridColumn_yxlh.Visible = true;
-            this.gridColumn_yxlh.VisibleIndex = 3;
-            this.gridColumn_yxlh.Width = 70;
+            this.新增合约_yxlh.AppearanceCell.Options.UseTextOptions = true;
+            this.新增合约_yxlh.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_yxlh.AppearanceHeader.Options.UseTextOptions = true;
+            this.新增合约_yxlh.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_yxlh.Caption = "允许老号";
+            this.新增合约_yxlh.ColumnEdit = this.ce_lh;
+            this.新增合约_yxlh.FieldName = "允许老号";
+            this.新增合约_yxlh.Name = "新增合约_yxlh";
+            this.新增合约_yxlh.Visible = true;
+            this.新增合约_yxlh.VisibleIndex = 3;
+            this.新增合约_yxlh.Width = 70;
             // 
-            // gridColumn_dyj
+            // 新增合约_dyj
             // 
-            this.gridColumn_dyj.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_dyj.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_dyj.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_dyj.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_dyj.Caption = "店员价";
-            this.gridColumn_dyj.DisplayFormat.FormatString = "F2";
-            this.gridColumn_dyj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn_dyj.FieldName = "店员价";
-            this.gridColumn_dyj.Name = "gridColumn_dyj";
-            this.gridColumn_dyj.Visible = true;
-            this.gridColumn_dyj.VisibleIndex = 4;
-            this.gridColumn_dyj.Width = 70;
+            this.新增合约_dyj.AppearanceCell.Options.UseTextOptions = true;
+            this.新增合约_dyj.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_dyj.AppearanceHeader.Options.UseTextOptions = true;
+            this.新增合约_dyj.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_dyj.Caption = "店员价";
+            this.新增合约_dyj.DisplayFormat.FormatString = "F2";
+            this.新增合约_dyj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.新增合约_dyj.FieldName = "店员价";
+            this.新增合约_dyj.Name = "新增合约_dyj";
+            this.新增合约_dyj.Visible = true;
+            this.新增合约_dyj.VisibleIndex = 4;
+            this.新增合约_dyj.Width = 70;
             // 
-            // gridColumn_zdj
+            // 新增合约_zdj
             // 
-            this.gridColumn_zdj.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_zdj.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_zdj.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_zdj.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_zdj.Caption = "最低价";
-            this.gridColumn_zdj.DisplayFormat.FormatString = "F2";
-            this.gridColumn_zdj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn_zdj.FieldName = "最低价";
-            this.gridColumn_zdj.Name = "gridColumn_zdj";
-            this.gridColumn_zdj.Visible = true;
-            this.gridColumn_zdj.VisibleIndex = 5;
-            this.gridColumn_zdj.Width = 70;
+            this.新增合约_zdj.AppearanceCell.Options.UseTextOptions = true;
+            this.新增合约_zdj.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_zdj.AppearanceHeader.Options.UseTextOptions = true;
+            this.新增合约_zdj.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_zdj.Caption = "最低价";
+            this.新增合约_zdj.DisplayFormat.FormatString = "F2";
+            this.新增合约_zdj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.新增合约_zdj.FieldName = "最低价";
+            this.新增合约_zdj.Name = "新增合约_zdj";
+            this.新增合约_zdj.Visible = true;
+            this.新增合约_zdj.VisibleIndex = 5;
+            this.新增合约_zdj.Width = 70;
             // 
-            // gridColumn_mljl
+            // 新增合约_mljl
             // 
-            this.gridColumn_mljl.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_mljl.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_mljl.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_mljl.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_mljl.Caption = "毛利奖励";
-            this.gridColumn_mljl.DisplayFormat.FormatString = "F2";
-            this.gridColumn_mljl.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn_mljl.FieldName = "毛利奖励";
-            this.gridColumn_mljl.Name = "gridColumn_mljl";
-            this.gridColumn_mljl.Visible = true;
-            this.gridColumn_mljl.VisibleIndex = 6;
-            this.gridColumn_mljl.Width = 70;
+            this.新增合约_mljl.AppearanceCell.Options.UseTextOptions = true;
+            this.新增合约_mljl.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_mljl.AppearanceHeader.Options.UseTextOptions = true;
+            this.新增合约_mljl.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_mljl.Caption = "毛利奖励";
+            this.新增合约_mljl.DisplayFormat.FormatString = "F2";
+            this.新增合约_mljl.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.新增合约_mljl.FieldName = "毛利奖励";
+            this.新增合约_mljl.Name = "新增合约_mljl";
+            this.新增合约_mljl.Visible = true;
+            this.新增合约_mljl.VisibleIndex = 6;
+            this.新增合约_mljl.Width = 70;
             // 
-            // gridColumn_xjjl
+            // 新增合约_xjjl
             // 
-            this.gridColumn_xjjl.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_xjjl.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_xjjl.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_xjjl.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_xjjl.Caption = "现金奖励";
-            this.gridColumn_xjjl.DisplayFormat.FormatString = "F2";
-            this.gridColumn_xjjl.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn_xjjl.FieldName = "现金奖励";
-            this.gridColumn_xjjl.Name = "gridColumn_xjjl";
-            this.gridColumn_xjjl.Visible = true;
-            this.gridColumn_xjjl.VisibleIndex = 7;
-            this.gridColumn_xjjl.Width = 70;
+            this.新增合约_xjjl.AppearanceCell.Options.UseTextOptions = true;
+            this.新增合约_xjjl.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_xjjl.AppearanceHeader.Options.UseTextOptions = true;
+            this.新增合约_xjjl.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_xjjl.Caption = "现金奖励";
+            this.新增合约_xjjl.DisplayFormat.FormatString = "F2";
+            this.新增合约_xjjl.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.新增合约_xjjl.FieldName = "现金奖励";
+            this.新增合约_xjjl.Name = "新增合约_xjjl";
+            this.新增合约_xjjl.Visible = true;
+            this.新增合约_xjjl.VisibleIndex = 7;
+            this.新增合约_xjjl.Width = 70;
             // 
-            // gridColumn_kssj
+            // 新增合约_kssj
             // 
-            this.gridColumn_kssj.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_kssj.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_kssj.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_kssj.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_kssj.Caption = "开始时间";
-            this.gridColumn_kssj.ColumnEdit = this.de_start;
-            this.gridColumn_kssj.DisplayFormat.FormatString = "yyyy-MM-dd";
-            this.gridColumn_kssj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.gridColumn_kssj.FieldName = "开始时间";
-            this.gridColumn_kssj.MinWidth = 75;
-            this.gridColumn_kssj.Name = "gridColumn_kssj";
-            this.gridColumn_kssj.Visible = true;
-            this.gridColumn_kssj.VisibleIndex = 8;
+            this.新增合约_kssj.AppearanceCell.Options.UseTextOptions = true;
+            this.新增合约_kssj.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_kssj.AppearanceHeader.Options.UseTextOptions = true;
+            this.新增合约_kssj.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_kssj.Caption = "开始时间";
+            this.新增合约_kssj.ColumnEdit = this.de_start;
+            this.新增合约_kssj.DisplayFormat.FormatString = "yyyy-MM-dd";
+            this.新增合约_kssj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.新增合约_kssj.FieldName = "开始时间";
+            this.新增合约_kssj.MinWidth = 75;
+            this.新增合约_kssj.Name = "新增合约_kssj";
+            this.新增合约_kssj.Visible = true;
+            this.新增合约_kssj.VisibleIndex = 8;
             // 
-            // gridColumn_jssj
+            // 新增合约_jssj
             // 
-            this.gridColumn_jssj.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_jssj.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_jssj.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_jssj.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_jssj.Caption = "结束时间";
-            this.gridColumn_jssj.ColumnEdit = this.de_end;
-            this.gridColumn_jssj.DisplayFormat.FormatString = "yyyy-MM-dd";
-            this.gridColumn_jssj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.gridColumn_jssj.FieldName = "结束时间";
-            this.gridColumn_jssj.MinWidth = 75;
-            this.gridColumn_jssj.Name = "gridColumn_jssj";
-            this.gridColumn_jssj.Visible = true;
-            this.gridColumn_jssj.VisibleIndex = 9;
+            this.新增合约_jssj.AppearanceCell.Options.UseTextOptions = true;
+            this.新增合约_jssj.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_jssj.AppearanceHeader.Options.UseTextOptions = true;
+            this.新增合约_jssj.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_jssj.Caption = "结束时间";
+            this.新增合约_jssj.ColumnEdit = this.de_end;
+            this.新增合约_jssj.DisplayFormat.FormatString = "yyyy-MM-dd";
+            this.新增合约_jssj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.新增合约_jssj.FieldName = "结束时间";
+            this.新增合约_jssj.MinWidth = 75;
+            this.新增合约_jssj.Name = "新增合约_jssj";
+            this.新增合约_jssj.Visible = true;
+            this.新增合约_jssj.VisibleIndex = 9;
             // 
-            // zt_hy_xzhy
+            // 新增合约_zt
             // 
-            this.zt_hy_xzhy.AppearanceCell.Options.UseTextOptions = true;
-            this.zt_hy_xzhy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.zt_hy_xzhy.AppearanceHeader.Options.UseTextOptions = true;
-            this.zt_hy_xzhy.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.zt_hy_xzhy.Caption = "状态";
-            this.zt_hy_xzhy.ColumnEdit = this.cb_state_hy;
-            this.zt_hy_xzhy.FieldName = "状态";
-            this.zt_hy_xzhy.Name = "zt_hy_xzhy";
-            this.zt_hy_xzhy.Visible = true;
-            this.zt_hy_xzhy.VisibleIndex = 10;
-            this.zt_hy_xzhy.Width = 76;
+            this.新增合约_zt.AppearanceCell.Options.UseTextOptions = true;
+            this.新增合约_zt.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_zt.AppearanceHeader.Options.UseTextOptions = true;
+            this.新增合约_zt.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.新增合约_zt.Caption = "状态";
+            this.新增合约_zt.ColumnEdit = this.cb_state_hy;
+            this.新增合约_zt.FieldName = "状态";
+            this.新增合约_zt.Name = "新增合约_zt";
+            this.新增合约_zt.Visible = true;
+            this.新增合约_zt.VisibleIndex = 10;
+            this.新增合约_zt.Width = 76;
             // 
             // gc_hy
             // 
@@ -805,17 +809,17 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit de_end;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cb_state_hy;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_hy;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_Name;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_kbzd;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_yysId;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_yxlh;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_dyj;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_zdj;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_mljl;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_xjjl;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_kssj;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_jssj;
-        private DevExpress.XtraGrid.Columns.GridColumn zt_hy_xzhy;
+        private DevExpress.XtraGrid.Columns.GridColumn 新增合约_Name;
+        private DevExpress.XtraGrid.Columns.GridColumn 新增合约_kbzd;
+        private DevExpress.XtraGrid.Columns.GridColumn 新增合约_yysId;
+        private DevExpress.XtraGrid.Columns.GridColumn 新增合约_yxlh;
+        private DevExpress.XtraGrid.Columns.GridColumn 新增合约_dyj;
+        private DevExpress.XtraGrid.Columns.GridColumn 新增合约_zdj;
+        private DevExpress.XtraGrid.Columns.GridColumn 新增合约_mljl;
+        private DevExpress.XtraGrid.Columns.GridColumn 新增合约_xjjl;
+        private DevExpress.XtraGrid.Columns.GridColumn 新增合约_kssj;
+        private DevExpress.XtraGrid.Columns.GridColumn 新增合约_jssj;
+        private DevExpress.XtraGrid.Columns.GridColumn 新增合约_zt;
         private DevExpress.XtraGrid.GridControl gc_hy;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cb_state_fy;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit ce_xz;

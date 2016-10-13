@@ -119,8 +119,7 @@ namespace DevTest
 
         private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-
-            frm新增合约 f = new frm新增合约();
+            frm添加合约 f = new frm添加合约();
             frmShow(f);
         }
 
