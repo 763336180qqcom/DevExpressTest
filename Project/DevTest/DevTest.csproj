@@ -80,6 +80,9 @@
     <Compile Include="frmDateEdit.Designer.cs">
       <DependentUpon>frmDateEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmSG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,11 +101,11 @@
     <Compile Include="frm合约业务.Designer.cs">
       <DependentUpon>frm合约业务.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm收入及费用.cs">
+    <Compile Include="frm收入费用.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm收入及费用.Designer.cs">
-      <DependentUpon>frm收入及费用.cs</DependentUpon>
+    <Compile Include="frm收入费用.Designer.cs">
+      <DependentUpon>frm收入费用.cs</DependentUpon>
     </Compile>
     <Compile Include="frm新增合约.cs">
       <SubType>Form</SubType>
@@ -128,6 +131,9 @@
     <EmbeddedResource Include="frmDateEdit.resx">
       <DependentUpon>frmDateEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTip.resx">
+      <DependentUpon>frmTip.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSG.resx">
       <DependentUpon>frmSG.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,8 +146,8 @@
     <EmbeddedResource Include="frm合约业务.resx">
       <DependentUpon>frm合约业务.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm收入及费用.resx">
-      <DependentUpon>frm收入及费用.cs</DependentUpon>
+    <EmbeddedResource Include="frm收入费用.resx">
+      <DependentUpon>frm收入费用.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm新增合约.resx">
       <DependentUpon>frm新增合约.cs</DependentUpon>

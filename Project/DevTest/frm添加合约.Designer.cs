@@ -15,7 +15,6 @@
         {
             if (disposing && (components != null))
             {
-                components.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -55,12 +54,12 @@
             this.gc信息列表 = new DevExpress.XtraGrid.GridControl();
             this.gv信息列表 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryCmb类别 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.repositoryItemCheckedComboBoxEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chk状态.Properties)).BeginInit();
@@ -80,8 +79,8 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc信息列表)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv信息列表)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryCmb类别)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckedComboBoxEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -118,7 +117,7 @@
             // 
             this.btn添加费用收入.Image = ((System.Drawing.Image)(resources.GetObject("btn添加费用收入.Image")));
             this.btn添加费用收入.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btn添加费用收入.Location = new System.Drawing.Point(349, 265);
+            this.btn添加费用收入.Location = new System.Drawing.Point(336, 246);
             this.btn添加费用收入.Name = "btn添加费用收入";
             this.btn添加费用收入.Size = new System.Drawing.Size(142, 29);
             this.btn添加费用收入.TabIndex = 23;
@@ -128,7 +127,7 @@
             // btn提交
             // 
             this.btn提交.Image = ((System.Drawing.Image)(resources.GetObject("btn提交.Image")));
-            this.btn提交.Location = new System.Drawing.Point(573, 265);
+            this.btn提交.Location = new System.Drawing.Point(573, 246);
             this.btn提交.Name = "btn提交";
             this.btn提交.Size = new System.Drawing.Size(84, 29);
             this.btn提交.TabIndex = 22;
@@ -201,32 +200,32 @@
             // 
             // txt最低价
             // 
-            this.txt最低价.Location = new System.Drawing.Point(316, 198);
+            this.txt最低价.Location = new System.Drawing.Point(303, 198);
             this.txt最低价.Name = "txt最低价";
             this.txt最低价.Properties.Mask.EditMask = "f2";
             this.txt最低价.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txt最低价.Size = new System.Drawing.Size(112, 20);
+            this.txt最低价.Size = new System.Drawing.Size(175, 20);
             this.txt最低价.TabIndex = 16;
             // 
             // txt店员价
             // 
-            this.txt店员价.Location = new System.Drawing.Point(316, 157);
+            this.txt店员价.Location = new System.Drawing.Point(303, 157);
             this.txt店员价.Name = "txt店员价";
             this.txt店员价.Properties.Mask.EditMask = "f2";
             this.txt店员价.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txt店员价.Size = new System.Drawing.Size(112, 20);
+            this.txt店员价.Size = new System.Drawing.Size(175, 20);
             this.txt店员价.TabIndex = 15;
             // 
             // txt运营商ID
             // 
-            this.txt运营商ID.Location = new System.Drawing.Point(316, 72);
+            this.txt运营商ID.Location = new System.Drawing.Point(303, 72);
             this.txt运营商ID.Name = "txt运营商ID";
             this.txt运营商ID.Size = new System.Drawing.Size(175, 20);
             this.txt运营商ID.TabIndex = 12;
             // 
             // txt名称
             // 
-            this.txt名称.Location = new System.Drawing.Point(316, 31);
+            this.txt名称.Location = new System.Drawing.Point(303, 31);
             this.txt名称.Name = "txt名称";
             this.txt名称.Size = new System.Drawing.Size(175, 20);
             this.txt名称.TabIndex = 11;
@@ -265,7 +264,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(272, 201);
+            this.labelControl6.Location = new System.Drawing.Point(259, 201);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(36, 14);
             this.labelControl6.TabIndex = 5;
@@ -273,7 +272,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(272, 160);
+            this.labelControl5.Location = new System.Drawing.Point(259, 160);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(36, 14);
             this.labelControl5.TabIndex = 4;
@@ -281,7 +280,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(260, 75);
+            this.labelControl2.Location = new System.Drawing.Point(247, 75);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(48, 14);
             this.labelControl2.TabIndex = 1;
@@ -289,7 +288,7 @@
             // 
             // lbl名称
             // 
-            this.lbl名称.Location = new System.Drawing.Point(284, 34);
+            this.lbl名称.Location = new System.Drawing.Point(271, 34);
             this.lbl名称.Name = "lbl名称";
             this.lbl名称.Size = new System.Drawing.Size(24, 14);
             this.lbl名称.TabIndex = 0;
@@ -298,7 +297,7 @@
             // chk捆绑终端
             // 
             this.chk捆绑终端.EditValue = null;
-            this.chk捆绑终端.Location = new System.Drawing.Point(258, 113);
+            this.chk捆绑终端.Location = new System.Drawing.Point(245, 113);
             this.chk捆绑终端.Name = "chk捆绑终端";
             this.chk捆绑终端.Properties.Appearance.Options.UseTextOptions = true;
             this.chk捆绑终端.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -313,7 +312,7 @@
             // chk允许老号
             // 
             this.chk允许老号.EditValue = null;
-            this.chk允许老号.Location = new System.Drawing.Point(418, 113);
+            this.chk允许老号.Location = new System.Drawing.Point(405, 113);
             this.chk允许老号.Name = "chk允许老号";
             this.chk允许老号.Properties.Appearance.Options.UseTextOptions = true;
             this.chk允许老号.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -342,8 +341,8 @@
             this.gc信息列表.MainView = this.gv信息列表;
             this.gc信息列表.Name = "gc信息列表";
             this.gc信息列表.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemComboBox1,
-            this.repositoryItemComboBox2});
+            this.repositoryCmb类别,
+            this.repositoryItemCheckedComboBoxEdit1});
             this.gc信息列表.Size = new System.Drawing.Size(994, 296);
             this.gc信息列表.TabIndex = 0;
             this.gc信息列表.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -358,17 +357,30 @@
             this.gridColumn4,
             this.gridColumn5});
             this.gv信息列表.GridControl = this.gc信息列表;
+            this.gv信息列表.IndicatorWidth = 30;
             this.gv信息列表.Name = "gv信息列表";
+            this.gv信息列表.OptionsBehavior.Editable = false;
+            this.gv信息列表.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv信息列表.OptionsView.ColumnAutoWidth = false;
             this.gv信息列表.OptionsView.ShowGroupPanel = false;
+            this.gv信息列表.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gv信息列表_RowClick);
+            this.gv信息列表.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gv信息列表_CustomDrawRowIndicator);
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "类别";
+            this.gridColumn1.ColumnEdit = this.repositoryItemCheckedComboBoxEdit1;
             this.gridColumn1.FieldName = "类别";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
+            // 
+            // repositoryCmb类别
+            // 
+            this.repositoryCmb类别.AutoHeight = false;
+            this.repositoryCmb类别.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryCmb类别.Name = "repositoryCmb类别";
             // 
             // gridColumn2
             // 
@@ -402,19 +414,15 @@
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
             // 
-            // repositoryItemComboBox1
+            // repositoryItemCheckedComboBoxEdit1
             // 
-            this.repositoryItemComboBox1.AutoHeight = false;
-            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemCheckedComboBoxEdit1.AutoHeight = false;
+            this.repositoryItemCheckedComboBoxEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
-            // 
-            // repositoryItemComboBox2
-            // 
-            this.repositoryItemComboBox2.AutoHeight = false;
-            this.repositoryItemComboBox2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox2.Name = "repositoryItemComboBox2";
+            this.repositoryItemCheckedComboBoxEdit1.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(1, "", "收入"),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(-1, "", "费用")});
+            this.repositoryItemCheckedComboBoxEdit1.Name = "repositoryItemCheckedComboBoxEdit1";
             // 
             // frm添加合约
             // 
@@ -446,8 +454,8 @@
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc信息列表)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv信息列表)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryCmb类别)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckedComboBoxEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -482,9 +490,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox2;
         private DevExpress.XtraEditors.CheckEdit chk捆绑终端;
         private DevExpress.XtraEditors.CheckEdit chk允许老号;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryCmb类别;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit repositoryItemCheckedComboBoxEdit1;
     }
 }

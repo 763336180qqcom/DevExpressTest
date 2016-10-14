@@ -106,7 +106,7 @@ namespace DevTest
                 DataTable dt = new DataTable();
                 ad.Fill(dt);
                 if (dt.Rows.Count > 0)
-                    throw new CustomException("已存在相同名称的有效合约");
+                    throw new CustomException("名称与已存在的有效合约重复");
                 dt.Dispose();
                 string sql添加合约 = "INSERT INTO t合约业务 VALUES(@名称,@运营商ID,@捆绑终端,@允许老号,@店员价,@最低价,@毛利奖励,@现金奖励,@开始时间,@结束时间,@状态)";
                 cmd = new SqlCommand(sql添加合约, con, tran);
@@ -132,7 +132,19 @@ namespace DevTest
                     string strfPID = dt1.Rows[0][0].ToString();
                     for (int i = 0; i < dt费用收入.Rows.Count; i++)
                     {
-                        string str类别 = dt费用收入.Rows[i]["type"].ToString();
+                        if (string.IsNullOrEmpty(dt费用收入.Rows[i]["项目名称"].ToString()))
+                        {
+                            throw new CustomException("第" + (i + 1) + "行名称不能为空");
+                        }
+                        if (!Util.IsInt(dt费用收入.Rows[i]["类别"].ToString()))
+                        {
+                            throw new CustomException("第" + (i + 1) + "行类别格式错误");
+                        }
+                        if (!Util.IsDecimal(dt费用收入.Rows[i]["金额"].ToString()))
+                        {
+                            throw new CustomException("第" + (i + 1) + "行金额格式错误");
+                        }
+                        string str类别 = dt费用收入.Rows[i]["类别"].ToString();
                         string str名称_费用收入 = dt费用收入.Rows[i]["项目名称"].ToString();
                         string str金额 = dt费用收入.Rows[i]["金额"].ToString();
                         string str期数 = dt费用收入.Rows[i]["期数"].ToString();
