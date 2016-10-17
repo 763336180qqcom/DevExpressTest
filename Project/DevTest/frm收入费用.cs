@@ -24,6 +24,8 @@ namespace DevTest
         public string str状态;
         private void frm收入费用_Load(object sender, EventArgs e)
         {
+            cmb类别.Properties.Items.Add(new string[] { "1","收入"});
+            cmb类别.Properties.Items.Add(new string[] { "-1", "费用" });
             chk状态.Checked = false;
             if (!string.IsNullOrEmpty(str类别))
             {
@@ -115,7 +117,7 @@ namespace DevTest
             }
             else
             {
-                frm添加合约.sDt收入费用.Rows.Add(cmb类别.EditValue.ToString(), txt名称.Text.Trim(), txt金额.Text.Trim(), txt期数.Text.Trim(), chk状态.EditValue.ToString().Trim());
+                frm添加合约.sDt收入费用.Rows.Add(-1,cmb类别.EditValue.ToString(), txt名称.Text.Trim(), txt金额.Text.Trim(), txt期数.Text.Trim(), chk状态.EditValue.ToString().Trim());
                 this.DialogResult = DialogResult.OK;
             }
         }

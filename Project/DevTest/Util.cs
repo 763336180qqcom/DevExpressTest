@@ -15,6 +15,11 @@ namespace DevTest
     {
         public static bool IsDecimal(string str)
         {
+            if (str != null && str.Equals("0"))
+            {
+                str = Convert.ToDecimal(0).ToString("F2");
+                return true;
+            }
             decimal d;
             Decimal.TryParse(str, out d);
             if (d == 0)
@@ -24,7 +29,7 @@ namespace DevTest
         public static bool IsInt(string str)
         {
             int i;
-            Int32.TryParse(str,out i);
+            Int32.TryParse(str, out i);
             if (i == 0)
                 return false;
             return true;

@@ -11,6 +11,7 @@ using System.Collections;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using System.Threading;
 using DevExpress.XtraEditors;
+using DevExpress.Utils;
 
 namespace DevTest
 {
@@ -51,28 +52,33 @@ namespace DevTest
 
         private void gv_hy_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            if (currentProgress != 0)
+            if (e.Button == MouseButtons.Left && e.Clicks == 2)
             {
-                return;
-            }else {
-                ts.IsOn = true;
-            }
-            int mainId = -1;
-            if (e.RowHandle >= 0 && e.Button == MouseButtons.Left)
-            {
-                mainId = (int)gv_Hy.GetRowCellValue(gv_Hy.GetSelectedRows()[0], "fID");
-            }
-            if (mainId >= 0)
-            {
-                currentProgress = 0;
-                pgb.Text = null;
-                mBgw = new BackgroundWorker();
-                mBgw.DoWork += new DoWorkEventHandler(bgw_DoWork);
-                mBgw.ProgressChanged += new ProgressChangedEventHandler(bgw_ProgressChanged);
-                mBgw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bgw_RunWorkerCompleted);
-                mBgw.WorkerReportsProgress = true;
-                mBgw.WorkerSupportsCancellation = true;
-                mBgw.RunWorkerAsync(mainId);
+                if (currentProgress != 0)
+                {
+                    return;
+                }
+                else
+                {
+                    ts.IsOn = true;
+                }
+                int mainId = -1;
+                if (e.RowHandle >= 0 && e.Button == MouseButtons.Left)
+                {
+                    mainId = (int)gv_Hy.GetRowCellValue(gv_Hy.GetSelectedRows()[0], "fID");
+                }
+                if (mainId >= 0)
+                {
+                    currentProgress = 0;
+                    pgb.Text = null;
+                    mBgw = new BackgroundWorker();
+                    mBgw.DoWork += new DoWorkEventHandler(bgw_DoWork);
+                    mBgw.ProgressChanged += new ProgressChangedEventHandler(bgw_ProgressChanged);
+                    mBgw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bgw_RunWorkerCompleted);
+                    mBgw.WorkerReportsProgress = true;
+                    mBgw.WorkerSupportsCancellation = true;
+                    mBgw.RunWorkerAsync(mainId);
+                }
             }
         }
 
@@ -153,6 +159,22 @@ namespace DevTest
             {
                 e.Info.DisplayText = (e.RowHandle + 1).ToString();
             }
+        }
+
+        private void gv_Hy_MouseMove(object sender, MouseEventArgs e)
+        {
+            DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo hitInfo = gv_Hy.CalcHitInfo(new Point(e.X, e.Y));
+            if (hitInfo.RowHandle < 0 && hitInfo.Column == null)
+                return;
+            string tip = "双击加载收入及费用信息！";
+            ToolTipControllerShowEventArgs args = toolTipController1.CreateShowArgs();
+            args.ToolTip = tip;
+            toolTipController1.ShowHint(args,Control.MousePosition);
+        }
+
+        private void gc_Hy_MouseHover(object sender, EventArgs e)
+        {
+         
         }
     }
 }

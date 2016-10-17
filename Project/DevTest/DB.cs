@@ -82,12 +82,6 @@ namespace DevTest
                 throw new CustomException("店员价格式错误");
             if (!Util.IsInt(str运营商ID))
                 throw new CustomException("运营商ID格式错误");
-            if (!string.IsNullOrEmpty(str最低价) && !Util.IsDecimal(str最低价))
-                throw new CustomException("最低价格式错误");
-            if (!string.IsNullOrEmpty(str毛利奖励) && !Util.IsDecimal(str毛利奖励))
-                throw new CustomException("毛利奖励格式错误");
-            if (!string.IsNullOrEmpty(str现金奖励) && !Util.IsDecimal(str现金奖励))
-                throw new CustomException("现金奖励格式错误");
             if (dte结束时间.HasValue && DateTime.Compare(Convert.ToDateTime(dte结束时间), Convert.ToDateTime(dte开始时间)) < 0)
             {
                 throw new CustomException("结束时间不能早于开始时间");
@@ -99,7 +93,7 @@ namespace DevTest
                 con.Open();
                 tran = con.BeginTransaction();
                 SqlCommand cmd = null;
-                string sql校验重复 = "SELECT TOP 1 fID FROM DevTest.dbo.t合约业务 WHERE 名称=@str名称 AND 状态=1";
+                string sql校验重复 = "SELECT TOP 1 fID FROM t合约业务 (updlock) WHERE 名称=@str名称 AND 状态=1";
                 cmd = new SqlCommand(sql校验重复, con, tran);
                 cmd.Parameters.AddWithValue("@str名称", str名称_合约);
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
@@ -115,13 +109,24 @@ namespace DevTest
                 cmd.Parameters.AddWithValue("@捆绑终端", int捆绑终端);
                 cmd.Parameters.AddWithValue("@允许老号", int允许老号);
                 cmd.Parameters.AddWithValue("@店员价", str店员价);
-                cmd.Parameters.AddWithValue("@最低价", str最低价);
-                cmd.Parameters.AddWithValue("@毛利奖励", str毛利奖励);
-                cmd.Parameters.AddWithValue("@现金奖励", str现金奖励);
+                if (string.IsNullOrEmpty(str最低价))
+                    cmd.Parameters.AddWithValue("@最低价", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@最低价", str最低价);
+                if (string.IsNullOrEmpty(str毛利奖励))
+                    cmd.Parameters.AddWithValue("@毛利奖励", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@毛利奖励", str毛利奖励);
+                if (string.IsNullOrEmpty(str现金奖励))
+                    cmd.Parameters.AddWithValue("@现金奖励", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@现金奖励", str现金奖励);
                 cmd.Parameters.AddWithValue("@开始时间", dte开始时间);
-                cmd.Parameters.AddWithValue("@结束时间", dte结束时间);
+                if (!dte结束时间.HasValue)
+                    cmd.Parameters.AddWithValue("@结束时间", DBNull.Value);
                 cmd.Parameters.AddWithValue("@状态", int状态_合约);
                 cmd.ExecuteNonQuery();
+                #region
                 if (dt费用收入 != null)
                 {
                     string sql获取fID = "SELECT IDENT_CURRENT('t合约业务')";
@@ -136,30 +141,43 @@ namespace DevTest
                         {
                             throw new CustomException("第" + (i + 1) + "行名称不能为空");
                         }
-                        if (!Util.IsInt(dt费用收入.Rows[i]["类别"].ToString()))
+                        if (string.IsNullOrEmpty(dt费用收入.Rows[i]["类别"].ToString()))
                         {
-                            throw new CustomException("第" + (i + 1) + "行类别格式错误");
+                            throw new CustomException("选择类别");
                         }
                         if (!Util.IsDecimal(dt费用收入.Rows[i]["金额"].ToString()))
                         {
                             throw new CustomException("第" + (i + 1) + "行金额格式错误");
                         }
-                        string str类别 = dt费用收入.Rows[i]["类别"].ToString();
+                        int int类别 = 0;
+                        if (dt费用收入.Rows[i]["类别"].Equals("收入"))
+                            int类别 = 1;
+                        else
+                            int类别 = -1;
+                        if (int类别 == 0)
+                            throw new CustomException("第" + (i + 1) + "行类别格式错误");
+                        int int状态_费用收入 = 0;
+                        if (dt费用收入.Rows[i]["状态"].Equals("有效"))
+                            int状态_费用收入 = 1;
+                        else
+                            int状态_费用收入 = -1;
+                        if (int状态_费用收入 == 0)
+                            throw new CustomException("第" + (i + 1) + "行状态格式错误");
                         string str名称_费用收入 = dt费用收入.Rows[i]["项目名称"].ToString();
                         string str金额 = dt费用收入.Rows[i]["金额"].ToString();
                         string str期数 = dt费用收入.Rows[i]["期数"].ToString();
-                        string str状态_费用收入 = dt费用收入.Rows[i]["状态"].ToString();
                         string sql添加费用收入 = "INSERT INTO DevTest.dbo.t费用收入 " +
-                            "VALUES(@strfPID,@strType,@str名称,@str金额,@str期数,@str状态)";
+                            "VALUES(@strfPID,@intType,@str名称,@str金额,@str期数,@str状态)";
                         cmd = new SqlCommand(sql添加费用收入, con, tran);
                         cmd.Parameters.AddWithValue("@strfPID", strfPID);
-                        cmd.Parameters.AddWithValue("@strType", str类别);
+                        cmd.Parameters.AddWithValue("@intType", int类别);
                         cmd.Parameters.AddWithValue("@str名称", str名称_费用收入);
                         cmd.Parameters.AddWithValue("@str金额", str金额);
                         cmd.Parameters.AddWithValue("@str期数", str期数);
-                        cmd.Parameters.AddWithValue("@str状态", str状态_费用收入);
+                        cmd.Parameters.AddWithValue("@str状态", int状态_费用收入);
                         cmd.ExecuteNonQuery();
                     }
+                    #endregion
                 }
                 tran.Commit();
             }
@@ -168,8 +186,9 @@ namespace DevTest
                 tran.Rollback();
                 throw ex;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+
                 tran.Rollback();
                 throw new CustomException("操作失败！");
             }
@@ -276,6 +295,31 @@ namespace DevTest
                 tran.Rollback();
                 throw new Exception("操作失败！");
             }
+        }
+
+        public static DataTable Ini合约表结构()
+        {
+            string strGetDt = "SELECT * FROM v合约业务 WHERE fID=@fID";
+            SqlConnection con = new SqlConnection(CONNSTR);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(strGetDt, con);
+            cmd.Parameters.AddWithValue("@fID", -1);
+            SqlDataAdapter at = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            at.Fill(dt);
+            return dt;
+        }
+        public static DataTable Ini收入费用表结构()
+        {
+            string strGetDt = "SELECT * FROM v费用收入 WHERE 业务ID=@业务ID";
+            SqlConnection con = new SqlConnection(CONNSTR);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(strGetDt, con);
+            cmd.Parameters.AddWithValue("@业务ID", -1);
+            SqlDataAdapter at = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            at.Fill(dt);
+            return dt;
         }
     }
 }

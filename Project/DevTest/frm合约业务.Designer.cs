@@ -65,6 +65,7 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.splitterControl2 = new DevExpress.XtraEditors.SplitterControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cb_type)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_zt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Hy)).BeginInit();
@@ -111,6 +112,7 @@
             this.gc_Hy.TabIndex = 0;
             this.gc_Hy.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Hy});
+            this.gc_Hy.MouseHover += new System.EventHandler(this.gc_Hy_MouseHover);
             // 
             // gv_Hy
             // 
@@ -128,7 +130,7 @@
             this.gridColumn_jssj,
             this.zt_hy_hyyw});
             this.gv_Hy.GridControl = this.gc_Hy;
-            this.gv_Hy.IndicatorWidth = 40;
+            this.gv_Hy.IndicatorWidth = 30;
             this.gv_Hy.Name = "gv_Hy";
             this.gv_Hy.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.gv_Hy.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
@@ -138,6 +140,7 @@
             this.gv_Hy.OptionsView.ShowGroupPanel = false;
             this.gv_Hy.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gv_hy_RowClick);
             this.gv_Hy.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gv_hy_CustomDrawRowIndicator);
+            this.gv_Hy.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gv_Hy_MouseMove);
             // 
             // gridColumn_fID
             // 
@@ -320,7 +323,7 @@
             this.c_QiShu,
             this.zt_fy_hyyw});
             this.gv_Fy.GridControl = this.gc_fy;
-            this.gv_Fy.IndicatorWidth = 40;
+            this.gv_Fy.IndicatorWidth = 30;
             this.gv_Fy.Name = "gv_Fy";
             this.gv_Fy.OptionsView.ColumnAutoWidth = false;
             this.gv_Fy.OptionsView.ShowGroupPanel = false;
@@ -452,6 +455,10 @@
             this.groupControl2.TabIndex = 44;
             this.groupControl2.Text = "groupControl2";
             // 
+            // toolTipController1
+            // 
+            this.toolTipController1.ToolTipType = DevExpress.Utils.ToolTipType.Standard;
+            // 
             // frm合约业务
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -524,5 +531,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cb_type;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cb_zt;
+        private DevExpress.Utils.ToolTipController toolTipController1;
     }
 }

@@ -481,5 +481,5 @@ E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe.licenses
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.pdb
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csprojResolveAssemblyReference.cache
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.TipForm.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm收入费用.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.TipForm.resources

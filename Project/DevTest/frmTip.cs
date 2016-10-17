@@ -21,25 +21,26 @@ namespace DevTest
         }
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer();
-            this.timer2 = new System.Windows.Forms.Timer();
-            this.timer3 = new System.Windows.Forms.Timer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(120, 40);
+            this.label1.Size = new System.Drawing.Size(93, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "执行成功！";
+            this.label1.Text = "执行成功!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer1
@@ -64,8 +65,8 @@ namespace DevTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.BurlyWood;
-            this.ClientSize = new System.Drawing.Size(120, 40);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(93, 40);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -80,7 +81,6 @@ namespace DevTest
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.frmPrompt_Load);
             this.ResumeLayout(false);
 
         }
@@ -103,10 +103,6 @@ namespace DevTest
             if (f == null || f.IsDisposed)
                 f = new TipForm();
             return f;
-        }
-        private void frmPrompt_Load(object sender, EventArgs e)
-        {
-
         }
        
         /// <summary>
@@ -133,13 +129,12 @@ namespace DevTest
         /// <summary>
         /// 在中间显示
         /// </summary>
-        public void showShortTip(string text, int d)
+        public void showShort(int d)
         {
             this.Width = 120;
             this.Width = 40;
             timer1.Enabled = false;
             this.waitime = d;
-            this.label1.Text = text;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Show();
         }

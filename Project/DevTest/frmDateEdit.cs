@@ -136,5 +136,6 @@ namespace DevTest
             dateEdit1.Properties.Mask.UseMaskAsDisplayFormat = true;
             txt_show.Text = dateEdit1.Text;
         }
+
     }
 }

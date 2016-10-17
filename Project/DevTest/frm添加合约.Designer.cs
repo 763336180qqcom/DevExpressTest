@@ -50,16 +50,29 @@
             this.lbl名称 = new DevExpress.XtraEditors.LabelControl();
             this.chk捆绑终端 = new DevExpress.XtraEditors.CheckEdit();
             this.chk允许老号 = new DevExpress.XtraEditors.CheckEdit();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.fPid_HY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.名称_HY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.运营商ID_HY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.捆绑终端_HY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.允许老号_HY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.店员价_HY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.最低价_HY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.毛利奖励_HY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.现金奖励_HY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.开始时间_HY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.结束时间_HY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.状态_HY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gc信息列表 = new DevExpress.XtraGrid.GridControl();
             this.gv信息列表 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryCmb类别 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.repositoryItemCheckedComboBoxEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckedComboBoxEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chk状态.Properties)).BeginInit();
@@ -75,11 +88,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt名称.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk捆绑终端.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk允许老号.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc信息列表)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv信息列表)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryCmb类别)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckedComboBoxEdit1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,6 +120,7 @@
             this.groupControl1.Controls.Add(this.lbl名称);
             this.groupControl1.Controls.Add(this.chk捆绑终端);
             this.groupControl1.Controls.Add(this.chk允许老号);
+            this.groupControl1.Controls.Add(this.lookUpEdit1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
@@ -324,6 +339,136 @@
             this.chk允许老号.TabIndex = 14;
             this.chk允许老号.CheckedChanged += new System.EventHandler(this.chk允许老号_CheckedChanged);
             // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.Location = new System.Drawing.Point(105, 31);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.NullText = "复制现有数据";
+            this.lookUpEdit1.Properties.View = this.searchLookUpEdit1View;
+            this.lookUpEdit1.Size = new System.Drawing.Size(102, 20);
+            this.lookUpEdit1.TabIndex = 24;
+            this.lookUpEdit1.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.fPid_HY,
+            this.名称_HY,
+            this.运营商ID_HY,
+            this.捆绑终端_HY,
+            this.允许老号_HY,
+            this.店员价_HY,
+            this.最低价_HY,
+            this.毛利奖励_HY,
+            this.现金奖励_HY,
+            this.开始时间_HY,
+            this.结束时间_HY,
+            this.状态_HY});
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.IndicatorWidth = 20;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.searchLookUpEdit1View.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.searchLookUpEdit1View_RowClick);
+            this.searchLookUpEdit1View.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.searchLookUpEdit1View_CustomDrawRowIndicator);
+            // 
+            // fPid_HY
+            // 
+            this.fPid_HY.Caption = "fID";
+            this.fPid_HY.FieldName = "fID";
+            this.fPid_HY.Name = "fPid_HY";
+            // 
+            // 名称_HY
+            // 
+            this.名称_HY.Caption = "名称";
+            this.名称_HY.FieldName = "名称";
+            this.名称_HY.Name = "名称_HY";
+            this.名称_HY.Visible = true;
+            this.名称_HY.VisibleIndex = 0;
+            // 
+            // 运营商ID_HY
+            // 
+            this.运营商ID_HY.Caption = "运营商ID";
+            this.运营商ID_HY.FieldName = "运营商ID";
+            this.运营商ID_HY.Name = "运营商ID_HY";
+            this.运营商ID_HY.Visible = true;
+            this.运营商ID_HY.VisibleIndex = 1;
+            // 
+            // 捆绑终端_HY
+            // 
+            this.捆绑终端_HY.Caption = "捆绑终端";
+            this.捆绑终端_HY.FieldName = "捆绑终端";
+            this.捆绑终端_HY.Name = "捆绑终端_HY";
+            this.捆绑终端_HY.Visible = true;
+            this.捆绑终端_HY.VisibleIndex = 2;
+            // 
+            // 允许老号_HY
+            // 
+            this.允许老号_HY.Caption = "允许老号";
+            this.允许老号_HY.FieldName = "允许老号";
+            this.允许老号_HY.Name = "允许老号_HY";
+            this.允许老号_HY.Visible = true;
+            this.允许老号_HY.VisibleIndex = 3;
+            // 
+            // 店员价_HY
+            // 
+            this.店员价_HY.Caption = "店员价";
+            this.店员价_HY.FieldName = "店员价";
+            this.店员价_HY.Name = "店员价_HY";
+            this.店员价_HY.Visible = true;
+            this.店员价_HY.VisibleIndex = 4;
+            // 
+            // 最低价_HY
+            // 
+            this.最低价_HY.Caption = "最低价";
+            this.最低价_HY.FieldName = "最低价";
+            this.最低价_HY.Name = "最低价_HY";
+            this.最低价_HY.Visible = true;
+            this.最低价_HY.VisibleIndex = 5;
+            // 
+            // 毛利奖励_HY
+            // 
+            this.毛利奖励_HY.Caption = "毛利奖励";
+            this.毛利奖励_HY.FieldName = "毛利奖励";
+            this.毛利奖励_HY.Name = "毛利奖励_HY";
+            this.毛利奖励_HY.Visible = true;
+            this.毛利奖励_HY.VisibleIndex = 6;
+            // 
+            // 现金奖励_HY
+            // 
+            this.现金奖励_HY.Caption = "现金奖励";
+            this.现金奖励_HY.FieldName = "现金奖励";
+            this.现金奖励_HY.Name = "现金奖励_HY";
+            this.现金奖励_HY.Visible = true;
+            this.现金奖励_HY.VisibleIndex = 7;
+            // 
+            // 开始时间_HY
+            // 
+            this.开始时间_HY.Caption = "开始时间";
+            this.开始时间_HY.FieldName = "开始时间";
+            this.开始时间_HY.Name = "开始时间_HY";
+            this.开始时间_HY.Visible = true;
+            this.开始时间_HY.VisibleIndex = 8;
+            // 
+            // 结束时间_HY
+            // 
+            this.结束时间_HY.Caption = "结束时间";
+            this.结束时间_HY.FieldName = "结束时间";
+            this.结束时间_HY.Name = "结束时间_HY";
+            this.结束时间_HY.Visible = true;
+            this.结束时间_HY.VisibleIndex = 9;
+            // 
+            // 状态_HY
+            // 
+            this.状态_HY.Caption = "状态";
+            this.状态_HY.FieldName = "状态";
+            this.状态_HY.Name = "状态_HY";
+            this.状态_HY.Visible = true;
+            this.状态_HY.VisibleIndex = 10;
+            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.gc信息列表);
@@ -341,7 +486,6 @@
             this.gc信息列表.MainView = this.gv信息列表;
             this.gc信息列表.Name = "gc信息列表";
             this.gc信息列表.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryCmb类别,
             this.repositoryItemCheckedComboBoxEdit1});
             this.gc信息列表.Size = new System.Drawing.Size(994, 296);
             this.gc信息列表.TabIndex = 0;
@@ -375,12 +519,15 @@
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             // 
-            // repositoryCmb类别
+            // repositoryItemCheckedComboBoxEdit1
             // 
-            this.repositoryCmb类别.AutoHeight = false;
-            this.repositoryCmb类别.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemCheckedComboBoxEdit1.AutoHeight = false;
+            this.repositoryItemCheckedComboBoxEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryCmb类别.Name = "repositoryCmb类别";
+            this.repositoryItemCheckedComboBoxEdit1.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(1, "", "收入"),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(-1, "", "费用")});
+            this.repositoryItemCheckedComboBoxEdit1.Name = "repositoryItemCheckedComboBoxEdit1";
             // 
             // gridColumn2
             // 
@@ -414,16 +561,6 @@
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
             // 
-            // repositoryItemCheckedComboBoxEdit1
-            // 
-            this.repositoryItemCheckedComboBoxEdit1.AutoHeight = false;
-            this.repositoryItemCheckedComboBoxEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemCheckedComboBoxEdit1.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(1, "", "收入"),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(-1, "", "费用")});
-            this.repositoryItemCheckedComboBoxEdit1.Name = "repositoryItemCheckedComboBoxEdit1";
-            // 
             // frm添加合约
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -433,6 +570,7 @@
             this.Controls.Add(this.groupControl1);
             this.Name = "frm添加合约";
             this.Text = "新增合约";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm添加合约_FormClosed);
             this.Load += new System.EventHandler(this.frm添加合约_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -450,11 +588,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt名称.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk捆绑终端.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk允许老号.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc信息列表)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv信息列表)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryCmb类别)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckedComboBoxEdit1)).EndInit();
             this.ResumeLayout(false);
 
@@ -492,7 +631,20 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraEditors.CheckEdit chk捆绑终端;
         private DevExpress.XtraEditors.CheckEdit chk允许老号;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryCmb类别;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit repositoryItemCheckedComboBoxEdit1;
+        private DevExpress.XtraEditors.SearchLookUpEdit lookUpEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn fPid_HY;
+        private DevExpress.XtraGrid.Columns.GridColumn 名称_HY;
+        private DevExpress.XtraGrid.Columns.GridColumn 运营商ID_HY;
+        private DevExpress.XtraGrid.Columns.GridColumn 捆绑终端_HY;
+        private DevExpress.XtraGrid.Columns.GridColumn 允许老号_HY;
+        private DevExpress.XtraGrid.Columns.GridColumn 店员价_HY;
+        private DevExpress.XtraGrid.Columns.GridColumn 最低价_HY;
+        private DevExpress.XtraGrid.Columns.GridColumn 毛利奖励_HY;
+        private DevExpress.XtraGrid.Columns.GridColumn 现金奖励_HY;
+        private DevExpress.XtraGrid.Columns.GridColumn 状态_HY;
+        private DevExpress.XtraGrid.Columns.GridColumn 开始时间_HY;
+        private DevExpress.XtraGrid.Columns.GridColumn 结束时间_HY;
     }
 }

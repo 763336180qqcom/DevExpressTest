@@ -107,7 +107,7 @@
             "费用"});
             this.cmb类别.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cmb类别.Size = new System.Drawing.Size(100, 18);
-            this.cmb类别.TabIndex = 5;
+            this.cmb类别.TabIndex = 1;
             this.cmb类别.SelectedIndexChanged += new System.EventHandler(this.cmb类别_SelectedIndexChanged);
             // 
             // txt名称
@@ -116,7 +116,7 @@
             this.txt名称.Name = "txt名称";
             this.txt名称.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txt名称.Size = new System.Drawing.Size(212, 18);
-            this.txt名称.TabIndex = 6;
+            this.txt名称.TabIndex = 2;
             this.txt名称.TextChanged += new System.EventHandler(this.txt名称_TextChanged);
             // 
             // txt金额
@@ -126,7 +126,7 @@
             this.txt金额.Properties.Mask.EditMask = "f2";
             this.txt金额.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txt金额.Size = new System.Drawing.Size(100, 20);
-            this.txt金额.TabIndex = 7;
+            this.txt金额.TabIndex = 3;
             this.txt金额.TextChanged += new System.EventHandler(this.txt金额_TextChanged);
             // 
             // txt期数
@@ -134,7 +134,7 @@
             this.txt期数.Location = new System.Drawing.Point(88, 161);
             this.txt期数.Name = "txt期数";
             this.txt期数.Size = new System.Drawing.Size(100, 20);
-            this.txt期数.TabIndex = 8;
+            this.txt期数.TabIndex = 4;
             this.txt期数.TextChanged += new System.EventHandler(this.txt期数_TextChanged);
             // 
             // chk状态
@@ -145,7 +145,7 @@
             this.chk状态.Properties.ValueChecked = 1;
             this.chk状态.Properties.ValueUnchecked = 0;
             this.chk状态.Size = new System.Drawing.Size(16, 19);
-            this.chk状态.TabIndex = 9;
+            this.chk状态.TabIndex = 5;
             this.chk状态.CheckedChanged += new System.EventHandler(this.chk状态_CheckedChanged);
             // 
             // btn添加
@@ -153,7 +153,7 @@
             this.btn添加.Location = new System.Drawing.Point(126, 242);
             this.btn添加.Name = "btn添加";
             this.btn添加.Size = new System.Drawing.Size(75, 23);
-            this.btn添加.TabIndex = 10;
+            this.btn添加.TabIndex = 6;
             this.btn添加.Text = "添加";
             this.btn添加.Click += new System.EventHandler(this.btn添加_Click);
             // 
@@ -201,7 +201,7 @@
             this.pc期数.TabIndex = 14;
             this.pc期数.Visible = false;
             // 
-            // frm收入及费用
+            // frm收入费用
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -221,7 +221,7 @@
             this.Controls.Add(this.pc类别);
             this.Controls.Add(this.pc金额);
             this.Controls.Add(this.pc期数);
-            this.Name = "frm收入及费用";
+            this.Name = "frm收入费用";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "信息";
             this.Load += new System.EventHandler(this.frm收入费用_Load);
