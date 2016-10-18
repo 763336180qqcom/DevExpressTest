@@ -107,17 +107,17 @@
     <Compile Include="frm收入费用.Designer.cs">
       <DependentUpon>frm收入费用.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm新增合约.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm新增合约.Designer.cs">
-      <DependentUpon>frm新增合约.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm添加合约.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm添加合约.Designer.cs">
       <DependentUpon>frm添加合约.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm编辑合约.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm编辑合约.Designer.cs">
+      <DependentUpon>frm编辑合约.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,11 +149,11 @@
     <EmbeddedResource Include="frm收入费用.resx">
       <DependentUpon>frm收入费用.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm新增合约.resx">
-      <DependentUpon>frm新增合约.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm添加合约.resx">
       <DependentUpon>frm添加合约.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm编辑合约.resx">
+      <DependentUpon>frm编辑合约.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

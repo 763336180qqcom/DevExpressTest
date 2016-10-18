@@ -341,7 +341,7 @@
             // 
             // lookUpEdit1
             // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(105, 31);
+            this.lookUpEdit1.Location = new System.Drawing.Point(12, 31);
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -374,6 +374,7 @@
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             this.searchLookUpEdit1View.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.searchLookUpEdit1View_RowClick);
             this.searchLookUpEdit1View.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.searchLookUpEdit1View_CustomDrawRowIndicator);
+            this.searchLookUpEdit1View.MouseUp += new System.Windows.Forms.MouseEventHandler(this.searchLookUpEdit1View_MouseUp);
             // 
             // fPid_HY
             // 
@@ -506,6 +507,8 @@
             this.gv信息列表.OptionsBehavior.Editable = false;
             this.gv信息列表.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gv信息列表.OptionsView.ColumnAutoWidth = false;
+            this.gv信息列表.OptionsView.EnableAppearanceEvenRow = true;
+            this.gv信息列表.OptionsView.EnableAppearanceOddRow = true;
             this.gv信息列表.OptionsView.ShowGroupPanel = false;
             this.gv信息列表.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gv信息列表_RowClick);
             this.gv信息列表.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gv信息列表_CustomDrawRowIndicator);
@@ -540,6 +543,8 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "金额";
+            this.gridColumn3.DisplayFormat.FormatString = "F2";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn3.FieldName = "金额";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
@@ -612,8 +617,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl lbl名称;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraGrid.GridControl gc信息列表;
-        private DevExpress.XtraGrid.Views.Grid.GridView gv信息列表;
         private DevExpress.XtraEditors.SimpleButton btn提交;
         private DevExpress.XtraEditors.CheckEdit chk状态;
         private DevExpress.XtraEditors.DateEdit dte结束时间;
@@ -646,5 +649,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn 状态_HY;
         private DevExpress.XtraGrid.Columns.GridColumn 开始时间_HY;
         private DevExpress.XtraGrid.Columns.GridColumn 结束时间_HY;
+        private DevExpress.XtraGrid.GridControl gc信息列表;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv信息列表;
     }
 }

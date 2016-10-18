@@ -24,8 +24,7 @@ namespace DevTest
         public string str状态;
         private void frm收入费用_Load(object sender, EventArgs e)
         {
-            cmb类别.Properties.Items.Add(new string[] { "1","收入"});
-            cmb类别.Properties.Items.Add(new string[] { "-1", "费用" });
+
             chk状态.Checked = false;
             if (!string.IsNullOrEmpty(str类别))
             {
@@ -41,17 +40,21 @@ namespace DevTest
             }
             if (!string.IsNullOrEmpty(str期数))
             {
-                txt期数.EditValue = str类别;
+                txt期数.EditValue = str期数;
             }
             if (!string.IsNullOrEmpty(str状态))
             {
-                if (str状态.Equals("0"))
-                    chk状态.EditValue = 0;
-                else
+                if (str状态.Equals("有效"))
                     chk状态.EditValue = 1;
+                else
+                    chk状态.EditValue = 0;
             }
+            if (sRowIndex == 1)
+                btn添加.Text = "添加";
+            else
+                btn添加.Text = "保存";
         }
-
+        public static int sRowIndex = -1;
         private void btn添加_Click(object sender, EventArgs e)
         {
             pc名称.Visible = false;
@@ -117,8 +120,29 @@ namespace DevTest
             }
             else
             {
-                frm添加合约.sDt收入费用.Rows.Add(-1,cmb类别.EditValue.ToString(), txt名称.Text.Trim(), txt金额.Text.Trim(), txt期数.Text.Trim(), chk状态.EditValue.ToString().Trim());
+                DataRow dr = frm添加合约.sDt收入费用.NewRow();
+                dr["类别"] = cmb类别.EditValue.ToString();
+                dr["项目名称"] = txt名称.Text.Trim();
+                dr["金额"] = txt金额.Text.Trim();
+                dr["期数"] = txt期数.Text.Trim();
+                if(chk状态.Checked)
+                    dr["状态"] = "有效";
+                else
+                    dr["状态"] = "无效";
+                if (frm添加合约.sMode == 1)
+                {
+                    frm添加合约.sDt收入费用.Rows.Add(dr);
+                }
+                else
+                {
+                    frm添加合约.sDt收入费用.Rows[sRowIndex]["类别"] = dr["类别"];
+                    frm添加合约.sDt收入费用.Rows[sRowIndex]["项目名称"] = dr["项目名称"];
+                    frm添加合约.sDt收入费用.Rows[sRowIndex]["金额"] = dr["金额"];
+                    frm添加合约.sDt收入费用.Rows[sRowIndex]["期数"] = dr["期数"];
+                    frm添加合约.sDt收入费用.Rows[sRowIndex]["状态"] = dr["状态"];
+                }
                 this.DialogResult = DialogResult.OK;
+               // this.Close();
             }
         }
 

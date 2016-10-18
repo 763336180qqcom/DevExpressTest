@@ -3,44 +3,56 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Collections;
-using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using System.Threading;
 using DevExpress.XtraEditors;
 using DevExpress.Utils;
+using DevExpress.Utils.Menu;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using System.Runtime.InteropServices;
+using System.Text;
 
 namespace DevTest
 {
-    public partial class frm合约业务 : DevExpress.XtraEditors.XtraForm
+    public partial class frm合约业务 : XtraForm
     {
         public frm合约业务()
         {
             InitializeComponent();
         }
-        private BackgroundWorker mBgw;
+        private BackgroundWorker mBgw进度测试;
         private int currentProgress = 0;
+        private int mfocusedIndex = -1;
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetForegroundWindow();
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern int GetWindowText(IntPtr hWnd, [Out, MarshalAs(UnmanagedType.LPTStr)] StringBuilder lpString, int nMaxCount);
+        public static string GetText(IntPtr hWnd)
+        {
+            StringBuilder result = new StringBuilder(128);
+            GetWindowText(hWnd, result, result.Capacity);
+            return result.ToString();
+        }
         private void frm合约业务_Load(object sender, EventArgs e)
         {
             StartPosition = FormStartPosition.CenterScreen;
             try
             {
-                gc_Hy.DataSource = DB.getDt("v合约业务", null);
+                grid_合约.DataSource = DB.getDt("v合约业务", null);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            gv_Hy.ExpandAllGroups();
-            gv_Hy.BestFitColumns();
+            gv_合约.ExpandAllGroups();
+            gv_合约.BestFitColumns();
 
             gv_Fy.BestFitColumns();
             gv_Fy.ExpandAllGroups();
 
-            Util.CreateCopyCellItem(gv_Hy);
+            Util.CreateCopyCellItem(gv_合约);
+            gv_合约.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(createEditMenuPop);
+            gv_合约.ClearSelection();
             pgb.EditValue = 0;
             pgb.Properties.Maximum = 100;
             pgb.Properties.Minimum = 0;
@@ -49,9 +61,50 @@ namespace DevTest
             groupControl1.Parent = this;
             groupControl2.Parent = this;
         }
+        private void createEditMenuPop(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
+        {
+            if (e.MenuType == DevExpress.XtraGrid.Views.Grid.GridMenuType.Row && e.HitInfo.InRow)
+            {
+                DXMenuItem edit = new DXMenuItem("编辑", new EventHandler(editClick), null);
+                edit.Tag = e.HitInfo.RowHandle;
+                gv_合约.FocusedRowHandle = e.HitInfo.RowHandle;
+                e.Menu.Items.Add(edit);
+            }
 
+        }
+        private void editClick(object sender, EventArgs e)
+        {
+            int rowIndex = (int)((DXMenuItem)sender).Tag;
+            frm编辑合约.str名称 = gv_合约.GetRowCellValue(gv_合约.FocusedRowHandle, "名称").ToString();
+            frm编辑合约.dte开始 = Convert.ToDateTime(gv_合约.GetRowCellValue(gv_合约.FocusedRowHandle, "开始时间"));
+            if (gv_合约.GetRowCellValue(gv_合约.FocusedRowHandle, "结束时间") != DBNull.Value)
+                frm编辑合约.dte结束 = Convert.ToDateTime(gv_合约.GetRowCellValue(gv_合约.FocusedRowHandle, "结束时间"));
+            else
+                frm编辑合约.dte结束 = null;
+            frm编辑合约.fID = gv_合约.GetRowCellValue(gv_合约.FocusedRowHandle, "fID").ToString();
+            frm编辑合约 f = new frm编辑合约();
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    grid_合约.DataSource = DB.getDt("v合约业务", null);
+                    grid_收入费用.DataSource = null;
+                    gv_合约.FocusedRowHandle = rowIndex;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+        }
+        
         private void gv_hy_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
+            if (e.RowHandle >= 0)
+            {
+                mfocusedIndex = e.RowHandle;
+            }
             if (e.Button == MouseButtons.Left && e.Clicks == 2)
             {
                 if (currentProgress != 0)
@@ -65,19 +118,19 @@ namespace DevTest
                 int mainId = -1;
                 if (e.RowHandle >= 0 && e.Button == MouseButtons.Left)
                 {
-                    mainId = (int)gv_Hy.GetRowCellValue(gv_Hy.GetSelectedRows()[0], "fID");
+                    mainId = (int)gv_合约.GetRowCellValue(gv_合约.GetSelectedRows()[0], "fID");
                 }
                 if (mainId >= 0)
                 {
                     currentProgress = 0;
                     pgb.Text = null;
-                    mBgw = new BackgroundWorker();
-                    mBgw.DoWork += new DoWorkEventHandler(bgw_DoWork);
-                    mBgw.ProgressChanged += new ProgressChangedEventHandler(bgw_ProgressChanged);
-                    mBgw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bgw_RunWorkerCompleted);
-                    mBgw.WorkerReportsProgress = true;
-                    mBgw.WorkerSupportsCancellation = true;
-                    mBgw.RunWorkerAsync(mainId);
+                    mBgw进度测试 = new BackgroundWorker();
+                    mBgw进度测试.DoWork += new DoWorkEventHandler(bgw_DoWork);
+                    mBgw进度测试.ProgressChanged += new ProgressChangedEventHandler(bgw_ProgressChanged);
+                    mBgw进度测试.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bgw_RunWorkerCompleted);
+                    mBgw进度测试.WorkerReportsProgress = true;
+                    mBgw进度测试.WorkerSupportsCancellation = true;
+                    mBgw进度测试.RunWorkerAsync(mainId);
                 }
             }
         }
@@ -92,12 +145,12 @@ namespace DevTest
             cis.Add(ci);
             for (int i = 1; i <= 5; i++)
             {
-                if (mBgw.CancellationPending)
+                if (mBgw进度测试.CancellationPending)
                 {
                     e.Cancel = true;
                     break;
                 }
-                mBgw.ReportProgress(i * 20);
+                mBgw进度测试.ReportProgress(i * 20);
                 Thread.Sleep(500);
                 if (i == 5)
                 {
@@ -115,7 +168,7 @@ namespace DevTest
 
         }
 
-    private void bgw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void bgw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (e.Cancelled)
             {
@@ -127,10 +180,10 @@ namespace DevTest
             }
             else
             {
-                gc_fy.DataSource = (DataTable)e.Result;
+                grid_收入费用.DataSource = (DataTable)e.Result;
                 currentProgress = 0;
                 ts.IsOn = true;
-                mBgw = null;
+                mBgw进度测试 = null;
             }
 
         }
@@ -143,11 +196,12 @@ namespace DevTest
 
         private void ts_Toggled(object sender, EventArgs e)
         {
-            if (mBgw != null && !ts.IsOn && currentProgress != 100)
+            if (mBgw进度测试 != null && !ts.IsOn && currentProgress != 100)
             {
-                mBgw.CancelAsync();
+                mBgw进度测试.CancelAsync();
                 currentProgress = 0;
-            }else if (mBgw == null)
+            }
+            else if (mBgw进度测试 == null)
             {
                 ts.IsOn = true;
             }
@@ -163,18 +217,66 @@ namespace DevTest
 
         private void gv_Hy_MouseMove(object sender, MouseEventArgs e)
         {
-            DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo hitInfo = gv_Hy.CalcHitInfo(new Point(e.X, e.Y));
-            if (hitInfo.RowHandle < 0 && hitInfo.Column == null)
+            GridHitInfo hitInfo = gv_合约.CalcHitInfo(new Point(e.X, e.Y));
+            if (hitInfo.InRow == false || hitInfo.RowHandle < 0 || hitInfo.Column == null)
+            {
+                toolTipController1.HideHint();
                 return;
+            }
+            showHint();
+        }
+        private void showHint()
+        {
             string tip = "双击加载收入及费用信息！";
             ToolTipControllerShowEventArgs args = toolTipController1.CreateShowArgs();
             args.ToolTip = tip;
-            toolTipController1.ShowHint(args,Control.MousePosition);
+            toolTipController1.ShowHint(args, Control.MousePosition);
         }
 
-        private void gc_Hy_MouseHover(object sender, EventArgs e)
+        private void gv_Hy_MouseLeave(object sender, EventArgs e)
         {
-         
+            toolTipController1.HideHint();
+        }
+        private DataTable mDtHy = null;
+        private void bw刷新合约_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if ((sender as BackgroundWorker).CancellationPending == false)
+            {
+                try
+                {
+                    mDtHy = DB.getDt("v合约业务", null);
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void bw刷新合约_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        { }
+        private void bw刷新合约_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            grid_合约.DataSource = mDtHy;
+            gv_合约.ClearSelection();
+            gv_合约.FocusedRowHandle = mfocusedIndex;
+            //string text = GetText(GetForegroundWindow());
+            TipForm.getInstance().showShort("已刷新！", 800);
+        }
+        private void frm合约业务_Shown(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (!bw刷新合约.IsBusy)
+                bw刷新合约.RunWorkerAsync();
+        }
+
+        private void gv_Hy_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            grid_收入费用.DataSource = null;
         }
     }
 }

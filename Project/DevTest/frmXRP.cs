@@ -23,8 +23,8 @@ namespace DevTest
             lbl病历日期.Text = "病历日期:" + DateTime.Now.ToString();
             List<ConditionItem> cl = new List<ConditionItem>();
             ConditionItem ci = new ConditionItem();
-            ci.Name = "运营商ID";
-            ci.Value = "12";
+            ci.Name = "名称";
+            ci.Value = "a";
             ci.Type = "=";
             cl.Add(ci);
             DataTable dt = null;
@@ -36,12 +36,14 @@ namespace DevTest
             {
                 MessageBox.Show(ex.Message);
             }
-            DataSource = dt;
+
             gp模块名称.DataBindings.Add("Text", dt, "名称");
+            this.DataSource = dt;
         }
 
         private void Detail_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
+            object dataSource = this.DataSource;
             List<ConditionItem> cl = new List<ConditionItem>();
             ConditionItem ci = new ConditionItem();
             ci.Name = "业务ID";

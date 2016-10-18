@@ -65,7 +65,7 @@ namespace DevTest
                     GridView view = (GridView)sender;
                     view.FocusedRowHandle = e.HitInfo.RowHandle;
                     e.Menu.Items.Add(CreateCopyCellMenuItem(e.HitInfo.Column));
-                    e.Menu.Items.Add(CreateCopyRowMenuItem(view.GetDataRow(e.HitInfo.RowHandle)));
+                  //  e.Menu.Items.Add(CreateCopyRowMenuItem(view.GetDataRow(e.HitInfo.RowHandle)));
                 }
             }
         }

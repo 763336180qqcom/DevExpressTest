@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.cb_type = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.cb_zt = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.gc_Hy = new DevExpress.XtraGrid.GridControl();
-            this.gv_Hy = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grid_合约 = new DevExpress.XtraGrid.GridControl();
+            this.gv_合约 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn_fID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_Name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_kbzd = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -43,7 +43,9 @@
             this.gridColumn_mljl = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_xjjl = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_kssj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.gridColumn_jssj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.zt_hy_hyyw = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -51,7 +53,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem_Add = new DevExpress.XtraBars.BarButtonItem();
-            this.gc_fy = new DevExpress.XtraGrid.GridControl();
+            this.grid_收入费用 = new DevExpress.XtraGrid.GridControl();
             this.gv_Fy = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.c_Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_Type = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,12 +68,18 @@
             this.splitterControl2 = new DevExpress.XtraEditors.SplitterControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
+            this.bw刷新合约 = new System.ComponentModel.BackgroundWorker();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cb_type)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_zt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gc_Hy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_Hy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_合约)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_合约)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gc_fy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_收入费用)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Fy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pgb.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ts.Properties)).BeginInit();
@@ -101,22 +109,24 @@
             "无效"});
             this.cb_zt.Name = "cb_zt";
             // 
-            // gc_Hy
+            // grid_合约
             // 
-            this.gc_Hy.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gc_Hy.Location = new System.Drawing.Point(2, 2);
-            this.gc_Hy.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.gc_Hy.MainView = this.gv_Hy;
-            this.gc_Hy.Name = "gc_Hy";
-            this.gc_Hy.Size = new System.Drawing.Size(967, 527);
-            this.gc_Hy.TabIndex = 0;
-            this.gc_Hy.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gv_Hy});
-            this.gc_Hy.MouseHover += new System.EventHandler(this.gc_Hy_MouseHover);
+            this.grid_合约.Dock = System.Windows.Forms.DockStyle.Left;
+            this.grid_合约.Location = new System.Drawing.Point(2, 2);
+            this.grid_合约.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.grid_合约.MainView = this.gv_合约;
+            this.grid_合约.Name = "grid_合约";
+            this.grid_合约.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemDateEdit3,
+            this.repositoryItemDateEdit4});
+            this.grid_合约.Size = new System.Drawing.Size(967, 531);
+            this.grid_合约.TabIndex = 0;
+            this.grid_合约.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gv_合约});
             // 
-            // gv_Hy
+            // gv_合约
             // 
-            this.gv_Hy.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gv_合约.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn_fID,
             this.gridColumn_Name,
             this.gridColumn_kbzd,
@@ -129,26 +139,26 @@
             this.gridColumn_kssj,
             this.gridColumn_jssj,
             this.zt_hy_hyyw});
-            this.gv_Hy.GridControl = this.gc_Hy;
-            this.gv_Hy.IndicatorWidth = 30;
-            this.gv_Hy.Name = "gv_Hy";
-            this.gv_Hy.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
-            this.gv_Hy.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
-            this.gv_Hy.OptionsBehavior.Editable = false;
-            this.gv_Hy.OptionsView.EnableAppearanceEvenRow = true;
-            this.gv_Hy.OptionsView.EnableAppearanceOddRow = true;
-            this.gv_Hy.OptionsView.ShowGroupPanel = false;
-            this.gv_Hy.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gv_hy_RowClick);
-            this.gv_Hy.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gv_hy_CustomDrawRowIndicator);
-            this.gv_Hy.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gv_Hy_MouseMove);
+            this.gv_合约.GridControl = this.grid_合约;
+            this.gv_合约.IndicatorWidth = 30;
+            this.gv_合约.Name = "gv_合约";
+            this.gv_合约.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gv_合约.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gv_合约.OptionsBehavior.Editable = false;
+            this.gv_合约.OptionsView.EnableAppearanceEvenRow = true;
+            this.gv_合约.OptionsView.EnableAppearanceOddRow = true;
+            this.gv_合约.OptionsView.ShowGroupPanel = false;
+            this.gv_合约.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gv_hy_RowClick);
+            this.gv_合约.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gv_hy_CustomDrawRowIndicator);
+            this.gv_合约.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gv_Hy_SelectionChanged);
+            this.gv_合约.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gv_Hy_MouseMove);
+            this.gv_合约.MouseLeave += new System.EventHandler(this.gv_Hy_MouseLeave);
             // 
             // gridColumn_fID
             // 
             this.gridColumn_fID.Caption = "编号";
             this.gridColumn_fID.FieldName = "fID";
             this.gridColumn_fID.Name = "gridColumn_fID";
-            this.gridColumn_fID.Visible = true;
-            this.gridColumn_fID.VisibleIndex = 0;
             this.gridColumn_fID.Width = 58;
             // 
             // gridColumn_Name
@@ -157,7 +167,7 @@
             this.gridColumn_Name.FieldName = "名称";
             this.gridColumn_Name.Name = "gridColumn_Name";
             this.gridColumn_Name.Visible = true;
-            this.gridColumn_Name.VisibleIndex = 1;
+            this.gridColumn_Name.VisibleIndex = 0;
             this.gridColumn_Name.Width = 58;
             // 
             // gridColumn_kbzd
@@ -166,7 +176,7 @@
             this.gridColumn_kbzd.FieldName = "捆绑终端";
             this.gridColumn_kbzd.Name = "gridColumn_kbzd";
             this.gridColumn_kbzd.Visible = true;
-            this.gridColumn_kbzd.VisibleIndex = 3;
+            this.gridColumn_kbzd.VisibleIndex = 2;
             this.gridColumn_kbzd.Width = 58;
             // 
             // gridColumn_yysId
@@ -175,7 +185,7 @@
             this.gridColumn_yysId.FieldName = "运营商ID";
             this.gridColumn_yysId.Name = "gridColumn_yysId";
             this.gridColumn_yysId.Visible = true;
-            this.gridColumn_yysId.VisibleIndex = 2;
+            this.gridColumn_yysId.VisibleIndex = 1;
             this.gridColumn_yysId.Width = 58;
             // 
             // gridColumn_yxlh
@@ -184,7 +194,7 @@
             this.gridColumn_yxlh.FieldName = "允许老号";
             this.gridColumn_yxlh.Name = "gridColumn_yxlh";
             this.gridColumn_yxlh.Visible = true;
-            this.gridColumn_yxlh.VisibleIndex = 4;
+            this.gridColumn_yxlh.VisibleIndex = 3;
             this.gridColumn_yxlh.Width = 61;
             // 
             // gridColumn_dyj
@@ -194,7 +204,7 @@
             this.gridColumn_dyj.FieldName = "店员价";
             this.gridColumn_dyj.Name = "gridColumn_dyj";
             this.gridColumn_dyj.Visible = true;
-            this.gridColumn_dyj.VisibleIndex = 5;
+            this.gridColumn_dyj.VisibleIndex = 4;
             this.gridColumn_dyj.Width = 61;
             // 
             // gridColumn_zdj
@@ -204,7 +214,7 @@
             this.gridColumn_zdj.FieldName = "最低价";
             this.gridColumn_zdj.Name = "gridColumn_zdj";
             this.gridColumn_zdj.Visible = true;
-            this.gridColumn_zdj.VisibleIndex = 6;
+            this.gridColumn_zdj.VisibleIndex = 5;
             this.gridColumn_zdj.Width = 61;
             // 
             // gridColumn_mljl
@@ -214,7 +224,7 @@
             this.gridColumn_mljl.FieldName = "毛利奖励";
             this.gridColumn_mljl.Name = "gridColumn_mljl";
             this.gridColumn_mljl.Visible = true;
-            this.gridColumn_mljl.VisibleIndex = 7;
+            this.gridColumn_mljl.VisibleIndex = 6;
             this.gridColumn_mljl.Width = 61;
             // 
             // gridColumn_xjjl
@@ -224,30 +234,52 @@
             this.gridColumn_xjjl.FieldName = "现金奖励";
             this.gridColumn_xjjl.Name = "gridColumn_xjjl";
             this.gridColumn_xjjl.Visible = true;
-            this.gridColumn_xjjl.VisibleIndex = 8;
+            this.gridColumn_xjjl.VisibleIndex = 7;
             this.gridColumn_xjjl.Width = 61;
             // 
             // gridColumn_kssj
             // 
             this.gridColumn_kssj.Caption = "开始时间";
-            this.gridColumn_kssj.DisplayFormat.FormatString = "yyyy-MM-dd";
+            this.gridColumn_kssj.ColumnEdit = this.repositoryItemDateEdit3;
             this.gridColumn_kssj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn_kssj.FieldName = "开始时间";
             this.gridColumn_kssj.Name = "gridColumn_kssj";
             this.gridColumn_kssj.Visible = true;
-            this.gridColumn_kssj.VisibleIndex = 9;
+            this.gridColumn_kssj.VisibleIndex = 8;
             this.gridColumn_kssj.Width = 123;
+            // 
+            // repositoryItemDateEdit3
+            // 
+            this.repositoryItemDateEdit3.AutoHeight = false;
+            this.repositoryItemDateEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit3.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit3.Mask.EditMask = " yyyy年MM月dd日";
+            this.repositoryItemDateEdit3.Mask.UseMaskAsDisplayFormat = true;
+            this.repositoryItemDateEdit3.Name = "repositoryItemDateEdit3";
             // 
             // gridColumn_jssj
             // 
             this.gridColumn_jssj.Caption = "结束时间";
-            this.gridColumn_jssj.DisplayFormat.FormatString = "yyyy-MM-dd";
+            this.gridColumn_jssj.ColumnEdit = this.repositoryItemDateEdit4;
             this.gridColumn_jssj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn_jssj.FieldName = "结束时间";
             this.gridColumn_jssj.Name = "gridColumn_jssj";
             this.gridColumn_jssj.Visible = true;
-            this.gridColumn_jssj.VisibleIndex = 10;
+            this.gridColumn_jssj.VisibleIndex = 9;
             this.gridColumn_jssj.Width = 86;
+            // 
+            // repositoryItemDateEdit4
+            // 
+            this.repositoryItemDateEdit4.AutoHeight = false;
+            this.repositoryItemDateEdit4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit4.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit4.Mask.EditMask = " yyyy年MM月dd日";
+            this.repositoryItemDateEdit4.Mask.UseMaskAsDisplayFormat = true;
+            this.repositoryItemDateEdit4.Name = "repositoryItemDateEdit4";
             // 
             // zt_hy_hyyw
             // 
@@ -255,7 +287,7 @@
             this.zt_hy_hyyw.FieldName = "状态";
             this.zt_hy_hyyw.Name = "zt_hy_hyyw";
             this.zt_hy_hyyw.Visible = true;
-            this.zt_hy_hyyw.VisibleIndex = 11;
+            this.zt_hy_hyyw.VisibleIndex = 10;
             this.zt_hy_hyyw.Width = 70;
             // 
             // barManager1
@@ -302,15 +334,15 @@
             this.barButtonItem_Add.Id = 1;
             this.barButtonItem_Add.Name = "barButtonItem_Add";
             // 
-            // gc_fy
+            // grid_收入费用
             // 
-            this.gc_fy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_fy.Location = new System.Drawing.Point(969, 2);
-            this.gc_fy.MainView = this.gv_Fy;
-            this.gc_fy.Name = "gc_fy";
-            this.gc_fy.Size = new System.Drawing.Size(332, 527);
-            this.gc_fy.TabIndex = 23;
-            this.gc_fy.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grid_收入费用.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid_收入费用.Location = new System.Drawing.Point(969, 2);
+            this.grid_收入费用.MainView = this.gv_Fy;
+            this.grid_收入费用.Name = "grid_收入费用";
+            this.grid_收入费用.Size = new System.Drawing.Size(332, 531);
+            this.grid_收入费用.TabIndex = 23;
+            this.grid_收入费用.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Fy});
             // 
             // gv_Fy
@@ -322,7 +354,7 @@
             this.c_JinEr,
             this.c_QiShu,
             this.zt_fy_hyyw});
-            this.gv_Fy.GridControl = this.gc_fy;
+            this.gv_Fy.GridControl = this.grid_收入费用;
             this.gv_Fy.IndicatorWidth = 30;
             this.gv_Fy.Name = "gv_Fy";
             this.gv_Fy.OptionsView.ColumnAutoWidth = false;
@@ -391,7 +423,7 @@
             this.pgb.Name = "pgb";
             this.pgb.Properties.ShowTitle = true;
             this.pgb.Properties.TextOrientation = DevExpress.Utils.Drawing.TextOrientation.Horizontal;
-            this.pgb.Size = new System.Drawing.Size(146, 29);
+            this.pgb.Size = new System.Drawing.Size(146, 25);
             this.pgb.TabIndex = 28;
             // 
             // ts
@@ -423,13 +455,13 @@
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.splitterControl2);
-            this.groupControl1.Controls.Add(this.gc_fy);
-            this.groupControl1.Controls.Add(this.gc_Hy);
+            this.groupControl1.Controls.Add(this.grid_收入费用);
+            this.groupControl1.Controls.Add(this.grid_合约);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 33);
+            this.groupControl1.Location = new System.Drawing.Point(0, 29);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
-            this.groupControl1.Size = new System.Drawing.Size(1303, 531);
+            this.groupControl1.Size = new System.Drawing.Size(1303, 535);
             this.groupControl1.TabIndex = 43;
             this.groupControl1.Text = "groupControl1";
             // 
@@ -439,7 +471,7 @@
             this.splitterControl2.Appearance.Options.UseBackColor = true;
             this.splitterControl2.Location = new System.Drawing.Point(969, 2);
             this.splitterControl2.Name = "splitterControl2";
-            this.splitterControl2.Size = new System.Drawing.Size(5, 527);
+            this.splitterControl2.Size = new System.Drawing.Size(5, 531);
             this.splitterControl2.TabIndex = 24;
             this.splitterControl2.TabStop = false;
             // 
@@ -451,13 +483,27 @@
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.ShowCaption = false;
-            this.groupControl2.Size = new System.Drawing.Size(1303, 33);
+            this.groupControl2.Size = new System.Drawing.Size(1303, 29);
             this.groupControl2.TabIndex = 44;
             this.groupControl2.Text = "groupControl2";
             // 
             // toolTipController1
             // 
-            this.toolTipController1.ToolTipType = DevExpress.Utils.ToolTipType.Standard;
+            this.toolTipController1.Rounded = true;
+            this.toolTipController1.ShowBeak = true;
+            // 
+            // bw刷新合约
+            // 
+            this.bw刷新合约.WorkerReportsProgress = true;
+            this.bw刷新合约.WorkerSupportsCancellation = true;
+            this.bw刷新合约.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bw刷新合约_DoWork);
+            this.bw刷新合约.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bw刷新合约_ProgressChanged);
+            this.bw刷新合约.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bw刷新合约_RunWorkerCompleted);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frm合约业务
             // 
@@ -476,12 +522,17 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm合约业务_FormClosing);
             this.Load += new System.EventHandler(this.frm合约业务_Load);
+            this.Shown += new System.EventHandler(this.frm合约业务_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.cb_type)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_zt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gc_Hy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_Hy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_合约)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_合约)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gc_fy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_收入费用)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Fy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pgb.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ts.Properties)).EndInit();
@@ -495,8 +546,7 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gc_Hy;
-        private DevExpress.XtraGrid.Views.Grid.GridView gv_Hy;
+        private DevExpress.XtraGrid.GridControl grid_合约;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_fID;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_Name;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_jssj;
@@ -515,7 +565,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraGrid.GridControl gc_fy;
+        private DevExpress.XtraGrid.GridControl grid_收入费用;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_Fy;
         private DevExpress.XtraGrid.Columns.GridColumn c_Type;
         private DevExpress.XtraGrid.Columns.GridColumn c_Name;
@@ -532,5 +582,12 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cb_type;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cb_zt;
         private DevExpress.Utils.ToolTipController toolTipController1;
+        public DevExpress.XtraGrid.Views.Grid.GridView gv_合约;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit rDateEdit_Start;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit rDateEdit_End;
+        private System.ComponentModel.BackgroundWorker bw刷新合约;
+        private System.Windows.Forms.Timer timer1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit4;
     }
 }

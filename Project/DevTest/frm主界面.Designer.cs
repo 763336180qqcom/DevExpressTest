@@ -30,6 +30,7 @@ namespace DevTest
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm主界面));
             this.gc_Left = new DevExpress.XtraEditors.GroupControl();
             this.nbc_Left = new DevExpress.XtraNavBar.NavBarControl();
@@ -38,13 +39,13 @@ namespace DevTest
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
-            this.myNotify = new System.Windows.Forms.NotifyIcon();
-            this.MaincontextMenuStrip = new System.Windows.Forms.ContextMenuStrip();
+            this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
+            this.myNotify = new System.Windows.Forms.NotifyIcon(this.components);
+            this.MaincontextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem_Show = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.pc_Left = new DevExpress.XtraEditors.PanelControl();
-            this.tab_Main = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
-            this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
+            this.tab_Main = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gc_Left)).BeginInit();
             this.gc_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbc_Left)).BeginInit();
@@ -140,6 +141,13 @@ namespace DevTest
             this.navBarItem1.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem1.SmallImage")));
             this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked_1);
             // 
+            // navBarItem4
+            // 
+            this.navBarItem4.Caption = "SourceGrid";
+            this.navBarItem4.Name = "navBarItem4";
+            this.navBarItem4.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem4.SmallImage")));
+            this.navBarItem4.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem4_LinkClicked);
+            // 
             // myNotify
             // 
             this.myNotify.ContextMenuStrip = this.MaincontextMenuStrip;
@@ -184,13 +192,6 @@ namespace DevTest
             this.tab_Main.FloatPageDragMode = DevExpress.XtraTabbedMdi.FloatPageDragMode.Preview;
             this.tab_Main.MdiParent = this;
             this.tab_Main.PageRemoved += new DevExpress.XtraTabbedMdi.MdiTabPageEventHandler(this.tab_Main_PageRemoved);
-            // 
-            // navBarItem4
-            // 
-            this.navBarItem4.Caption = "SourceGrid";
-            this.navBarItem4.Name = "navBarItem4";
-            this.navBarItem4.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem4.SmallImage")));
-            this.navBarItem4.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem4_LinkClicked);
             // 
             // frm主界面
             // 

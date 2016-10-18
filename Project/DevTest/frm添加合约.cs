@@ -1,14 +1,7 @@
 ﻿using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
-using DevExpress.XtraGrid;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DevTest
@@ -26,7 +19,7 @@ namespace DevTest
             chk捆绑终端.Checked = false;
             chk允许老号.Checked = false;
             chk状态.Checked = false;
-            dte开始时间.EditValue = DateTime.Now;
+            dte开始时间.EditValue = DateTime.Today;
             dte结束时间.EditValue = null;
             iniDt();
         }
@@ -46,9 +39,10 @@ namespace DevTest
                 MessageBox.Show(e.Message);
             }
         }
-
+        public static int sMode = 1;
         private void btn添加费用收入_Click(object sender, EventArgs e)
         {
+            sMode = 1;
             frm收入费用 f = new frm收入费用();
             if (f.ShowDialog() == DialogResult.OK)
             {
@@ -124,17 +118,19 @@ namespace DevTest
                 e.Info.DisplayText = (e.RowHandle + 1).ToString();
             }
         }
+        private frm收入费用 f = new frm收入费用();
         private void gv信息列表_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             if (e.Button == MouseButtons.Left && e.Clicks == 2)
             {
-                frm收入费用 f = new frm收入费用();
+                sMode = 0;
+                frm收入费用.sRowIndex = e.RowHandle;
                 f.str类别 = gv信息列表.GetRowCellValue(e.RowHandle, gv信息列表.Columns["类别"]).ToString();
                 f.str名称 = gv信息列表.GetRowCellValue(e.RowHandle, gv信息列表.Columns["项目名称"]).ToString();
                 f.str金额 = gv信息列表.GetRowCellValue(e.RowHandle, gv信息列表.Columns["金额"]).ToString();
                 f.str期数 = gv信息列表.GetRowCellValue(e.RowHandle, gv信息列表.Columns["期数"]).ToString();
                 f.str状态 = gv信息列表.GetRowCellValue(e.RowHandle, gv信息列表.Columns["状态"]).ToString();
-                f.Show();
+                f.ShowDialog();
             }
         }
         private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
@@ -208,6 +204,11 @@ namespace DevTest
         private void searchLookUpEdit1View_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
            
+        }
+
+        private void searchLookUpEdit1View_MouseUp(object sender, MouseEventArgs e)
+        {
+            lookUpEdit1.EditValue =null;
         }
     }
 }

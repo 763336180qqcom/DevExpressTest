@@ -104,7 +104,7 @@ namespace DevTest
                 f = new TipForm();
             return f;
         }
-       
+
         /// <summary>
         /// 在右下角显示
         /// </summary>
@@ -131,8 +131,19 @@ namespace DevTest
         /// </summary>
         public void showShort(int d)
         {
+            label1.Text = "执行成功！";
             this.Width = 120;
             this.Width = 40;
+            timer1.Enabled = false;
+            this.waitime = d;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Show();
+        }
+        public void showShort(string text,int d)
+        {
+            this.Width = 120;
+            this.Width = 40;
+            label1.Text = text;
             timer1.Enabled = false;
             this.waitime = d;
             this.StartPosition = FormStartPosition.CenterScreen;
