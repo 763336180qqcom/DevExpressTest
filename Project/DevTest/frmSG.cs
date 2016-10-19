@@ -4,6 +4,8 @@ using SourceGrid;
 using System;
 using System.IO;
 using System.Reflection;
+using DevAge.Drawing;
+using System.Drawing;
 
 namespace DevTest
 {
@@ -23,13 +25,15 @@ namespace DevTest
         private SourceGrid.Cells.Editors.EditorBase mEditor_Country;
         private SourceGrid.Cells.Editors.EditorBase mEditor_Price;
 
-        private SourceGrid.Cells.Views.Cell mView_Price;
+        private SourceGrid.Cells.Views.Cell mView_Content;
+        private SourceGrid.Cells.Views.Cell mView_Header;
+        private SourceGrid.Cells.Views.Cell mView_Header_0;
 
         private SourceGrid.Cells.Controllers.Button mController_Link;
 
         private void frmSG_Load(object sender, System.EventArgs e)
         {
-            string[] countryList = new string[] { "Italy", "France", "Spain", "UK", "Argentina", "Mexico", "Switzerland", "Brazil", "Germany", "Portugal", "Sweden", "Austria" };
+            string[] countryList = new string[] { "意大利", "法国", "西班牙", "英国", "阿根廷", "墨西哥", "瑞士", "巴西", "德国", "葡萄牙", "瑞典", "澳大利亚" };
             grid1.RowsCount = 1;
             grid1.ColumnsCount = 10;
             grid1.FixedRows = 1;
@@ -40,47 +44,85 @@ namespace DevTest
             grid1.Columns[0].Width = 25;
             grid1.Controller.AddController(new keyDeleteController());
 
-            mView_Price = new SourceGrid.Cells.Views.Cell();
-            mView_Price.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleRight;
+            mView_Content = new SourceGrid.Cells.Views.Cell();
+            mView_Content.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+
+            mView_Header_0 = new SourceGrid.Cells.Views.Cell();
+            mView_Header_0.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+            mView_Header_0.Font = new Font("幼圆", 12);
+            BorderLine boderT_0 = new BorderLine();
+            BorderLine boderB_0 = new BorderLine();
+            BorderLine boderL_0 = new BorderLine();
+            BorderLine boderR_0 = new BorderLine(Color.BlueViolet);
+            boderR_0.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            RectangleBorder headBoder_0 = new RectangleBorder(boderT_0, boderB_0, boderL_0, boderR_0);
+            mView_Header_0.Border = headBoder_0;
+
+            mView_Header = new SourceGrid.Cells.Views.Cell();
+            mView_Header.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+            mView_Header.Font = new Font("幼圆", 12);
+            BorderLine boderT = new BorderLine(Color.BlueViolet);
+            boderT.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            BorderLine boderB = new BorderLine(Color.BlueViolet);
+            boderB.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            BorderLine boderL = new BorderLine(Color.BlueViolet);
+            boderL.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            BorderLine boderR = new BorderLine(Color.BlueViolet);
+            boderR.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            RectangleBorder headBoder = new RectangleBorder(boderT, boderB, boderL, boderR);
+            mView_Header.Border = headBoder;
+
+
 
             mController_Link = new SourceGrid.Cells.Controllers.Button();
             mController_Link.Executed += new System.EventHandler(mController_Link_Click);
 
             SourceGrid.Cells.Header header = new SourceGrid.Cells.Header(null);
             grid1[0, 0] = header;
+            grid1[0, 0].View = mView_Header_0;
 
             mEditor_Id = SourceGrid.Cells.Editors.Factory.Create(typeof(int));
             mEditor_Id.EditableMode = SourceGrid.EditableMode.Focus | EditableMode.AnyKey | EditableMode.SingleClick;
-            grid1[0, 1] = new SourceGrid.Cells.Header("ID(int)");
+            grid1[0, 1] = new SourceGrid.Cells.Header("编号");
+            grid1[0, 1].View = mView_Header;
 
             mEditor_Name = SourceGrid.Cells.Editors.Factory.Create(typeof(string));
             mEditor_Name.EditableMode = SourceGrid.EditableMode.Focus | EditableMode.AnyKey | EditableMode.SingleClick;
-            grid1[0, 2] = new SourceGrid.Cells.Header("Name(string)");
+            grid1[0, 2] = new SourceGrid.Cells.Header("姓名");
+            grid1[0, 2].View = mView_Header;
 
             mEditor_Address = SourceGrid.Cells.Editors.Factory.Create(typeof(string));
             mEditor_Address.EditableMode = SourceGrid.EditableMode.Focus | EditableMode.AnyKey | EditableMode.SingleClick;
-            grid1[0, 3] = new SourceGrid.Cells.Header("ADDRESS(string)");
+            grid1[0, 3] = new SourceGrid.Cells.Header("地址");
+            grid1[0, 3].View = mView_Header;
 
             mEditor_City = SourceGrid.Cells.Editors.Factory.Create(typeof(string));
             mEditor_City.EditableMode = SourceGrid.EditableMode.Focus | EditableMode.AnyKey | EditableMode.SingleClick;
-            grid1[0, 4] = new SourceGrid.Cells.Header("CITY(string)");
+            grid1[0, 4] = new SourceGrid.Cells.Header("城市");
+            grid1[0, 4].View = mView_Header;
 
             mEditor_Birthday = SourceGrid.Cells.Editors.Factory.Create(typeof(DateTime));
             mEditor_Birthday.EditableMode = SourceGrid.EditableMode.Focus | EditableMode.AnyKey | EditableMode.SingleClick;
-            grid1[0, 5] = new SourceGrid.Cells.Header("BIRTHDAY(DateTime)");
+            grid1[0, 5] = new SourceGrid.Cells.Header("出生日期");
+            grid1[0, 5].View = mView_Header;
 
             mEditor_Country = new SourceGrid.Cells.Editors.ComboBox(typeof(string), countryList, false);
             mEditor_Country.EditableMode = EditableMode.Focus | EditableMode.AnyKey | EditableMode.SingleClick;
-            grid1[0, 6] = new SourceGrid.Cells.Header("COUNTRY(string+combobox)");
+            grid1[0, 6] = new SourceGrid.Cells.Header("国家");
+            grid1[0, 6].View = mView_Header;
 
             mEditor_Price = new SourceGrid.Cells.Editors.TextBoxCurrency(typeof(double));
             mEditor_Price.EditableMode = EditableMode.Focus | EditableMode.AnyKey | EditableMode.SingleClick;
-            grid1[0, 7] = new SourceGrid.Cells.Header("$PRICE(double)");
+            grid1[0, 7] = new SourceGrid.Cells.Header("价格($)");
+            grid1[0, 7].View = mView_Header;
 
-            grid1[0, 8] = new SourceGrid.Cells.Header("Selected");
-            grid1[0, 9] = new SourceGrid.Cells.Header("WebSite");
+            grid1[0, 8] = new SourceGrid.Cells.Header("选中");
+            grid1[0, 8].View = mView_Header;
 
-            System.IO.StreamReader reader = new System.IO.StreamReader(System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("DevTest.Resources"+".Data_SG.xml"));
+            grid1[0, 9] = new SourceGrid.Cells.Header("网站");
+            grid1[0, 9].View = mView_Header;
+
+            System.IO.StreamReader reader = new System.IO.StreamReader(System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("DevTest.Resources" + ".Data_SG.xml"));
             System.Xml.XmlDocument xmlDoc = new System.Xml.XmlDocument();
             xmlDoc.LoadXml(reader.ReadToEnd());
             reader.Close();
@@ -90,19 +132,39 @@ namespace DevTest
             foreach (System.Xml.XmlNode node in nodes)
             {
                 grid1[rowIndex, 0] = new SourceGrid.Cells.RowHeader(null);
+                grid1[rowIndex, 0].View = mView_Header_0;
+
                 grid1[rowIndex, 1] = new SourceGrid.Cells.Cell(rowIndex, mEditor_Id);
+                grid1[rowIndex, 1].View = mView_Content;
+
                 grid1[rowIndex, 2] = new SourceGrid.Cells.Cell(node.Attributes["姓名"].InnerText, mEditor_Name);
+                grid1[rowIndex, 2].View = mView_Content;
+
                 grid1[rowIndex, 3] = new SourceGrid.Cells.Cell(node.Attributes["地址"].InnerText, mEditor_Address);
+                grid1[rowIndex, 3].View = mView_Content;
+
                 grid1[rowIndex, 4] = new SourceGrid.Cells.Cell(node.Attributes["城市"].InnerText, mEditor_City);
+                grid1[rowIndex, 4].View = mView_Content;
+
                 grid1[rowIndex, 5] = new SourceGrid.Cells.Cell(DateTime.Today, mEditor_Birthday);
+                grid1[rowIndex, 5].View = mView_Content;
+
                 grid1[rowIndex, 6] = new SourceGrid.Cells.Cell(node.Attributes["国家"].InnerText, mEditor_Country);
+                grid1[rowIndex, 6].View = mView_Content;
+
                 grid1[rowIndex, 7] = new SourceGrid.Cells.Cell(25.0, mEditor_Price);
+                grid1[rowIndex, 7].View = mView_Content;
+
                 grid1[rowIndex, 8] = new SourceGrid.Cells.CheckBox(null, false);
+
                 grid1[rowIndex, 9] = new SourceGrid.Cells.Link(node.Attributes["网站"].InnerText);
+                grid1[rowIndex, 9].View = mView_Content;
                 grid1[rowIndex, 9].AddController(mController_Link);
+
                 rowIndex++;
             }
             grid1.AutoSizeCells();
+            chk编辑.Checked = true;
         }
         private void frmSG_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
         {
@@ -121,8 +183,9 @@ namespace DevTest
             grid1[rowIndex, 3] = new SourceGrid.Cells.Cell(mEditor_Address.DefaultValue, mEditor_Address);
             grid1[rowIndex, 4] = new SourceGrid.Cells.Cell(mEditor_City.DefaultValue, mEditor_City);
             grid1[rowIndex, 5] = new SourceGrid.Cells.Cell(mEditor_Birthday.DefaultValue, mEditor_Birthday);
-            grid1[rowIndex, 6] = new SourceGrid.Cells.Cell(mEditor_Country, mEditor_Country);
-            grid1[rowIndex, 7] = new SourceGrid.Cells.Cell(mEditor_Price.DefaultValue, mEditor_Price);
+            grid1[rowIndex, 6] = new SourceGrid.Cells.Cell(mEditor_Country.DefaultValue, mEditor_Country);
+            grid1[rowIndex, 7] = new SourceGrid.Cells.Cell(25.0, mEditor_Price);
+            grid1[rowIndex, 7].View = mView_Content;
             grid1[rowIndex, 8] = new SourceGrid.Cells.CheckBox(null, false);
             grid1[rowIndex, 9] = new SourceGrid.Cells.Link("http://www.baidu.com");
             grid1[rowIndex, 9].AddController(mController_Link);
@@ -174,7 +237,7 @@ namespace DevTest
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show(ex.Message,"EXPORT ERROR");
+                XtraMessageBox.Show(ex.Message, "EXPORT ERROR");
             }
 
         }
@@ -191,7 +254,7 @@ namespace DevTest
 
         private void chkEditOnDoubleClick_CheckedChanged(object sender, System.EventArgs e)
         {
-            if (chkEditOnDoubleClick.Checked)
+            if (chk编辑.Checked)
             {
                 mEditor_Id.EditableMode = SourceGrid.EditableMode.F2Key | EditableMode.AnyKey | EditableMode.DoubleClick;
                 mEditor_Name.EditableMode = SourceGrid.EditableMode.F2Key | EditableMode.AnyKey | EditableMode.DoubleClick;
@@ -218,7 +281,7 @@ namespace DevTest
             try
             {
                 string path = System.IO.Path.Combine("C:\\Users\\admin\\Desktop", "sg.csv");
-                StreamWriter writer = new StreamWriter(path,false,System.Text.Encoding.Default);
+                StreamWriter writer = new StreamWriter(path, false, System.Text.Encoding.Default);
                 SourceGrid.Exporter.CSV csv = new SourceGrid.Exporter.CSV();
                 csv.Export(grid1, writer);
                 writer.Close();
@@ -226,7 +289,7 @@ namespace DevTest
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show(ex.Message,"EXPORT ERROR");
+                XtraMessageBox.Show(ex.Message, "EXPORT ERROR");
             }
         }
         private void mController_Link_Click(object sender, EventArgs e)
@@ -261,7 +324,7 @@ namespace DevTest
             {
                 string path = System.IO.Path.Combine("C:\\Users\\admin\\Desktop", "sg.jpeg");
                 SourceGrid.Exporter.Image img = new SourceGrid.Exporter.Image();
-                img.Export(grid1,grid1.CompleteRange).Save(path);
+                img.Export(grid1, grid1.CompleteRange).Save(path);
                 DevAge.Shell.Utilities.OpenFile(path);
             }
             catch (Exception ex)

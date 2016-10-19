@@ -36,11 +36,11 @@ namespace DevTest
             this.gc_Left = new DevExpress.XtraEditors.GroupControl();
             this.nbc_Left = new DevExpress.XtraNavBar.NavBarControl();
             this.nbg_First = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem_Hyyw = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBar合约业务 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBar新增合约 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarDateEdit = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarReports = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarSGRID = new DevExpress.XtraNavBar.NavBarItem();
             this.myNotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.MaincontextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem_Show = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,11 +82,11 @@ namespace DevTest
             this.nbc_Left.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.nbg_First});
             this.nbc_Left.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
-            this.navBarItem_Hyyw,
-            this.navBarItem2,
-            this.navBarItem3,
-            this.navBarItem1,
-            this.navBarItem4});
+            this.navBar合约业务,
+            this.navBar新增合约,
+            this.navBarDateEdit,
+            this.navBarReports,
+            this.navBarSGRID});
             this.nbc_Left.Location = new System.Drawing.Point(2, 2);
             this.nbc_Left.Name = "nbc_Left";
             this.nbc_Left.OptionsNavPane.ExpandedWidth = 169;
@@ -101,54 +101,54 @@ namespace DevTest
             this.nbg_First.Caption = "测试";
             this.nbg_First.Expanded = true;
             this.nbg_First.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem_Hyyw),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBar合约业务),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBar新增合约),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDateEdit),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarReports),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSGRID)});
             this.nbg_First.Name = "nbg_First";
             this.nbg_First.ShowIcons = DevExpress.Utils.DefaultBoolean.True;
             this.nbg_First.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbg_First.SmallImage")));
             // 
-            // navBarItem_Hyyw
+            // navBar合约业务
             // 
-            this.navBarItem_Hyyw.Appearance.Options.UseTextOptions = true;
-            this.navBarItem_Hyyw.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.navBarItem_Hyyw.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.navBarItem_Hyyw.CanDrag = false;
-            this.navBarItem_Hyyw.Caption = "合约业务";
-            this.navBarItem_Hyyw.Name = "navBarItem_Hyyw";
-            this.navBarItem_Hyyw.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem_Hyyw.SmallImage")));
-            this.navBarItem_Hyyw.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked);
+            this.navBar合约业务.Appearance.Options.UseTextOptions = true;
+            this.navBar合约业务.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.navBar合约业务.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.navBar合约业务.CanDrag = false;
+            this.navBar合约业务.Caption = "合约业务";
+            this.navBar合约业务.Name = "navBar合约业务";
+            this.navBar合约业务.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBar合约业务.SmallImage")));
+            this.navBar合约业务.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBar合约业务_LinkClicked);
             // 
-            // navBarItem2
+            // navBar新增合约
             // 
-            this.navBarItem2.CanDrag = false;
-            this.navBarItem2.Caption = "新增合约";
-            this.navBarItem2.Name = "navBarItem2";
-            this.navBarItem2.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem2.SmallImage")));
-            this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked);
+            this.navBar新增合约.CanDrag = false;
+            this.navBar新增合约.Caption = "新增合约";
+            this.navBar新增合约.Name = "navBar新增合约";
+            this.navBar新增合约.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBar新增合约.SmallImage")));
+            this.navBar新增合约.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBar新增合约_LinkClicked);
             // 
-            // navBarItem3
+            // navBarDateEdit
             // 
-            this.navBarItem3.Caption = "DateEdit";
-            this.navBarItem3.Name = "navBarItem3";
-            this.navBarItem3.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem3.SmallImage")));
-            this.navBarItem3.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem3_LinkClicked);
+            this.navBarDateEdit.Caption = "DateEdit";
+            this.navBarDateEdit.Name = "navBarDateEdit";
+            this.navBarDateEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarDateEdit.SmallImage")));
+            this.navBarDateEdit.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarDateEdit_LinkClicked);
             // 
-            // navBarItem1
+            // navBarReports
             // 
-            this.navBarItem1.Caption = "XtraReports";
-            this.navBarItem1.Name = "navBarItem1";
-            this.navBarItem1.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem1.SmallImage")));
-            this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked_1);
+            this.navBarReports.Caption = "XtraReports";
+            this.navBarReports.Name = "navBarReports";
+            this.navBarReports.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem1.SmallImage")));
+            this.navBarReports.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarReports_LinkClicked);
             // 
-            // navBarItem4
+            // navBarSGRID
             // 
-            this.navBarItem4.Caption = "SourceGrid";
-            this.navBarItem4.Name = "navBarItem4";
-            this.navBarItem4.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem4.SmallImage")));
-            this.navBarItem4.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem4_LinkClicked);
+            this.navBarSGRID.Caption = "SourceGrid";
+            this.navBarSGRID.Name = "navBarSGRID";
+            this.navBarSGRID.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem4.SmallImage")));
+            this.navBarSGRID.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarSGRID_LinkClicked);
             // 
             // myNotify
             // 
@@ -193,8 +193,7 @@ namespace DevTest
             this.tab_Main.FloatOnDrag = DevExpress.Utils.DefaultBoolean.True;
             this.tab_Main.FloatPageDragMode = DevExpress.XtraTabbedMdi.FloatPageDragMode.Preview;
             this.tab_Main.MdiParent = this;
-            tab_Main.SelectedPageChanged += new EventHandler(midPageEvent);
-
+            this.tab_Main.SelectedPageChanged += new System.EventHandler(this.midPageEvent);
             // 
             // timer1
             // 
@@ -230,17 +229,17 @@ namespace DevTest
         private DevExpress.XtraEditors.GroupControl gc_Left;
         private DevExpress.XtraNavBar.NavBarControl nbc_Left;
         private DevExpress.XtraNavBar.NavBarGroup nbg_First;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem_Hyyw;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem2;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem3;
+        private DevExpress.XtraNavBar.NavBarItem navBar合约业务;
+        private DevExpress.XtraNavBar.NavBarItem navBar新增合约;
+        private DevExpress.XtraNavBar.NavBarItem navBarDateEdit;
         private System.Windows.Forms.NotifyIcon myNotify;
         private System.Windows.Forms.ContextMenuStrip MaincontextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_Show;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_Exit;
         private PanelControl pc_Left;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager tab_Main;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem4;
+        private DevExpress.XtraNavBar.NavBarItem navBarReports;
+        private DevExpress.XtraNavBar.NavBarItem navBarSGRID;
         private System.Windows.Forms.Timer timer1;
     }
 }

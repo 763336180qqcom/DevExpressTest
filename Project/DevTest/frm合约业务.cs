@@ -182,6 +182,7 @@ namespace DevTest
         {
             if (frm主界面.childs.Contains(Name))
                 frm主界面.childs.Remove(Name);
+            Dispose();
         }
 
         private void ts_Toggled(object sender, EventArgs e)

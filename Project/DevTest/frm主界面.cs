@@ -39,7 +39,7 @@ namespace DevTest
             sText = this.Text;
             StartPosition = FormStartPosition.CenterScreen;
             this.WindowState = FormWindowState.Maximized;
-            navBarItem1_LinkClicked(null, null);
+            navBarSGRID_LinkClicked(null,null);
         }
         private void midPageEvent(object sender, EventArgs e)
         {
@@ -65,7 +65,7 @@ namespace DevTest
             }
         }
 
-        private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        private void navBar合约业务_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
 
             frm合约业务 f = new frm合约业务();
@@ -136,20 +136,20 @@ namespace DevTest
         }
 
 
-        private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        private void navBar新增合约_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frm添加合约 f = new frm添加合约();
             frmShow(f);
         }
 
-        private void navBarItem3_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        private void navBarDateEdit_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmDateEdit f = new frmDateEdit();
             frmShow(f);
         }
 
         private PrintPreviewFormEx pv = null;
-        private void navBarItem1_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        private void navBarReports_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmXRP xrp = new frmXRP();
             pv = new ReportPrintTool(xrp).PreviewForm;
@@ -167,7 +167,7 @@ namespace DevTest
             if (childs.Contains(pv.Name))
                 childs.Remove(pv.Name);
         }
-        private void navBarItem4_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        private void navBarSGRID_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmSG f = new frmSG();
             frmShow(f);
