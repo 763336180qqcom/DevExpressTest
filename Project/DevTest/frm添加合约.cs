@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Utils.Menu;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,7 +22,25 @@ namespace DevTest
             chk状态.Checked = false;
             dte开始时间.EditValue = DateTime.Today;
             dte结束时间.EditValue = null;
+            gv信息列表.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(gv信息列表PopMenuEvent);
             iniDt();
+        }
+        private void gv信息列表PopMenuEvent(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
+        {
+            if (e.MenuType == DevExpress.XtraGrid.Views.Grid.GridMenuType.Row && e.HitInfo.InRow)
+            {
+                DXMenuItem item = new DXMenuItem("删除", new EventHandler(editMenuClick), null);
+                e.Menu.Items.Add(item);
+            }
+        }
+        private void editMenuClick(object sender, EventArgs e)
+        {
+            int[] selectedRows = gv信息列表.GetSelectedRows();
+            Util.quickSort(selectedRows);
+            for(int i = selectedRows.Length-1; i >=0; i--)
+            {
+                sDt收入费用.Rows.RemoveAt(selectedRows[i]);
+            }
         }
 
         private void iniDt()
@@ -84,7 +103,6 @@ namespace DevTest
                 if (control is LookUpEdit)
                     ((LookUpEdit)control).EditValue = null;
             }
-         //   sDt收入费用.Clear();
         }
 
         private void chk状态_CheckedChanged(object sender, EventArgs e)
@@ -135,7 +153,7 @@ namespace DevTest
         }
         private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
-            if (lookUpEdit1.EditValue!=null&&lookUpEdit1.EditValue is DataRowView)
+            if (lookUpEdit1.EditValue != null && lookUpEdit1.EditValue is DataRowView)
             {
                 DataRowView drv = (DataRowView)lookUpEdit1.EditValue;
                 txt名称.Text = (drv.Row)["名称"].ToString();
@@ -203,12 +221,12 @@ namespace DevTest
 
         private void searchLookUpEdit1View_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-           
+
         }
 
         private void searchLookUpEdit1View_MouseUp(object sender, MouseEventArgs e)
         {
-            lookUpEdit1.EditValue =null;
+            lookUpEdit1.EditValue = null;
         }
     }
 }

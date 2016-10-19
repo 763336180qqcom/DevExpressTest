@@ -5,24 +5,47 @@ using DevExpress.XtraReports.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 
 namespace DevTest
 {
     public partial class frm主界面 : XtraForm
     {
-        public static HashSet<string> childs = new HashSet<string>();
         public frm主界面()
         {
             InitializeComponent();
         }
+        public static string sSelectedTabName = "";
+        public static string sCurrentFromName = "";
+        public static string sText = "";
+
+        public static HashSet<string> childs = new HashSet<string>();
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetForegroundWindow();
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern int GetWindowText(IntPtr hWnd, [Out, MarshalAs(UnmanagedType.LPTStr)] StringBuilder lpString, int nMaxCount);
+        private string GetText(IntPtr hWnd)
+        {
+            StringBuilder result = new StringBuilder(128);
+            GetWindowText(hWnd, result, result.Capacity);
+            return result.ToString();
+        }
+
         private void frm主界面_Load(object sender, EventArgs e)
         {
+            sText = this.Text;
             StartPosition = FormStartPosition.CenterScreen;
             this.WindowState = FormWindowState.Maximized;
             navBarItem1_LinkClicked(null, null);
         }
-
+        private void midPageEvent(object sender, EventArgs e)
+        {
+            if (((DevExpress.XtraTabbedMdi.XtraTabbedMdiManager)sender).SelectedPage != null)
+                sSelectedTabName = ((DevExpress.XtraTabbedMdi.XtraTabbedMdiManager)sender).SelectedPage.MdiChild.Name;
+        }
         private void frm主界面_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -112,10 +135,6 @@ namespace DevTest
             Activate();
         }
 
-        private void tab_Main_PageRemoved(object sender, DevExpress.XtraTabbedMdi.MdiTabPageEventArgs e)
-        {
-
-        }
 
         private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -150,7 +169,7 @@ namespace DevTest
         }
         private void navBarItem4_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            frmSG f=new frmSG();
+            frmSG f = new frmSG();
             frmShow(f);
         }
 
@@ -164,6 +183,9 @@ namespace DevTest
             }
         }
 
-
+        private void timer_getWindowText_Tick(object sender, EventArgs e)
+        {
+            sCurrentFromName = GetText(GetForegroundWindow());
+        }
     }
 }

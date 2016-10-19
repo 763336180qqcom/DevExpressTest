@@ -19,13 +19,13 @@ namespace DevTest
         {
             InitializeComponent();
         }
-        public static string str名称="";
-        public static DateTime? dte开始=DateTime.Today;
-        public static DateTime? dte结束=null;
+        public static string str名称 = "";
+        public static DateTime? dte开始 = DateTime.Today;
+        public static DateTime? dte结束 = null;
         public static string fID = "-1";
         private void frm编辑合约_Load(object sender, EventArgs e)
         {
-           
+
             if (!string.IsNullOrEmpty(str名称))
                 txt名称.Text = str名称;
             if (dte开始.HasValue)
@@ -40,13 +40,14 @@ namespace DevTest
 
         private void btn保存_Click(object sender, EventArgs e)
         {
-            str名称 = txt名称.Text.Trim();
-            dte开始 = (DateTime?)dte开始时间.EditValue;
-            dte结束 = (DateTime?)dte结束时间.EditValue;
             try
             {
-                DB.frm合约业务_Update(fID, str名称, dte开始, dte结束);
+                DB.frm合约业务_Update(fID, txt名称.Text.Trim(), (DateTime?)dte开始时间.EditValue, (DateTime?)dte结束时间.EditValue);
                 TipForm.getInstance().showShort(800);
+                str名称 = "";
+                dte开始 = DateTime.Today;
+                dte结束 = null;
+                fID = "-1";
                 this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex)

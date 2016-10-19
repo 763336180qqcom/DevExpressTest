@@ -151,9 +151,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        public DevExpress.XtraEditors.TextEdit txt名称;
-        public DevExpress.XtraEditors.DateEdit dte开始时间;
         private DevExpress.XtraEditors.DateEdit dte结束时间;
         private DevExpress.XtraEditors.SimpleButton btn保存;
+        private DevExpress.XtraEditors.TextEdit txt名称;
+        private DevExpress.XtraEditors.DateEdit dte开始时间;
     }
 }

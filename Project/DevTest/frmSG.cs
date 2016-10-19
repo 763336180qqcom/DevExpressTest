@@ -91,14 +91,14 @@ namespace DevTest
             {
                 grid1[rowIndex, 0] = new SourceGrid.Cells.RowHeader(null);
                 grid1[rowIndex, 1] = new SourceGrid.Cells.Cell(rowIndex, mEditor_Id);
-                grid1[rowIndex, 2] = new SourceGrid.Cells.Cell(node.Attributes["Name"].InnerText, mEditor_Name);
-                grid1[rowIndex, 3] = new SourceGrid.Cells.Cell(node.Attributes["Address"].InnerText, mEditor_Address);
-                grid1[rowIndex, 4] = new SourceGrid.Cells.Cell(node.Attributes["City"].InnerText, mEditor_City);
+                grid1[rowIndex, 2] = new SourceGrid.Cells.Cell(node.Attributes["姓名"].InnerText, mEditor_Name);
+                grid1[rowIndex, 3] = new SourceGrid.Cells.Cell(node.Attributes["地址"].InnerText, mEditor_Address);
+                grid1[rowIndex, 4] = new SourceGrid.Cells.Cell(node.Attributes["城市"].InnerText, mEditor_City);
                 grid1[rowIndex, 5] = new SourceGrid.Cells.Cell(DateTime.Today, mEditor_Birthday);
-                grid1[rowIndex, 6] = new SourceGrid.Cells.Cell(node.Attributes["Country"].InnerText, mEditor_Country);
+                grid1[rowIndex, 6] = new SourceGrid.Cells.Cell(node.Attributes["国家"].InnerText, mEditor_Country);
                 grid1[rowIndex, 7] = new SourceGrid.Cells.Cell(25.0, mEditor_Price);
                 grid1[rowIndex, 8] = new SourceGrid.Cells.CheckBox(null, false);
-                grid1[rowIndex, 9] = new SourceGrid.Cells.Link(node.Attributes["website"].InnerText);
+                grid1[rowIndex, 9] = new SourceGrid.Cells.Link(node.Attributes["网站"].InnerText);
                 grid1[rowIndex, 9].AddController(mController_Link);
                 rowIndex++;
             }

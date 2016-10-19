@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using System;
 
 namespace DevTest
 {
@@ -46,6 +47,7 @@ namespace DevTest
             this.toolStripMenuItem_Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.pc_Left = new DevExpress.XtraEditors.PanelControl();
             this.tab_Main = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gc_Left)).BeginInit();
             this.gc_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbc_Left)).BeginInit();
@@ -191,7 +193,13 @@ namespace DevTest
             this.tab_Main.FloatOnDrag = DevExpress.Utils.DefaultBoolean.True;
             this.tab_Main.FloatPageDragMode = DevExpress.XtraTabbedMdi.FloatPageDragMode.Preview;
             this.tab_Main.MdiParent = this;
-            this.tab_Main.PageRemoved += new DevExpress.XtraTabbedMdi.MdiTabPageEventHandler(this.tab_Main_PageRemoved);
+            tab_Main.SelectedPageChanged += new EventHandler(midPageEvent);
+
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer_getWindowText_Tick);
             // 
             // frm主界面
             // 
@@ -233,5 +241,6 @@ namespace DevTest
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager tab_Main;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem4;
+        private System.Windows.Forms.Timer timer1;
     }
 }

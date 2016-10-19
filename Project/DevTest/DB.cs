@@ -85,13 +85,9 @@ namespace DevTest
             if (!Util.IsInt(str运营商ID))
                 throw new CustomException("运营商ID格式错误");
             if (dte结束时间.HasValue && DateTime.Compare(Convert.ToDateTime(dte结束时间), Convert.ToDateTime(dte开始时间)) < 0)
-            {
                 throw new CustomException("结束时间不能早于开始时间");
-            }
             if (dte结束时间.HasValue)
-            {
                 dte结束时间 = dte结束时间.Value.Date;
-            }
             SqlConnection con = new SqlConnection(CONNSTR);
             SqlTransaction tran = null;
             try
@@ -129,6 +125,8 @@ namespace DevTest
                     cmd.Parameters.AddWithValue("@现金奖励", str现金奖励);
                 cmd.Parameters.AddWithValue("@开始时间", dte开始时间);
                 if (dte结束时间.HasValue)
+                    cmd.Parameters.AddWithValue("@结束时间", dte结束时间);
+                else
                     cmd.Parameters.AddWithValue("@结束时间", DBNull.Value);
                 cmd.Parameters.AddWithValue("@状态", int状态_合约);
                 cmd.ExecuteNonQuery();
@@ -352,18 +350,18 @@ namespace DevTest
                 SqlDataAdapter adt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adt.Fill(dt);
-                if (dt.Rows.Count>0)
+                if (dt.Rows.Count > 0)
                     throw new CustomException("不能与已有的有效合约名称重复");
-                string sqlUpdate = " UPDATE t合约业务 SET 名称=@str名称,开始时间=@dte开始时间";
-                if (dte结束时间.HasValue)
-                    sqlUpdate += ", 结束时间=@dte结束时间";
-                sqlUpdate+= " WHERE fID=@strfID";
-                cmd = new SqlCommand(sqlUpdate,con,tran);
-                cmd.Parameters.AddWithValue("@strfID",strfID);
-                cmd.Parameters.AddWithValue("@str名称",str名称);
+                string sqlUpdate = " UPDATE t合约业务 SET 名称=@str名称,开始时间=@dte开始时间, 结束时间 = @dte结束时间";
+                sqlUpdate += " WHERE fID=@strfID";
+                cmd = new SqlCommand(sqlUpdate, con, tran);
+                cmd.Parameters.AddWithValue("@strfID", strfID);
+                cmd.Parameters.AddWithValue("@str名称", str名称);
                 cmd.Parameters.AddWithValue("@dte开始时间", dte开始时间);
-                if(dte结束时间.HasValue)
-                cmd.Parameters.AddWithValue("@dte结束时间", dte结束时间);
+                if (dte结束时间.HasValue)
+                    cmd.Parameters.AddWithValue("@dte结束时间", dte结束时间);
+                else
+                    cmd.Parameters.AddWithValue("@dte结束时间", DBNull.Value);
                 cmd.ExecuteNonQuery();
                 tran.Commit();
             }

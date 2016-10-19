@@ -506,6 +506,7 @@
             this.gv信息列表.Name = "gv信息列表";
             this.gv信息列表.OptionsBehavior.Editable = false;
             this.gv信息列表.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gv信息列表.OptionsSelection.MultiSelect = true;
             this.gv信息列表.OptionsView.ColumnAutoWidth = false;
             this.gv信息列表.OptionsView.EnableAppearanceEvenRow = true;
             this.gv信息列表.OptionsView.EnableAppearanceOddRow = true;

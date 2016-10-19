@@ -23,16 +23,6 @@ namespace DevTest
         private BackgroundWorker mBgw进度测试;
         private int currentProgress = 0;
         private int mfocusedIndex = -1;
-        [DllImport("user32.dll")]
-        private static extern IntPtr GetForegroundWindow();
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        public static extern int GetWindowText(IntPtr hWnd, [Out, MarshalAs(UnmanagedType.LPTStr)] StringBuilder lpString, int nMaxCount);
-        public static string GetText(IntPtr hWnd)
-        {
-            StringBuilder result = new StringBuilder(128);
-            GetWindowText(hWnd, result, result.Capacity);
-            return result.ToString();
-        }
         private void frm合约业务_Load(object sender, EventArgs e)
         {
             StartPosition = FormStartPosition.CenterScreen;
@@ -98,7 +88,7 @@ namespace DevTest
             }
 
         }
-        
+
         private void gv_hy_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             if (e.RowHandle >= 0)
@@ -260,17 +250,16 @@ namespace DevTest
             grid_合约.DataSource = mDtHy;
             gv_合约.ClearSelection();
             gv_合约.FocusedRowHandle = mfocusedIndex;
-            //string text = GetText(GetForegroundWindow());
-            TipForm.getInstance().showShort("已刷新！", 800);
+            if (frm主界面.sSelectedTabName.Equals(Name) && frm主界面.sCurrentFromName.Equals(frm主界面.sText))
+                TipForm.getInstance().showShort("已刷新！", 800);
         }
         private void frm合约业务_Shown(object sender, EventArgs e)
         {
             timer1.Enabled = true;
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (!bw刷新合约.IsBusy)
+            if (timer1.Enabled && !bw刷新合约.IsBusy)
                 bw刷新合约.RunWorkerAsync();
         }
 
