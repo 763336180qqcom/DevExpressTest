@@ -308,6 +308,7 @@ E:\Project\DevTest\obj\Debug\DevTest.exe
 E:\Project\DevTest\obj\Debug\DevTest.pdb
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csprojResolveAssemblyReference.cache
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmDateEdit.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmSample03.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.TipForm.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmSG.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmXRP.resources

@@ -63,6 +63,16 @@ namespace DevTest.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_b {
+            get {
+                object obj = ResourceManager.GetObject("arrow_b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap bocustomer_32x32 {
             get {
                 object obj = ResourceManager.GetObject("bocustomer_32x32", resourceCulture);

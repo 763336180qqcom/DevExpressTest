@@ -34,8 +34,10 @@ namespace DevTest
         private void frmSG_Load(object sender, System.EventArgs e)
         {
             string[] countryList = new string[] { "意大利", "法国", "西班牙", "英国", "阿根廷", "墨西哥", "瑞士", "巴西", "德国", "葡萄牙", "瑞典", "澳大利亚" };
-            grid1.RowsCount = 1;
-            grid1.ColumnsCount = 10;
+           
+            //grid1.RowsCount = 1;
+            //grid1.ColumnsCount = 10;
+            grid1.Redim(1, 10);
             grid1.FixedRows = 1;
             grid1.FixedColumns = 1;
             grid1.SelectionMode = SourceGrid.GridSelectionMode.Row;
@@ -191,6 +193,7 @@ namespace DevTest
             grid1[rowIndex, 9].AddController(mController_Link);
 
             grid1.Selection.FocusRow(rowIndex);
+         
         }
 
         private void btRemoveRow_Click(object sender, System.EventArgs e)

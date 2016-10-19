@@ -370,7 +370,7 @@ namespace DevTest
                 tran.Rollback();
                 throw new CustomException(ex.Message);
             }
-            catch (Exception E)
+            catch (Exception)
             {
                 tran.Rollback();
                 throw new Exception("操作失败！");
