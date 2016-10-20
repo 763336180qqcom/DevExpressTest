@@ -520,7 +520,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "合约业务";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm合约业务_FormClosing);
             this.Load += new System.EventHandler(this.frm合约业务_Load);
             this.Shown += new System.EventHandler(this.frm合约业务_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.cb_type)).EndInit();

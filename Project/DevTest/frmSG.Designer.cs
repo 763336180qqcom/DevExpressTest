@@ -173,7 +173,6 @@
             this.Controls.Add(this.grid1);
             this.Name = "frmSG";
             this.Text = "SourceGrid";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmSG_FormClosed);
             this.Load += new System.EventHandler(this.frmSG_Load);
             this.ResumeLayout(false);
 

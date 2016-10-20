@@ -24,14 +24,12 @@ namespace DevTest
 
         private DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton gpBoxBtn_Hide;
 
-        public static HashSet<string> childs;
 
         public frm主界面()
         {
             sSelectedTabName = "";
             sCurrentFromName = "";
             sText = "";
-            childs = new HashSet<string>();
             InitializeComponent();
         }
 
@@ -79,8 +77,7 @@ namespace DevTest
         private void navBar合约业务_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
 
-            frm合约业务 f = new frm合约业务();
-            LoadFrm(f);
+            LoadFrm(new frm合约业务());
         }
 
         private void toolStripMenuItem_Exit_Click(object sender, EventArgs e)
@@ -132,14 +129,12 @@ namespace DevTest
 
         private void navBar新增合约_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            frm添加合约 f = new frm添加合约();
-            LoadFrm(f);
+            LoadFrm(new frm添加合约());
         }
 
         private void navBarDateEdit_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            frmDateEdit f = new frmDateEdit();
-            LoadFrm(f);
+            LoadFrm(new frmDateEdit());
         }
 
         private PrintPreviewFormEx pv = null;
@@ -147,34 +142,23 @@ namespace DevTest
         {
             frmXRP xrp = new frmXRP();
             pv = new ReportPrintTool(xrp).PreviewForm;
-            if (!childs.Contains(pv.Name))
+            if (!Util.childs.Contains(pv.Name))
             {
                 pv.FormClosed += new FormClosedEventHandler(ptClosed);
                 pv.MdiParent = this;
                 pv.Text = "打印预览";
-                childs.Add(pv.Name);
+                Util.childs.Add(pv.Name);
                 xrp.ShowPreview();
             }
         }
         private void ptClosed(object sender, FormClosedEventArgs e)
         {
-            if (childs.Contains(pv.Name))
-                childs.Remove(pv.Name);
+            if (Util.childs.Contains(pv.Name))
+                Util.childs.Remove(pv.Name);
         }
         private void navBarSGRID_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            frmSG f = new frmSG();
-            LoadFrm(f);
-        }
-
-        private void LoadFrm(XtraForm f)
-        {
-            if (!(childs.Contains(f.Name)))
-            {
-                childs.Add(f.Name);
-                f.MdiParent = this;
-                f.Show();
-            }
+            LoadFrm(new frmSG());
         }
 
         private void timer_getWindowText_Tick(object sender, EventArgs e)
@@ -182,5 +166,18 @@ namespace DevTest
             sCurrentFromName = GetText(GetForegroundWindow());
         }
 
+        private void navBarWeather_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            LoadFrm(new frm天气());
+        }
+        private void LoadFrm(XtraForm f)
+        {
+            if (!(Util.childs.Contains(f.Name)))
+            {
+                Util.childs.Add(f.Name);
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

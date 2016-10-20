@@ -323,6 +323,7 @@ namespace DevTest
             SqlDataAdapter at = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             at.Fill(dt);
+            dt.Clear();
             return dt;
         }
         public static void frm合约业务_Update(string strfID,string str名称,DateTime? dte开始时间,DateTime? dte结束时间)

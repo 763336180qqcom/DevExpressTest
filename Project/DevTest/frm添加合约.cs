@@ -1,13 +1,15 @@
 ﻿using DevExpress.Utils.Menu;
 using DevExpress.XtraEditors;
+using DevTest.Common;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace DevTest
 {
-    public partial class frm添加合约 : XtraForm
+    public partial class frm添加合约 : XFormChild
     {
         public frm添加合约()
         {
@@ -15,6 +17,7 @@ namespace DevTest
         }
         private DataTable mTempDt合约 = null;
         public static DataTable sDt收入费用 = null;
+
         private void frm添加合约_Load(object sender, EventArgs e)
         {
             chk捆绑终端.Checked = false;
@@ -23,8 +26,38 @@ namespace DevTest
             dte开始时间.EditValue = DateTime.Today;
             dte结束时间.EditValue = null;
             gv信息列表.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(gv信息列表PopMenuEvent);
-            iniDt();
+            try
+            {
+                System.Threading.Thread thread = new System.Threading.Thread(
+                    new System.Threading.ParameterizedThreadStart(iniDt));
+                thread.Start("v合约业务");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            };
         }
+        #region Control.BeginInvoke
+        private int id;
+        private int id1;
+        private delegate void fin();
+        private void iniDt(object dtName)
+        {
+            id = System.Threading.Thread.CurrentThread.ManagedThreadId;
+            mTempDt合约 = DB.getDt(dtName.ToString(), null);
+            sDt收入费用 = DB.Ini收入费用表结构().Clone();
+            fin f = new fin(afterIniDt);
+            this.BeginInvoke(f);
+            //f.BeginInvoke();
+        }
+        private void afterIniDt()
+        {
+            lookUpEdit1.Properties.DataSource = mTempDt合约;
+            sDt收入费用.Columns.Remove("业务ID");
+            id1 = System.Threading.Thread.CurrentThread.ManagedThreadId;
+        }
+        #endregion
         private void gv信息列表PopMenuEvent(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
         {
             if (e.MenuType == DevExpress.XtraGrid.Views.Grid.GridMenuType.Row && e.HitInfo.InRow)
@@ -37,27 +70,13 @@ namespace DevTest
         {
             int[] selectedRows = gv信息列表.GetSelectedRows();
             Util.quickSort(selectedRows);
-            for(int i = selectedRows.Length-1; i >=0; i--)
+            for (int i = selectedRows.Length - 1; i >= 0; i--)
             {
                 sDt收入费用.Rows.RemoveAt(selectedRows[i]);
             }
         }
 
-        private void iniDt()
-        {
-            try
-            {
-                mTempDt合约 = DB.getDt("v合约业务", null);
-                lookUpEdit1.Properties.DataSource = mTempDt合约;
-                sDt收入费用 = DB.Ini收入费用表结构().Clone();
-                sDt收入费用.Columns.Remove("业务ID");
-                sDt收入费用.Clear();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-        }
+
         public static int sMode = 1;
         private void btn添加费用收入_Click(object sender, EventArgs e)
         {
@@ -78,11 +97,10 @@ namespace DevTest
             try
             {
                 DB.提交合约及费用(txt名称.Text.Trim(), txt运营商ID.Text, (int)chk捆绑终端.EditValue, (int)chk允许老号.EditValue, txt店员价.Text, txt最低价.Text, txt毛利奖励.Text, txt现金奖励.Text, (DateTime?)dte开始时间.EditValue, (DateTime?)dte结束时间.EditValue, (int)chk状态.EditValue, sDt收入费用);
-                TipForm.getInstance().showShort(800);
                 mTempDt合约 = DB.getDt("v合约业务", null);
                 lookUpEdit1.Properties.DataSource = mTempDt合约;
                 clearData();
-
+                TipForm.getInstance().showShort(800);
             }
             catch (Exception ex)
             {
@@ -212,18 +230,6 @@ namespace DevTest
                 e.Info.DisplayText = (e.RowHandle + 1).ToString();
             }
         }
-
-        private void frm添加合约_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (frm主界面.childs.Contains(Name))
-                frm主界面.childs.Remove(Name);
-        }
-
-        private void searchLookUpEdit1View_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-
-        }
-
         private void searchLookUpEdit1View_MouseUp(object sender, MouseEventArgs e)
         {
             lookUpEdit1.EditValue = null;

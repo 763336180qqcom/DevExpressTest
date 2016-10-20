@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevTest.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace DevTest
 {
-    public partial class frmDateEdit : XtraForm
+    public partial class frmDateEdit : XFormChild
     {
 
 
@@ -23,30 +24,6 @@ namespace DevTest
 
         private void frmDateEdit_Load(object sender, EventArgs e)
         {
-            this.FormClosed += new FormClosedEventHandler(FormClose);
-            //dateEdit1.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            //dateEdit1.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
-            //dateEdit1.Properties.DisplayFormat.FormatString = "G";
-            //dateEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            //dateEdit1.Properties.EditFormat.FormatString = "G";
-            //dateEdit1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            //dateEdit1.EditValue = DateTime.Now;
-            //SqlConnection con = new SqlConnection(DB.CONNSTR);
-            //try
-            //{
-            //    con.Open();
-            //    SqlCommand cmd = null;
-            //    cmd.ExecuteNonQuery();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message+"空cmd");
-            //}
-        }
-        private void FormClose(Object sender, FormClosedEventArgs e)
-        {
-            if (frm主界面.childs.Contains(Name))
-                frm主界面.childs.Remove(Name);
         }
 
         private void dateEdit1_EditValueChanged(object sender, EventArgs e)

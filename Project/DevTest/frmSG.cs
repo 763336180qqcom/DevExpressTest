@@ -6,10 +6,11 @@ using System.IO;
 using System.Reflection;
 using DevAge.Drawing;
 using System.Drawing;
+using DevTest.Common;
 
 namespace DevTest
 {
-    public partial class frmSG : XtraForm
+    public partial class frmSG : XFormChild
     {
         public frmSG()
         {
@@ -168,12 +169,6 @@ namespace DevTest
             grid1.AutoSizeCells();
             chk编辑.Checked = true;
         }
-        private void frmSG_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
-        {
-            if (frm主界面.childs.Contains(Name))
-                frm主界面.childs.Remove(Name);
-        }
-
         private void btAddRow_Click(object sender, System.EventArgs e)
         {
             int rowIndex = grid1.RowsCount;

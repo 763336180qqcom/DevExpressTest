@@ -143,7 +143,7 @@ namespace DevTest
                     frm添加合约.sDt收入费用.Rows[sRowIndex]["状态"] = dr["状态"];
                 }
                 this.DialogResult = DialogResult.OK;
-                // this.Close();
+                this.Dispose();
             }
         }
 

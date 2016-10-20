@@ -11,10 +11,11 @@ using DevExpress.Utils.Menu;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using System.Runtime.InteropServices;
 using System.Text;
+using DevTest.Common;
 
 namespace DevTest
 {
-    public partial class frm合约业务 : XtraForm
+    public partial class frm合约业务 : XFormChild
     {
         public frm合约业务()
         {
@@ -178,13 +179,6 @@ namespace DevTest
                 mBgw进度测试 = null;
             }
 
-        }
-
-        private void frm合约业务_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (frm主界面.childs.Contains(Name))
-                frm主界面.childs.Remove(Name);
-            Dispose();
         }
 
         private void ts_Toggled(object sender, EventArgs e)

@@ -14,6 +14,7 @@ namespace DevTest
 {
     class Util
     {
+        public static HashSet<string> childs= new HashSet<string>();
         public static bool IsDecimal(string str)
         {
             if (str != null && str.Equals("0"))

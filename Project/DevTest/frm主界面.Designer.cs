@@ -48,6 +48,7 @@ namespace DevTest
             this.pc_Left = new DevExpress.XtraEditors.PanelControl();
             this.tab_Main = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.navBarWeather = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Left)).BeginInit();
             this.gc_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbc_Left)).BeginInit();
@@ -82,7 +83,8 @@ namespace DevTest
             this.navBar新增合约,
             this.navBarDateEdit,
             this.navBarReports,
-            this.navBarSGRID});
+            this.navBarSGRID,
+            this.navBarWeather});
             this.nbc_Left.Location = new System.Drawing.Point(2, 2);
             this.nbc_Left.Name = "nbc_Left";
             this.nbc_Left.OptionsNavPane.ExpandedWidth = 175;
@@ -101,7 +103,8 @@ namespace DevTest
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBar新增合约),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDateEdit),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarReports),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSGRID)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSGRID),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarWeather)});
             this.nbg_First.Name = "nbg_First";
             this.nbg_First.ShowIcons = DevExpress.Utils.DefaultBoolean.True;
             this.nbg_First.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbg_First.SmallImage")));
@@ -196,6 +199,13 @@ namespace DevTest
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer_getWindowText_Tick);
             // 
+            // navBarWeather
+            // 
+            this.navBarWeather.Caption = "天气";
+            this.navBarWeather.Name = "navBarWeather";
+            this.navBarWeather.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarWeather.SmallImage")));
+            this.navBarWeather.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarWeather_LinkClicked);
+            // 
             // frm主界面
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -237,5 +247,6 @@ namespace DevTest
         private DevExpress.XtraNavBar.NavBarItem navBarReports;
         private DevExpress.XtraNavBar.NavBarItem navBarSGRID;
         private System.Windows.Forms.Timer timer1;
+        private DevExpress.XtraNavBar.NavBarItem navBarWeather;
     }
 }

@@ -372,7 +372,6 @@
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            this.searchLookUpEdit1View.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.searchLookUpEdit1View_RowClick);
             this.searchLookUpEdit1View.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.searchLookUpEdit1View_CustomDrawRowIndicator);
             this.searchLookUpEdit1View.MouseUp += new System.Windows.Forms.MouseEventHandler(this.searchLookUpEdit1View_MouseUp);
             // 
@@ -576,7 +575,6 @@
             this.Controls.Add(this.groupControl1);
             this.Name = "frm添加合约";
             this.Text = "新增合约";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm添加合约_FormClosed);
             this.Load += new System.EventHandler(this.frm添加合约_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
