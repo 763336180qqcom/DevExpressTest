@@ -41,7 +41,6 @@ namespace DevTest
             this.navBarDateEdit = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarReports = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarSGRID = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarSample = new DevExpress.XtraNavBar.NavBarItem();
             this.myNotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.MaincontextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem_Show = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,12 +82,11 @@ namespace DevTest
             this.navBar新增合约,
             this.navBarDateEdit,
             this.navBarReports,
-            this.navBarSGRID,
-            this.navBarSample});
+            this.navBarSGRID});
             this.nbc_Left.Location = new System.Drawing.Point(2, 2);
             this.nbc_Left.Name = "nbc_Left";
             this.nbc_Left.OptionsNavPane.ExpandedWidth = 175;
-            this.nbc_Left.Size = new System.Drawing.Size(169, 678);
+            this.nbc_Left.Size = new System.Drawing.Size(175, 678);
             this.nbc_Left.TabIndex = 1;
             this.nbc_Left.Text = "navBarControl2";
             // 
@@ -103,8 +101,7 @@ namespace DevTest
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBar新增合约),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDateEdit),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarReports),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSGRID),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSample)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSGRID)});
             this.nbg_First.Name = "nbg_First";
             this.nbg_First.ShowIcons = DevExpress.Utils.DefaultBoolean.True;
             this.nbg_First.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbg_First.SmallImage")));
@@ -148,13 +145,6 @@ namespace DevTest
             this.navBarSGRID.Name = "navBarSGRID";
             this.navBarSGRID.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarSGRID.SmallImage")));
             this.navBarSGRID.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarSGRID_LinkClicked);
-            // 
-            // navBarSample
-            // 
-            this.navBarSample.Caption = "SG例子";
-            this.navBarSample.Name = "navBarSample";
-            this.navBarSample.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarSample.SmallImage")));
-            this.navBarSample.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked);
             // 
             // myNotify
             // 
@@ -247,6 +237,5 @@ namespace DevTest
         private DevExpress.XtraNavBar.NavBarItem navBarReports;
         private DevExpress.XtraNavBar.NavBarItem navBarSGRID;
         private System.Windows.Forms.Timer timer1;
-        private DevExpress.XtraNavBar.NavBarItem navBarSample;
     }
 }

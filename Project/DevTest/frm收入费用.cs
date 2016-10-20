@@ -69,7 +69,7 @@ namespace DevTest
                 pc类别.Visible = true;
                 return;
             }
-             if (string.IsNullOrEmpty(txt名称.Text.ToString().Trim()))
+            if (string.IsNullOrEmpty(txt名称.Text.ToString().Trim()))
             {
                 txt名称.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Error;
                 txt名称.ToolTip = "名称不能为空！";
@@ -77,16 +77,9 @@ namespace DevTest
                 pc名称.Visible = true;
                 return;
             }
-             if (string.IsNullOrEmpty(txt期数.Text.ToString().Trim()))
-            {
-                txt期数.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Error;
-                txt期数.ToolTip = "期数不能为空！";
-                txt期数.Focus();
-                pc期数.Visible = true;
-                return;
-            }
 
-             if (string.IsNullOrEmpty(txt金额.Text.ToString().Trim()))
+
+            if (string.IsNullOrEmpty(txt金额.Text.ToString().Trim()))
             {
                 txt金额.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Error;
                 txt金额.ToolTip = "金额不能为空！";
@@ -94,7 +87,7 @@ namespace DevTest
                 pc金额.Visible = true;
                 return;
             }
-             if (Convert.ToDecimal(txt金额.Text.ToString().Trim()) <= 0)
+            if (Convert.ToDecimal(txt金额.Text.ToString().Trim()) <= 0)
             {
                 txt金额.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Error;
                 txt金额.ToolTip = "金额必须为正数！";
@@ -102,7 +95,15 @@ namespace DevTest
                 pc金额.Visible = true;
                 return;
             }
-             if (cmb类别.Text.Equals("费用") && !txt期数.Text.Trim().Equals("1"))
+            if (string.IsNullOrEmpty(txt期数.Text.ToString().Trim()))
+            {
+                txt期数.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Error;
+                txt期数.ToolTip = "期数不能为空！";
+                txt期数.Focus();
+                pc期数.Visible = true;
+                return;
+            }
+            if (cmb类别.Text.Equals("费用") && !txt期数.Text.Trim().Equals("1"))
             {
                 txt期数.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Error;
                 txt期数.ToolTip = "费用项目期数必须为1！";
@@ -110,7 +111,7 @@ namespace DevTest
                 pc期数.Visible = true;
                 return;
             }
-             if (cmb类别.Text.Equals("收入") && Convert.ToInt32(txt期数.Text.Trim()) <= 0)
+            if (cmb类别.Text.Equals("收入") && Convert.ToInt32(txt期数.Text.Trim()) <= 0)
             {
                 txt期数.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Error;
                 txt期数.ToolTip = "收入项目期数为正数！";
@@ -125,7 +126,7 @@ namespace DevTest
                 dr["项目名称"] = txt名称.Text.Trim();
                 dr["金额"] = txt金额.Text.Trim();
                 dr["期数"] = txt期数.Text.Trim();
-                if(chk状态.Checked)
+                if (chk状态.Checked)
                     dr["状态"] = "有效";
                 else
                     dr["状态"] = "无效";
@@ -142,7 +143,7 @@ namespace DevTest
                     frm添加合约.sDt收入费用.Rows[sRowIndex]["状态"] = dr["状态"];
                 }
                 this.DialogResult = DialogResult.OK;
-               // this.Close();
+                // this.Close();
             }
         }
 

@@ -12,14 +12,12 @@ namespace DevTest
 {
     public partial class frm主界面 : XtraForm
     {
-
         public static string sSelectedTabName;
         public static string sCurrentFromName;
         public static string sText;
 
         [DllImport("user32.dll")]
         private static extern IntPtr GetForegroundWindow();
-
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern int GetWindowText(IntPtr hWnd, [Out, MarshalAs(UnmanagedType.LPTStr)] StringBuilder lpString, int nMaxCount);
@@ -52,7 +50,7 @@ namespace DevTest
             sText = this.Text;
             StartPosition = FormStartPosition.CenterScreen;
             this.WindowState = FormWindowState.Maximized;
-            navBarSGRID_LinkClicked(null, null);
+            navBar合约业务_LinkClicked(null, null);
         }
         private void midPageEvent(object sender, EventArgs e)
         {
@@ -106,24 +104,24 @@ namespace DevTest
             {
                 case "hide":
                     nbc_Left.Dock = (nbc_Left.Dock == DockStyle.Left ? DockStyle.Fill : DockStyle.Left);
-                    if (nbc_Left.Width == 169)
+                    switch (e.Button.Properties.Caption)
                     {
-                        nbc_Left.Width = 0;
-                        gc_Left.Width = 29;
-                        pc_Left.Width = 27;
-                        e.Button.Properties.Caption = "固定";
-                    }
-                    else
-                    {
-                        nbc_Left.Width = 169;
-                        gc_Left.Width = 198;
-                        pc_Left.Width = 196;
-                        e.Button.Properties.Caption = "隐藏";
+                        case "固定":
+                            nbc_Left.Width = 169;
+                            gc_Left.Width = 198;
+                            pc_Left.Width = 196;
+                            e.Button.Properties.Caption = "隐藏";
+                            break;
+                        case "隐藏":
+                            nbc_Left.Width = 0;
+                            gc_Left.Width = 29;
+                            pc_Left.Width = 27;
+                            e.Button.Properties.Caption = "固定";
+                            break;
                     }
                     break;
             }
         }
-
 
         private void myNotify_DoubleClick(object sender, EventArgs e)
         {
@@ -131,7 +129,6 @@ namespace DevTest
             WindowState = FormWindowState.Maximized;
             Activate();
         }
-
 
         private void navBar新增合约_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -183,12 +180,6 @@ namespace DevTest
         private void timer_getWindowText_Tick(object sender, EventArgs e)
         {
             sCurrentFromName = GetText(GetForegroundWindow());
-        }
-
-        private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            frmSample03 f = new frmSample03();
-            LoadFrm(f);
         }
 
     }

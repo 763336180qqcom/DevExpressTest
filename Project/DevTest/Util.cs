@@ -1,4 +1,5 @@
 ﻿using DevExpress.Utils.Menu;
+using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
@@ -50,55 +51,87 @@ namespace DevTest
             }
             return true;                                        //是，就返回True  
         }
-        #region 添加复制Cell菜单
-        public static void CreateCopyCellItem(GridView View)
-        {
-            View.PopupMenuShowing += new PopupMenuShowingEventHandler(Create_CopyCellItem);
-        }
 
-        static void Create_CopyCellItem(object sender, PopupMenuShowingEventArgs e)
+        #region 导出Pdf
+        public static void createExportToPdfItem(GridView gv)
         {
-            if (e.MenuType == GridMenuType.Row)
+            gv.PopupMenuShowing += new PopupMenuShowingEventHandler(popupMenuShowingEventHandler_Pdf);
+        }
+        private static void popupMenuShowingEventHandler_Pdf(object sender,PopupMenuShowingEventArgs e)
+        {
+            if (e.MenuType==GridMenuType.Row&&e.HitInfo.InRow)
             {
-                if (e.HitInfo.InRow)
-                {
-                    GridView view = (GridView)sender;
-                    view.FocusedRowHandle = e.HitInfo.RowHandle;
-                    e.Menu.Items.Add(CreateCopyCellMenuItem(e.HitInfo.Column));
-                    //  e.Menu.Items.Add(CreateCopyRowMenuItem(view.GetDataRow(e.HitInfo.RowHandle)));
-                }
+                DXMenuItem item = new DXMenuItem("导出PDF",new EventHandler(exportPdfClickEventHandler),null);
+                item.Tag = ((GridView)sender).GridControl;
+                e.Menu.Items.Add(item);
+            }
+        }
+        private static void exportPdfClickEventHandler(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Title = "导出PDF文件";
+            dialog.Filter = "PDF文件(*.pdf)|*.pdf";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                ((GridControl)((DXMenuItem)(sender)).Tag).ExportToPdf(dialog.FileName);
+                TipForm.getInstance().showShort("导出成功！", 800);
             }
         }
 
-        static DXMenuItem CreateCopyCellMenuItem(GridColumn column)
+        #endregion
+
+        #region 导出Excel
+        public static void createExportToExcelItem(GridView gv)
         {
-            //DXMenuItem copyItem = new DXMenuItem("复制 [" + column.Caption+"]",
-            //    new EventHandler(OnCopyCellClick), null);
-            DXMenuItem copyItem = new DXMenuItem("复制单元格",
-               new EventHandler(OnCopyCellClick), null);
-            copyItem.Tag = column;
-            return copyItem;
+            gv.PopupMenuShowing += new PopupMenuShowingEventHandler(popupMenuShowingEventHandler_Excel);
+        }
+        private static void popupMenuShowingEventHandler_Excel(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
+        {
+            if (e.MenuType == DevExpress.XtraGrid.Views.Grid.GridMenuType.Row && e.HitInfo.InRow)
+            {
+                DXMenuItem excel = new DXMenuItem("导出Excel", new EventHandler(exportExcelClickEventHandler), null);
+                GridView view = (GridView)sender;
+                excel.Tag = view.GridControl;
+                view.FocusedRowHandle = e.HitInfo.RowHandle;
+                e.Menu.Items.Add(excel);
+            }
 
         }
-        static DXMenuItem CreateCopyRowMenuItem(DataRow Row)
+        private static void exportExcelClickEventHandler(object sender, EventArgs e)
         {
-            DXMenuItem copyRow = new DXMenuItem("复制整行",
-                new EventHandler(OnCopyRowClick), null);
-            copyRow.Tag = Row;
-            return copyRow;
-
+            SaveFileDialog save = new SaveFileDialog();
+            save.Title = "导出Excel表格";
+            save.Filter = "Excel文件(*.xls)|*.xls";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                DevExpress.XtraPrinting.XlsExportOptions option = new DevExpress.XtraPrinting.XlsExportOptions();
+                ((GridControl)(((DXMenuItem)sender).Tag)).ExportToXls(save.FileName,option);
+                TipForm.getInstance().showShort("导出成功！", 800);
+            }
         }
+        #endregion
 
-        static void OnCopyCellClick(object sender, EventArgs e)
+        #region 复制单元格
+        public static void createCopyCellItem(GridView gv)
+        {
+            gv.PopupMenuShowing += new PopupMenuShowingEventHandler(popupMenuShowingEventHandler_Copy);
+        }
+        private static void popupMenuShowingEventHandler_Copy(object sender, PopupMenuShowingEventArgs e)
+        {
+            if (e.MenuType == GridMenuType.Row && e.HitInfo.InRow)
+            {
+                GridView view = (GridView)sender;
+                view.FocusedRowHandle = e.HitInfo.RowHandle;
+                DXMenuItem copyItem = new DXMenuItem("复制单元格", new EventHandler(OnCopyCellClick), null);
+                copyItem.Tag = e.HitInfo.Column;
+                e.Menu.Items.Add((copyItem));
+            }
+        }
+        private static void OnCopyCellClick(object sender, EventArgs e)
         {
             GridColumn col = (GridColumn)((DXMenuItem)sender).Tag;
-            // string filed = col.FieldName;
             Clipboard.SetDataObject(col.View.GetRowCellDisplayText(col.View.FocusedRowHandle, col), true);
-        }
-        static void OnCopyRowClick(object sender, EventArgs e)
-        {
-            DataRow row = (DataRow)((DXMenuItem)sender).Tag;
-            Clipboard.SetDataObject(row, true);
+            TipForm.getInstance().showShort("导出成功！", 800);
         }
         #endregion
         private static void quick_sort(int[] s, int l, int r)

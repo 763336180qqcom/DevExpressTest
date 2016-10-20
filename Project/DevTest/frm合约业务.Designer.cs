@@ -43,9 +43,9 @@
             this.gridColumn_mljl = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_xjjl = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_kssj = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rDateEditStart = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.repositoryItemDateEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.gridColumn_jssj = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rDateEditEnd = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.repositoryItemDateEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.zt_hy_hyyw = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -74,10 +74,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.cb_zt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_合约)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_合约)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rDateEditStart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rDateEditStart.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rDateEditEnd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rDateEditEnd.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_收入费用)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Fy)).BeginInit();
@@ -117,8 +117,8 @@
             this.grid_合约.MainView = this.gv_合约;
             this.grid_合约.Name = "grid_合约";
             this.grid_合约.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.rDateEditStart,
-            this.rDateEditEnd});
+            this.repositoryItemDateEdit3,
+            this.repositoryItemDateEdit4});
             this.grid_合约.Size = new System.Drawing.Size(967, 531);
             this.grid_合约.TabIndex = 0;
             this.grid_合约.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -240,7 +240,7 @@
             // gridColumn_kssj
             // 
             this.gridColumn_kssj.Caption = "开始时间";
-            this.gridColumn_kssj.ColumnEdit = this.rDateEditStart;
+            this.gridColumn_kssj.ColumnEdit = this.repositoryItemDateEdit3;
             this.gridColumn_kssj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn_kssj.FieldName = "开始时间";
             this.gridColumn_kssj.Name = "gridColumn_kssj";
@@ -250,19 +250,19 @@
             // 
             // repositoryItemDateEdit3
             // 
-            this.rDateEditStart.AutoHeight = false;
-            this.rDateEditStart.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemDateEdit3.AutoHeight = false;
+            this.repositoryItemDateEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.rDateEditStart.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemDateEdit3.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.rDateEditStart.Mask.EditMask = " yyyy年MM月dd日";
-            this.rDateEditStart.Mask.UseMaskAsDisplayFormat = true;
-            this.rDateEditStart.Name = "repositoryItemDateEdit3";
+            this.repositoryItemDateEdit3.Mask.EditMask = " yyyy年MM月dd日";
+            this.repositoryItemDateEdit3.Mask.UseMaskAsDisplayFormat = true;
+            this.repositoryItemDateEdit3.Name = "repositoryItemDateEdit3";
             // 
             // gridColumn_jssj
             // 
             this.gridColumn_jssj.Caption = "结束时间";
-            this.gridColumn_jssj.ColumnEdit = this.rDateEditEnd;
+            this.gridColumn_jssj.ColumnEdit = this.repositoryItemDateEdit4;
             this.gridColumn_jssj.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn_jssj.FieldName = "结束时间";
             this.gridColumn_jssj.Name = "gridColumn_jssj";
@@ -272,14 +272,14 @@
             // 
             // repositoryItemDateEdit4
             // 
-            this.rDateEditEnd.AutoHeight = false;
-            this.rDateEditEnd.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemDateEdit4.AutoHeight = false;
+            this.repositoryItemDateEdit4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.rDateEditEnd.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemDateEdit4.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.rDateEditEnd.Mask.EditMask = " yyyy年MM月dd日";
-            this.rDateEditEnd.Mask.UseMaskAsDisplayFormat = true;
-            this.rDateEditEnd.Name = "repositoryItemDateEdit4";
+            this.repositoryItemDateEdit4.Mask.EditMask = " yyyy年MM月dd日";
+            this.repositoryItemDateEdit4.Mask.UseMaskAsDisplayFormat = true;
+            this.repositoryItemDateEdit4.Name = "repositoryItemDateEdit4";
             // 
             // zt_hy_hyyw
             // 
@@ -527,10 +527,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.cb_zt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_合约)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_合约)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rDateEditStart.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rDateEditStart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rDateEditEnd.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rDateEditEnd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_收入费用)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Fy)).EndInit();
@@ -585,7 +585,7 @@
         public DevExpress.XtraGrid.Views.Grid.GridView gv_合约;
         private System.ComponentModel.BackgroundWorker bw刷新合约;
         private System.Windows.Forms.Timer timer1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit rDateEditStart;
-        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit rDateEditEnd;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit4;
     }
 }

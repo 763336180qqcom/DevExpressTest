@@ -40,7 +40,8 @@ namespace DevTest
             gv_Fy.BestFitColumns();
             gv_Fy.ExpandAllGroups();
 
-            Util.CreateCopyCellItem(gv_合约);
+            Util.createCopyCellItem(gv_合约);
+            Util.createExportToExcelItem(gv_合约);
             gv_合约.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(createEditMenuPop);
             gv_合约.ClearSelection();
             pgb.EditValue = 0;
@@ -55,14 +56,15 @@ namespace DevTest
         {
             if (e.MenuType == DevExpress.XtraGrid.Views.Grid.GridMenuType.Row && e.HitInfo.InRow)
             {
-                DXMenuItem edit = new DXMenuItem("编辑", new EventHandler(editClick), null);
+                DXMenuItem edit = new DXMenuItem("编辑", new EventHandler(editClickEventHandler), null);
                 edit.Tag = e.HitInfo.RowHandle;
                 gv_合约.FocusedRowHandle = e.HitInfo.RowHandle;
                 e.Menu.Items.Add(edit);
             }
-
         }
-        private void editClick(object sender, EventArgs e)
+
+
+        private void editClickEventHandler(object sender, EventArgs e)
         {
             int rowIndex = (int)((DXMenuItem)sender).Tag;
             frm编辑合约.str名称 = gv_合约.GetRowCellValue(gv_合约.FocusedRowHandle, "名称").ToString();
