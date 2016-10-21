@@ -468,12 +468,14 @@ E:\GitRepos\VSProject\Project\DevTest\bin\Debug\de\DevExpress.Xpo.v15.1.resource
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\es\DevExpress.Xpo.v15.1.resources.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\ja\DevExpress.Xpo.v15.1.resources.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\ru\DevExpress.Xpo.v15.1.resources.dll
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.Common.XFormChild.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmDateEdit.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.TipForm.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmSG.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmXRP.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm主界面.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm合约业务.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm天气.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm收入费用.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm添加合约.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm编辑合约.resources
@@ -482,6 +484,3 @@ E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csproj.GenerateResource.
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe.licenses
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.pdb
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csprojResolveAssemblyReference.cache
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm天气.resources
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.Common.XFormChild.resources

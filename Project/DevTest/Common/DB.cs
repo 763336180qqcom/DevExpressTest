@@ -344,7 +344,7 @@ namespace DevTest
             {
                 con.Open();
                 tran = con.BeginTransaction();
-                string sqlCheck = "SELECT * FROM t合约业务 WHERE fID<>@strfID AND 状态=1 AND 名称 =@str名称";
+                string sqlCheck = "SELECT * FROM t合约业务(UPDLOCK) WHERE fID<>@strfID AND 状态=1 AND 名称 =@str名称";
                 SqlCommand cmd = new SqlCommand(sqlCheck,con,tran);
                 cmd.Parameters.AddWithValue("@strfID", strfID);
                 cmd.Parameters.AddWithValue("@str名称", str名称);

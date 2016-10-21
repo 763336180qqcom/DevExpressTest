@@ -5,10 +5,13 @@ using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace DevTest
 {
@@ -161,6 +164,22 @@ namespace DevTest
         public static void quickSort(int[] s)
         {
             quick_sort(s, 0, s.Length - 1);
+        }
+
+        /// <summary>
+        /// ImageName->img文件夹内的图片
+        /// </summary>
+        public static Bitmap getImage(string picName)
+        {
+            FileStream fs = File.OpenRead(Application.StartupPath.Replace("\\bin\\Debug", "\\img\\weather\\"+picName)); //OpenRead
+            int filelength = 0;
+            filelength = (int)fs.Length; //获得文件长度 
+            Byte[] image = new Byte[filelength]; //建立一个字节数组 
+            fs.Read(image, 0, filelength); //按字节流读取 
+            System.Drawing.Image result = System.Drawing.Image.FromStream(fs);
+            fs.Close();
+            Bitmap bit = new Bitmap(result);
+            return bit;
         }
     }
 }

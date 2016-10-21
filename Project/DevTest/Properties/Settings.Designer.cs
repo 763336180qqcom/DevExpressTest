@@ -26,10 +26,10 @@ namespace DevTest.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.webxml.com.cn/WebServices/WeatherWebService.asmx")]
-        public string DevTest_cn_webxml_getWeatherByCityName_WeatherWebService {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://www.webxml.com.cn/WebServices/WeatherWS.asmx")]
+        public string DevTest_CN_GetWeather_WeatherWS {
             get {
-                return ((string)(this["DevTest_cn_webxml_getWeatherByCityName_WeatherWebService"]));
+                return ((string)(this["DevTest_CN_GetWeather_WeatherWS"]));
             }
         }
     }

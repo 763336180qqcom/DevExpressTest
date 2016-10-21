@@ -81,8 +81,10 @@
     </Compile>
     <Compile Include="Entity\ConditionItem.cs" />
     <Compile Include="CustomException.cs" />
-    <Compile Include="DB.cs" />
+    <Compile Include="Common\DB.cs" />
+    <Compile Include="Entity\Province.cs" />
     <Compile Include="Entity\WeatherInfo.cs" />
+    <Compile Include="Entity\WeatherInfoA.cs" />
     <Compile Include="frmDateEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,7 +145,7 @@
     <Compile Include="frmXRP.Designer.cs">
       <DependentUpon>frmXRP.cs</DependentUpon>
     </Compile>
-    <Compile Include="Web References\cn.webxml.getWeatherByCityName\Reference.cs">
+    <Compile Include="Web References\CN_GetWeather\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -201,11 +203,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Web References\cn.webxml.getWeatherByCityName\Reference.map">
+    <None Include="Web References\CN_GetWeather\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\cn.webxml.getWeatherByCityName\WeatherWebService.wsdl" />
+    <None Include="Web References\CN_GetWeather\WeatherWS.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -228,23 +230,24 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://www.webxml.com.cn/WebServices/WeatherWebService.asmx%3fop=getWeatherbyCityName">
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Area.xml" />
+    <None Include="Web References\CN_GetWeather\WeatherWS.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://www.webxml.com.cn/WebServices/WeatherWS.asmx%3fop=getWeather">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\cn.webxml.getWeatherByCityName\</RelPath>
-      <UpdateFromURL>http://www.webxml.com.cn/WebServices/WeatherWebService.asmx%3fop=getWeatherbyCityName</UpdateFromURL>
+      <RelPath>Web References\CN_GetWeather\</RelPath>
+      <UpdateFromURL>http://www.webxml.com.cn/WebServices/WeatherWS.asmx%3fop=getWeather</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>DevTest_cn_webxml_getWeatherByCityName_WeatherWebService</CachedSettingsPropName>
+      <CachedSettingsPropName>DevTest_CN_GetWeather_WeatherWS</CachedSettingsPropName>
     </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web References\cn.webxml.getWeatherByCityName\WeatherWebService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
