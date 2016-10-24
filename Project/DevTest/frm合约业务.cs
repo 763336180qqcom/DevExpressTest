@@ -12,10 +12,11 @@ using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using System.Runtime.InteropServices;
 using System.Text;
 using DevTest.Common;
+using DevExpress.XtraSplashScreen;
 
 namespace DevTest
 {
-    public partial class frm合约业务 : XFormChild
+    public partial class frm合约业务 : XtraFormC
     {
         public frm合约业务()
         {
@@ -33,7 +34,7 @@ namespace DevTest
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message);
             }
             gv_合约.ExpandAllGroups();
             gv_合约.BestFitColumns();
@@ -86,7 +87,7 @@ namespace DevTest
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    XtraMessageBox.Show(ex.Message);
                 }
             }
 
@@ -169,7 +170,7 @@ namespace DevTest
             }
             else if (e.Error != null)
             {
-                MessageBox.Show(this, "Error", "提示");
+                XtraMessageBox.Show(this, "Error", "提示");
             }
             else
             {
@@ -247,7 +248,7 @@ namespace DevTest
             grid_合约.DataSource = mDtHy;
             gv_合约.ClearSelection();
             gv_合约.FocusedRowHandle = mfocusedIndex;
-            if (frm主界面.sSelectedTabName.Equals(Name) && frm主界面.sCurrentFromName.Equals(frm主界面.sText))
+            if (frm主界面.sSelectedTabName.Equals(Name) && frm主界面.sCurrentWindowText.Equals(frm主界面.sFormText))
                 TipForm.getInstance().showShort("已刷新！", 800);
         }
         private void frm合约业务_Shown(object sender, EventArgs e)

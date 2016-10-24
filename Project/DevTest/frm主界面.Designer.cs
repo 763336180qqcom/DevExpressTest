@@ -1,9 +1,10 @@
 ﻿using DevExpress.XtraEditors;
+using DevTest.Common;
 using System;
 
 namespace DevTest
 {
-    partial class frm主界面:XtraForm
+    partial class frm主界面:XtraFormP
     {
         /// <summary>
         /// Required designer variable.
@@ -41,6 +42,7 @@ namespace DevTest
             this.navBarDateEdit = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarReports = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarSGRID = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarWeather = new DevExpress.XtraNavBar.NavBarItem();
             this.myNotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.MaincontextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem_Show = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +50,6 @@ namespace DevTest
             this.pc_Left = new DevExpress.XtraEditors.PanelControl();
             this.tab_Main = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.navBarWeather = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Left)).BeginInit();
             this.gc_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbc_Left)).BeginInit();
@@ -149,6 +150,13 @@ namespace DevTest
             this.navBarSGRID.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarSGRID.SmallImage")));
             this.navBarSGRID.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarSGRID_LinkClicked);
             // 
+            // navBarWeather
+            // 
+            this.navBarWeather.Caption = "天气";
+            this.navBarWeather.Name = "navBarWeather";
+            this.navBarWeather.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarWeather.SmallImage")));
+            this.navBarWeather.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarWeather_LinkClicked);
+            // 
             // myNotify
             // 
             this.myNotify.ContextMenuStrip = this.MaincontextMenuStrip;
@@ -192,19 +200,12 @@ namespace DevTest
             this.tab_Main.FloatOnDrag = DevExpress.Utils.DefaultBoolean.True;
             this.tab_Main.FloatPageDragMode = DevExpress.XtraTabbedMdi.FloatPageDragMode.Preview;
             this.tab_Main.MdiParent = this;
-            this.tab_Main.SelectedPageChanged += new System.EventHandler(this.midPageEvent);
+            this.tab_Main.SelectedPageChanged += new System.EventHandler(this.midPageChangedEventHandler);
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer_getWindowText_Tick);
-            // 
-            // navBarWeather
-            // 
-            this.navBarWeather.Caption = "天气";
-            this.navBarWeather.Name = "navBarWeather";
-            this.navBarWeather.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarWeather.SmallImage")));
-            this.navBarWeather.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarWeather_LinkClicked);
             // 
             // frm主界面
             // 
@@ -216,7 +217,6 @@ namespace DevTest
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "frm主界面";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "主界面";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm主界面_FormClosing);
             this.Load += new System.EventHandler(this.frm主界面_Load);

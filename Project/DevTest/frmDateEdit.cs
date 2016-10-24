@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace DevTest
 {
-    public partial class frmDateEdit : XFormChild
+    public partial class frmDateEdit : XtraFormC
     {
 
 

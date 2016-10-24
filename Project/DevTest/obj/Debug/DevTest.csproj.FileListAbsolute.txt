@@ -309,6 +309,7 @@ E:\Project\DevTest\obj\Debug\DevTest.pdb
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevTest.exe.config
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevTest.exe
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevTest.pdb
+E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.BonusSkins.v15.1.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.Charts.v15.1.Core.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.Data.v15.1.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.Office.v15.1.Core.dll
@@ -468,7 +469,6 @@ E:\GitRepos\VSProject\Project\DevTest\bin\Debug\de\DevExpress.Xpo.v15.1.resource
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\es\DevExpress.Xpo.v15.1.resources.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\ja\DevExpress.Xpo.v15.1.resources.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\ru\DevExpress.Xpo.v15.1.resources.dll
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.Common.XFormChild.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmDateEdit.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.TipForm.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmSG.resources
@@ -480,7 +480,12 @@ E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm收入费用.resource
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm添加合约.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm编辑合约.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.Properties.Resources.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.SplashScreen1.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.WaitForm1.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csproj.GenerateResource.Cache
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe.licenses
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.pdb
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csprojResolveAssemblyReference.cache
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.Common.XtraFormC.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.Common.XtraFormP.resources

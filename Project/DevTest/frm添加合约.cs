@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace DevTest
 {
-    public partial class frm添加合约 : XFormChild
+    public partial class frm添加合约 : XtraFormC
     {
         public frm添加合约()
         {
@@ -35,7 +35,7 @@ namespace DevTest
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message);
             };
         }
         #region Control.BeginInvoke
@@ -90,7 +90,7 @@ namespace DevTest
 
         private void btn提交_Click(object sender, EventArgs e)
         {
-            if (gv信息列表.RowCount == 0 && MessageBox.Show("没有为该合约指定任何费用收入，确定提交吗？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+            if (gv信息列表.RowCount == 0 && XtraMessageBox.Show("没有为该合约指定任何费用收入，确定提交吗？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
             {
                 return;
             }
@@ -104,7 +104,7 @@ namespace DevTest
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, ex.Message, "提示");
+                XtraMessageBox.Show(this, ex.Message, "提示");
             }
         }
 
@@ -216,7 +216,7 @@ namespace DevTest
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    XtraMessageBox.Show(ex.Message);
                     return;
                 }
 

@@ -2,55 +2,34 @@
 using DevExpress.XtraEditors.ButtonPanel;
 using DevExpress.XtraPrinting.Preview;
 using DevExpress.XtraReports.UI;
+using DevTest.Common;
 using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows.Forms;
 
 namespace DevTest
 {
-    public partial class frm主界面 : XtraForm
+    public partial class frm主界面 : XtraFormP
     {
-        public static string sSelectedTabName;
-        public static string sCurrentFromName;
-        public static string sText;
-
-        [DllImport("user32.dll")]
-        private static extern IntPtr GetForegroundWindow();
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        public static extern int GetWindowText(IntPtr hWnd, [Out, MarshalAs(UnmanagedType.LPTStr)] StringBuilder lpString, int nMaxCount);
-
         private DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton gpBoxBtn_Hide;
-
-
         public frm主界面()
         {
             sSelectedTabName = "";
-            sCurrentFromName = "";
-            sText = "";
+            sCurrentWindowText = "";
+            sFormText = "";
             InitializeComponent();
-        }
-
-        private string GetText(IntPtr hWnd)
-        {
-            StringBuilder result = new StringBuilder(128);
-            GetWindowText(hWnd, result, result.Capacity);
-            return result.ToString();
         }
 
         private void frm主界面_Load(object sender, EventArgs e)
         {
-            gpBoxBtn_Hide = new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("隐藏", null);
-            gpBoxBtn_Hide.Tag = "hide";
+            XtraFormP.defaultLookAndFeel.LookAndFeel.SkinName = "Coffee";
+            gpBoxBtn_Hide = new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("隐藏", null) { Tag = "hide" };
             this.gc_Left.CustomHeaderButtons.AddRange(new IBaseButton[] { gpBoxBtn_Hide });
-            sText = this.Text;
+            sFormText = this.Text;
             StartPosition = FormStartPosition.CenterScreen;
             this.WindowState = FormWindowState.Maximized;
             navBar合约业务_LinkClicked(null, null);
         }
-        private void midPageEvent(object sender, EventArgs e)
+        private void midPageChangedEventHandler(object sender, EventArgs e)
         {
             if (((DevExpress.XtraTabbedMdi.XtraTabbedMdiManager)sender).SelectedPage != null)
                 sSelectedTabName = ((DevExpress.XtraTabbedMdi.XtraTabbedMdiManager)sender).SelectedPage.MdiChild.Name;
@@ -59,7 +38,7 @@ namespace DevTest
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                if (MessageBox.Show("点击'否'最小化到系统托盘,点击'是'退出应用.", "确定当前应用吗?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (XtraMessageBox.Show("点击'否'最小化到系统托盘,点击'是'退出应用.", "确定当前应用吗?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     myNotify.Dispose();
                     Dispose();
@@ -73,7 +52,6 @@ namespace DevTest
                 }
             }
         }
-
         private void navBar合约业务_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
 
@@ -86,15 +64,12 @@ namespace DevTest
             Dispose();
             Application.Exit();
         }
-
         private void toolStripMenuItem_Show_Click(object sender, EventArgs e)
         {
-
             Show();
             WindowState = FormWindowState.Maximized;
             Activate();
         }
-
         private void gcLeft_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
         {
             switch (e.Button.Properties.Tag.ToString())
@@ -131,12 +106,10 @@ namespace DevTest
         {
             LoadFrm(new frm添加合约());
         }
-
         private void navBarDateEdit_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             LoadFrm(new frmDateEdit());
         }
-
         private PrintPreviewFormEx pv = null;
         private void navBarReports_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -160,24 +133,13 @@ namespace DevTest
         {
             LoadFrm(new frmSG());
         }
-
         private void timer_getWindowText_Tick(object sender, EventArgs e)
         {
-            sCurrentFromName = GetText(GetForegroundWindow());
+            sCurrentWindowText = GetText(GetForegroundWindow());
         }
-
         private void navBarWeather_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             LoadFrm(new frm天气());
-        }
-        private void LoadFrm(XtraForm f)
-        {
-            if (!(Util.childs.Contains(f.Name)))
-            {
-                Util.childs.Add(f.Name);
-                f.MdiParent = this;
-                f.Show();
-            }
         }
     }
 }

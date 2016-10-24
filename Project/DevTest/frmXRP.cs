@@ -6,6 +6,7 @@ using DevExpress.XtraReports.UI;
 using System.Data;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace DevTest
 {
@@ -34,7 +35,7 @@ namespace DevTest
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message);
             }
 
             gp模块名称.DataBindings.Add("Text", dt, "名称");

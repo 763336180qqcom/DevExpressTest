@@ -52,7 +52,7 @@ namespace DevTest
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message);
             }
         }
     }

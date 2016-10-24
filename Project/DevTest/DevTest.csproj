@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Charts.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -73,11 +74,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\XFormChild.cs">
+    <Compile Include="Common\XtraFormC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Common\XFormChild.Designer.cs">
-      <DependentUpon>XFormChild.cs</DependentUpon>
+    <Compile Include="Common\XtraFormC.Designer.cs">
+      <DependentUpon>XtraFormC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\XtraFromP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\XtraFromP.Designer.cs">
+      <DependentUpon>XtraFromP.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\ConditionItem.cs" />
     <Compile Include="CustomException.cs" />
@@ -145,13 +152,28 @@
     <Compile Include="frmXRP.Designer.cs">
       <DependentUpon>frmXRP.cs</DependentUpon>
     </Compile>
+    <Compile Include="SplashScreen1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen1.Designer.cs">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Web References\CN_GetWeather\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Common\XFormChild.resx">
-      <DependentUpon>XFormChild.cs</DependentUpon>
+    <EmbeddedResource Include="Common\XtraFormC.resx">
+      <DependentUpon>XtraFormC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\XtraFromP.resx">
+      <DependentUpon>XtraFromP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDateEdit.resx">
       <DependentUpon>frmDateEdit.cs</DependentUpon>
@@ -194,6 +216,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -233,6 +261,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\weather\nothing.gif" />
     <Content Include="Resources\Area.xml" />
     <None Include="Web References\CN_GetWeather\WeatherWS.disco" />
   </ItemGroup>

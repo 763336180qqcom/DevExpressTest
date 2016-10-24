@@ -99,6 +99,8 @@
             this.cmb市.Name = "cmb市";
             this.cmb市.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb市.Properties.DropDownRows = 10;
+            this.cmb市.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cmb市.Size = new System.Drawing.Size(156, 20);
             this.cmb市.TabIndex = 2;
             this.cmb市.SelectedValueChanged += new System.EventHandler(this.cmb市_SelectedValueChanged);
@@ -110,8 +112,11 @@
             this.cmb省.Name = "cmb省";
             this.cmb省.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb省.Properties.DropDownRows = 10;
+            this.cmb省.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cmb省.Size = new System.Drawing.Size(158, 20);
             this.cmb省.TabIndex = 0;
+            this.cmb省.SelectedValueChanged += new System.EventHandler(this.cmb省_SelectedValueChanged);
             // 
             // panel1
             // 
@@ -220,6 +225,7 @@
             // me4
             // 
             this.me4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.me4.Enabled = false;
             this.me4.Location = new System.Drawing.Point(758, 245);
             this.me4.Name = "me4";
             this.me4.Properties.AllowFocused = false;
@@ -240,6 +246,7 @@
             // me3
             // 
             this.me3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.me3.Enabled = false;
             this.me3.Location = new System.Drawing.Point(575, 245);
             this.me3.Name = "me3";
             this.me3.Properties.AllowFocused = false;
@@ -260,6 +267,7 @@
             // me2
             // 
             this.me2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.me2.Enabled = false;
             this.me2.Location = new System.Drawing.Point(392, 245);
             this.me2.Name = "me2";
             this.me2.Properties.AllowFocused = false;
@@ -280,6 +288,7 @@
             // me1
             // 
             this.me1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.me1.Enabled = false;
             this.me1.Location = new System.Drawing.Point(209, 245);
             this.me1.Name = "me1";
             this.me1.Properties.AllowFocused = false;
@@ -300,6 +309,7 @@
             // me0
             // 
             this.me0.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.me0.Enabled = false;
             this.me0.Location = new System.Drawing.Point(24, 245);
             this.me0.Name = "me0";
             this.me0.Properties.AllowFocused = false;
@@ -320,6 +330,7 @@
             // meMain
             // 
             this.meMain.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.meMain.Enabled = false;
             this.meMain.Location = new System.Drawing.Point(0, 5);
             this.meMain.Name = "meMain";
             this.meMain.Properties.AllowFocused = false;
@@ -340,6 +351,7 @@
             // imageEdit0A
             // 
             this.imageEdit0A.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imageEdit0A.EditValue = global::DevTest.Properties.Resources.nothing;
             this.imageEdit0A.Location = new System.Drawing.Point(44, 200);
             this.imageEdit0A.Name = "imageEdit0A";
             this.imageEdit0A.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -353,6 +365,7 @@
             // imageEdit0B
             // 
             this.imageEdit0B.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imageEdit0B.EditValue = global::DevTest.Properties.Resources.nothing;
             this.imageEdit0B.Location = new System.Drawing.Point(125, 200);
             this.imageEdit0B.Name = "imageEdit0B";
             this.imageEdit0B.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -365,6 +378,7 @@
             // imageEdit1A
             // 
             this.imageEdit1A.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imageEdit1A.EditValue = global::DevTest.Properties.Resources.nothing;
             this.imageEdit1A.Location = new System.Drawing.Point(228, 200);
             this.imageEdit1A.Name = "imageEdit1A";
             this.imageEdit1A.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -377,6 +391,7 @@
             // imageEdit1B
             // 
             this.imageEdit1B.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imageEdit1B.EditValue = global::DevTest.Properties.Resources.nothing;
             this.imageEdit1B.Location = new System.Drawing.Point(313, 200);
             this.imageEdit1B.Name = "imageEdit1B";
             this.imageEdit1B.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -389,6 +404,7 @@
             // imageEdit2A
             // 
             this.imageEdit2A.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imageEdit2A.EditValue = global::DevTest.Properties.Resources.nothing;
             this.imageEdit2A.Location = new System.Drawing.Point(409, 200);
             this.imageEdit2A.Name = "imageEdit2A";
             this.imageEdit2A.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -401,6 +417,7 @@
             // imageEdit2B
             // 
             this.imageEdit2B.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imageEdit2B.EditValue = global::DevTest.Properties.Resources.nothing;
             this.imageEdit2B.Location = new System.Drawing.Point(494, 200);
             this.imageEdit2B.Name = "imageEdit2B";
             this.imageEdit2B.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -413,6 +430,7 @@
             // imageEdit3A
             // 
             this.imageEdit3A.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imageEdit3A.EditValue = global::DevTest.Properties.Resources.nothing;
             this.imageEdit3A.Location = new System.Drawing.Point(592, 200);
             this.imageEdit3A.Name = "imageEdit3A";
             this.imageEdit3A.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -425,6 +443,7 @@
             // imageEdit3B
             // 
             this.imageEdit3B.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imageEdit3B.EditValue = global::DevTest.Properties.Resources.nothing;
             this.imageEdit3B.Location = new System.Drawing.Point(677, 200);
             this.imageEdit3B.Name = "imageEdit3B";
             this.imageEdit3B.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -437,6 +456,7 @@
             // imageEdit4A
             // 
             this.imageEdit4A.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imageEdit4A.EditValue = global::DevTest.Properties.Resources.nothing;
             this.imageEdit4A.Location = new System.Drawing.Point(775, 200);
             this.imageEdit4A.Name = "imageEdit4A";
             this.imageEdit4A.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -449,6 +469,7 @@
             // imageEdit4B
             // 
             this.imageEdit4B.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imageEdit4B.EditValue = global::DevTest.Properties.Resources.nothing;
             this.imageEdit4B.Location = new System.Drawing.Point(860, 200);
             this.imageEdit4B.Name = "imageEdit4B";
             this.imageEdit4B.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;

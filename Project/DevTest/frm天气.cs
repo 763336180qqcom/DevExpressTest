@@ -5,53 +5,73 @@ using System.Net;
 using System.Runtime.Remoting.Messaging;
 using DevTest.CN_GetWeather;
 using System.Windows.Forms;
-using System.IO;
-using System.Runtime.InteropServices;
 using DevExpress.XtraEditors;
 using System.Xml;
 using System.Collections.Generic;
+using DevExpress.Utils;
 
 namespace DevTest
 {
-    public partial class frm天气 : XFormChild
+    public partial class frm天气 : XtraFormC
     {
+        private List<Province> mPro;
         private string[] weatherResult;
-        private delegate WeatherInfo GetWeatherDelegate();
-        private delegate void EndGetWeatherDelegate(WeatherInfo info);
+        private delegate WeatherInfo mGetWeatherWithPara(string city);
+        private delegate void EndGetWeather(WeatherInfo info);
         private WeatherWS mService;
-        private string mCityName;
-        private bool selected ;
-        private List<Province> mPS;
-       // [DllImport("user32", EntryPoint = "HideCaret")]
-       // private static extern bool HideCaret(IntPtr hWnd);
-
+        // [DllImport("user32", EntryPoint = "HideCaret")]
+        // private static extern bool HideCaret(IntPtr hWnd);
         public frm天气()
         {
-            selected = false;
-            mPS = new List<Province>();
             InitializeComponent();
         }
         private void frm天气_Load(object sender, EventArgs e)
         {
-            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ReadXmlNodes));
-            t.Start();
             //me0.MouseDown += me0MouseDown;
         }
+        private void frm天气_Shown(object sender, EventArgs ex)
+        {
+           // XtraFormP.showWait("请稍等", "正在加载天气信息");
+            try
+            {
+                mGetWeatherWithPara d = new mGetWeatherWithPara(getWeatherWithPara);
+                if (cmb市.EditValue != null)
+                    d.BeginInvoke(cmb市.EditValue.ToString(), new AsyncCallback(dCallBack), this);
+                else
+                    d.BeginInvoke("", new AsyncCallback(dCallBack), this);
+            }
+            catch (Exception e)
+            {
+                XtraMessageBox.Show(e.Message);
+            }
+        }
+
         private void me0MouseDown(object sender, MouseEventArgs e)
         {
             //HideCaret((sender as MemoEdit).Handle);
         }
-        private void iniLabel(WeatherInfo info)
+        private void enableC()
         {
-            meMain.Text = "\t" + info.City + "/";
+            meMain.Enabled = !meMain.Enabled;
+            me0.Enabled = !me0.Enabled;
+            me1.Enabled = !me1.Enabled;
+            me2.Enabled = !me2.Enabled;
+            me3.Enabled = !me3.Enabled;
+            me4.Enabled = !me4.Enabled;
+        }
+        private void iniControl(WeatherInfo info)
+        {
+            imageEdit0A.Properties.InitialImage = Util.getImage("0.gif");
+            enableC();
+            meMain.Text = string.Format("\t{0}/", info.City);
             meMain.Text += info.Area + "\r\n\t";
             meMain.Text += info.Tm + "\r\n\t";
             meMain.Text += info.ToDay + "\r\n\t";
             meMain.Text += info.Uv + "\r\n\t";
             meMain.Text += info.UvIndex.Replace("。", "。\r\n\t");
 
-            me0.Text = info.Weather5Days[0].ToDay + "\r\n";
-            me0.Text += info.Weather5Days[0].T.Replace("/", "~") + "\r\n";
+            me0.Text = info.Weather5Days[0].ToDay + Environment.NewLine;
+            me0.Text += info.Weather5Days[0].T.Replace("/", "~") + Environment.NewLine;
             me0.Text += info.Weather5Days[0].Wind + "\r\n";
             imageEdit0A.EditValue = info.Weather5Days[0].IconA;
             imageEdit0B.EditValue = info.Weather5Days[0].IconB;
@@ -79,64 +99,52 @@ namespace DevTest
             me4.Text += info.Weather5Days[4].Wind + "\r\n";
             imageEdit4A.EditValue = info.Weather5Days[4].IconA;
             imageEdit4B.EditValue = info.Weather5Days[4].IconB;
+            if (mPro.Count > 0)
+            {
+                cmb省.Properties.Items.Clear();
+                foreach (Province p in mPro)
+                    cmb省.Properties.Items.Add(p.Name);
+            }
+            XtraFormP.closeWait();
+        }
 
-        }
-        private void frm天气_Shown(object sender, EventArgs ex)
-        {
-            try
-            {
-                GetWeatherDelegate d = new GetWeatherDelegate(getWeather);
-                d.BeginInvoke(new AsyncCallback(dCallBack), this);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-        }
         private void dCallBack(IAsyncResult result)
         {
             try
             {
-                GetWeatherDelegate d = (result as AsyncResult).AsyncDelegate as GetWeatherDelegate;
-                EndGetWeatherDelegate endGet = new EndGetWeatherDelegate(iniLabel);
+                mGetWeatherWithPara d = (result as AsyncResult).AsyncDelegate as mGetWeatherWithPara;
+                EndGetWeather endGetDelegate = new EndGetWeather(iniControl);
                 WeatherInfo info = d.EndInvoke(result);
-                this.Invoke(endGet, info);
+                if (info != null)
+                    this.Invoke(endGetDelegate, info);
+                else
+                    throw new Exception(Properties.Resources.strInfoFailed);
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                XtraFormP.closeWait();
+                XtraMessageBox.Show(e.Message);
+                return;
             }
         }
-    
-        private WeatherInfo getWeather(string city)
-        {
-            return null;
-        }
-        private WeatherInfo getWeather()
+
+        private WeatherInfo getWeatherWithPara(string city)
         {
             try
             {
                 mService = new WeatherWS();
-                if (selected)
-                    mCityName = cmb市.EditValue.ToString();
-                else
-                    mCityName = getCity().Replace("市", "").Trim();
-                weatherResult = mService.getWeather(mCityName, "3573dee3157c41c8ad5fd76feef41cdd");
-                WeatherInfo info = new WeatherInfo();
-
-                info.City = weatherResult[0];
-                info.Area = weatherResult[1];
-                info.Tm = weatherResult[3];
-                info.ToDay = weatherResult[4];
-                info.Uv = weatherResult[5];
-                info.UvIndex = weatherResult[6];
+                if (string.IsNullOrEmpty(city))
+                    city = getCity().Replace("市", "").Trim();
+                mService.Timeout = 16384;
+                weatherResult = mService.getWeather(city, "3573dee3157c41c8ad5fd76feef41cdd");
+                WeatherInfo info = new WeatherInfo() { City = weatherResult[0], Area = weatherResult[1], Tm = weatherResult[3], ToDay = weatherResult[4], Uv = weatherResult[5], UvIndex = weatherResult[6] };
 
                 WeatherInfoA a = new WeatherInfoA();
                 a.ToDay = weatherResult[7];
                 a.T = weatherResult[8];
                 a.Wind = weatherResult[9];
-                a.IconA= Util.getImage(weatherResult[10]);
-                a.IconB= Util.getImage(weatherResult[11]);
+                a.IconA = Util.getImage(weatherResult[10]);
+                a.IconB = Util.getImage(weatherResult[11]);
                 info.Weather5Days.Add(a);
 
                 a = new WeatherInfoA();
@@ -170,12 +178,48 @@ namespace DevTest
                 a.IconA = Util.getImage(weatherResult[30]);
                 a.IconB = Util.getImage(weatherResult[31]);
                 info.Weather5Days.Add(a);
+                if (mPro == null)
+                    ReadXmlNodes();
                 return info;
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
-                return null ;
+                XtraMessageBox.Show(e.Message);
+                return null;
+            }
+        }
+        private void ReadXmlNodes()
+        {
+            mPro = new List<Province>();
+            string fileName = Application.StartupPath.Replace("\\bin\\Debug", "\\Resources\\" + "Area.xml");
+            XmlDocument xmlDoc = new XmlDocument();
+            try
+            {
+                xmlDoc.Load(fileName);
+                XmlNodeList nodes_P = xmlDoc.SelectNodes("//Province");
+                foreach (XmlNode node in nodes_P)
+                {
+                    Province p = new Province();
+                    p.Name = node.Attributes["name"].Value;
+                    XmlNodeList nodes_C = node.ChildNodes;
+                    List<string> cNames = new List<string>();
+                    foreach (XmlNode node0 in nodes_C)
+                    {
+                        string name = node0.InnerText;
+                        cNames.Add(name);
+                    }
+                    p.Childs = cNames;
+                    mPro.Add(p);
+                }
+                if (mPro.Count == 0)
+                {
+                    throw new Exception("获取位置名称失败！");
+                }
+            }
+            catch (Exception e)
+            {
+                XtraMessageBox.Show(e.Message);
+                return;
             }
         }
         private string getCity()
@@ -191,56 +235,45 @@ namespace DevTest
             }
             catch (Exception e)
             {
-                throw new CustomException(e.Message); 
+                throw new CustomException(e.Message);
             }
             finally
             {
                 wc.Dispose();
             }
         }
-        private void ReadXmlNodes()
-        {
-            List<Province> ps = new List<Province>();
-            string fileName = Application.StartupPath.Replace("\\bin\\Debug", "\\Resources\\" + "Area.xml");
-            XmlDocument xmlDoc = new XmlDocument();
-            try
-            {
-                xmlDoc.Load(fileName);
-                XmlNodeList nodes_P = xmlDoc.SelectNodes("//Province");
-                Province p = new Province();
-                foreach (XmlNode node in nodes_P)
-                {
-                    p.Name = node.Attributes["name"].Value;
-                    XmlNodeList nodes_C = node.ChildNodes;
-                    List<string> cNames = new List<string>();
-                    foreach (XmlNode node0 in nodes_C)
-                    {
-                        string name = node0.InnerText;
-                        cNames.Add(name);
-                    }
-                    p.Childs = cNames;
-                }
-                ps.Add(p);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-            return ps;
-        }
+        
         private void cmb市_SelectedValueChanged(object sender, EventArgs e)
         {
             if (cmb市.EditValue != null)
             {
-                selected = true;
+                enableC();
+                XtraFormP.showWait("请稍等", "正在加载天气信息");
                 try
                 {
-                    GetWeatherDelegate d = new GetWeatherDelegate(getWeather);
-                    d.BeginInvoke(new AsyncCallback(dCallBack), this);
+                    mGetWeatherWithPara d = new mGetWeatherWithPara(getWeatherWithPara);
+                    d.BeginInvoke(cmb市.EditValue.ToString(), new AsyncCallback(dCallBack), this);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    XtraMessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void cmb省_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cmb省.EditValue != null && mPro.Count > 0)
+            {
+                for (int i = 0; i < mPro.Count; i++)
+                {
+                    if (mPro[i].Name.Equals(cmb省.EditValue.ToString()))
+                    {
+                        cmb市.Properties.Items.Clear();
+                        cmb市.Properties.Items.AddRange(mPro[i].Childs);
+                        cmb市.SelectedIndex = 0;
+                        break;
+                    }
                 }
             }
         }

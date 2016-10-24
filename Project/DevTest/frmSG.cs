@@ -10,7 +10,7 @@ using DevTest.Common;
 
 namespace DevTest
 {
-    public partial class frmSG : XFormChild
+    public partial class frmSG : XtraFormC
     {
         public frmSG()
         {
@@ -300,7 +300,7 @@ namespace DevTest
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message);
             }
         }
         public class keyDeleteController : SourceGrid.Cells.Controllers.ControllerBase
