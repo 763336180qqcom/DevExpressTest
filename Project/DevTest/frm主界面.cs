@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.ButtonPanel;
+using DevExpress.XtraNavBar;
 using DevExpress.XtraPrinting.Preview;
 using DevExpress.XtraReports.UI;
 using DevTest.Common;
@@ -18,16 +19,14 @@ namespace DevTest
             sFormText = "";
             InitializeComponent();
         }
-
         private void frm主界面_Load(object sender, EventArgs e)
         {
-            XtraFormP.defaultLookAndFeel.LookAndFeel.SkinName = "Coffee";
             gpBoxBtn_Hide = new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("隐藏", null) { Tag = "hide" };
             this.gc_Left.CustomHeaderButtons.AddRange(new IBaseButton[] { gpBoxBtn_Hide });
             sFormText = this.Text;
             StartPosition = FormStartPosition.CenterScreen;
             this.WindowState = FormWindowState.Maximized;
-            navBar合约业务_LinkClicked(null, null);
+            navBar截屏_LinkClicked(null, null);
         }
         private void midPageChangedEventHandler(object sender, EventArgs e)
         {
@@ -54,7 +53,6 @@ namespace DevTest
         }
         private void navBar合约业务_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-
             LoadFrm(new frm合约业务());
         }
 
@@ -94,14 +92,12 @@ namespace DevTest
                     break;
             }
         }
-
         private void myNotify_DoubleClick(object sender, EventArgs e)
         {
             Show();
             WindowState = FormWindowState.Maximized;
             Activate();
         }
-
         private void navBar新增合约_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             LoadFrm(new frm添加合约());
@@ -140,6 +136,10 @@ namespace DevTest
         private void navBarWeather_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             LoadFrm(new frm天气());
+        }
+        private void navBar截屏_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            LoadFrm(new frm截屏());
         }
     }
 }

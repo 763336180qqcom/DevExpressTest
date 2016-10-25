@@ -9,6 +9,8 @@ using DevExpress.XtraEditors;
 using System.Xml;
 using System.Collections.Generic;
 using DevExpress.Utils;
+using System.IO;
+using System.Text;
 
 namespace DevTest
 {
@@ -31,6 +33,10 @@ namespace DevTest
         }
         private void frm天气_Shown(object sender, EventArgs ex)
         {
+            loadWeather();
+        }
+        private void loadWeather()
+        {
             XtraFormP.showWait("请稍等", "正在请求www.webxml.com.cn");
             try
             {
@@ -44,6 +50,32 @@ namespace DevTest
             {
                 XtraMessageBox.Show(e.Message);
             }
+        }
+        private string getCity()
+        {
+            try
+            {
+                string result = request("http://ip.chinaz.com/getip.aspx?");
+                result = result.Substring(0, result.LastIndexOf(" "));
+                result = result.Substring(result.LastIndexOf("'") + 1);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw new CustomException(e.Message);
+            }
+        }
+        private string request(string url)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Timeout = 30720;
+            request.AllowAutoRedirect = true;
+            request.Method = "GET";
+            request.ContentType = "text/xml; charset=utf-8";
+            request.Credentials = CredentialCache.DefaultCredentials;
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
+            return reader.ReadToEnd();
         }
         private void me0MouseDown(object sender, MouseEventArgs e)
         {
@@ -60,6 +92,16 @@ namespace DevTest
         }
         private void iniControl(WeatherInfo info)
         {
+
+            if (info == null)
+            {
+                XtraFormP.closeWait();
+                if (XtraMessageBox.Show(this, "获取信息失败,是否重试？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    loadWeather();
+                }
+                return;
+            }
             imageEdit0A.Properties.InitialImage = Util.getImage("0.gif");
             enableC();
             meMain.Text = string.Format("\t{0}/", info.City);
@@ -71,31 +113,31 @@ namespace DevTest
 
             me0.Text = info.Weather5Days[0].ToDay + Environment.NewLine;
             me0.Text += info.Weather5Days[0].T.Replace("/", "~") + Environment.NewLine;
-            me0.Text += info.Weather5Days[0].Wind + "\r\n";
+            me0.Text += info.Weather5Days[0].Wind + Environment.NewLine;
             imageEdit0A.EditValue = info.Weather5Days[0].IconA;
             imageEdit0B.EditValue = info.Weather5Days[0].IconB;
 
-            me1.Text = info.Weather5Days[1].ToDay + "\r\n";
-            me1.Text += info.Weather5Days[1].T.Replace("/", "~") + "\r\n";
-            me1.Text += info.Weather5Days[1].Wind + "\r\n";
+            me1.Text = info.Weather5Days[1].ToDay + Environment.NewLine;
+            me1.Text += info.Weather5Days[1].T.Replace("/", "~") + Environment.NewLine;
+            me1.Text += info.Weather5Days[1].Wind + Environment.NewLine;
             imageEdit1A.EditValue = info.Weather5Days[1].IconA;
             imageEdit1B.EditValue = info.Weather5Days[1].IconB;
 
-            me2.Text = info.Weather5Days[2].ToDay + "\r\n";
-            me2.Text += info.Weather5Days[2].T.Replace("/", "~") + "\r\n";
-            me2.Text += info.Weather5Days[2].Wind + "\r\n";
+            me2.Text = info.Weather5Days[2].ToDay + Environment.NewLine;
+            me2.Text += info.Weather5Days[2].T.Replace("/", "~") + Environment.NewLine;
+            me2.Text += info.Weather5Days[2].Wind + Environment.NewLine;
             imageEdit2A.EditValue = info.Weather5Days[2].IconA;
             imageEdit2B.EditValue = info.Weather5Days[2].IconB;
 
-            me3.Text = info.Weather5Days[3].ToDay + "\r\n";
-            me3.Text += info.Weather5Days[3].T.Replace("/", "~") + "\r\n";
-            me3.Text += info.Weather5Days[3].Wind + "\r\n";
+            me3.Text = info.Weather5Days[3].ToDay + Environment.NewLine;
+            me3.Text += info.Weather5Days[3].T.Replace("/", "~") + Environment.NewLine;
+            me3.Text += info.Weather5Days[3].Wind + Environment.NewLine;
             imageEdit3A.EditValue = info.Weather5Days[3].IconA;
             imageEdit3B.EditValue = info.Weather5Days[3].IconB;
 
-            me4.Text = info.Weather5Days[4].ToDay + "\r\n";
-            me4.Text += info.Weather5Days[4].T.Replace("/", "~") + "\r\n";
-            me4.Text += info.Weather5Days[4].Wind + "\r\n";
+            me4.Text = info.Weather5Days[4].ToDay + Environment.NewLine;
+            me4.Text += info.Weather5Days[4].T.Replace("/", "~") + Environment.NewLine;
+            me4.Text += info.Weather5Days[4].Wind + Environment.NewLine;
             imageEdit4A.EditValue = info.Weather5Days[4].IconA;
             imageEdit4B.EditValue = info.Weather5Days[4].IconB;
             if (mPro.Count > 0)
@@ -113,19 +155,14 @@ namespace DevTest
                 mGetWeatherWithPara d = (result as AsyncResult).AsyncDelegate as mGetWeatherWithPara;
                 EndGetWeather endGetDelegate = new EndGetWeather(iniControl);
                 WeatherInfo info = d.EndInvoke(result);
-                if (info != null)
-                    this.Invoke(endGetDelegate, info);
-                else
-                    throw new Exception(Properties.Resources.strInfoFailed);
+                this.Invoke(endGetDelegate, info);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 XtraFormP.closeWait();
-                XtraMessageBox.Show(e.Message);
-                return;
             }
         }
-
+        
         private WeatherInfo getWeatherWithPara(string city)
         {
             try
@@ -135,6 +172,9 @@ namespace DevTest
                     city = getCity().Replace("市", "").Trim();
                 mService.Timeout = 16384;
                 weatherResult = mService.getWeather(city, "3573dee3157c41c8ad5fd76feef41cdd");
+                if (weatherResult.Length < 2)
+                    return null;
+
                 WeatherInfo info = new WeatherInfo() { City = weatherResult[0], Area = weatherResult[1], Tm = weatherResult[3], ToDay = weatherResult[4], Uv = weatherResult[5], UvIndex = weatherResult[6] };
 
                 WeatherInfoA a = new WeatherInfoA();
@@ -220,27 +260,6 @@ namespace DevTest
                 return;
             }
         }
-        private string getCity()
-        {
-            WebClient wc = new WebClient();
-            wc.Encoding = System.Text.Encoding.UTF8;
-            try
-            {
-                string result = wc.DownloadString("http://ip.chinaz.com/getip.aspx");
-                result = result.Substring(0, result.LastIndexOf(" "));
-                result = result.Substring(result.LastIndexOf("'") + 1);
-                return result;
-            }
-            catch (Exception e)
-            {
-                throw new CustomException(e.Message);
-            }
-            finally
-            {
-                wc.Dispose();
-            }
-        }
-        
         private void cmb市_SelectedValueChanged(object sender, EventArgs e)
         {
             if (cmb市.EditValue != null)

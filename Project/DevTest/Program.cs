@@ -1,5 +1,6 @@
 ﻿using DevExpress.LookAndFeel;
 using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace DevTest
@@ -12,19 +13,32 @@ namespace DevTest
         [STAThread]
         static void Main()
         {
-            DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(SplashScreen1));
+            bool createdNew = false;
+            using (Mutex mutext = new Mutex(true, "Instance", out createdNew))
+            {
+                if (createdNew)
+                {
+                    DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(SplashScreen1));
 
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("zh-Hans");
-            DB.CONNSTR = System.Configuration.ConfigurationManager.ConnectionStrings["AppConnectString"].ToString();
+                    System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("zh-Hans");
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+                    DB.CONNSTR = System.Configuration.ConfigurationManager.ConnectionStrings["AppConnectString"].ToString();
 
-            DevExpress.UserSkins.BonusSkins.Register();
-            DevExpress.Skins.SkinManager.EnableFormSkins();
-            DevExpress.Skins.SkinManager.EnableMdiFormSkins();
-           
-            Application.Run(new frm主界面());
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+
+                    DevExpress.UserSkins.BonusSkins.Register();
+                    DevExpress.Skins.SkinManager.EnableFormSkins();
+
+                    Application.Run(new frm主界面());
+                }
+                else
+                {
+                    MessageBox.Show("程序已经运行");
+                    Thread.Sleep(2000);
+                    Environment.Exit(0);
+                }
+            }
         }
     }
 }

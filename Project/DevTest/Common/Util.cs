@@ -4,20 +4,37 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
 
 namespace DevTest
 {
     class Util
     {
-        public static HashSet<string> childs= new HashSet<string>();
+        #region DLL calls
+        [DllImport("gdi32.dll")]
+        static extern bool BitBlt(IntPtr hdcDest, int xDest, int yDest, int
+        wDest, int hDest, IntPtr hdcSource, int xSrc, int ySrc, CopyPixelOperation rop);
+        [DllImport("gdi32.dll")]
+        static extern IntPtr DeleteDC(IntPtr hDc);
+        [DllImport("gdi32.dll")]
+        static extern IntPtr DeleteObject(IntPtr hDc);
+        [DllImport("gdi32.dll")]
+        static extern IntPtr CreateCompatibleBitmap(IntPtr hdc, int nWidth, int nHeight);
+        [DllImport("gdi32.dll")]
+        static extern IntPtr CreateCompatibleDC(IntPtr hdc);
+        [DllImport("gdi32.dll")]
+        static extern IntPtr SelectObject(IntPtr hdc, IntPtr bmp);
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetWindowDC(IntPtr ptr);
+        [DllImport("user32.dll")]
+        static extern bool ReleaseDC(IntPtr hWnd, IntPtr hDc);
+        #endregion
+
+        public static HashSet<string> childs = new HashSet<string>();
         public static bool IsDecimal(string str)
         {
             if (str != null && str.Equals("0"))
@@ -56,16 +73,34 @@ namespace DevTest
             return true;                                        //是，就返回True  
         }
 
+        public static Bitmap captureControl(Control control)
+        {
+            IntPtr ptr = GetWindowDC(control.Handle);
+            IntPtr ptr1 = CreateCompatibleDC(ptr);
+            IntPtr ptr2 = CreateCompatibleBitmap(ptr, control.Width, control.Height);
+            IntPtr ptr3 = SelectObject(ptr1, ptr2);
+            if (BitBlt(ptr1, 0, 0, control.Width, control.Height, ptr, 0, 0, CopyPixelOperation.SourceCopy | CopyPixelOperation.CaptureBlt))
+            {
+                Bitmap bmp = Image.FromHbitmap(ptr2);
+                SelectObject(ptr1, ptr3);
+                DeleteObject(ptr2);
+                DeleteDC(ptr1);
+                ReleaseDC(control.Handle, ptr);
+                return bmp;
+            }
+            return null;
+        }
+
         #region 导出Pdf
         public static void createExportToPdfItem(GridView gv)
         {
             gv.PopupMenuShowing += new PopupMenuShowingEventHandler(popupMenuShowingEventHandler_Pdf);
         }
-        private static void popupMenuShowingEventHandler_Pdf(object sender,PopupMenuShowingEventArgs e)
+        private static void popupMenuShowingEventHandler_Pdf(object sender, PopupMenuShowingEventArgs e)
         {
-            if (e.MenuType==GridMenuType.Row&&e.HitInfo.InRow)
+            if (e.MenuType == GridMenuType.Row && e.HitInfo.InRow)
             {
-                DXMenuItem item = new DXMenuItem("导出PDF",new EventHandler(exportPdfClickEventHandler),null);
+                DXMenuItem item = new DXMenuItem("导出PDF", new EventHandler(exportPdfClickEventHandler), null);
                 item.Tag = ((GridView)sender).GridControl;
                 e.Menu.Items.Add(item);
             }
@@ -109,7 +144,7 @@ namespace DevTest
             if (save.ShowDialog() == DialogResult.OK)
             {
                 DevExpress.XtraPrinting.XlsExportOptions option = new DevExpress.XtraPrinting.XlsExportOptions();
-                ((GridControl)(((DXMenuItem)sender).Tag)).ExportToXls(save.FileName,option);
+                ((GridControl)(((DXMenuItem)sender).Tag)).ExportToXls(save.FileName, option);
                 TipForm.getInstance().showShort("导出成功！", 800);
             }
         }
@@ -171,7 +206,7 @@ namespace DevTest
         /// </summary>
         public static Bitmap getImage(string picName)
         {
-            FileStream fs = File.OpenRead(Application.StartupPath.Replace("\\bin\\Debug", "\\img\\weather\\"+picName)); //OpenRead
+            FileStream fs = File.OpenRead(Application.StartupPath.Replace("\\bin\\Debug", "\\img\\weather\\" + picName)); //OpenRead
             int filelength = 0;
             filelength = (int)fs.Length; //获得文件长度 
             Byte[] image = new Byte[filelength]; //建立一个字节数组 

@@ -125,6 +125,12 @@
     <Compile Include="frm天气.Designer.cs">
       <DependentUpon>frm天气.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm截屏.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm截屏.Designer.cs">
+      <DependentUpon>frm截屏.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm收入费用.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm天气.resx">
       <DependentUpon>frm天气.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm截屏.resx">
+      <DependentUpon>frm截屏.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm收入费用.resx">
       <DependentUpon>frm收入费用.cs</DependentUpon>

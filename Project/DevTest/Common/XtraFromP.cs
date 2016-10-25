@@ -1,15 +1,19 @@
 ﻿using DevExpress.XtraEditors;
 using System;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Windows.Forms;
 
 namespace DevTest.Common
 {
     public partial class XtraFormP : XtraForm
     {
-        
+
+        protected static DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
         public XtraFormP()
         {
+
             LoadFirst = true;
             InitializeComponent();
         }
@@ -82,8 +86,14 @@ namespace DevTest.Common
                     LoadFirst = false;
                 }
                 f.Show();
-                
             }
         }
+
+        private void XtraFormP_Load(object sender, EventArgs e)
+        {
+            splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DevTest.WaitForm1), true, true) { ClosingDelay = 500 };
+            defaultLookAndFeel.LookAndFeel.SkinName = "Coffee";
+        }
+     
     }
 }
