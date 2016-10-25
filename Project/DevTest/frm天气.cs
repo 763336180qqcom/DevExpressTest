@@ -31,7 +31,7 @@ namespace DevTest
         }
         private void frm天气_Shown(object sender, EventArgs ex)
         {
-           // XtraFormP.showWait("请稍等", "正在加载天气信息");
+            XtraFormP.showWait("请稍等", "正在请求www.webxml.com.cn");
             try
             {
                 mGetWeatherWithPara d = new mGetWeatherWithPara(getWeatherWithPara);
@@ -248,7 +248,7 @@ namespace DevTest
             if (cmb市.EditValue != null)
             {
                 enableC();
-                XtraFormP.showWait("请稍等", "正在加载天气信息");
+                XtraFormP.showWait("请稍等", "正在请求www.webxml.com.cn");
                 try
                 {
                     mGetWeatherWithPara d = new mGetWeatherWithPara(getWeatherWithPara);
