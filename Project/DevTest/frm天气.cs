@@ -45,7 +45,6 @@ namespace DevTest
                 XtraMessageBox.Show(e.Message);
             }
         }
-
         private void me0MouseDown(object sender, MouseEventArgs e)
         {
             //HideCaret((sender as MemoEdit).Handle);
