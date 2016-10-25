@@ -106,7 +106,6 @@ namespace DevTest
             }
             XtraFormP.closeWait();
         }
-
         private void dCallBack(IAsyncResult result)
         {
             try
