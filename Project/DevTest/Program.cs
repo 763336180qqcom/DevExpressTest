@@ -35,7 +35,7 @@ namespace DevTest
                 else
                 {
                     MessageBox.Show("程序已经运行");
-                    Thread.Sleep(2000);
+                    Thread.Sleep(1000);
                     Environment.Exit(0);
                 }
             }
