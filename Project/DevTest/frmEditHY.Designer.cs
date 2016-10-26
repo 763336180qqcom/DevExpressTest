@@ -1,6 +1,6 @@
 ﻿namespace DevTest
 {
-    partial class frm编辑合约
+    partial class frmEditHY
     {
         /// <summary>
         /// Required designer variable.

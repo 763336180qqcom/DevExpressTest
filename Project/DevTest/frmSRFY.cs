@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace DevTest
 {
-    public partial class frm收入费用 : XtraForm
+    public partial class frmSRFY : XtraForm
     {
-        public frm收入费用()
+        public frmSRFY()
         {
             InitializeComponent();
         }
@@ -121,7 +121,7 @@ namespace DevTest
             }
             else
             {
-                DataRow dr = frm添加合约.sDt收入费用.NewRow();
+                DataRow dr = frmAddHY.sDt收入费用.NewRow();
                 dr["类别"] = cmb类别.EditValue.ToString();
                 dr["项目名称"] = txt名称.Text.Trim();
                 dr["金额"] = txt金额.Text.Trim();
@@ -130,20 +130,19 @@ namespace DevTest
                     dr["状态"] = "有效";
                 else
                     dr["状态"] = "无效";
-                if (frm添加合约.sMode == 1)
+                if (frmAddHY.sMode == 1)
                 {
-                    frm添加合约.sDt收入费用.Rows.Add(dr);
+                    frmAddHY.sDt收入费用.Rows.Add(dr);
                 }
                 else
                 {
-                    frm添加合约.sDt收入费用.Rows[sRowIndex]["类别"] = dr["类别"];
-                    frm添加合约.sDt收入费用.Rows[sRowIndex]["项目名称"] = dr["项目名称"];
-                    frm添加合约.sDt收入费用.Rows[sRowIndex]["金额"] = dr["金额"];
-                    frm添加合约.sDt收入费用.Rows[sRowIndex]["期数"] = dr["期数"];
-                    frm添加合约.sDt收入费用.Rows[sRowIndex]["状态"] = dr["状态"];
+                    frmAddHY.sDt收入费用.Rows[sRowIndex]["类别"] = dr["类别"];
+                    frmAddHY.sDt收入费用.Rows[sRowIndex]["项目名称"] = dr["项目名称"];
+                    frmAddHY.sDt收入费用.Rows[sRowIndex]["金额"] = dr["金额"];
+                    frmAddHY.sDt收入费用.Rows[sRowIndex]["期数"] = dr["期数"];
+                    frmAddHY.sDt收入费用.Rows[sRowIndex]["状态"] = dr["状态"];
                 }
-                this.DialogResult = DialogResult.OK;
-                this.Dispose();
+                this.Close();
             }
         }
 

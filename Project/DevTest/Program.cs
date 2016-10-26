@@ -30,12 +30,11 @@ namespace DevTest
                     DevExpress.UserSkins.BonusSkins.Register();
                     DevExpress.Skins.SkinManager.EnableFormSkins();
 
-                    Application.Run(new frm主界面());
+                    Application.Run(new frmMain());
                 }
                 else
                 {
-                    MessageBox.Show("程序已经运行");
-                    Thread.Sleep(1000);
+                    MessageBox.Show(null, "程序已经运行", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Environment.Exit(0);
                 }
             }

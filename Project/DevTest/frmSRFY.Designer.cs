@@ -1,6 +1,6 @@
 ﻿namespace DevTest
 {
-    partial class frm收入费用
+    partial class frmSRFY
     {
         /// <summary>
         /// Required designer variable.

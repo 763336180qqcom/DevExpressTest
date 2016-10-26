@@ -104,7 +104,7 @@ namespace DevTest
                 if (dt.Rows.Count > 0)
                     throw new CustomException("名称与已存在的有效合约重复");
                 dt.Dispose();
-                string sql添加合约 = "INSERT INTO t合约业务 VALUES(@名称,@运营商ID,@捆绑终端,@允许老号,@店员价,@最低价,@毛利奖励,@现金奖励,@开始时间,@结束时间,@状态)";
+                string sql添加合约 = "INSERT INTO t合约业务(名称,运营商ID,捆绑终端,允许老号,店员价,最低价,毛利奖励,现金奖励,开始时间,结束时间,状态) VALUES(@名称,@运营商ID,@捆绑终端,@允许老号,@店员价,@最低价,@毛利奖励,@现金奖励,@开始时间,@结束时间,@状态)";
                 cmd = new SqlCommand(sql添加合约, con, tran);
                 cmd.Parameters.AddWithValue("@名称", str名称_合约);
                 cmd.Parameters.AddWithValue("@运营商ID", str运营商ID);
@@ -326,7 +326,7 @@ namespace DevTest
             dt.Clear();
             return dt;
         }
-        public static void frm合约业务_Update(string strfID,string str名称,DateTime? dte开始时间,DateTime? dte结束时间)
+        public static void frm合约业务_Update(string strfID, string str名称, DateTime? dte开始时间, DateTime? dte结束时间)
         {
             if (string.IsNullOrEmpty(str名称))
                 throw new CustomException("名称必填");
@@ -336,16 +336,16 @@ namespace DevTest
                 dte开始时间 = dte开始时间.Value.Date;
             if (dte结束时间.HasValue)
                 dte结束时间 = dte结束时间.Value.Date;
-            if (dte结束时间.HasValue&&DateTime.Compare(Convert.ToDateTime(dte结束时间),Convert.ToDateTime(dte开始时间))<0)
+            if (dte结束时间.HasValue && DateTime.Compare(Convert.ToDateTime(dte结束时间), Convert.ToDateTime(dte开始时间)) < 0)
                 throw new CustomException("结束时间不能早于开始时间");
             SqlConnection con = new SqlConnection(CONNSTR);
-            SqlTransaction tran=null;
+            SqlTransaction tran = null;
             try
             {
                 con.Open();
                 tran = con.BeginTransaction();
                 string sqlCheck = "SELECT * FROM t合约业务(UPDLOCK) WHERE fID<>@strfID AND 状态=1 AND 名称 =@str名称";
-                SqlCommand cmd = new SqlCommand(sqlCheck,con,tran);
+                SqlCommand cmd = new SqlCommand(sqlCheck, con, tran);
                 cmd.Parameters.AddWithValue("@strfID", strfID);
                 cmd.Parameters.AddWithValue("@str名称", str名称);
                 SqlDataAdapter adt = new SqlDataAdapter(cmd);
@@ -381,5 +381,36 @@ namespace DevTest
                 con.Close();
             }
         }
+        public static DataTable sRefreshHY(ref string lastStamp)
+        {
+            if (!Util.IsInt(lastStamp))
+                throw new CustomException("传入的时间戳格式错误");
+            using (SqlConnection con = new SqlConnection(CONNSTR))
+            {
+                con.Open();
+                SqlCommand cmd = null;
+                string getStamp = "SELECT MAX(int时间戳) FROM v合约业务(NOLOCK)";
+                cmd = new SqlCommand(getStamp, con);
+                SqlDataAdapter adt = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adt.Fill(dt);
+                if (!(dt.Rows.Count > 0) || dt.Rows[0][0] == null)
+                    throw new CustomException("获取最新时间戳出错");
+                if (Convert.ToInt32(lastStamp) < Convert.ToInt32(dt.Rows[0][0]))
+                {
+                    lastStamp = dt.Rows[0][0].ToString();
+                    string getDt = "SELECT [fID],[名称],[运营商ID],[捆绑终端],[允许老号],[店员价],[最低价],[毛利奖励]," +
+                        "[现金奖励],[开始时间],[结束时间],[状态] FROM v合约业务(NOLOCK)";
+                    cmd = new SqlCommand(getDt, con);
+                    adt = new SqlDataAdapter(cmd);
+                    dt = new DataTable();
+                    adt.Fill(dt);
+                    return dt;
+                }
+            }
+            return null;
+        }
+
     }
+
 }

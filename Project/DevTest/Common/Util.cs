@@ -113,7 +113,7 @@ namespace DevTest
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 ((GridControl)((DXMenuItem)(sender)).Tag).ExportToPdf(dialog.FileName);
-                TipForm.getInstance().showShort("导出成功！", 800);
+                TipForm.getInstance().shortTip("导出成功！", 800);
             }
         }
 
@@ -145,7 +145,7 @@ namespace DevTest
             {
                 DevExpress.XtraPrinting.XlsExportOptions option = new DevExpress.XtraPrinting.XlsExportOptions();
                 ((GridControl)(((DXMenuItem)sender).Tag)).ExportToXls(save.FileName, option);
-                TipForm.getInstance().showShort("导出成功！", 800);
+                TipForm.getInstance().shortTip("导出成功！", 800);
             }
         }
         #endregion
@@ -170,7 +170,7 @@ namespace DevTest
         {
             GridColumn col = (GridColumn)((DXMenuItem)sender).Tag;
             Clipboard.SetDataObject(col.View.GetRowCellDisplayText(col.View.FocusedRowHandle, col), true);
-            TipForm.getInstance().showShort("导出成功！", 800);
+            TipForm.getInstance().shortTip("导出成功！", 800);
         }
         #endregion
         private static void quick_sort(int[] s, int l, int r)

@@ -4,7 +4,7 @@ using System;
 
 namespace DevTest
 {
-    partial class frm主界面:XtraFormP
+    partial class frmMain:XtraFormP
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@ namespace DevTest
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm主界面));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.gc_Left = new DevExpress.XtraEditors.GroupControl();
             this.nbc_Left = new DevExpress.XtraNavBar.NavBarControl();
             this.nbg_First = new DevExpress.XtraNavBar.NavBarGroup();

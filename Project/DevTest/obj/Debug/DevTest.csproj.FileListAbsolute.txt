@@ -475,13 +475,6 @@ E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmDateEdit.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.TipForm.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmSG.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmXRP.resources
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm主界面.resources
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm合约业务.resources
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm天气.resources
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm截屏.resources
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm收入费用.resources
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm添加合约.resources
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frm编辑合约.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.Properties.Resources.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.SplashScreen1.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.WaitForm1.resources
@@ -489,3 +482,11 @@ E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csproj.GenerateResource.
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe.licenses
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.pdb
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csprojResolveAssemblyReference.cache
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmMain.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmHYYW.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmWeather.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmPrintScreen.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmSRFY.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmAddHY.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmEditHY.resources

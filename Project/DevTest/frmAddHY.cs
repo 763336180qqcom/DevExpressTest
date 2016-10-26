@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace DevTest
 {
-    public partial class frm添加合约 : XtraFormC
+    public partial class frmAddHY : XtraFormC
     {
-        public frm添加合约()
+        public frmAddHY()
         {
             InitializeComponent();
         }
@@ -81,7 +81,7 @@ namespace DevTest
         private void btn添加费用收入_Click(object sender, EventArgs e)
         {
             sMode = 1;
-            frm收入费用 f = new frm收入费用();
+            frmSRFY f = new frmSRFY();
             if (f.ShowDialog() == DialogResult.OK)
             {
                 gc信息列表.DataSource = sDt收入费用;
@@ -154,19 +154,19 @@ namespace DevTest
                 e.Info.DisplayText = (e.RowHandle + 1).ToString();
             }
         }
-        private frm收入费用 f = new frm收入费用();
         private void gv信息列表_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             if (e.Button == MouseButtons.Left && e.Clicks == 2)
             {
                 sMode = 0;
-                frm收入费用.sRowIndex = e.RowHandle;
+                frmSRFY f = new frmSRFY();
+                frmSRFY.sRowIndex = e.RowHandle;
                 f.str类别 = gv信息列表.GetRowCellValue(e.RowHandle, gv信息列表.Columns["类别"]).ToString();
                 f.str名称 = gv信息列表.GetRowCellValue(e.RowHandle, gv信息列表.Columns["项目名称"]).ToString();
                 f.str金额 = gv信息列表.GetRowCellValue(e.RowHandle, gv信息列表.Columns["金额"]).ToString();
                 f.str期数 = gv信息列表.GetRowCellValue(e.RowHandle, gv信息列表.Columns["期数"]).ToString();
                 f.str状态 = gv信息列表.GetRowCellValue(e.RowHandle, gv信息列表.Columns["状态"]).ToString();
-                f.ShowDialog();
+                f.Show();
             }
         }
         private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)

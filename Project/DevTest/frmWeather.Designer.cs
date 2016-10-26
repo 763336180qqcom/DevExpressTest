@@ -1,6 +1,6 @@
 ﻿namespace DevTest
 {
-    partial class frm天气
+    partial class frmWeather
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm天气));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWeather));
             this.panel0 = new DevExpress.XtraEditors.PanelControl();
             this.cmb市 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cmb省 = new DevExpress.XtraEditors.ComboBoxEdit();

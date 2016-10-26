@@ -1,6 +1,6 @@
 ﻿namespace DevTest
 {
-    partial class frm合约业务
+    partial class frmHYYW
     {
         /// <summary>
         /// Required designer variable.
@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.cb_type = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.cb_zt = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.grid_合约 = new DevExpress.XtraGrid.GridControl();
-            this.gv_合约 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gc合约 = new DevExpress.XtraGrid.GridControl();
+            this.gvHY = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn_fID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_Name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_kbzd = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,8 +72,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cb_type)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_zt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_合约)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_合约)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc合约)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvHY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4)).BeginInit();
@@ -111,22 +111,22 @@
             // 
             // grid_合约
             // 
-            this.grid_合约.Dock = System.Windows.Forms.DockStyle.Left;
-            this.grid_合约.Location = new System.Drawing.Point(2, 2);
-            this.grid_合约.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.grid_合约.MainView = this.gv_合约;
-            this.grid_合约.Name = "grid_合约";
-            this.grid_合约.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gc合约.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gc合约.Location = new System.Drawing.Point(2, 2);
+            this.gc合约.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.gc合约.MainView = this.gvHY;
+            this.gc合约.Name = "grid_合约";
+            this.gc合约.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEdit3,
             this.repositoryItemDateEdit4});
-            this.grid_合约.Size = new System.Drawing.Size(967, 531);
-            this.grid_合约.TabIndex = 0;
-            this.grid_合约.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gv_合约});
+            this.gc合约.Size = new System.Drawing.Size(967, 531);
+            this.gc合约.TabIndex = 0;
+            this.gc合约.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvHY});
             // 
             // gv_合约
             // 
-            this.gv_合约.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvHY.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn_fID,
             this.gridColumn_Name,
             this.gridColumn_kbzd,
@@ -139,20 +139,20 @@
             this.gridColumn_kssj,
             this.gridColumn_jssj,
             this.zt_hy_hyyw});
-            this.gv_合约.GridControl = this.grid_合约;
-            this.gv_合约.IndicatorWidth = 30;
-            this.gv_合约.Name = "gv_合约";
-            this.gv_合约.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
-            this.gv_合约.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
-            this.gv_合约.OptionsBehavior.Editable = false;
-            this.gv_合约.OptionsView.EnableAppearanceEvenRow = true;
-            this.gv_合约.OptionsView.EnableAppearanceOddRow = true;
-            this.gv_合约.OptionsView.ShowGroupPanel = false;
-            this.gv_合约.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gv_hy_RowClick);
-            this.gv_合约.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gv_hy_CustomDrawRowIndicator);
-            this.gv_合约.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gv_Hy_SelectionChanged);
-            this.gv_合约.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gv_Hy_MouseMove);
-            this.gv_合约.MouseLeave += new System.EventHandler(this.gv_Hy_MouseLeave);
+            this.gvHY.GridControl = this.gc合约;
+            this.gvHY.IndicatorWidth = 30;
+            this.gvHY.Name = "gv_合约";
+            this.gvHY.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gvHY.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gvHY.OptionsBehavior.Editable = false;
+            this.gvHY.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvHY.OptionsView.EnableAppearanceOddRow = true;
+            this.gvHY.OptionsView.ShowGroupPanel = false;
+            this.gvHY.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gv_hy_RowClick);
+            this.gvHY.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gv_hy_CustomDrawRowIndicator);
+            this.gvHY.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gv_Hy_SelectionChanged);
+            this.gvHY.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gv_Hy_MouseMove);
+            this.gvHY.MouseLeave += new System.EventHandler(this.gv_Hy_MouseLeave);
             // 
             // gridColumn_fID
             // 
@@ -456,7 +456,7 @@
             // 
             this.groupControl1.Controls.Add(this.splitterControl2);
             this.groupControl1.Controls.Add(this.grid_收入费用);
-            this.groupControl1.Controls.Add(this.grid_合约);
+            this.groupControl1.Controls.Add(this.gc合约);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 29);
             this.groupControl1.Name = "groupControl1";
@@ -496,9 +496,9 @@
             // 
             this.bw刷新合约.WorkerReportsProgress = true;
             this.bw刷新合约.WorkerSupportsCancellation = true;
-            this.bw刷新合约.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bw刷新合约_DoWork);
-            this.bw刷新合约.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bw刷新合约_ProgressChanged);
-            this.bw刷新合约.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bw刷新合约_RunWorkerCompleted);
+            this.bw刷新合约.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwRefreshHY_DoWork);
+            this.bw刷新合约.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bwRefreshHY_ProgressChanged);
+            this.bw刷新合约.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwRefreshHY_RunWorkerCompleted);
             // 
             // timer1
             // 
@@ -520,12 +520,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "合约业务";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frm合约业务_Load);
+            this.Load += new System.EventHandler(this.frmAddHY_Load);
             this.Shown += new System.EventHandler(this.frm合约业务_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.cb_type)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_zt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_合约)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_合约)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc合约)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvHY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4.CalendarTimeProperties)).EndInit();
@@ -545,7 +545,7 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl grid_合约;
+        private DevExpress.XtraGrid.GridControl gc合约;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_fID;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_Name;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_jssj;
@@ -581,7 +581,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cb_type;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cb_zt;
         private DevExpress.Utils.ToolTipController toolTipController1;
-        public DevExpress.XtraGrid.Views.Grid.GridView gv_合约;
+        public DevExpress.XtraGrid.Views.Grid.GridView gvHY;
         private System.ComponentModel.BackgroundWorker bw刷新合约;
         private System.Windows.Forms.Timer timer1;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit3;

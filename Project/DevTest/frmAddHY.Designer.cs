@@ -1,6 +1,6 @@
 ﻿namespace DevTest
 {
-    partial class frm添加合约
+    partial class frmAddHY
     {
         /// <summary>
         /// Required designer variable.
@@ -27,7 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm添加合约));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddHY));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btn添加费用收入 = new DevExpress.XtraEditors.SimpleButton();
             this.btn提交 = new DevExpress.XtraEditors.SimpleButton();

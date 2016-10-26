@@ -108,7 +108,7 @@ namespace DevTest
         /// <summary>
         /// 在右下角显示
         /// </summary>
-        public void showLongTip(string text, int d)
+        public void longTip(string text, int d)
         {
             this.Width = 200;
             this.Height = 80;
@@ -139,7 +139,7 @@ namespace DevTest
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Show();
         }
-        public void showShort(string text,int d)
+        public void shortTip(string text,int d)
         {
             this.Width = 120;
             this.Width = 40;

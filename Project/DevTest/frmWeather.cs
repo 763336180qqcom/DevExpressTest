@@ -14,7 +14,7 @@ using System.Text;
 
 namespace DevTest
 {
-    public partial class frm天气 : XtraFormC
+    public partial class frmWeather : XtraFormC
     {
         private List<Province> mPro;
         private string[] weatherResult;
@@ -23,7 +23,7 @@ namespace DevTest
         private WeatherWS mService;
         // [DllImport("user32", EntryPoint = "HideCaret")]
         // private static extern bool HideCaret(IntPtr hWnd);
-        public frm天气()
+        public frmWeather()
         {
             InitializeComponent();
         }

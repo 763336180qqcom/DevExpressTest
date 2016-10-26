@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 namespace DevTest
 {
-    public partial class frm主界面 : XtraFormP
+    public partial class frmMain : XtraFormP
     {
         private DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton gpBoxBtn_Hide;
-        public frm主界面()
+        public frmMain()
         {
             sSelectedTabName = "";
             sCurrentWindowText = "";
@@ -53,7 +53,7 @@ namespace DevTest
         }
         private void navBar合约业务_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            LoadFrm(new frm合约业务());
+            LoadFrm(new frmHYYW());
         }
 
         private void toolStripMenuItem_Exit_Click(object sender, EventArgs e)
@@ -100,7 +100,7 @@ namespace DevTest
         }
         private void navBar新增合约_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            LoadFrm(new frm添加合约());
+            LoadFrm(new frmAddHY());
         }
         private void navBarDateEdit_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -135,11 +135,11 @@ namespace DevTest
         }
         private void navBarWeather_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            LoadFrm(new frm天气());
+            LoadFrm(new frmWeather());
         }
         private void navBar截屏_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            LoadFrm(new frm截屏());
+            LoadFrm(new frmPrintScreen());
         }
     }
 }

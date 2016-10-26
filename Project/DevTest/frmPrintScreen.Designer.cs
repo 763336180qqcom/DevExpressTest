@@ -1,6 +1,6 @@
 ﻿namespace DevTest
 {
-    partial class frm截屏
+    partial class frmPrintScreen
     {
         /// <summary>
         /// Required designer variable.

@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 namespace DevTest
 {
-    public partial class frm截屏 : XtraFormC
+    public partial class frmPrintScreen : XtraFormC
     {
 
-        public frm截屏()
+        public frmPrintScreen()
         {
             InitializeComponent();
         }

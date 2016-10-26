@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace DevTest
 {
-    public partial class frm编辑合约 : XtraForm
+    public partial class frmEditHY : XtraForm
     {
-        public frm编辑合约()
+        public frmEditHY()
         {
             InitializeComponent();
         }
