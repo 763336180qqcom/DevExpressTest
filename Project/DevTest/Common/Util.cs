@@ -73,7 +73,7 @@ namespace DevTest
             return true;                                        //是，就返回True  
         }
 
-        public static Bitmap captureControl(Control control)
+        public static Bitmap CaptureDefineControl(Control control)
         {
             IntPtr ptr = GetWindowDC(control.Handle);
             IntPtr ptr1 = CreateCompatibleDC(ptr);

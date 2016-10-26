@@ -43,6 +43,7 @@ namespace DevTest
             this.navBarReports = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarSGRID = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarWeather = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBar截屏 = new DevExpress.XtraNavBar.NavBarItem();
             this.myNotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.MaincontextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem_Show = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +51,6 @@ namespace DevTest
             this.pc_Left = new DevExpress.XtraEditors.PanelControl();
             this.tab_Main = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.navBar截屏 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Left)).BeginInit();
             this.gc_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbc_Left)).BeginInit();
@@ -99,7 +99,7 @@ namespace DevTest
             // 
             this.nbg_First.Appearance.Options.UseTextOptions = true;
             this.nbg_First.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.nbg_First.Caption = "测试";
+            this.nbg_First.Caption = "测试1";
             this.nbg_First.Expanded = true;
             this.nbg_First.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBar合约业务),
@@ -160,6 +160,13 @@ namespace DevTest
             this.navBarWeather.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarWeather.SmallImage")));
             this.navBarWeather.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarWeather_LinkClicked);
             // 
+            // navBar截屏
+            // 
+            this.navBar截屏.Caption = "截屏";
+            this.navBar截屏.Name = "navBar截屏";
+            this.navBar截屏.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBar截屏.SmallImage")));
+            this.navBar截屏.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBar截屏_LinkClicked);
+            // 
             // myNotify
             // 
             this.myNotify.ContextMenuStrip = this.MaincontextMenuStrip;
@@ -210,14 +217,7 @@ namespace DevTest
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer_getWindowText_Tick);
             // 
-            // navBar截屏
-            // 
-            this.navBar截屏.Caption = "截屏";
-            this.navBar截屏.Name = "navBar截屏";
-            this.navBar截屏.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBar截屏.SmallImage")));
-            this.navBar截屏.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBar截屏_LinkClicked);
-            // 
-            // frm主界面
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -226,7 +226,7 @@ namespace DevTest
             this.Controls.Add(this.pc_Left);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.Name = "frm主界面";
+            this.Name = "frmMain";
             this.Text = "主界面";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm主界面_FormClosing);
             this.Load += new System.EventHandler(this.frm主界面_Load);

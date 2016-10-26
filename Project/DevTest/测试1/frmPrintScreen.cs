@@ -26,7 +26,7 @@ namespace DevTest
         {
             sfd = new SaveFileDialog() { FileName = "Test.jpg", Filter = @"所有类型|*.*|jpeg|*.jpg|bmp|*.bmp|png|*.png" };
         }
-        private void simpleButton5_Click(object sender, EventArgs e)
+        private void btnFullScreen_Click(object sender, EventArgs e)
         {
             Bitmap image = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
             Graphics g = Graphics.FromImage(image);
@@ -41,14 +41,13 @@ namespace DevTest
                 image.Save(sfd.FileName);
             }
         }
-        private void simpleButton6_Click(object sender, EventArgs e)
+        private void btnTestPtScreen_Click(object sender, EventArgs e)
         {
-            SaveImage(Util.captureControl(this));
+
         }
     
         private void btnTest_Click(object sender, EventArgs e)
         {
-            //TODO 当前不会命中断点还未为文档加载任何符号
         }
     }
 }
