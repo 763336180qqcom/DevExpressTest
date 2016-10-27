@@ -329,6 +329,7 @@ E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.XtraNavBar.v15.1.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.XtraPrinting.v15.1.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.XtraReports.v15.1.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.XtraReports.v15.1.Extensions.dll
+E:\GitRepos\VSProject\Project\DevTest\bin\Debug\IPlugins.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.XtraTreeList.v15.1.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.XtraRichEdit.v15.1.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.XtraVerticalGrid.v15.1.dll
@@ -339,6 +340,7 @@ E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.CodeParser.v15.1.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.DataAccess.v15.1.UI.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.XtraCharts.v15.1.Wizard.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.Xpo.v15.1.dll
+E:\GitRepos\VSProject\Project\DevTest\bin\Debug\IPlugins.pdb
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.Data.v15.1.xml
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.Office.v15.1.Core.xml
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\DevExpress.PivotGrid.v15.1.Core.xml
@@ -490,3 +492,4 @@ E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csproj.GenerateResource.
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe.licenses
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.pdb
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.FrmCapture.resources

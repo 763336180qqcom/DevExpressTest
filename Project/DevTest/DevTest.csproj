@@ -53,6 +53,11 @@
     <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v15.1.Extensions, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\mshtml.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="SourceGrid, Version=4.40.4580.29320, Culture=neutral, PublicKeyToken=df6f5e538749e85d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\SourceGrid.dll</HintPath>
@@ -60,6 +65,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Services" />
@@ -74,6 +80,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Capture\CaptureToolbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Capture\CaptureToolbar.Designer.cs">
+      <DependentUpon>CaptureToolbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capture\FrmCapture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capture\FrmCapture.Designer.cs">
+      <DependentUpon>FrmCapture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capture\FrmOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capture\FrmOut.Designer.cs">
+      <DependentUpon>FrmOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capture\FrmRectAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capture\FrmRectAlert.Designer.cs">
+      <DependentUpon>FrmRectAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capture\FrmTextAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capture\FrmTextAlert.Designer.cs">
+      <DependentUpon>FrmTextAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capture\ImageHelper.cs" />
+    <Compile Include="Capture\RenderHelper.cs" />
+    <Compile Include="Capture\ToolStripRendererEx.cs" />
+    <Compile Include="Common\Win32.cs" />
     <Compile Include="Common\XtraFormC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,18 +127,30 @@
       <DependentUpon>XtraFromP.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\ConditionItem.cs" />
-    <Compile Include="CustomException.cs" />
+    <Compile Include="Common\CustomException.cs" />
     <Compile Include="Common\DB.cs" />
     <Compile Include="Entity\Province.cs" />
     <Compile Include="Entity\WeatherInfo.cs" />
     <Compile Include="Entity\WeatherInfoA.cs" />
+    <Compile Include="Gif\GIFCreator.cs" />
+    <Compile Include="Gif\GIFLZWEncoder.cs" />
+    <Compile Include="Gif\NeuQuant.cs" />
+    <Compile Include="Gif\ScreenRecorder.cs" />
+    <Compile Include="Capture\CaptureToolbarDesigner.cs" />
+    <Compile Include="Capture\CaptureToolButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Capture\CaptureToolButtonDesigner.cs" />
+    <Compile Include="Capture\ColorBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="测试1\frmDateEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="测试1\frmDateEdit.Designer.cs">
       <DependentUpon>frmDateEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="测试1\frmTip.cs">
+    <Compile Include="Common\frmTip.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="测试1\frmSG.cs">
@@ -149,6 +201,9 @@
     <Compile Include="测试1\frmEditHY.Designer.cs">
       <DependentUpon>frmEditHY.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capture\ImageCroppingBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="测试1\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\Util.cs" />
@@ -157,6 +212,9 @@
     </Compile>
     <Compile Include="测试1\frmXRP.Designer.cs">
       <DependentUpon>frmXRP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capture\SizeTrackBar.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="测试1\SplashScreen1.cs">
       <SubType>Form</SubType>
@@ -175,6 +233,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Capture\FrmCapture.resx">
+      <DependentUpon>FrmCapture.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Common\XtraFormC.resx">
       <DependentUpon>XtraFormC.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,7 +245,7 @@
     <EmbeddedResource Include="测试1\frmDateEdit.resx">
       <DependentUpon>frmDateEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="测试1\frmTip.resx">
+    <EmbeddedResource Include="Common\frmTip.resx">
       <DependentUpon>frmTip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="测试1\frmSG.resx">
@@ -252,16 +313,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bocustomer_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resources\Data_SG.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\arrow_b.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\arrow_b.png" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
@@ -270,7 +325,28 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\toolbar_white.ico" />
+    <None Include="Resources\src_image_none.png" />
+    <None Include="Resources\separator.png" />
+    <None Include="Resources\QBtn_Glass_Hover.png" />
+    <None Include="Resources\ok.png" />
+    <None Include="Resources\frm_out.ico" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\btn_text.png" />
+    <None Include="Resources\btn_save.png" />
+    <None Include="Resources\btn_rect.png" />
+    <None Include="Resources\btn_out.png" />
+    <None Include="Resources\btn_ok.png" />
+    <None Include="Resources\btn_mosaic.png" />
+    <None Include="Resources\btn_ellips.png" />
+    <None Include="Resources\btn_close.png" />
+    <None Include="Resources\btn_cancel.png" />
+    <None Include="Resources\btn_brush.png" />
+    <None Include="Resources\btn_arrow.png" />
+    <None Include="Resources\brush.png" />
+    <None Include="Resources\back_toolbar.png" />
     <None Include="img\weather\nothing.gif" />
+    <None Include="Resources\alpha_back.png" />
     <Content Include="Resources\Area.xml" />
     <None Include="Web References\CN_GetWeather\WeatherWS.disco" />
   </ItemGroup>
@@ -287,7 +363,12 @@
       <CachedSettingsPropName>DevTest_CN_GetWeather_WeatherWS</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\admin\Desktop\capture_test\IPlugins\IPlugins.csproj">
+      <Project>{8ef4539c-2a0a-470f-bfc1-38e243d52561}</Project>
+      <Name>IPlugins</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
