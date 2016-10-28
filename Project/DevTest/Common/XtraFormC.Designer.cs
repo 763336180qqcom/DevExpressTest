@@ -30,15 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // XFormChild
+            // XtraFormC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(331, 304);
-            this.Name = "XFormChild";
+            this.Name = "XtraFormC";
             this.Text = "XFormChild";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.XFormChild_FormClosed);
-            
             this.Shown += new System.EventHandler(this.XFormChild_Shown);
             this.ResumeLayout(false);
 

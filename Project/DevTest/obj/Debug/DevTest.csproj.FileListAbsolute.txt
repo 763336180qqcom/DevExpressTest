@@ -472,6 +472,7 @@ E:\GitRepos\VSProject\Project\DevTest\bin\Debug\es\DevExpress.Xpo.v15.1.resource
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\ja\DevExpress.Xpo.v15.1.resources.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\ru\DevExpress.Xpo.v15.1.resources.dll
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csprojResolveAssemblyReference.cache
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.FrmCapture.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.Common.XtraFormC.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.Common.XtraFormP.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmDateEdit.resources
@@ -486,10 +487,10 @@ E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmSRFY.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmAddHY.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmEditHY.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.Properties.Resources.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.测试1.frmValidate.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.SplashScreen1.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.WaitForm1.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csproj.GenerateResource.Cache
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe.licenses
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.pdb
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.FrmCapture.resources

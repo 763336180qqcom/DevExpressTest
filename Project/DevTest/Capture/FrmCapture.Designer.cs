@@ -41,7 +41,6 @@
             this.tmsi_plugin = new System.Windows.Forms.ToolStripMenuItem();
             this.无ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tmsi_gif = new System.Windows.Forms.ToolStripMenuItem();
             this.rdbtn_draw = new System.Windows.Forms.RadioButton();
             this.rdbtn_fill = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -68,8 +67,7 @@
             this.toolStripSeparator3,
             this.tmsi_toggle,
             this.tmsi_plugin,
-            this.toolStripSeparator1,
-            this.tmsi_gif});
+            this.toolStripSeparator1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(180, 198);
             // 
@@ -154,13 +152,6 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(176, 6);
-            // 
-            // tmsi_gif
-            // 
-            this.tmsi_gif.Name = "tmsi_gif";
-            this.tmsi_gif.Size = new System.Drawing.Size(179, 22);
-            this.tmsi_gif.Text = "设置为GIF录制区域";
-            this.tmsi_gif.Click += new System.EventHandler(this.tmsi_gif_Click);
             // 
             // rdbtn_draw
             // 
@@ -336,7 +327,6 @@
         private System.Windows.Forms.ToolStripMenuItem tmsi_toggle;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem tmsi_gif;
 
     }
 }

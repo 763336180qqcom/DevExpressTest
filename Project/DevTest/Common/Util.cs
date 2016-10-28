@@ -216,5 +216,44 @@ namespace DevTest
             Bitmap bit = new Bitmap(result);
             return bit;
         }
+
+        public static Stream bytesToStream(byte[] bs)
+        {
+            return new MemoryStream(bs);
+        }
+
+        public static byte[] streamToBytes(Stream sm)
+        {
+            byte[] bs = new byte[sm.Length];
+            sm.Read(bs,0,bs.Length);
+            sm.Seek(0,SeekOrigin.Begin);
+            return bs;
+        }
+
+        public static string Tran10To16(int num10)
+        {
+            StringBuilder ss = new StringBuilder();
+            int[] nums = new int[8];
+            int i;
+            for (i=0;i< nums.Length;i++)
+            {
+                nums[i] = num10 % 16;
+                num10 /= 16;
+                if (num10 == 0)
+                    break;
+            }
+            for (; i >= 0; i--)
+                switch (nums[i])
+                {
+                    case 10: ss.Append("A"); break;
+                    case 11: ss.Append("B"); break;
+                    case 12: ss.Append("C"); break;
+                    case 13: ss.Append("D"); break;
+                    case 14: ss.Append("E"); break;
+                    case 15: ss.Append("F"); break;
+                    default: ss.Append(nums[i]);
+                }
+            return null;
+        }
     }
 }

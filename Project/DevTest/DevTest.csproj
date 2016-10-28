@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -113,6 +114,7 @@
     <Compile Include="Capture\ImageHelper.cs" />
     <Compile Include="Capture\RenderHelper.cs" />
     <Compile Include="Capture\ToolStripRendererEx.cs" />
+    <Compile Include="Common\VCode.cs" />
     <Compile Include="Common\Win32.cs" />
     <Compile Include="Common\XtraFormC.cs">
       <SubType>Form</SubType>
@@ -132,10 +134,12 @@
     <Compile Include="Entity\Province.cs" />
     <Compile Include="Entity\WeatherInfo.cs" />
     <Compile Include="Entity\WeatherInfoA.cs" />
-    <Compile Include="Gif\GIFCreator.cs" />
-    <Compile Include="Gif\GIFLZWEncoder.cs" />
-    <Compile Include="Gif\NeuQuant.cs" />
-    <Compile Include="Gif\ScreenRecorder.cs" />
+    <Compile Include="测试1\frmValidate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="测试1\frmValidate.Designer.cs">
+      <DependentUpon>frmValidate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capture\CaptureToolbarDesigner.cs" />
     <Compile Include="Capture\CaptureToolButton.cs">
       <SubType>Component</SubType>
@@ -159,10 +163,10 @@
     <Compile Include="测试1\frmSG.Designer.cs">
       <DependentUpon>frmSG.cs</DependentUpon>
     </Compile>
-    <Compile Include="测试1\frmMain.cs">
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="测试1\frmMain.Designer.cs">
+    <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="测试1\frmHYYW.cs">
@@ -254,7 +258,7 @@
     <EmbeddedResource Include="测试1\frmXRP.resx">
       <DependentUpon>frmXRP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="测试1\frmMain.resx">
+    <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="测试1\frmHYYW.resx">
@@ -286,6 +290,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="测试1\frmValidate.resx">
+      <DependentUpon>frmValidate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="测试1\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </EmbeddedResource>

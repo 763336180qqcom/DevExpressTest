@@ -118,7 +118,7 @@ namespace DevTest
                 }
             }
             return hParent;
-        }
+        }//
 
         public static string GetWindowText(IntPtr hWnd) {
             int len = Win32.GetWindowText(hWnd, m_byBuffer, m_byBuffer.Length);

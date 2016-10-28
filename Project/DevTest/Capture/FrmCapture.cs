@@ -40,12 +40,12 @@ namespace DevTest
             set { _ScreenRecorderInterval = value; }
         }
 
-        private static ScreenRecorder _ScreenRecorder;
+        //private static ScreenRecorder _ScreenRecorder;
 
-        public static ScreenRecorder ScreenRecorder
-        {
-            get { return _ScreenRecorder; }
-        }
+        //public static ScreenRecorder ScreenRecorder
+        //{
+        //    get { return _ScreenRecorder; }
+        //}
 
         private Point m_ptLastMouseDown;        //鼠标上一次点击位置
         private Point m_ptCurrent;              //鼠标当前位置
@@ -74,8 +74,6 @@ namespace DevTest
         private List<Image> m_layer = new List<Image>();    //历史记录
         //缓存的插件
         private static Dictionary<string, List<IPlugins.IFilter>> m_dic_plugin = new Dictionary<string, List<IPlugins.IFilter>>();
-
-        public static event ScreenRecorder.RecordErrorEventHandler RecordError;
 
         private void FrmCaption_Load(object sender, EventArgs e)
         {
@@ -179,10 +177,10 @@ namespace DevTest
             textBox1.Text = string.Empty;
         }
 
-        private void _ScreenRecorder_RecordError(object sender, RecordErrorEventArgs e)
-        {
-            if (FrmCapture.RecordError != null) FrmCapture.RecordError(FrmCapture.ScreenRecorder, e);
-        }
+        //private void _ScreenRecorder_RecordError(object sender, RecordErrorEventArgs e)
+        //{
+        //    if (FrmCapture.RecordError != null) FrmCapture.RecordError(FrmCapture.ScreenRecorder, e);
+        //}
         /// <summary>
         /// 获取桌面图片
         /// </summary>
@@ -236,14 +234,14 @@ namespace DevTest
                 else
                     new FrmTextAlert("没有发现[SpyTool.exe]").Show();
             }
-            if (m_bAltDown && !imageCroppingBox1.IsSelected)
-            {
-                if (FrmCapture._ScreenRecorder != null) FrmCapture._ScreenRecorder.Dispose();
-                FrmCapture._ScreenRecorder = new ScreenRecorder(m_hWnd, FrmCapture._ScreenRecorderInterval);
-                FrmCapture._ScreenRecorder.RecordError += _ScreenRecorder_RecordError;
-                new FrmRectAlert(m_rect, "Gif Window").Show();
-                this.Close();
-            }
+            //if (m_bAltDown && !imageCroppingBox1.IsSelected)
+            //{
+            //    if (FrmCapture._ScreenRecorder != null) FrmCapture._ScreenRecorder.Dispose();
+            //    FrmCapture._ScreenRecorder = new ScreenRecorder(m_hWnd, FrmCapture._ScreenRecorderInterval);
+            //    FrmCapture._ScreenRecorder.RecordError += _ScreenRecorder_RecordError;
+            //    new FrmRectAlert(m_rect, "Gif Window").Show();
+            //    this.Close();
+            //}
             //如果已经锁定了选取 并且 鼠标点下的位置在选取内 而且工具条上有选择工具 那么则表示可能需要绘制了 如：矩形框 箭头 等
             if (imageCroppingBox1.IsLockSelected && imageCroppingBox1.SelectedRectangle.Contains(e.Location) && captureToolbar1.GetSelectBtnName() != null)
             {
@@ -470,14 +468,14 @@ namespace DevTest
             panel1.Visible = captureToolbar1.Visible && captureToolbar1.GetSelectBtnName() != null;
         }
 
-        private void tmsi_gif_Click(object sender, EventArgs e)
-        {
-            if (FrmCapture._ScreenRecorder != null) FrmCapture._ScreenRecorder.Dispose();
-            FrmCapture._ScreenRecorder = new ScreenRecorder(this.RectangleToScreen(imageCroppingBox1.SelectedRectangle), FrmCapture._ScreenRecorderInterval);
-            FrmCapture._ScreenRecorder.RecordError += _ScreenRecorder_RecordError;
-            new FrmRectAlert(imageCroppingBox1.SelectedRectangle, "Gif Rectangle").Show();
-            this.Close();
-        }
+        //private void tmsi_gif_Click(object sender, EventArgs e)
+        //{
+        //    if (FrmCapture._ScreenRecorder != null) FrmCapture._ScreenRecorder.Dispose();
+        //    FrmCapture._ScreenRecorder = new ScreenRecorder(this.RectangleToScreen(imageCroppingBox1.SelectedRectangle), FrmCapture._ScreenRecorderInterval);
+        //    FrmCapture._ScreenRecorder.RecordError += _ScreenRecorder_RecordError;
+        //    new FrmRectAlert(imageCroppingBox1.SelectedRectangle, "Gif Rectangle").Show();
+        //    this.Close();
+        //}
         /// <summary>
         /// 工具栏被点下的时候
         /// </summary>

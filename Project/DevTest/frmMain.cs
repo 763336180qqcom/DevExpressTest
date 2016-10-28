@@ -26,7 +26,7 @@ namespace DevTest
             sFormText = this.Text;
             StartPosition = FormStartPosition.CenterScreen;
             this.WindowState = FormWindowState.Maximized;
-            navBar截屏_LinkClicked(null, null);
+            navBarVCode_LinkClicked(null, null);
         }
         private void midPageChangedEventHandler(object sender, EventArgs e)
         {
@@ -140,6 +140,11 @@ namespace DevTest
         private void navBar截屏_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             LoadFrm(new frmPrintScreen());
+        }
+
+        private void navBarVCode_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            LoadFrm(new DevTest.测试1.frmValidate());
         }
     }
 }

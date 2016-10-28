@@ -74,8 +74,8 @@ namespace DevTest
             request.ContentType = "text/xml; charset=utf-8";
             request.Credentials = CredentialCache.DefaultCredentials;
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
-            return reader.ReadToEnd();
+            string result = new StreamReader(response.GetResponseStream(), Encoding.UTF8).ReadToEnd();
+            return result;
         }
         private void me0MouseDown(object sender, MouseEventArgs e)
         {
@@ -162,7 +162,7 @@ namespace DevTest
                 XtraFormP.closeWait();
             }
         }
-        
+
         private WeatherInfo getWeatherWithPara(string city)
         {
             try
