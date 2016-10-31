@@ -481,10 +481,8 @@ E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmSG.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmXRP.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmMain.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmHYYW.resources
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmWeather.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmPrintScreen.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmSRFY.resources
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmAddHY.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmEditHY.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.Properties.Resources.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.SplashScreen1.resources
@@ -494,3 +492,12 @@ E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe.licenses
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.pdb
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.测试1.frmVerCode.resources
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.测试1.frmWeather.resources
+E:\GitRepos\VSProject\Project\DevTest\bin\Debug\FSharp.Core.dll
+E:\GitRepos\VSProject\Project\DevTest\bin\Debug\HtmlAgilityPack.dll
+E:\GitRepos\VSProject\Project\DevTest\bin\Debug\ScrapySharp.Core.dll
+E:\GitRepos\VSProject\Project\DevTest\bin\Debug\ScrapySharpAsync.dll
+E:\GitRepos\VSProject\Project\DevTest\bin\Debug\FSharp.Core.xml
+E:\GitRepos\VSProject\Project\DevTest\bin\Debug\HtmlAgilityPack.pdb
+E:\GitRepos\VSProject\Project\DevTest\bin\Debug\HtmlAgilityPack.xml
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.测试1.frmAddHY.resources

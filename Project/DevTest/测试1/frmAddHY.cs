@@ -7,7 +7,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace DevTest
+namespace DevTest.测试1
 {
     public partial class frmAddHY : XtraFormC
     {
@@ -200,10 +200,7 @@ namespace DevTest
                 try
                 {
                     List<ConditionItem> lists = new List<ConditionItem>();
-                    ConditionItem item = new ConditionItem();
-                    item.Value = (drv.Row)["fID"].ToString();
-                    item.Name = "业务ID";
-                    item.Type = "=";
+                    ConditionItem item = new ConditionItem() { Value = (drv.Row)["fID"].ToString(), Name = "业务ID", Type = "=" };
                     lists.Add(item);
                     DataTable dt = new DataTable();
                     dt = DB.getDt("v费用收入", lists);

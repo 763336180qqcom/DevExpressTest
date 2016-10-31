@@ -4,6 +4,7 @@ using DevExpress.XtraNavBar;
 using DevExpress.XtraPrinting.Preview;
 using DevExpress.XtraReports.UI;
 using DevTest.Common;
+using DevTest.测试1;
 using System;
 using System.Windows.Forms;
 
@@ -26,7 +27,7 @@ namespace DevTest
             sFormText = this.Text;
             StartPosition = FormStartPosition.CenterScreen;
             this.WindowState = FormWindowState.Maximized;
-            navBarVCode_LinkClicked(null, null);
+            navBarWeather_LinkClicked(null, null);
         }
         private void midPageChangedEventHandler(object sender, EventArgs e)
         {
@@ -144,7 +145,7 @@ namespace DevTest
 
         private void navBarVCode_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-            LoadFrm(new DevTest.测试1.frmVerCode());
+            LoadFrm(new frmVerCode());
         }
     }
 }

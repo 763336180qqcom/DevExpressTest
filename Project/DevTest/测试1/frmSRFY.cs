@@ -121,7 +121,7 @@ namespace DevTest
             }
             else
             {
-                DataRow dr = frmAddHY.sDt收入费用.NewRow();
+                DataRow dr = DevTest.测试1.frmAddHY.sDt收入费用.NewRow();
                 dr["类别"] = cmb类别.EditValue.ToString();
                 dr["项目名称"] = txt名称.Text.Trim();
                 dr["金额"] = txt金额.Text.Trim();
@@ -130,17 +130,17 @@ namespace DevTest
                     dr["状态"] = "有效";
                 else
                     dr["状态"] = "无效";
-                if (frmAddHY.sMode == 1)
+                if (DevTest.测试1.frmAddHY.sMode == 1)
                 {
-                    frmAddHY.sDt收入费用.Rows.Add(dr);
+                    DevTest.测试1.frmAddHY.sDt收入费用.Rows.Add(dr);
                 }
                 else
                 {
-                    frmAddHY.sDt收入费用.Rows[sRowIndex]["类别"] = dr["类别"];
-                    frmAddHY.sDt收入费用.Rows[sRowIndex]["项目名称"] = dr["项目名称"];
-                    frmAddHY.sDt收入费用.Rows[sRowIndex]["金额"] = dr["金额"];
-                    frmAddHY.sDt收入费用.Rows[sRowIndex]["期数"] = dr["期数"];
-                    frmAddHY.sDt收入费用.Rows[sRowIndex]["状态"] = dr["状态"];
+                    DevTest.测试1.frmAddHY.sDt收入费用.Rows[sRowIndex]["类别"] = dr["类别"];
+                    DevTest.测试1.frmAddHY.sDt收入费用.Rows[sRowIndex]["项目名称"] = dr["项目名称"];
+                    DevTest.测试1.frmAddHY.sDt收入费用.Rows[sRowIndex]["金额"] = dr["金额"];
+                    DevTest.测试1.frmAddHY.sDt收入费用.Rows[sRowIndex]["期数"] = dr["期数"];
+                    DevTest.测试1.frmAddHY.sDt收入费用.Rows[sRowIndex]["状态"] = dr["状态"];
                 }
                 this.Close();
             }

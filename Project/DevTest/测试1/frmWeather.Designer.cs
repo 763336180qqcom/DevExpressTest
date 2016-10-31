@@ -1,4 +1,4 @@
-﻿namespace DevTest
+﻿namespace DevTest.测试1
 {
     partial class frmWeather
     {
@@ -30,9 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWeather));
             this.panel0 = new DevExpress.XtraEditors.PanelControl();
-            this.cmb市 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.sLue = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cmb省 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panel1 = new DevExpress.XtraEditors.PanelControl();
+            this.img4B = new DevExpress.XtraEditors.LabelControl();
+            this.img4A = new DevExpress.XtraEditors.LabelControl();
+            this.img3B = new DevExpress.XtraEditors.LabelControl();
+            this.img3A = new DevExpress.XtraEditors.LabelControl();
+            this.img2B = new DevExpress.XtraEditors.LabelControl();
+            this.img2A = new DevExpress.XtraEditors.LabelControl();
+            this.img1B = new DevExpress.XtraEditors.LabelControl();
+            this.img1A = new DevExpress.XtraEditors.LabelControl();
+            this.img0B = new DevExpress.XtraEditors.LabelControl();
+            this.img0A = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -44,19 +55,10 @@
             this.me1 = new DevExpress.XtraEditors.MemoEdit();
             this.me0 = new DevExpress.XtraEditors.MemoEdit();
             this.meMain = new DevExpress.XtraEditors.MemoEdit();
-            this.imageEdit0A = new DevExpress.XtraEditors.PictureEdit();
-            this.imageEdit0B = new DevExpress.XtraEditors.PictureEdit();
-            this.imageEdit1A = new DevExpress.XtraEditors.PictureEdit();
-            this.imageEdit1B = new DevExpress.XtraEditors.PictureEdit();
-            this.imageEdit2A = new DevExpress.XtraEditors.PictureEdit();
-            this.imageEdit2B = new DevExpress.XtraEditors.PictureEdit();
-            this.imageEdit3A = new DevExpress.XtraEditors.PictureEdit();
-            this.imageEdit3B = new DevExpress.XtraEditors.PictureEdit();
-            this.imageEdit4A = new DevExpress.XtraEditors.PictureEdit();
-            this.imageEdit4B = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panel0)).BeginInit();
             this.panel0.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb市.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sLue.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb省.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -66,16 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.me1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.me0.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.meMain.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit0A.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit0B.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit1A.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit1B.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit2A.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit2B.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit3A.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit3B.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit4A.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit4B.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel0
@@ -85,36 +77,55 @@
             this.panel0.Appearance.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel0.Appearance.Options.UseBackColor = true;
             this.panel0.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panel0.Controls.Add(this.cmb市);
+            this.panel0.Controls.Add(this.sLue);
             this.panel0.Controls.Add(this.cmb省);
             this.panel0.Location = new System.Drawing.Point(0, 0);
             this.panel0.Name = "panel0";
-            this.panel0.Size = new System.Drawing.Size(1017, 49);
+            this.panel0.Size = new System.Drawing.Size(1079, 49);
             this.panel0.TabIndex = 9;
             // 
-            // cmb市
+            // sLue
             // 
-            this.cmb市.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmb市.Location = new System.Drawing.Point(505, 12);
-            this.cmb市.Name = "cmb市";
-            this.cmb市.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.sLue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.sLue.EditValue = "";
+            this.sLue.Location = new System.Drawing.Point(350, 12);
+            this.sLue.Name = "sLue";
+            this.sLue.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.sLue.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.sLue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmb市.Properties.DropDownRows = 10;
-            this.cmb市.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmb市.Size = new System.Drawing.Size(156, 20);
-            this.cmb市.TabIndex = 2;
-            this.cmb市.SelectedValueChanged += new System.EventHandler(this.cmb市_SelectedValueChanged);
+            this.sLue.Properties.NullText = "";
+            this.sLue.Properties.ShowClearButton = false;
+            this.sLue.Properties.ShowFooter = false;
+            this.sLue.Properties.View = this.searchLookUpEdit1View;
+            this.sLue.Size = new System.Drawing.Size(109, 18);
+            this.sLue.TabIndex = 1;
+            this.sLue.EditValueChanged += new System.EventHandler(this.sLue_EditValueChanged);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FixedLineWidth = 1;
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.IndicatorWidth = 35;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.EnableAppearanceEvenRow = true;
+            this.searchLookUpEdit1View.OptionsView.EnableAppearanceOddRow = true;
+            this.searchLookUpEdit1View.OptionsView.ShowColumnHeaders = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.searchLookUpEdit1View.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.searchLookUpEdit1View_CustomDrawRowIndicator);
             // 
             // cmb省
             // 
             this.cmb省.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmb省.Location = new System.Drawing.Point(273, 12);
+            this.cmb省.Location = new System.Drawing.Point(205, 12);
             this.cmb省.Name = "cmb省";
+            this.cmb省.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cmb省.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmb省.Properties.DropDownRows = 10;
             this.cmb省.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmb省.Size = new System.Drawing.Size(158, 20);
+            this.cmb省.Size = new System.Drawing.Size(109, 18);
             this.cmb省.TabIndex = 0;
             this.cmb省.SelectedValueChanged += new System.EventHandler(this.cmb省_SelectedValueChanged);
             // 
@@ -126,6 +137,16 @@
             this.panel1.Appearance.BackColor = System.Drawing.Color.White;
             this.panel1.Appearance.Options.UseBackColor = true;
             this.panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panel1.Controls.Add(this.img4B);
+            this.panel1.Controls.Add(this.img4A);
+            this.panel1.Controls.Add(this.img3B);
+            this.panel1.Controls.Add(this.img3A);
+            this.panel1.Controls.Add(this.img2B);
+            this.panel1.Controls.Add(this.img2A);
+            this.panel1.Controls.Add(this.img1B);
+            this.panel1.Controls.Add(this.img1A);
+            this.panel1.Controls.Add(this.img0B);
+            this.panel1.Controls.Add(this.img0A);
             this.panel1.Controls.Add(this.labelControl5);
             this.panel1.Controls.Add(this.labelControl4);
             this.panel1.Controls.Add(this.labelControl3);
@@ -137,20 +158,110 @@
             this.panel1.Controls.Add(this.me1);
             this.panel1.Controls.Add(this.me0);
             this.panel1.Controls.Add(this.meMain);
-            this.panel1.Controls.Add(this.imageEdit0A);
-            this.panel1.Controls.Add(this.imageEdit0B);
-            this.panel1.Controls.Add(this.imageEdit1A);
-            this.panel1.Controls.Add(this.imageEdit1B);
-            this.panel1.Controls.Add(this.imageEdit2A);
-            this.panel1.Controls.Add(this.imageEdit2B);
-            this.panel1.Controls.Add(this.imageEdit3A);
-            this.panel1.Controls.Add(this.imageEdit3B);
-            this.panel1.Controls.Add(this.imageEdit4A);
-            this.panel1.Controls.Add(this.imageEdit4B);
             this.panel1.Location = new System.Drawing.Point(0, 49);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1017, 640);
+            this.panel1.Size = new System.Drawing.Size(1079, 586);
             this.panel1.TabIndex = 11;
+            // 
+            // img4B
+            // 
+            this.img4B.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.img4B.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img4B.Appearance.Image")));
+            this.img4B.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.img4B.Location = new System.Drawing.Point(885, 209);
+            this.img4B.Name = "img4B";
+            this.img4B.Size = new System.Drawing.Size(44, 24);
+            this.img4B.TabIndex = 74;
+            // 
+            // img4A
+            // 
+            this.img4A.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.img4A.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img4A.Appearance.Image")));
+            this.img4A.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.img4A.Location = new System.Drawing.Point(826, 209);
+            this.img4A.Name = "img4A";
+            this.img4A.Size = new System.Drawing.Size(44, 24);
+            this.img4A.TabIndex = 73;
+            // 
+            // img3B
+            // 
+            this.img3B.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.img3B.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img3B.Appearance.Image")));
+            this.img3B.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.img3B.Location = new System.Drawing.Point(704, 209);
+            this.img3B.Name = "img3B";
+            this.img3B.Size = new System.Drawing.Size(44, 24);
+            this.img3B.TabIndex = 72;
+            // 
+            // img3A
+            // 
+            this.img3A.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.img3A.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img3A.Appearance.Image")));
+            this.img3A.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.img3A.Location = new System.Drawing.Point(644, 209);
+            this.img3A.Name = "img3A";
+            this.img3A.Size = new System.Drawing.Size(44, 24);
+            this.img3A.TabIndex = 71;
+            // 
+            // img2B
+            // 
+            this.img2B.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.img2B.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img2B.Appearance.Image")));
+            this.img2B.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.img2B.Location = new System.Drawing.Point(521, 209);
+            this.img2B.Name = "img2B";
+            this.img2B.Size = new System.Drawing.Size(44, 24);
+            this.img2B.TabIndex = 70;
+            // 
+            // img2A
+            // 
+            this.img2A.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.img2A.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img2A.Appearance.Image")));
+            this.img2A.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.img2A.Location = new System.Drawing.Point(458, 209);
+            this.img2A.Name = "img2A";
+            this.img2A.Size = new System.Drawing.Size(44, 24);
+            this.img2A.TabIndex = 69;
+            // 
+            // img1B
+            // 
+            this.img1B.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.img1B.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img1B.Appearance.Image")));
+            this.img1B.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.img1B.Location = new System.Drawing.Point(338, 209);
+            this.img1B.Name = "img1B";
+            this.img1B.Size = new System.Drawing.Size(44, 24);
+            this.img1B.TabIndex = 68;
+            // 
+            // img1A
+            // 
+            this.img1A.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.img1A.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img1A.Appearance.Image")));
+            this.img1A.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.img1A.Location = new System.Drawing.Point(279, 209);
+            this.img1A.Name = "img1A";
+            this.img1A.Size = new System.Drawing.Size(44, 24);
+            this.img1A.TabIndex = 67;
+            // 
+            // img0B
+            // 
+            this.img0B.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.img0B.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img0B.Appearance.Image")));
+            this.img0B.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.img0B.Location = new System.Drawing.Point(149, 209);
+            this.img0B.Name = "img0B";
+            this.img0B.Size = new System.Drawing.Size(44, 24);
+            this.img0B.TabIndex = 66;
+            // 
+            // img0A
+            // 
+            this.img0A.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.img0A.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img0A.Appearance.Image")));
+            this.img0A.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.img0A.Location = new System.Drawing.Point(90, 209);
+            this.img0A.Name = "img0A";
+            this.img0A.Size = new System.Drawing.Size(44, 24);
+            this.img0A.TabIndex = 65;
             // 
             // labelControl5
             // 
@@ -160,7 +271,7 @@
             this.labelControl5.Appearance.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Location = new System.Drawing.Point(833, 200);
+            this.labelControl5.Location = new System.Drawing.Point(864, 200);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(29, 39);
             this.labelControl5.TabIndex = 64;
@@ -174,7 +285,7 @@
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl4.Location = new System.Drawing.Point(650, 200);
+            this.labelControl4.Location = new System.Drawing.Point(681, 200);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(29, 39);
             this.labelControl4.TabIndex = 61;
@@ -188,7 +299,7 @@
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(467, 200);
+            this.labelControl3.Location = new System.Drawing.Point(498, 200);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(29, 39);
             this.labelControl3.TabIndex = 58;
@@ -202,7 +313,7 @@
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(286, 200);
+            this.labelControl2.Location = new System.Drawing.Point(317, 200);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(29, 39);
             this.labelControl2.TabIndex = 55;
@@ -216,7 +327,7 @@
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(98, 200);
+            this.labelControl1.Location = new System.Drawing.Point(129, 200);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(29, 39);
             this.labelControl1.TabIndex = 52;
@@ -226,7 +337,7 @@
             // 
             this.me4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.me4.Enabled = false;
-            this.me4.Location = new System.Drawing.Point(758, 245);
+            this.me4.Location = new System.Drawing.Point(789, 245);
             this.me4.Name = "me4";
             this.me4.Properties.AllowFocused = false;
             this.me4.Properties.Appearance.BackColor = System.Drawing.Color.White;
@@ -247,7 +358,7 @@
             // 
             this.me3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.me3.Enabled = false;
-            this.me3.Location = new System.Drawing.Point(575, 245);
+            this.me3.Location = new System.Drawing.Point(606, 245);
             this.me3.Name = "me3";
             this.me3.Properties.AllowFocused = false;
             this.me3.Properties.Appearance.BackColor = System.Drawing.Color.White;
@@ -268,7 +379,7 @@
             // 
             this.me2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.me2.Enabled = false;
-            this.me2.Location = new System.Drawing.Point(392, 245);
+            this.me2.Location = new System.Drawing.Point(423, 245);
             this.me2.Name = "me2";
             this.me2.Properties.AllowFocused = false;
             this.me2.Properties.Appearance.BackColor = System.Drawing.Color.White;
@@ -289,7 +400,7 @@
             // 
             this.me1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.me1.Enabled = false;
-            this.me1.Location = new System.Drawing.Point(209, 245);
+            this.me1.Location = new System.Drawing.Point(240, 245);
             this.me1.Name = "me1";
             this.me1.Properties.AllowFocused = false;
             this.me1.Properties.Appearance.BackColor = System.Drawing.Color.White;
@@ -310,7 +421,7 @@
             // 
             this.me0.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.me0.Enabled = false;
-            this.me0.Location = new System.Drawing.Point(24, 245);
+            this.me0.Location = new System.Drawing.Point(55, 245);
             this.me0.Name = "me0";
             this.me0.Properties.AllowFocused = false;
             this.me0.Properties.Appearance.BackColor = System.Drawing.Color.White;
@@ -331,7 +442,7 @@
             // 
             this.meMain.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.meMain.Enabled = false;
-            this.meMain.Location = new System.Drawing.Point(0, 5);
+            this.meMain.Location = new System.Drawing.Point(31, 5);
             this.meMain.Name = "meMain";
             this.meMain.Properties.AllowFocused = false;
             this.meMain.Properties.Appearance.BackColor = System.Drawing.Color.White;
@@ -348,151 +459,21 @@
             this.meMain.TabIndex = 33;
             this.meMain.TabStop = false;
             // 
-            // imageEdit0A
-            // 
-            this.imageEdit0A.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imageEdit0A.EditValue = global::DevTest.Properties.Resources.nothing;
-            this.imageEdit0A.Location = new System.Drawing.Point(44, 200);
-            this.imageEdit0A.Name = "imageEdit0A";
-            this.imageEdit0A.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.imageEdit0A.Properties.InitialImage = ((System.Drawing.Image)(resources.GetObject("imageEdit0A.Properties.InitialImage")));
-            this.imageEdit0A.Properties.ReadOnly = true;
-            this.imageEdit0A.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.imageEdit0A.Properties.ShowMenu = false;
-            this.imageEdit0A.Size = new System.Drawing.Size(60, 39);
-            this.imageEdit0A.TabIndex = 50;
-            // 
-            // imageEdit0B
-            // 
-            this.imageEdit0B.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imageEdit0B.EditValue = global::DevTest.Properties.Resources.nothing;
-            this.imageEdit0B.Location = new System.Drawing.Point(125, 200);
-            this.imageEdit0B.Name = "imageEdit0B";
-            this.imageEdit0B.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.imageEdit0B.Properties.ReadOnly = true;
-            this.imageEdit0B.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.imageEdit0B.Properties.ShowMenu = false;
-            this.imageEdit0B.Size = new System.Drawing.Size(60, 39);
-            this.imageEdit0B.TabIndex = 51;
-            // 
-            // imageEdit1A
-            // 
-            this.imageEdit1A.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imageEdit1A.EditValue = global::DevTest.Properties.Resources.nothing;
-            this.imageEdit1A.Location = new System.Drawing.Point(228, 200);
-            this.imageEdit1A.Name = "imageEdit1A";
-            this.imageEdit1A.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.imageEdit1A.Properties.ReadOnly = true;
-            this.imageEdit1A.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.imageEdit1A.Properties.ShowMenu = false;
-            this.imageEdit1A.Size = new System.Drawing.Size(60, 39);
-            this.imageEdit1A.TabIndex = 53;
-            // 
-            // imageEdit1B
-            // 
-            this.imageEdit1B.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imageEdit1B.EditValue = global::DevTest.Properties.Resources.nothing;
-            this.imageEdit1B.Location = new System.Drawing.Point(313, 200);
-            this.imageEdit1B.Name = "imageEdit1B";
-            this.imageEdit1B.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.imageEdit1B.Properties.ReadOnly = true;
-            this.imageEdit1B.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.imageEdit1B.Properties.ShowMenu = false;
-            this.imageEdit1B.Size = new System.Drawing.Size(60, 39);
-            this.imageEdit1B.TabIndex = 54;
-            // 
-            // imageEdit2A
-            // 
-            this.imageEdit2A.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imageEdit2A.EditValue = global::DevTest.Properties.Resources.nothing;
-            this.imageEdit2A.Location = new System.Drawing.Point(409, 200);
-            this.imageEdit2A.Name = "imageEdit2A";
-            this.imageEdit2A.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.imageEdit2A.Properties.ReadOnly = true;
-            this.imageEdit2A.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.imageEdit2A.Properties.ShowMenu = false;
-            this.imageEdit2A.Size = new System.Drawing.Size(60, 39);
-            this.imageEdit2A.TabIndex = 56;
-            // 
-            // imageEdit2B
-            // 
-            this.imageEdit2B.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imageEdit2B.EditValue = global::DevTest.Properties.Resources.nothing;
-            this.imageEdit2B.Location = new System.Drawing.Point(494, 200);
-            this.imageEdit2B.Name = "imageEdit2B";
-            this.imageEdit2B.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.imageEdit2B.Properties.ReadOnly = true;
-            this.imageEdit2B.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.imageEdit2B.Properties.ShowMenu = false;
-            this.imageEdit2B.Size = new System.Drawing.Size(60, 39);
-            this.imageEdit2B.TabIndex = 57;
-            // 
-            // imageEdit3A
-            // 
-            this.imageEdit3A.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imageEdit3A.EditValue = global::DevTest.Properties.Resources.nothing;
-            this.imageEdit3A.Location = new System.Drawing.Point(592, 200);
-            this.imageEdit3A.Name = "imageEdit3A";
-            this.imageEdit3A.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.imageEdit3A.Properties.ReadOnly = true;
-            this.imageEdit3A.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.imageEdit3A.Properties.ShowMenu = false;
-            this.imageEdit3A.Size = new System.Drawing.Size(60, 39);
-            this.imageEdit3A.TabIndex = 59;
-            // 
-            // imageEdit3B
-            // 
-            this.imageEdit3B.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imageEdit3B.EditValue = global::DevTest.Properties.Resources.nothing;
-            this.imageEdit3B.Location = new System.Drawing.Point(677, 200);
-            this.imageEdit3B.Name = "imageEdit3B";
-            this.imageEdit3B.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.imageEdit3B.Properties.ReadOnly = true;
-            this.imageEdit3B.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.imageEdit3B.Properties.ShowMenu = false;
-            this.imageEdit3B.Size = new System.Drawing.Size(60, 39);
-            this.imageEdit3B.TabIndex = 60;
-            // 
-            // imageEdit4A
-            // 
-            this.imageEdit4A.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imageEdit4A.EditValue = global::DevTest.Properties.Resources.nothing;
-            this.imageEdit4A.Location = new System.Drawing.Point(775, 200);
-            this.imageEdit4A.Name = "imageEdit4A";
-            this.imageEdit4A.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.imageEdit4A.Properties.ReadOnly = true;
-            this.imageEdit4A.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.imageEdit4A.Properties.ShowMenu = false;
-            this.imageEdit4A.Size = new System.Drawing.Size(60, 39);
-            this.imageEdit4A.TabIndex = 62;
-            // 
-            // imageEdit4B
-            // 
-            this.imageEdit4B.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imageEdit4B.EditValue = global::DevTest.Properties.Resources.nothing;
-            this.imageEdit4B.Location = new System.Drawing.Point(860, 200);
-            this.imageEdit4B.Name = "imageEdit4B";
-            this.imageEdit4B.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.imageEdit4B.Properties.ReadOnly = true;
-            this.imageEdit4B.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.imageEdit4B.Properties.ShowMenu = false;
-            this.imageEdit4B.Size = new System.Drawing.Size(60, 39);
-            this.imageEdit4B.TabIndex = 63;
-            // 
-            // frm天气
+            // frmWeather
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 685);
+            this.ClientSize = new System.Drawing.Size(1078, 631);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel0);
-            this.Name = "frm天气";
+            this.Name = "frmWeather";
             this.Text = "天气预报";
             this.Load += new System.EventHandler(this.frm天气_Load);
             this.Shown += new System.EventHandler(this.frm天气_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.panel0)).EndInit();
             this.panel0.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cmb市.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sLue.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb省.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -502,16 +483,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.me1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.me0.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.meMain.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit0A.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit0B.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit1A.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit1B.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit2A.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit2B.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit3A.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit3B.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit4A.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit4B.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -519,7 +490,6 @@
         #endregion
         private DevExpress.XtraEditors.PanelControl panel0;
         private DevExpress.XtraEditors.ComboBoxEdit cmb省;
-        private DevExpress.XtraEditors.ComboBoxEdit cmb市;
         private DevExpress.XtraEditors.PanelControl panel1;
         private DevExpress.XtraEditors.MemoEdit meMain;
         private DevExpress.XtraEditors.MemoEdit me0;
@@ -532,15 +502,17 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.PictureEdit imageEdit0A;
-        private DevExpress.XtraEditors.PictureEdit imageEdit0B;
-        private DevExpress.XtraEditors.PictureEdit imageEdit1A;
-        private DevExpress.XtraEditors.PictureEdit imageEdit1B;
-        private DevExpress.XtraEditors.PictureEdit imageEdit2A;
-        private DevExpress.XtraEditors.PictureEdit imageEdit2B;
-        private DevExpress.XtraEditors.PictureEdit imageEdit3A;
-        private DevExpress.XtraEditors.PictureEdit imageEdit3B;
-        private DevExpress.XtraEditors.PictureEdit imageEdit4A;
-        private DevExpress.XtraEditors.PictureEdit imageEdit4B;
+        private DevExpress.XtraEditors.SearchLookUpEdit sLue;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraEditors.LabelControl img0A;
+        private DevExpress.XtraEditors.LabelControl img4B;
+        private DevExpress.XtraEditors.LabelControl img4A;
+        private DevExpress.XtraEditors.LabelControl img3B;
+        private DevExpress.XtraEditors.LabelControl img3A;
+        private DevExpress.XtraEditors.LabelControl img2B;
+        private DevExpress.XtraEditors.LabelControl img2A;
+        private DevExpress.XtraEditors.LabelControl img1B;
+        private DevExpress.XtraEditors.LabelControl img1A;
+        private DevExpress.XtraEditors.LabelControl img0B;
     }
 }

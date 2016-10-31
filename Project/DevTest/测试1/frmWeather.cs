@@ -11,8 +11,12 @@ using System.Collections.Generic;
 using DevExpress.Utils;
 using System.IO;
 using System.Text;
+using ScrapySharp.Network;
+using HtmlAgilityPack;
+using ScrapySharp.Extensions;
+using System.Net.Cache;
 
-namespace DevTest
+namespace DevTest.测试1
 {
     public partial class frmWeather : XtraFormC
     {
@@ -21,6 +25,7 @@ namespace DevTest
         private delegate WeatherInfo mGetWeatherWithPara(string city);
         private delegate void EndGetWeather(WeatherInfo info);
         private WeatherWS mService;
+        private List<string> citys = new List<string>();
         // [DllImport("user32", EntryPoint = "HideCaret")]
         // private static extern bool HideCaret(IntPtr hWnd);
         public frmWeather()
@@ -30,6 +35,7 @@ namespace DevTest
         private void frm天气_Load(object sender, EventArgs e)
         {
             //me0.MouseDown += me0MouseDown;
+            sLue.Properties.DataSource = citys;
         }
         private void frm天气_Shown(object sender, EventArgs ex)
         {
@@ -41,41 +47,45 @@ namespace DevTest
             try
             {
                 mGetWeatherWithPara d = new mGetWeatherWithPara(getWeatherWithPara);
-                if (cmb市.EditValue != null)
-                    d.BeginInvoke(cmb市.EditValue.ToString(), new AsyncCallback(dCallBack), this);
+                if (sLue.EditValue != null)
+                    d.BeginInvoke(sLue.EditValue.ToString(), new AsyncCallback(dCallBack), this);
                 else
                     d.BeginInvoke("", new AsyncCallback(dCallBack), this);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                XtraMessageBox.Show(e.Message);
+                XtraMessageBox.Show(ex.Message);
             }
         }
-        private string getCity()
+        private string getDefaultCity()
         {
             try
             {
-                string result = request("http://ip.chinaz.com/getip.aspx?");
+                //HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://ip.chinaz.com/getip.aspx?");
+                //request.Timeout = 30720;
+                //request.AllowAutoRedirect = true;
+                //request.Method = "GET";
+                //request.ContentType = "text/xml; charset=utf-8";
+                //request.Credentials = CredentialCache.DefaultCredentials;
+                //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                //string result = new StreamReader(response.GetResponseStream(), Encoding.UTF8).ReadToEnd();
+                //result = result.Substring(0, result.LastIndexOf(" "));
+                //result = result.Substring(result.LastIndexOf("'") + 1);
+                ScrapingBrowser br = new ScrapingBrowser() { Language = new System.Globalization.CultureInfo("en-us"), Timeout = new TimeSpan(0, 0, 16), AllowAutoRedirect = true, Encoding = Encoding.UTF8 };
+                string htmlStr = br.DownloadString(new Uri("http://www.ip.cn/"));
+                var doc = new HtmlAgilityPack.HtmlDocument();
+                doc.LoadHtml(htmlStr);
+                var nodes = doc.DocumentNode.CssSelect("code");
+                string result = null;
+                foreach (var n in nodes)
+                    result = n.InnerText;
                 result = result.Substring(0, result.LastIndexOf(" "));
-                result = result.Substring(result.LastIndexOf("'") + 1);
                 return result;
             }
             catch (Exception e)
             {
                 throw new CustomException(e.Message);
             }
-        }
-        private string request(string url)
-        {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Timeout = 30720;
-            request.AllowAutoRedirect = true;
-            request.Method = "GET";
-            request.ContentType = "text/xml; charset=utf-8";
-            request.Credentials = CredentialCache.DefaultCredentials;
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            string result = new StreamReader(response.GetResponseStream(), Encoding.UTF8).ReadToEnd();
-            return result;
         }
         private void me0MouseDown(object sender, MouseEventArgs e)
         {
@@ -92,7 +102,6 @@ namespace DevTest
         }
         private void iniControl(WeatherInfo info)
         {
-
             if (info == null)
             {
                 XtraFormP.closeWait();
@@ -102,7 +111,6 @@ namespace DevTest
                 }
                 return;
             }
-            imageEdit0A.Properties.InitialImage = Util.getImage("0.gif");
             enableC();
             meMain.Text = string.Format("\t{0}/", info.City);
             meMain.Text += info.Area + "\r\n\t";
@@ -114,32 +122,32 @@ namespace DevTest
             me0.Text = info.Weather5Days[0].ToDay + Environment.NewLine;
             me0.Text += info.Weather5Days[0].T.Replace("/", "~") + Environment.NewLine;
             me0.Text += info.Weather5Days[0].Wind + Environment.NewLine;
-            imageEdit0A.EditValue = info.Weather5Days[0].IconA;
-            imageEdit0B.EditValue = info.Weather5Days[0].IconB;
+            img0A.Appearance.Image = info.Weather5Days[0].IconA;
+            img0B.Appearance.Image = info.Weather5Days[0].IconB;
 
             me1.Text = info.Weather5Days[1].ToDay + Environment.NewLine;
             me1.Text += info.Weather5Days[1].T.Replace("/", "~") + Environment.NewLine;
             me1.Text += info.Weather5Days[1].Wind + Environment.NewLine;
-            imageEdit1A.EditValue = info.Weather5Days[1].IconA;
-            imageEdit1B.EditValue = info.Weather5Days[1].IconB;
+            img1A.Appearance.Image = info.Weather5Days[1].IconA;
+            img1B.Appearance.Image = info.Weather5Days[1].IconB;
 
             me2.Text = info.Weather5Days[2].ToDay + Environment.NewLine;
             me2.Text += info.Weather5Days[2].T.Replace("/", "~") + Environment.NewLine;
             me2.Text += info.Weather5Days[2].Wind + Environment.NewLine;
-            imageEdit2A.EditValue = info.Weather5Days[2].IconA;
-            imageEdit2B.EditValue = info.Weather5Days[2].IconB;
+            img2A.Appearance.Image = info.Weather5Days[2].IconA;
+            img2B.Appearance.Image = info.Weather5Days[2].IconB;
 
             me3.Text = info.Weather5Days[3].ToDay + Environment.NewLine;
             me3.Text += info.Weather5Days[3].T.Replace("/", "~") + Environment.NewLine;
             me3.Text += info.Weather5Days[3].Wind + Environment.NewLine;
-            imageEdit3A.EditValue = info.Weather5Days[3].IconA;
-            imageEdit3B.EditValue = info.Weather5Days[3].IconB;
+            img3A.Appearance.Image = info.Weather5Days[3].IconA;
+            img3B.Appearance.Image = info.Weather5Days[3].IconB;
 
             me4.Text = info.Weather5Days[4].ToDay + Environment.NewLine;
             me4.Text += info.Weather5Days[4].T.Replace("/", "~") + Environment.NewLine;
             me4.Text += info.Weather5Days[4].Wind + Environment.NewLine;
-            imageEdit4A.EditValue = info.Weather5Days[4].IconA;
-            imageEdit4B.EditValue = info.Weather5Days[4].IconB;
+            img4A.Appearance.Image = info.Weather5Days[4].IconA;
+            img4B.Appearance.Image = info.Weather5Days[4].IconB;
             if (mPro.Count > 0)
             {
                 cmb省.Properties.Items.Clear();
@@ -169,7 +177,7 @@ namespace DevTest
             {
                 mService = new WeatherWS();
                 if (string.IsNullOrEmpty(city))
-                    city = getCity().Replace("市", "").Trim();
+                    city = getDefaultCity().Replace("市", "").Trim();
                 mService.Timeout = 16384;
                 weatherResult = mService.getWeather(city, "3573dee3157c41c8ad5fd76feef41cdd");
                 if (weatherResult.Length < 2)
@@ -260,23 +268,7 @@ namespace DevTest
                 return;
             }
         }
-        private void cmb市_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (cmb市.EditValue != null)
-            {
-                enableC();
-                XtraFormP.showWait("请稍等", "正在请求www.webxml.com.cn");
-                try
-                {
-                    mGetWeatherWithPara d = new mGetWeatherWithPara(getWeatherWithPara);
-                    d.BeginInvoke(cmb市.EditValue.ToString(), new AsyncCallback(dCallBack), this);
-                }
-                catch (Exception ex)
-                {
-                    XtraMessageBox.Show(ex.Message);
-                }
-            }
-        }
+
 
         private void cmb省_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -286,12 +278,30 @@ namespace DevTest
                 {
                     if (mPro[i].Name.Equals(cmb省.EditValue.ToString()))
                     {
-                        cmb市.Properties.Items.Clear();
-                        cmb市.Properties.Items.AddRange(mPro[i].Childs);
-                        cmb市.SelectedIndex = 0;
+                        citys.Clear();
+                        citys.AddRange(mPro[i].Childs);
+                        searchLookUpEdit1View.RefreshData();
+                        sLue.Text = citys[0];
                         break;
                     }
                 }
+            }
+        }
+        private void sLue_EditValueChanged(object sender, EventArgs e)
+        {
+            if (sLue.EditValue != null)
+            {
+                enableC();
+                sLue.Text = sLue.EditValue.ToString();
+                loadWeather();
+            }
+        }
+
+        private void searchLookUpEdit1View_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+            {
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
             }
         }
     }

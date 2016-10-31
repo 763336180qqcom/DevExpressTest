@@ -1,4 +1,4 @@
-﻿namespace DevTest
+﻿namespace DevTest.测试1
 {
     partial class frmAddHY
     {
@@ -27,7 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddHY));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DevTest.测试1.frmAddHY));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btn添加费用收入 = new DevExpress.XtraEditors.SimpleButton();
             this.btn提交 = new DevExpress.XtraEditors.SimpleButton();
