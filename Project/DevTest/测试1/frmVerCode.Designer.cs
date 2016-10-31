@@ -1,6 +1,6 @@
 ﻿namespace DevTest.测试1
 {
-    partial class frmValidate
+    partial class frmVerCode
     {
         /// <summary>
         /// Required designer variable.
@@ -39,12 +39,12 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.hScrollBar1 = new DevExpress.XtraEditors.HScrollBar();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.hScrollBar2 = new DevExpress.XtraEditors.HScrollBar();
+            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxLength.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxLineNum.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -52,7 +52,7 @@
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(104, 186);
+            this.labelControl1.Location = new System.Drawing.Point(155, 117);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(52, 27);
             this.labelControl1.TabIndex = 0;
@@ -60,25 +60,25 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(162, 186);
+            this.textEdit1.Location = new System.Drawing.Point(213, 117);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.AutoHeight = false;
             this.textEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit1.Size = new System.Drawing.Size(150, 27);
+            this.textEdit1.Size = new System.Drawing.Size(164, 27);
             this.textEdit1.TabIndex = 1;
             // 
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = global::DevTest.Properties.Resources.nothing;
-            this.pictureEdit1.Location = new System.Drawing.Point(162, 219);
+            this.pictureEdit1.Location = new System.Drawing.Point(213, 150);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowMenu = false;
-            this.pictureEdit1.Size = new System.Drawing.Size(150, 42);
+            this.pictureEdit1.Size = new System.Drawing.Size(164, 42);
             this.pictureEdit1.TabIndex = 3;
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(236, 278);
+            this.simpleButton1.Location = new System.Drawing.Point(287, 209);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(76, 27);
             this.simpleButton1.TabIndex = 4;
@@ -160,7 +160,7 @@
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(318, 186);
+            this.labelControl2.Location = new System.Drawing.Point(383, 117);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(41, 27);
             this.labelControl2.TabIndex = 2;
@@ -188,35 +188,22 @@
             this.labelControl5.TabIndex = 10;
             this.labelControl5.Text = "当前亮度值:";
             // 
-            // labelControl6
+            // checkEdit1
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.Location = new System.Drawing.Point(51, 101);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(53, 27);
-            this.labelControl6.TabIndex = 11;
-            this.labelControl6.Text = "曝光度";
-            // 
-            // hScrollBar2
-            // 
-            this.hScrollBar2.LargeChange = 100000;
-            this.hScrollBar2.Location = new System.Drawing.Point(110, 101);
-            this.hScrollBar2.Maximum = 16777215;
-            this.hScrollBar2.Name = "hScrollBar2";
-            this.hScrollBar2.Size = new System.Drawing.Size(205, 27);
-            this.hScrollBar2.SmallChange = 1000;
-            this.hScrollBar2.TabIndex = 12;
-            this.hScrollBar2.ValueChanged += new System.EventHandler(this.hScrollBar2_ValueChanged);
+            this.checkEdit1.Location = new System.Drawing.Point(750, 42);
+            this.checkEdit1.Name = "checkEdit1";
+            this.checkEdit1.Properties.AutoHeight = false;
+            this.checkEdit1.Properties.Caption = "浮雕效果";
+            this.checkEdit1.Size = new System.Drawing.Size(75, 27);
+            this.checkEdit1.TabIndex = 11;
+            this.checkEdit1.CheckedChanged += new System.EventHandler(this.checkEdit1_CheckedChanged);
             // 
             // frmValidate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1078, 618);
-            this.Controls.Add(this.hScrollBar2);
-            this.Controls.Add(this.labelControl6);
+            this.Controls.Add(this.checkEdit1);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.labelControl4);
@@ -231,11 +218,12 @@
             this.Name = "frmValidate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm验证码";
-            this.Load += new System.EventHandler(this.frmValidate_Load);
+            this.Load += new System.EventHandler(this.frmVerCode_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxLength.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxLineNum.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -253,7 +241,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.HScrollBar hScrollBar1;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.HScrollBar hScrollBar2;
+        private DevExpress.XtraEditors.CheckEdit checkEdit1;
     }
 }

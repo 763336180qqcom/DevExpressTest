@@ -14,7 +14,7 @@ namespace DevTest.Common
     /// <summary>
     /// 验证码生成类
     /// </summary>
-    public class VCode
+    public class VerCoder
     {
         #region 定义和初始化配置字段
         //用户存取验证码字符串
@@ -123,7 +123,7 @@ namespace DevTest.Common
         }
         Random random = new Random();
 
-        private String charCollection = "2,3,4,5,6,7,8,9,a,s,d,f,g,h,z,c,v,b,n,m,k,q,w,e,r,t,y,u,p,A,S,D,F,G,H,Z,C,V,B,N,M,K,Q,W,E,R,T,Y,U,P"; //定义验证码字符及出现频次 ,避免出现0 o j i l 1 x; 
+        private String charCollection = "2,3,4,5,6,7,8,9,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,S,D,F,G,H,I,J,L,Z,C,V,B,N,M,K,Q,W,E,R,T,Y,U,P"; //定义验证码字符及出现频次 ,避免出现0 o j i l 1 x; 
                                                                                                                                                /// <summary>
                                                                                                                                                /// 随机字符串列表，请使用英文状态下的逗号分隔。
                                                                                                                                                /// </summary>

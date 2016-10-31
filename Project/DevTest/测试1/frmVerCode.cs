@@ -2,12 +2,13 @@
 using DevTest.Common;
 using System;
 using System.Drawing;
+using System.Threading;
 
 namespace DevTest.测试1
 {
-    public partial class frmValidate : XtraFormC
+    public partial class frmVerCode : XtraFormC
     {
-        private VCode mCodeCreator;
+        private VerCoder mCodeCreator;
 
         private string mCodeStr;
 
@@ -16,18 +17,18 @@ namespace DevTest.测试1
         private int mLineNum;
         private int mBrightness;
 
+        private bool mStone;
 
-
-        public frmValidate()
+        public frmVerCode()
         {
             InitializeComponent();
-            mCodeCreator = new VCode();
+            mCodeCreator = new VerCoder();
             mCharNum = 4;
             mLineNum = 0;
             mWidth = pictureEdit1.Width;
             mBrightness = -1;
         }
-        private void frmValidate_Load(object sender, EventArgs e)
+        private void frmVerCode_Load(object sender, EventArgs e)
         {
             cbxLength.SelectedIndex = 3;
             cbxLineNum.SelectedIndex = 0;
@@ -49,18 +50,18 @@ namespace DevTest.测试1
 
         private void labelChange_Click(object sender, EventArgs e)
         {
-            pictureEdit1.Width = mCharNum > 4 ? mWidth + (Math.Abs(mCharNum - 4) * 28) : mWidth - (Math.Abs(mCharNum - 4) * 28);
+            pictureEdit1.Width = mCharNum > 4 ? mWidth + (Math.Abs(mCharNum - 4) * 30) : mWidth - (Math.Abs(mCharNum - 4) * 30);
             pictureEdit1.EditValue = genCodeImg(mCharNum);
         }
 
         private void cbxLength_SelectedValueChanged(object sender, EventArgs e)
         {
-            ComboBoxEdit cbx = (sender as ComboBoxEdit);
+            ComboBoxEdit cbx = sender as ComboBoxEdit;
             mCharNum = Convert.ToInt32(cbx.EditValue);
         }
         private void cbxLineNum_SelectedValueChanged(object sender, EventArgs e)
         {
-            ComboBoxEdit cbx = (sender as ComboBoxEdit);
+            ComboBoxEdit cbx = sender as ComboBoxEdit;
             mLineNum = Convert.ToInt32(cbx.EditValue);
         }
 
@@ -71,6 +72,20 @@ namespace DevTest.测试1
 
             mCodeStr = mCodeCreator.GetRandomString(length);
 
+            if (mCodeStr.Length >= 4)
+            {
+                mCodeStr = mCodeCreator.GetRandomString(length - 1);
+                Random ran = new Random();
+                if (mCodeStr.Length > 0 && (mCodeStr.Length + 1) / 4 > 0)
+                {
+                    int l = (mCodeStr.Length + 1) / 4;
+                    for (int i = 0; i < l; i++)
+                    {
+                        string val = Util.CreateGBChar(1);
+                        mCodeStr = mCodeStr.Insert(ran.Next(0, length - 1), val);
+                    }
+                }
+            }
             byte[] bs = mCodeCreator.CreateImage(mCodeStr);
             Bitmap org = Image.FromStream(Util.bytesToStream(bs)) as Bitmap;
 
@@ -82,9 +97,8 @@ namespace DevTest.测试1
 
             org = mCodeCreator.AdjustBrightness(org, mBrightness);
 
-            //  org = mCodeCreator.AdjustGamma(org, 100, 100, 100);
-
-            org=mCodeCreator.AdjustRippleEffect(org,50);
+            if (mStone)
+                org = mCodeCreator.AdjustToStone(org);
 
             return org;
         }
@@ -100,16 +114,16 @@ namespace DevTest.测试1
 
         private void hScrollBar1_ValueChanged(object sender, EventArgs e)
         {
-            HScrollBar sb = (sender as HScrollBar);
-            mBrightness= sb.Value;
-            labelControl5.Text ="当前亮度值:"+mBrightness;
+            HScrollBar sb = sender as HScrollBar;
+            mBrightness = sb.Value;
+            labelControl5.Text = "当前亮度值:" + mBrightness;
         }
 
-        private void hScrollBar2_ValueChanged(object sender, EventArgs e)
+        private void checkEdit1_CheckedChanged(object sender, EventArgs e)
         {
-            HScrollBar sb = (sender as HScrollBar);
-            string a=Convert.ToString(sb.Value,16);
-            textEdit1.Text = a;
+            CheckEdit chk = sender as CheckEdit;
+            if (chk.EditValue != null)
+                mStone = Convert.ToBoolean(chk.EditValue);
         }
     }
 }

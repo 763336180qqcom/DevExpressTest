@@ -487,10 +487,10 @@ E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmSRFY.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmAddHY.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmEditHY.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.Properties.Resources.resources
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.测试1.frmValidate.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.SplashScreen1.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.WaitForm1.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csproj.GenerateResource.Cache
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe.licenses
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.pdb
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.测试1.frmVerCode.resources

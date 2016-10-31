@@ -144,7 +144,7 @@ namespace DevTest
 
         private void navBarVCode_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-            LoadFrm(new DevTest.测试1.frmValidate());
+            LoadFrm(new DevTest.测试1.frmVerCode());
         }
     }
 }
