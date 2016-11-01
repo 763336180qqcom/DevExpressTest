@@ -1,0 +1,6 @@
+C:\Users\admin\Desktop\capture_test\IPlugins\bin\Debug\IPlugins.dll
+C:\Users\admin\Desktop\capture_test\IPlugins\bin\Debug\IPlugins.pdb
+C:\Users\admin\Desktop\capture_test\IPlugins\obj\Debug\IPlugins.Properties.Resources.resources
+C:\Users\admin\Desktop\capture_test\IPlugins\obj\Debug\IPlugins.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\capture_test\IPlugins\obj\Debug\IPlugins.dll
+C:\Users\admin\Desktop\capture_test\IPlugins\obj\Debug\IPlugins.pdb

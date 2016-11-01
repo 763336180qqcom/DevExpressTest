@@ -390,9 +390,13 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\admin\Desktop\capture_test\IPlugins\IPlugins.csproj">
+    <ProjectReference Include="..\IPlugins\IPlugins.csproj">
       <Project>{8ef4539c-2a0a-470f-bfc1-38e243d52561}</Project>
       <Name>IPlugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpyTool\SpyTool.csproj">
+      <Project>{ffb129f1-0ec4-4ee2-896e-177a9587f21a}</Project>
+      <Name>SpyTool</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

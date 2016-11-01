@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTest", "DevTest\DevTest.csproj", "{8FF7368B-68CE-4BFF-AEED-1333D838A46E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPlugins", "C:\Users\admin\Desktop\capture_test\IPlugins\IPlugins.csproj", "{8EF4539C-2A0A-470F-BFC1-38E243D52561}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPlugins", "IPlugins\IPlugins.csproj", "{8EF4539C-2A0A-470F-BFC1-38E243D52561}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpyTool", "C:\Users\admin\Desktop\capture_test\SpyTool\SpyTool.csproj", "{FFB129F1-0EC4-4EE2-896E-177A9587F21A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpyTool", "SpyTool\SpyTool.csproj", "{FFB129F1-0EC4-4EE2-896E-177A9587F21A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

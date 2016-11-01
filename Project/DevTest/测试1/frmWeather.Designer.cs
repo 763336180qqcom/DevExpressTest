@@ -162,6 +162,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1079, 586);
             this.panel1.TabIndex = 11;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // img4B
             // 

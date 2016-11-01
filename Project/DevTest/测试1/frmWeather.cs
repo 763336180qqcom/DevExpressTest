@@ -15,6 +15,7 @@ using ScrapySharp.Network;
 using HtmlAgilityPack;
 using ScrapySharp.Extensions;
 using System.Net.Cache;
+using System.Drawing;
 
 namespace DevTest.测试1
 {
@@ -303,6 +304,14 @@ namespace DevTest.测试1
             {
                 e.Info.DisplayText = (e.RowHandle + 1).ToString();
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            Font font = new Font("楷体", 50);
+            Graphics graphics = e.Graphics; 
+            graphics.RotateTransform(30f);
+            graphics.DrawString("panel1_Paint()", font, new SolidBrush(Color.Brown), panel1.Location.X+panel1.Width/2, panel1.Location.Y);
         }
     }
 }

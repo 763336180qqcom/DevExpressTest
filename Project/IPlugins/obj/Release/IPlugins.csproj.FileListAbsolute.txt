@@ -1,0 +1,14 @@
+d:\Users\Nemo\Desktop\capture_test\IPlugins\bin\Release\IPlugins.dll
+d:\Users\Nemo\Desktop\capture_test\IPlugins\bin\Release\IPlugins.pdb
+d:\Users\Nemo\Desktop\capture_test\IPlugins\obj\Release\IPlugins.csprojResolveAssemblyReference.cache
+d:\Users\Nemo\Desktop\capture_test\IPlugins\obj\Release\IPlugins.Properties.Resources.resources
+d:\Users\Nemo\Desktop\capture_test\IPlugins\obj\Release\IPlugins.csproj.GenerateResource.Cache
+d:\Users\Nemo\Desktop\capture_test\IPlugins\obj\Release\IPlugins.dll
+d:\Users\Nemo\Desktop\capture_test\IPlugins\obj\Release\IPlugins.pdb
+C:\Users\admin\Desktop\capture_test\IPlugins\bin\Release\IPlugins.dll
+C:\Users\admin\Desktop\capture_test\IPlugins\bin\Release\IPlugins.pdb
+C:\Users\admin\Desktop\capture_test\IPlugins\obj\Release\IPlugins.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\capture_test\IPlugins\obj\Release\IPlugins.Properties.Resources.resources
+C:\Users\admin\Desktop\capture_test\IPlugins\obj\Release\IPlugins.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\capture_test\IPlugins\obj\Release\IPlugins.dll
+C:\Users\admin\Desktop\capture_test\IPlugins\obj\Release\IPlugins.pdb
