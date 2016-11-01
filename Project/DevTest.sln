@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTest", "DevTest\DevTest.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPlugins", "IPlugins\IPlugins.csproj", "{8EF4539C-2A0A-470F-BFC1-38E243D52561}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpyTool", "SpyTool\SpyTool.csproj", "{FFB129F1-0EC4-4EE2-896E-177A9587F21A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{8EF4539C-2A0A-470F-BFC1-38E243D52561}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EF4539C-2A0A-470F-BFC1-38E243D52561}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EF4539C-2A0A-470F-BFC1-38E243D52561}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FFB129F1-0EC4-4EE2-896E-177A9587F21A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFB129F1-0EC4-4EE2-896E-177A9587F21A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FFB129F1-0EC4-4EE2-896E-177A9587F21A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FFB129F1-0EC4-4EE2-896E-177A9587F21A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

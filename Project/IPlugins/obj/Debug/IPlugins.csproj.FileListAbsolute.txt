@@ -4,3 +4,10 @@ C:\Users\admin\Desktop\capture_test\IPlugins\obj\Debug\IPlugins.Properties.Resou
 C:\Users\admin\Desktop\capture_test\IPlugins\obj\Debug\IPlugins.csproj.GenerateResource.Cache
 C:\Users\admin\Desktop\capture_test\IPlugins\obj\Debug\IPlugins.dll
 C:\Users\admin\Desktop\capture_test\IPlugins\obj\Debug\IPlugins.pdb
+E:\GitRepos\VSProject\Project\IPlugins\bin\Debug\IPlugins.dll
+E:\GitRepos\VSProject\Project\IPlugins\bin\Debug\IPlugins.pdb
+E:\GitRepos\VSProject\Project\IPlugins\obj\Debug\IPlugins.csprojResolveAssemblyReference.cache
+E:\GitRepos\VSProject\Project\IPlugins\obj\Debug\IPlugins.Properties.Resources.resources
+E:\GitRepos\VSProject\Project\IPlugins\obj\Debug\IPlugins.csproj.GenerateResource.Cache
+E:\GitRepos\VSProject\Project\IPlugins\obj\Debug\IPlugins.dll
+E:\GitRepos\VSProject\Project\IPlugins\obj\Debug\IPlugins.pdb
