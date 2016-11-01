@@ -44,6 +44,9 @@ namespace DevTest
             this.navBarSGRID = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarWeather = new DevExpress.XtraNavBar.NavBarItem();
             this.navBar截屏 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarVCode = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarEF1 = new DevExpress.XtraNavBar.NavBarItem();
             this.myNotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.MaincontextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem_Show = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +54,6 @@ namespace DevTest
             this.pc_Left = new DevExpress.XtraEditors.PanelControl();
             this.tab_Main = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.navBarVCode = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Left)).BeginInit();
             this.gc_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbc_Left)).BeginInit();
@@ -80,7 +82,8 @@ namespace DevTest
             this.nbc_Left.ActiveGroup = this.nbg_First;
             this.nbc_Left.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nbc_Left.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.nbg_First});
+            this.nbg_First,
+            this.navBarGroup1});
             this.nbc_Left.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBar合约业务,
             this.navBar新增合约,
@@ -89,7 +92,8 @@ namespace DevTest
             this.navBarSGRID,
             this.navBarWeather,
             this.navBar截屏,
-            this.navBarVCode});
+            this.navBarVCode,
+            this.navBarEF1});
             this.nbc_Left.Location = new System.Drawing.Point(2, 2);
             this.nbc_Left.Name = "nbc_Left";
             this.nbc_Left.OptionsNavPane.ExpandedWidth = 173;
@@ -170,6 +174,29 @@ namespace DevTest
             this.navBar截屏.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBar截屏.SmallImage")));
             this.navBar截屏.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBar截屏_LinkClicked);
             // 
+            // navBarVCode
+            // 
+            this.navBarVCode.Caption = "验证码";
+            this.navBarVCode.Name = "navBarVCode";
+            this.navBarVCode.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarVCode.SmallImage")));
+            this.navBarVCode.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarVCode_LinkClicked);
+            // 
+            // navBarGroup1
+            // 
+            this.navBarGroup1.Caption = "测试2";
+            this.navBarGroup1.Expanded = true;
+            this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarEF1)});
+            this.navBarGroup1.Name = "navBarGroup1";
+            this.navBarGroup1.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup1.SmallImage")));
+            // 
+            // navBarEF1
+            // 
+            this.navBarEF1.Caption = "EF6";
+            this.navBarEF1.Name = "navBarEF1";
+            this.navBarEF1.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarEF1.SmallImage")));
+            this.navBarEF1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarEF1_LinkClicked);
+            // 
             // myNotify
             // 
             this.myNotify.ContextMenuStrip = this.MaincontextMenuStrip;
@@ -220,13 +247,6 @@ namespace DevTest
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer_getWindowText_Tick);
             // 
-            // navBarVCode
-            // 
-            this.navBarVCode.Caption = "验证码";
-            this.navBarVCode.Name = "navBarItem1";
-            this.navBarVCode.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem1.SmallImage")));
-            this.navBarVCode.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarVCode_LinkClicked);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -270,5 +290,7 @@ namespace DevTest
         private DevExpress.XtraNavBar.NavBarItem navBarWeather;
         private DevExpress.XtraNavBar.NavBarItem navBar截屏;
         private DevExpress.XtraNavBar.NavBarItem navBarVCode;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
+        private DevExpress.XtraNavBar.NavBarItem navBarEF1;
     }
 }

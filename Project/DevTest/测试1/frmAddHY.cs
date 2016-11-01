@@ -96,6 +96,9 @@ namespace DevTest.测试1
             }
             try
             {
+
+
+
                 DB.提交合约及费用(txt名称.Text.Trim(), txt运营商ID.Text, (int)chk捆绑终端.EditValue, (int)chk允许老号.EditValue, txt店员价.Text, txt最低价.Text, txt毛利奖励.Text, txt现金奖励.Text, (DateTime?)dte开始时间.EditValue, (DateTime?)dte结束时间.EditValue, (int)chk状态.EditValue, sDt收入费用);
                 mTempDt合约 = DB.getDt("v合约业务", null);
                 lookUpEdit1.Properties.DataSource = mTempDt合约;

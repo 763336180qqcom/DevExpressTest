@@ -5,6 +5,7 @@ using DevExpress.XtraPrinting.Preview;
 using DevExpress.XtraReports.UI;
 using DevTest.Common;
 using DevTest.测试1;
+using DevTest.测试2;
 using System;
 using System.Windows.Forms;
 
@@ -146,6 +147,11 @@ namespace DevTest
         private void navBarVCode_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
             LoadFrm(new frmVerCode());
+        }
+
+        private void navBarEF1_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            LoadFrm(new frmEF1());
         }
     }
 }
