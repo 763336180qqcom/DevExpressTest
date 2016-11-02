@@ -8,9 +8,8 @@
     public partial class EF1ModelContext : DbContext
     {
         public EF1ModelContext()
-            : base("name=EF1ModelContext")
-        {
-        }
+            : base("name=EF1ModelConStr")
+        { }
 
         public virtual DbSet<t费用收入> t费用收入 { get; set; }
         public virtual DbSet<t合约业务> t合约业务 { get; set; }

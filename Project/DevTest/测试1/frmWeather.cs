@@ -72,7 +72,7 @@ namespace DevTest.测试1
                 //string result = new StreamReader(response.GetResponseStream(), Encoding.UTF8).ReadToEnd();
                 //result = result.Substring(0, result.LastIndexOf(" "));
                 //result = result.Substring(result.LastIndexOf("'") + 1);
-                ScrapingBrowser br = new ScrapingBrowser() { Language = new System.Globalization.CultureInfo("en-us"), Timeout = new TimeSpan(0, 0, 16), AllowAutoRedirect = true, Encoding = Encoding.UTF8 };
+                ScrapingBrowser br = new ScrapingBrowser() { Language = new System.Globalization.CultureInfo("en-us"), Timeout = new TimeSpan(0, 0, 16), AllowAutoRedirect = true, Encoding = Encoding.UTF8,KeepAlive=true};
                 string htmlStr = br.DownloadString(new Uri("http://www.ip.cn/"));
                 var doc = new HtmlAgilityPack.HtmlDocument();
                 doc.LoadHtml(htmlStr);
@@ -182,8 +182,7 @@ namespace DevTest.测试1
                 mService.Timeout = 16384;
                 weatherResult = mService.getWeather(city, "3573dee3157c41c8ad5fd76feef41cdd");
                 if (weatherResult.Length < 2)
-                    return null;
-
+                    throw new CustomException(weatherResult[0]);;
                 WeatherInfo info = new WeatherInfo() { City = weatherResult[0], Area = weatherResult[1], Tm = weatherResult[3], ToDay = weatherResult[4], Uv = weatherResult[5], UvIndex = weatherResult[6] };
 
                 WeatherInfoA a = new WeatherInfoA();
@@ -231,8 +230,7 @@ namespace DevTest.测试1
             }
             catch (Exception e)
             {
-                XtraMessageBox.Show(e.Message);
-                return null;
+                throw new CustomException(e.Message); 
             }
         }
         private void ReadXmlNodes()

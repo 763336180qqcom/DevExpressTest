@@ -27,7 +27,7 @@ namespace DevTest.测试2
 
         [Key]
         [Column(Order = 3)]
-        public decimal 期数 { get; set; }
+        public int 期数 { get; set; }
 
         [Key]
         [Column(Order = 4)]
