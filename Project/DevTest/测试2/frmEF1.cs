@@ -73,6 +73,7 @@ namespace DevTest.测试2
             {
                 str = new StringBuilder();
 
+
                 var fys = DBContext.v费用收入.GroupBy(g => new { g.业务ID, g.类别 })
                     .Select(s => new { s.Key.类别, s.Key.业务ID, 次数 = s.Count(c => c.业务ID > 0), 消费 = s.Sum(su => su.金额) })
                     .OrderByDescending(o => o.业务ID);
