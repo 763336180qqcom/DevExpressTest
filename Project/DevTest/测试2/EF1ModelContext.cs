@@ -1,9 +1,6 @@
 ﻿namespace DevTest.测试2
 {
-    using System;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
 
     public partial class EF1ModelContext : DbContext
     {

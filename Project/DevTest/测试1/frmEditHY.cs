@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DevTest
+namespace DevTest.测试1
 {
     public partial class frmEditHY : XtraForm
     {

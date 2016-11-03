@@ -3,8 +3,10 @@ using DevTest.Common;
 using System;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace DevTest.测试2
 {
@@ -22,6 +24,17 @@ namespace DevTest.测试2
             memoEdit2.Text = "SELECT 类别, 业务ID,COUNT(业务ID)" +
                 "次数,SUM(金额) 消费 FROM dbo.v费用收入 GROUP BY 业务ID, 类别  ORDER BY 业务ID DESC";
             gridControl1.DataSource = DB.getDt("v费用收入", null);
+            string hostName = Dns.GetHostName();
+            IPHostEntry hostEntry = Dns.GetHostEntry(hostName);
+            string ip = null;
+            for (int i = 0; i < hostEntry.AddressList.Length; i++)
+            {
+                if (hostEntry.AddressList[i].AddressFamily.ToString() == "InterNetwork")
+                {
+                    ip = hostEntry.AddressList[i].MapToIPv4().ToString();
+                    break;
+                }
+            }
 
         }
         private void iniCt()
@@ -38,6 +51,7 @@ namespace DevTest.测试2
             Thread thread = new Thread(new ParameterizedThreadStart(operate));
             thread.Start(sender);
         }
+             
         private void operate(object obj)
         {
             try
@@ -63,10 +77,16 @@ namespace DevTest.测试2
             }
             catch (Exception e)
             {
+                iniSkin();
                 XtraMessageBox.Show(e.Message);
             }
         }
-
+        private void iniSkin()
+        {
+            DevExpress.UserSkins.BonusSkins.Register();
+            DevExpress.Skins.SkinManager.EnableFormSkins();
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = "Coffee";
+        }
         private void findFY()
         {
             using (var DBContext = new EF1ModelContext())

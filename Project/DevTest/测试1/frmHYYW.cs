@@ -70,14 +70,14 @@ namespace DevTest
         private void editClickEventHandler(object sender, EventArgs e)
         {
             int rowIndex = (int)((DXMenuItem)sender).Tag;
-            frmEditHY.str名称 = gvHY.GetRowCellValue(gvHY.FocusedRowHandle, "名称").ToString();
-            frmEditHY.dte开始 = Convert.ToDateTime(gvHY.GetRowCellValue(gvHY.FocusedRowHandle, "开始时间"));
+            DevTest.测试1.frmEditHY.str名称 = gvHY.GetRowCellValue(gvHY.FocusedRowHandle, "名称").ToString();
+            DevTest.测试1.frmEditHY.dte开始 = Convert.ToDateTime(gvHY.GetRowCellValue(gvHY.FocusedRowHandle, "开始时间"));
             if (gvHY.GetRowCellValue(gvHY.FocusedRowHandle, "结束时间") != DBNull.Value)
-                frmEditHY.dte结束 = Convert.ToDateTime(gvHY.GetRowCellValue(gvHY.FocusedRowHandle, "结束时间"));
+                DevTest.测试1.frmEditHY.dte结束 = Convert.ToDateTime(gvHY.GetRowCellValue(gvHY.FocusedRowHandle, "结束时间"));
             else
-                frmEditHY.dte结束 = null;
-            frmEditHY.fID = gvHY.GetRowCellValue(gvHY.FocusedRowHandle, "fID").ToString();
-            frmEditHY f = new frmEditHY();
+                DevTest.测试1.frmEditHY.dte结束 = null;
+            DevTest.测试1.frmEditHY.fID = gvHY.GetRowCellValue(gvHY.FocusedRowHandle, "fID").ToString();
+            DevTest.测试1.frmEditHY f = new DevTest.测试1.frmEditHY();
             if (f.ShowDialog() == DialogResult.OK)
             {
                 try

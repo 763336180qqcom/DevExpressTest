@@ -1,4 +1,4 @@
-﻿namespace DevTest
+﻿namespace DevTest.测试1
 {
     partial class frmEditHY
     {

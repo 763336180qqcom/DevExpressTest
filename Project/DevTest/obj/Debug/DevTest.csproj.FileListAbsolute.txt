@@ -497,7 +497,6 @@ E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.测试1.frmWeather.resou
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmPrintScreen.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmSRFY.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.测试1.frmAddHY.resources
-E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.frmEditHY.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.Properties.Resources.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.测试1.frmVerCode.resources
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.SplashScreen1.resources
@@ -507,3 +506,6 @@ E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.csproj.GenerateResource.
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe.licenses
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.exe
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.pdb
+E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.测试1.frmEditHY.resources
+E:\GitRepos\VSProject\Project\DevTest\bin\Debug\Newtonsoft.Json.dll
+E:\GitRepos\VSProject\Project\DevTest\bin\Debug\Newtonsoft.Json.xml
