@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
@@ -215,6 +216,26 @@ namespace DevTest
             fs.Close();
             Bitmap bit = new Bitmap(result);
             return bit;
+        }
+        public static Bitmap getImageFromNet(string url)
+        {
+            try
+            {
+                Uri mUri = new Uri(url);
+                HttpWebRequest mRequest = (HttpWebRequest)WebRequest.Create(mUri);
+                mRequest.Method = "GET";
+                mRequest.Timeout = 3000;
+                HttpWebResponse mResponse = (HttpWebResponse)mRequest.GetResponse();
+                using (Stream mStream = mResponse.GetResponseStream())
+                {
+                    Bitmap bit = new Bitmap(Image.FromStream(mStream));
+                    return bit;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new CustomException(e.Message);
+            }
         }
 
         public static Stream bytesToStream(byte[] bs)

@@ -30,12 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWeather));
             this.panel0 = new DevExpress.XtraEditors.PanelControl();
-            this.sLue = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.lue县区 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cmb省 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.lue省 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lue市 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel1 = new DevExpress.XtraEditors.PanelControl();
-            this.img4B = new DevExpress.XtraEditors.LabelControl();
-            this.img4A = new DevExpress.XtraEditors.LabelControl();
             this.img3B = new DevExpress.XtraEditors.LabelControl();
             this.img3A = new DevExpress.XtraEditors.LabelControl();
             this.img2B = new DevExpress.XtraEditors.LabelControl();
@@ -44,12 +47,10 @@
             this.img1A = new DevExpress.XtraEditors.LabelControl();
             this.img0B = new DevExpress.XtraEditors.LabelControl();
             this.img0A = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.me4 = new DevExpress.XtraEditors.MemoEdit();
             this.me3 = new DevExpress.XtraEditors.MemoEdit();
             this.me2 = new DevExpress.XtraEditors.MemoEdit();
             this.me1 = new DevExpress.XtraEditors.MemoEdit();
@@ -57,12 +58,14 @@
             this.meMain = new DevExpress.XtraEditors.MemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panel0)).BeginInit();
             this.panel0.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sLue.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue县区.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb省.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue省.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue市.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.me4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.me3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.me2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.me1.Properties)).BeginInit();
@@ -77,30 +80,31 @@
             this.panel0.Appearance.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel0.Appearance.Options.UseBackColor = true;
             this.panel0.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panel0.Controls.Add(this.sLue);
-            this.panel0.Controls.Add(this.cmb省);
+            this.panel0.Controls.Add(this.lue县区);
+            this.panel0.Controls.Add(this.lue省);
+            this.panel0.Controls.Add(this.lue市);
             this.panel0.Location = new System.Drawing.Point(0, 0);
             this.panel0.Name = "panel0";
             this.panel0.Size = new System.Drawing.Size(1079, 49);
             this.panel0.TabIndex = 9;
             // 
-            // sLue
+            // lue县区
             // 
-            this.sLue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.sLue.EditValue = "";
-            this.sLue.Location = new System.Drawing.Point(350, 12);
-            this.sLue.Name = "sLue";
-            this.sLue.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-            this.sLue.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.sLue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lue县区.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lue县区.EditValue = "";
+            this.lue县区.Location = new System.Drawing.Point(481, 12);
+            this.lue县区.Name = "lue县区";
+            this.lue县区.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.lue县区.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.lue县区.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.sLue.Properties.NullText = "";
-            this.sLue.Properties.ShowClearButton = false;
-            this.sLue.Properties.ShowFooter = false;
-            this.sLue.Properties.View = this.searchLookUpEdit1View;
-            this.sLue.Size = new System.Drawing.Size(109, 18);
-            this.sLue.TabIndex = 1;
-            this.sLue.EditValueChanged += new System.EventHandler(this.sLue_EditValueChanged);
+            this.lue县区.Properties.NullText = "";
+            this.lue县区.Properties.ShowClearButton = false;
+            this.lue县区.Properties.ShowFooter = false;
+            this.lue县区.Properties.View = this.searchLookUpEdit1View;
+            this.lue县区.Size = new System.Drawing.Size(109, 18);
+            this.lue县区.TabIndex = 1;
+            this.lue县区.EditValueChanged += new System.EventHandler(this.lue县区_EditValueChanged);
             // 
             // searchLookUpEdit1View
             // 
@@ -115,19 +119,68 @@
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             this.searchLookUpEdit1View.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.searchLookUpEdit1View_CustomDrawRowIndicator);
             // 
-            // cmb省
+            // lue省
             // 
-            this.cmb省.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmb省.Location = new System.Drawing.Point(205, 12);
-            this.cmb省.Name = "cmb省";
-            this.cmb省.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.cmb省.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lue省.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lue省.Location = new System.Drawing.Point(205, 12);
+            this.lue省.Name = "lue省";
+            this.lue省.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.lue省.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmb省.Properties.DropDownRows = 10;
-            this.cmb省.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmb省.Size = new System.Drawing.Size(109, 18);
-            this.cmb省.TabIndex = 0;
-            this.cmb省.SelectedValueChanged += new System.EventHandler(this.cmb省_SelectedValueChanged);
+            this.lue省.Properties.NullText = "";
+            this.lue省.Properties.PopupSizeable = false;
+            this.lue省.Properties.View = this.gridView1;
+            this.lue省.Size = new System.Drawing.Size(109, 18);
+            this.lue省.TabIndex = 0;
+            this.lue省.EditValueChanged += new System.EventHandler(this.lue省_EditValueChanged);
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.IndicatorWidth = 35;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowColumnHeaders = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "名称";
+            this.gridColumn1.FieldName = "名称";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "简称";
+            this.gridColumn2.FieldName = "简称";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // lue市
+            // 
+            this.lue市.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lue市.Location = new System.Drawing.Point(343, 12);
+            this.lue市.Name = "lue市";
+            this.lue市.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.lue市.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lue市.Properties.NullText = "";
+            this.lue市.Properties.PopupSizeable = false;
+            this.lue市.Properties.View = this.gridView2;
+            this.lue市.Size = new System.Drawing.Size(109, 18);
+            this.lue市.TabIndex = 2;
+            this.lue市.EditValueChanged += new System.EventHandler(this.lue市_EditValueChanged);
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // panel1
             // 
@@ -137,8 +190,6 @@
             this.panel1.Appearance.BackColor = System.Drawing.Color.White;
             this.panel1.Appearance.Options.UseBackColor = true;
             this.panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panel1.Controls.Add(this.img4B);
-            this.panel1.Controls.Add(this.img4A);
             this.panel1.Controls.Add(this.img3B);
             this.panel1.Controls.Add(this.img3A);
             this.panel1.Controls.Add(this.img2B);
@@ -147,12 +198,10 @@
             this.panel1.Controls.Add(this.img1A);
             this.panel1.Controls.Add(this.img0B);
             this.panel1.Controls.Add(this.img0A);
-            this.panel1.Controls.Add(this.labelControl5);
             this.panel1.Controls.Add(this.labelControl4);
             this.panel1.Controls.Add(this.labelControl3);
             this.panel1.Controls.Add(this.labelControl2);
             this.panel1.Controls.Add(this.labelControl1);
-            this.panel1.Controls.Add(this.me4);
             this.panel1.Controls.Add(this.me3);
             this.panel1.Controls.Add(this.me2);
             this.panel1.Controls.Add(this.me1);
@@ -164,34 +213,14 @@
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // img4B
-            // 
-            this.img4B.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.img4B.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img4B.Appearance.Image")));
-            this.img4B.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.img4B.Location = new System.Drawing.Point(885, 209);
-            this.img4B.Name = "img4B";
-            this.img4B.Size = new System.Drawing.Size(44, 24);
-            this.img4B.TabIndex = 74;
-            // 
-            // img4A
-            // 
-            this.img4A.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.img4A.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img4A.Appearance.Image")));
-            this.img4A.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.img4A.Location = new System.Drawing.Point(826, 209);
-            this.img4A.Name = "img4A";
-            this.img4A.Size = new System.Drawing.Size(44, 24);
-            this.img4A.TabIndex = 73;
-            // 
             // img3B
             // 
             this.img3B.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.img3B.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img3B.Appearance.Image")));
             this.img3B.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.img3B.Location = new System.Drawing.Point(704, 209);
+            this.img3B.Location = new System.Drawing.Point(821, 187);
             this.img3B.Name = "img3B";
-            this.img3B.Size = new System.Drawing.Size(44, 24);
+            this.img3B.Size = new System.Drawing.Size(42, 30);
             this.img3B.TabIndex = 72;
             // 
             // img3A
@@ -199,9 +228,9 @@
             this.img3A.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.img3A.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img3A.Appearance.Image")));
             this.img3A.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.img3A.Location = new System.Drawing.Point(644, 209);
+            this.img3A.Location = new System.Drawing.Point(761, 187);
             this.img3A.Name = "img3A";
-            this.img3A.Size = new System.Drawing.Size(44, 24);
+            this.img3A.Size = new System.Drawing.Size(42, 30);
             this.img3A.TabIndex = 71;
             // 
             // img2B
@@ -209,9 +238,9 @@
             this.img2B.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.img2B.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img2B.Appearance.Image")));
             this.img2B.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.img2B.Location = new System.Drawing.Point(521, 209);
+            this.img2B.Location = new System.Drawing.Point(638, 187);
             this.img2B.Name = "img2B";
-            this.img2B.Size = new System.Drawing.Size(44, 24);
+            this.img2B.Size = new System.Drawing.Size(42, 30);
             this.img2B.TabIndex = 70;
             // 
             // img2A
@@ -219,9 +248,9 @@
             this.img2A.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.img2A.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img2A.Appearance.Image")));
             this.img2A.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.img2A.Location = new System.Drawing.Point(458, 209);
+            this.img2A.Location = new System.Drawing.Point(578, 187);
             this.img2A.Name = "img2A";
-            this.img2A.Size = new System.Drawing.Size(44, 24);
+            this.img2A.Size = new System.Drawing.Size(42, 30);
             this.img2A.TabIndex = 69;
             // 
             // img1B
@@ -229,9 +258,9 @@
             this.img1B.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.img1B.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img1B.Appearance.Image")));
             this.img1B.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.img1B.Location = new System.Drawing.Point(338, 209);
+            this.img1B.Location = new System.Drawing.Point(458, 187);
             this.img1B.Name = "img1B";
-            this.img1B.Size = new System.Drawing.Size(44, 24);
+            this.img1B.Size = new System.Drawing.Size(42, 30);
             this.img1B.TabIndex = 68;
             // 
             // img1A
@@ -239,9 +268,9 @@
             this.img1A.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.img1A.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img1A.Appearance.Image")));
             this.img1A.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.img1A.Location = new System.Drawing.Point(279, 209);
+            this.img1A.Location = new System.Drawing.Point(397, 187);
             this.img1A.Name = "img1A";
-            this.img1A.Size = new System.Drawing.Size(44, 24);
+            this.img1A.Size = new System.Drawing.Size(42, 30);
             this.img1A.TabIndex = 67;
             // 
             // img0B
@@ -249,9 +278,9 @@
             this.img0B.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.img0B.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img0B.Appearance.Image")));
             this.img0B.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.img0B.Location = new System.Drawing.Point(149, 209);
+            this.img0B.Location = new System.Drawing.Point(270, 187);
             this.img0B.Name = "img0B";
-            this.img0B.Size = new System.Drawing.Size(44, 24);
+            this.img0B.Size = new System.Drawing.Size(42, 30);
             this.img0B.TabIndex = 66;
             // 
             // img0A
@@ -259,24 +288,10 @@
             this.img0A.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.img0A.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("img0A.Appearance.Image")));
             this.img0A.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.img0A.Location = new System.Drawing.Point(90, 209);
+            this.img0A.Location = new System.Drawing.Point(209, 187);
             this.img0A.Name = "img0A";
-            this.img0A.Size = new System.Drawing.Size(44, 24);
+            this.img0A.Size = new System.Drawing.Size(42, 30);
             this.img0A.TabIndex = 65;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl5.Appearance.BackColor = System.Drawing.Color.White;
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Location = new System.Drawing.Point(864, 200);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(29, 39);
-            this.labelControl5.TabIndex = 64;
-            this.labelControl5.Text = "~";
             // 
             // labelControl4
             // 
@@ -286,7 +301,7 @@
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl4.Location = new System.Drawing.Point(681, 200);
+            this.labelControl4.Location = new System.Drawing.Point(798, 184);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(29, 39);
             this.labelControl4.TabIndex = 61;
@@ -300,7 +315,7 @@
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(498, 200);
+            this.labelControl3.Location = new System.Drawing.Point(615, 184);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(29, 39);
             this.labelControl3.TabIndex = 58;
@@ -314,7 +329,7 @@
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(317, 200);
+            this.labelControl2.Location = new System.Drawing.Point(434, 184);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(29, 39);
             this.labelControl2.TabIndex = 55;
@@ -328,38 +343,17 @@
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(129, 200);
+            this.labelControl1.Location = new System.Drawing.Point(246, 184);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(29, 39);
             this.labelControl1.TabIndex = 52;
             this.labelControl1.Text = "~";
             // 
-            // me4
-            // 
-            this.me4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.me4.Enabled = false;
-            this.me4.Location = new System.Drawing.Point(789, 245);
-            this.me4.Name = "me4";
-            this.me4.Properties.AllowFocused = false;
-            this.me4.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.me4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.me4.Properties.Appearance.Options.UseBackColor = true;
-            this.me4.Properties.Appearance.Options.UseFont = true;
-            this.me4.Properties.Appearance.Options.UseTextOptions = true;
-            this.me4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.me4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.me4.Properties.ReadOnly = true;
-            this.me4.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.me4.ShowToolTips = false;
-            this.me4.Size = new System.Drawing.Size(180, 319);
-            this.me4.TabIndex = 49;
-            this.me4.TabStop = false;
-            // 
             // me3
             // 
             this.me3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.me3.Enabled = false;
-            this.me3.Location = new System.Drawing.Point(606, 245);
+            this.me3.Location = new System.Drawing.Point(723, 229);
             this.me3.Name = "me3";
             this.me3.Properties.AllowFocused = false;
             this.me3.Properties.Appearance.BackColor = System.Drawing.Color.White;
@@ -380,7 +374,7 @@
             // 
             this.me2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.me2.Enabled = false;
-            this.me2.Location = new System.Drawing.Point(423, 245);
+            this.me2.Location = new System.Drawing.Point(540, 229);
             this.me2.Name = "me2";
             this.me2.Properties.AllowFocused = false;
             this.me2.Properties.Appearance.BackColor = System.Drawing.Color.White;
@@ -401,7 +395,7 @@
             // 
             this.me1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.me1.Enabled = false;
-            this.me1.Location = new System.Drawing.Point(240, 245);
+            this.me1.Location = new System.Drawing.Point(357, 229);
             this.me1.Name = "me1";
             this.me1.Properties.AllowFocused = false;
             this.me1.Properties.Appearance.BackColor = System.Drawing.Color.White;
@@ -422,7 +416,7 @@
             // 
             this.me0.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.me0.Enabled = false;
-            this.me0.Location = new System.Drawing.Point(55, 245);
+            this.me0.Location = new System.Drawing.Point(172, 229);
             this.me0.Name = "me0";
             this.me0.Properties.AllowFocused = false;
             this.me0.Properties.Appearance.BackColor = System.Drawing.Color.White;
@@ -473,12 +467,14 @@
             this.Shown += new System.EventHandler(this.frm天气_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.panel0)).EndInit();
             this.panel0.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sLue.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue县区.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb省.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue省.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue市.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.me4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.me3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.me2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.me1.Properties)).EndInit();
@@ -490,24 +486,19 @@
 
         #endregion
         private DevExpress.XtraEditors.PanelControl panel0;
-        private DevExpress.XtraEditors.ComboBoxEdit cmb省;
         private DevExpress.XtraEditors.PanelControl panel1;
         private DevExpress.XtraEditors.MemoEdit meMain;
         private DevExpress.XtraEditors.MemoEdit me0;
-        private DevExpress.XtraEditors.MemoEdit me4;
         private DevExpress.XtraEditors.MemoEdit me3;
         private DevExpress.XtraEditors.MemoEdit me2;
         private DevExpress.XtraEditors.MemoEdit me1;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.SearchLookUpEdit sLue;
+        private DevExpress.XtraEditors.SearchLookUpEdit lue县区;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraEditors.LabelControl img0A;
-        private DevExpress.XtraEditors.LabelControl img4B;
-        private DevExpress.XtraEditors.LabelControl img4A;
         private DevExpress.XtraEditors.LabelControl img3B;
         private DevExpress.XtraEditors.LabelControl img3A;
         private DevExpress.XtraEditors.LabelControl img2B;
@@ -515,5 +506,11 @@
         private DevExpress.XtraEditors.LabelControl img1B;
         private DevExpress.XtraEditors.LabelControl img1A;
         private DevExpress.XtraEditors.LabelControl img0B;
+        private DevExpress.XtraEditors.SearchLookUpEdit lue省;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.SearchLookUpEdit lue市;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

@@ -69,7 +69,7 @@ namespace DevTest.Entity
             }
         }
 
-        public string _地区
+        public string _区
         {
             get
             {

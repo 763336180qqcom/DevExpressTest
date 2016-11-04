@@ -7,37 +7,78 @@ using System.Threading.Tasks;
 
 namespace DevTest.Entity
 {
-    class WeatherInfoA
+    class WeatherInfoA : IDisposable
     {
-        private string _ToDay;
-        private string _T;
-        private string _Wind;
-        private Image _IconA;
-        private Image _IconB;
-
-        public string ToDay
+        public void Dispose()
         {
-            get
+            if (_DayP != null)
             {
-                return _ToDay;
+                _DayP.Dispose();
+                _DayP = null;
             }
-
-            set
+            if (_Nightp != null)
             {
-                _ToDay = value;
+                _Nightp.Dispose();
+                _Nightp = null;
             }
         }
 
-        public string T
+        private string _Date;
+        private Image _DayP;
+        private Image _Nightp;
+        private string _Weather;
+        private string _Wind;
+        private string _Temperature;
+
+        public string Date
         {
             get
             {
-                return _T;
+                return _Date;
             }
 
             set
             {
-                _T = value;
+                _Date = value;
+            }
+        }
+
+        public Image DayP
+        {
+            get
+            {
+                return _DayP;
+            }
+
+            set
+            {
+                _DayP = value;
+            }
+        }
+
+        public Image Nightp
+        {
+            get
+            {
+                return _Nightp;
+            }
+
+            set
+            {
+                _Nightp = value;
+            }
+        }
+
+        public string Weather
+        {
+            get
+            {
+                return _Weather;
+            }
+
+            set
+            {
+                _Weather = value;
             }
         }
 
@@ -54,29 +95,16 @@ namespace DevTest.Entity
             }
         }
 
-        public Image IconA
+        public string Temperature
         {
             get
             {
-                return _IconA;
+                return _Temperature;
             }
 
             set
             {
-                _IconA = value;
-            }
-        }
-
-        public Image IconB
-        {
-            get
-            {
-                return _IconB;
-            }
-
-            set
-            {
-                _IconB = value;
+                _Temperature = value;
             }
         }
     }

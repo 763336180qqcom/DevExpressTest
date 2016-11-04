@@ -509,3 +509,5 @@ E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.pdb
 E:\GitRepos\VSProject\Project\DevTest\obj\Debug\DevTest.测试1.frmEditHY.resources
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\Newtonsoft.Json.dll
 E:\GitRepos\VSProject\Project\DevTest\bin\Debug\Newtonsoft.Json.xml
+E:\GitRepos\VSProject\Project\DevTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\GitRepos\VSProject\Project\DevTest\bin\Debug\zh-Hans\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll

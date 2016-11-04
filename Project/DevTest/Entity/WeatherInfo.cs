@@ -8,13 +8,9 @@ namespace DevTest.Entity
 {
     class WeatherInfo
     {
-        private string _City;
-        private string _Area;
-        private string _Tm;
-        private string _ToDay;
-        private string _Uv;
-        private string _UvIndex;
-        private List<WeatherInfoA> weather5Days=new List<WeatherInfoA>(); 
+        private string _City;//当前位置
+        private string _Indicator;
+        private List<WeatherInfoA> weather4Days = new List<WeatherInfoA>();
 
         public string City
         {
@@ -29,81 +25,29 @@ namespace DevTest.Entity
             }
         }
 
-        public string Area
+        internal List<WeatherInfoA> Weather4Days
         {
             get
             {
-                return _Area;
+                return weather4Days;
             }
 
             set
             {
-                _Area = value;
+                weather4Days = value;
             }
         }
 
-        public string Tm
+        public string ZhiShu
         {
             get
             {
-                return _Tm;
+                return _Indicator;
             }
 
             set
             {
-                _Tm = value;
-            }
-        }
-
-        public string ToDay
-        {
-            get
-            {
-                return _ToDay;
-            }
-
-            set
-            {
-                _ToDay = value;
-            }
-        }
-
-        public string Uv
-        {
-            get
-            {
-                return _Uv;
-            }
-
-            set
-            {
-                _Uv = value;
-            }
-        }
-
-        public string UvIndex
-        {
-            get
-            {
-                return _UvIndex;
-            }
-
-            set
-            {
-                _UvIndex = value;
-            }
-        }
-
-        internal List<WeatherInfoA> Weather5Days
-        {
-            get
-            {
-                return weather5Days;
-            }
-
-            set
-            {
-                weather5Days = value;
+                _Indicator = value;
             }
         }
     }
