@@ -143,8 +143,8 @@ namespace DevTest.测试1
                 request.Credentials = CredentialCache.DefaultCredentials;
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 string strJson = new StreamReader(response.GetResponseStream()).ReadToEnd();
-
-                JToken J0 = ((JObject)JsonConvert.DeserializeObject(strJson))["HeWeather data service 3.0"][0];
+                JObject jRoot = (JObject)JsonConvert.DeserializeObject(strJson);
+                JToken J0 = jRoot["HeWeather data service 3.0"][0];
 
                 if (J0["status"].ToString().Equals("ok"))
                 {
@@ -355,13 +355,6 @@ namespace DevTest.测试1
                 loadWeather();
             }
         }
-        private void searchLookUpEdit1View_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
-        {
-            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
-            {
-                e.Info.DisplayText = (e.RowHandle + 1).ToString();
-            }
-        }
         private void gridView1_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
             if (e.Info.IsRowIndicator && e.RowHandle >= 0)
@@ -370,12 +363,5 @@ namespace DevTest.测试1
             }
         }
 
-        private void gridView2_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
-        {
-            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
-            {
-                e.Info.DisplayText = (e.RowHandle + 1).ToString();
-            }
-        }
     }
 }

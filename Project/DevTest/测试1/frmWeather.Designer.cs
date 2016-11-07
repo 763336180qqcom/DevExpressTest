@@ -120,7 +120,7 @@
             this.searchLookUpEdit1View.OptionsView.EnableAppearanceOddRow = true;
             this.searchLookUpEdit1View.OptionsView.ShowColumnHeaders = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            this.searchLookUpEdit1View.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.searchLookUpEdit1View_CustomDrawRowIndicator);
+            this.searchLookUpEdit1View.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
             // 
             // gridColumn3
             // 
@@ -206,7 +206,7 @@
             this.gridView2.OptionsView.EnableAppearanceOddRow = true;
             this.gridView2.OptionsView.ShowColumnHeaders = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
-            this.gridView2.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView2_CustomDrawRowIndicator);
+            this.gridView2.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
             // 
             // gridColumn2
             // 
