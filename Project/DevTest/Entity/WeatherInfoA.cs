@@ -29,6 +29,8 @@ namespace DevTest.Entity
         private string _Weather;
         private string _Wind;
         private string _Temperature;
+        private string _Sunrise;
+        private string _Sunset;
 
         public string Date
         {
@@ -105,6 +107,32 @@ namespace DevTest.Entity
             set
             {
                 _Temperature = value;
+            }
+        }
+
+        public string Sunrise
+        {
+            get
+            {
+                return _Sunrise;
+            }
+
+            set
+            {
+                _Sunrise = value;
+            }
+        }
+
+        public string Sunset
+        {
+            get
+            {
+                return _Sunset;
+            }
+
+            set
+            {
+                _Sunset = value;
             }
         }
     }

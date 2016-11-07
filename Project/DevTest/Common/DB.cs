@@ -412,7 +412,7 @@ namespace DevTest
             return null;
         }
 
-        public static DataTable getName(string[] flags)
+        public static DataTable getNames(string[] flags)
         {
             using (SqlConnection con = new SqlConnection(CONNSTR))
             {
@@ -420,7 +420,7 @@ namespace DevTest
                 switch (flags[0])
                 {
                     case "P":
-                        SqlCommand cmd = new SqlCommand("SELECT 名称,简称 FROM v省级", con);
+                        SqlCommand cmd = new SqlCommand("SELECT DISTINCT 省中文  FROM t城市列表(nolock) WHERE 中文=所属上级市中文 ORDER BY 省中文 DESC", con);
                         SqlDataAdapter adt = new SqlDataAdapter(cmd);
                         DataTable dt = new DataTable();
                         adt.Fill(dt);
@@ -429,16 +429,8 @@ namespace DevTest
                         else
                             throw new CustomException("没有找到省级名称"); ;
                     case "C":
-                        SqlCommand cmdC = new SqlCommand("SELECT ID FROM v省级 WHERE 简称=@简称", con);
-                        cmdC.Parameters.AddWithValue("@简称", flags[1]);
-                        SqlDataReader readC = cmdC.ExecuteReader();
-                        string cid = null;
-                        if (!readC.Read())
-                            throw new CustomException("没有找到省级ID");
-                        else
-                            cid = readC[0].ToString();
-                        cmdC = new SqlCommand("SELECT 名称,简称 FROM v市级 WHERE 上级ID=@上级ID", con);
-                        cmdC.Parameters.AddWithValue("@上级ID", cid);
+                        SqlCommand cmdC = new SqlCommand("SELECT 所属上级市中文 FROM t城市列表(nolock) WHERE 省中文=@省中文 AND 中文=所属上级市中文", con);
+                        cmdC.Parameters.AddWithValue("@省中文", flags[1]);
                         SqlDataAdapter adtC = new SqlDataAdapter(cmdC);
                         DataTable dtC = new DataTable();
                         adtC.Fill(dtC);
@@ -447,17 +439,9 @@ namespace DevTest
                         else
                             throw new CustomException("没有找到对应的下级市名称");
                     case "D":
-                        SqlCommand cmdD = new SqlCommand("SELECT ID FROM v市级 WHERE 简称=@简称", con);
-                        cmdD.Parameters.AddWithValue("@简称", flags[1]);
-                        SqlDataReader readD = cmdD.ExecuteReader();
-                        string did = null;
-                        if (!readD.Read())
-                            throw new CustomException("没有找到省级ID");
-                        else
-                            did = readD[0].ToString();
-                        cmdC = new SqlCommand("SELECT 名称,简称 FROM v县区级 WHERE 上级ID=@上级ID", con);
-                        cmdC.Parameters.AddWithValue("@上级ID", did);
-                        SqlDataAdapter adtD = new SqlDataAdapter(cmdC);
+                        SqlCommand cmdD = new SqlCommand("SELECT 中文 FROM t城市列表 WHERE 所属上级市中文=@市中文", con);
+                        cmdD.Parameters.AddWithValue("@市中文", flags[1]);
+                        SqlDataAdapter adtD = new SqlDataAdapter(cmdD);
                         DataTable dtD = new DataTable();
                         adtD.Fill(dtD);
                         if (dtD.Rows.Count > 0)

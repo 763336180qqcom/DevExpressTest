@@ -208,11 +208,10 @@ namespace DevTest
         public static Bitmap getImage(string picName)
         {
             FileStream fs = File.OpenRead(Application.StartupPath.Replace("\\bin\\Debug", "\\img\\weather\\" + picName)); //OpenRead
-            int filelength = 0;
-            filelength = (int)fs.Length; //获得文件长度 
+            int filelength = (int)fs.Length; //获得文件长度 
             Byte[] image = new Byte[filelength]; //建立一个字节数组 
             fs.Read(image, 0, filelength); //按字节流读取 
-            System.Drawing.Image result = System.Drawing.Image.FromStream(fs);
+            Image result = Image.FromStream(fs);
             fs.Close();
             Bitmap bit = new Bitmap(result);
             return bit;
@@ -228,7 +227,7 @@ namespace DevTest
                 HttpWebResponse mResponse = (HttpWebResponse)mRequest.GetResponse();
                 using (Stream mStream = mResponse.GetResponseStream())
                 {
-                    Bitmap bit = new Bitmap(Image.FromStream(mStream));
+                    Bitmap bit = new Bitmap(Image.FromStream(mStream), new Size(60, 45));
                     return bit;
                 }
             }
@@ -246,8 +245,8 @@ namespace DevTest
         public static byte[] streamToBytes(Stream sm)
         {
             byte[] bs = new byte[sm.Length];
-            sm.Read(bs,0,bs.Length);
-            sm.Seek(0,SeekOrigin.Begin);
+            sm.Read(bs, 0, bs.Length);
+            sm.Seek(0, SeekOrigin.Begin);
             return bs;
         }
 

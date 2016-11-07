@@ -28,7 +28,7 @@ namespace DevTest
             sFormText = this.Text;
             StartPosition = FormStartPosition.CenterScreen;
             this.WindowState = FormWindowState.Maximized;
-            navBarEF1_LinkClicked(null, null);
+            navBarWeather_LinkClicked(null, null);
         }
         private void midPageChangedEventHandler(object sender, EventArgs e)
         {
