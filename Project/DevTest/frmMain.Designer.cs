@@ -45,8 +45,7 @@ namespace DevTest
             this.navBarWeather = new DevExpress.XtraNavBar.NavBarItem();
             this.navBar截屏 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarVCode = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarEF1 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarEF = new DevExpress.XtraNavBar.NavBarItem();
             this.myNotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.MaincontextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem_Show = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,8 +81,7 @@ namespace DevTest
             this.nbc_Left.ActiveGroup = this.nbg_First;
             this.nbc_Left.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nbc_Left.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.nbg_First,
-            this.navBarGroup1});
+            this.nbg_First});
             this.nbc_Left.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBar合约业务,
             this.navBar新增合约,
@@ -93,7 +91,7 @@ namespace DevTest
             this.navBarWeather,
             this.navBar截屏,
             this.navBarVCode,
-            this.navBarEF1});
+            this.navBarEF});
             this.nbc_Left.Location = new System.Drawing.Point(2, 2);
             this.nbc_Left.Name = "nbc_Left";
             this.nbc_Left.OptionsNavPane.ExpandedWidth = 173;
@@ -115,7 +113,8 @@ namespace DevTest
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSGRID),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarWeather),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBar截屏),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarVCode)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarVCode),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarEF)});
             this.nbg_First.Name = "nbg_First";
             this.nbg_First.ShowIcons = DevExpress.Utils.DefaultBoolean.True;
             this.nbg_First.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbg_First.SmallImage")));
@@ -181,21 +180,12 @@ namespace DevTest
             this.navBarVCode.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarVCode.SmallImage")));
             this.navBarVCode.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarVCode_LinkClicked);
             // 
-            // navBarGroup1
+            // navBarEF
             // 
-            this.navBarGroup1.Caption = "测试2";
-            this.navBarGroup1.Expanded = true;
-            this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarEF1)});
-            this.navBarGroup1.Name = "navBarGroup1";
-            this.navBarGroup1.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup1.SmallImage")));
-            // 
-            // navBarEF1
-            // 
-            this.navBarEF1.Caption = "EF6";
-            this.navBarEF1.Name = "navBarEF1";
-            this.navBarEF1.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarEF1.SmallImage")));
-            this.navBarEF1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarEF1_LinkClicked);
+            this.navBarEF.Caption = "EF6";
+            this.navBarEF.Name = "navBarIEF";
+            this.navBarEF.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarIEF.SmallImage")));
+            this.navBarEF.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarEF_LinkClicked);
             // 
             // myNotify
             // 
@@ -290,7 +280,6 @@ namespace DevTest
         private DevExpress.XtraNavBar.NavBarItem navBarWeather;
         private DevExpress.XtraNavBar.NavBarItem navBar截屏;
         private DevExpress.XtraNavBar.NavBarItem navBarVCode;
-        private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
-        private DevExpress.XtraNavBar.NavBarItem navBarEF1;
+        private DevExpress.XtraNavBar.NavBarItem navBarEF;
     }
 }

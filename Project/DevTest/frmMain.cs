@@ -151,6 +151,10 @@ namespace DevTest
 
         private void navBarEF1_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
+
+        }
+        private void navBarEF_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
             LoadFrm(new frmEF1());
         }
     }

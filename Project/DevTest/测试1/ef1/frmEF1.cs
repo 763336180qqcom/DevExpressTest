@@ -51,7 +51,7 @@ namespace DevTest.测试2
             Thread thread = new Thread(new ParameterizedThreadStart(operate));
             thread.Start(sender);
         }
-             
+
         private void operate(object obj)
         {
             try

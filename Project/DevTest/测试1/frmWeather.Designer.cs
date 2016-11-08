@@ -32,13 +32,10 @@
             this.panel0 = new DevExpress.XtraEditors.PanelControl();
             this.lue县区 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lue省 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lue市 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new DevExpress.XtraEditors.PanelControl();
             this.img3B = new DevExpress.XtraEditors.LabelControl();
             this.img3A = new DevExpress.XtraEditors.LabelControl();
@@ -57,6 +54,9 @@
             this.me1 = new DevExpress.XtraEditors.MemoEdit();
             this.me0 = new DevExpress.XtraEditors.MemoEdit();
             this.meMain = new DevExpress.XtraEditors.MemoEdit();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panel0)).BeginInit();
             this.panel0.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lue县区.Properties)).BeginInit();
@@ -122,14 +122,6 @@
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             this.searchLookUpEdit1View.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
             // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "县区";
-            this.gridColumn3.FieldName = "中文";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            // 
             // lue省
             // 
             this.lue省.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -168,15 +160,6 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "省";
-            this.gridColumn1.FieldName = "省中文";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.ReadOnly = true;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
             // lue市
             // 
             this.lue市.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -207,14 +190,6 @@
             this.gridView2.OptionsView.ShowColumnHeaders = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "市";
-            this.gridColumn2.FieldName = "所属上级市中文";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
             // 
             // panel1
             // 
@@ -400,7 +375,7 @@
             this.me3.Properties.ReadOnly = true;
             this.me3.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.me3.ShowToolTips = false;
-            this.me3.Size = new System.Drawing.Size(180, 319);
+            this.me3.Size = new System.Drawing.Size(180, 187);
             this.me3.TabIndex = 48;
             this.me3.TabStop = false;
             // 
@@ -421,7 +396,7 @@
             this.me2.Properties.ReadOnly = true;
             this.me2.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.me2.ShowToolTips = false;
-            this.me2.Size = new System.Drawing.Size(180, 319);
+            this.me2.Size = new System.Drawing.Size(180, 187);
             this.me2.TabIndex = 47;
             this.me2.TabStop = false;
             // 
@@ -442,7 +417,7 @@
             this.me1.Properties.ReadOnly = true;
             this.me1.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.me1.ShowToolTips = false;
-            this.me1.Size = new System.Drawing.Size(180, 319);
+            this.me1.Size = new System.Drawing.Size(180, 187);
             this.me1.TabIndex = 46;
             this.me1.TabStop = false;
             // 
@@ -463,20 +438,21 @@
             this.me0.Properties.ReadOnly = true;
             this.me0.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.me0.ShowToolTips = false;
-            this.me0.Size = new System.Drawing.Size(180, 319);
+            this.me0.Size = new System.Drawing.Size(180, 187);
             this.me0.TabIndex = 45;
             this.me0.TabStop = false;
             // 
             // meMain
             // 
             this.meMain.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.meMain.EditValue = "";
             this.meMain.Enabled = false;
             this.meMain.Location = new System.Drawing.Point(31, 5);
             this.meMain.Name = "meMain";
             this.meMain.Properties.AcceptsReturn = false;
             this.meMain.Properties.AllowFocused = false;
             this.meMain.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.meMain.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.meMain.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
             this.meMain.Properties.Appearance.Options.UseBackColor = true;
             this.meMain.Properties.Appearance.Options.UseFont = true;
             this.meMain.Properties.Appearance.Options.UseTextOptions = true;
@@ -490,6 +466,31 @@
             this.meMain.TabIndex = 33;
             this.meMain.TabStop = false;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "县区";
+            this.gridColumn3.FieldName = "中文";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "省";
+            this.gridColumn1.FieldName = "省中文";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.ReadOnly = true;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "市";
+            this.gridColumn2.FieldName = "所属上级市中文";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
             // frmWeather
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -499,7 +500,6 @@
             this.Controls.Add(this.panel0);
             this.Name = "frmWeather";
             this.Text = "天气预报";
-            this.Load += new System.EventHandler(this.frm天气_Load);
             this.Shown += new System.EventHandler(this.frm天气_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.panel0)).EndInit();
             this.panel0.ResumeLayout(false);

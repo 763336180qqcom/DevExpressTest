@@ -14,6 +14,7 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Threading;
 using System.Data;
+using System.ComponentModel;
 
 namespace DevTest.测试1
 {
@@ -29,9 +30,6 @@ namespace DevTest.测试1
         public frmWeather()
         {
             InitializeComponent();
-        }
-        private void frm天气_Load(object sender, EventArgs e)
-        {
         }
 
         private void frm天气_Shown(object sender, EventArgs ex)
@@ -150,7 +148,7 @@ namespace DevTest.测试1
                 {
                     WeatherInfo mainInfo = new WeatherInfo()
                     {
-                        City = "当前位置:" + string.Format("{0},{1},{2}℃,能见度{3}km",
+                        City = DateTime.Now + string.Format("，{0},{1},{2}℃,能见度{3}km",
                         J0["basic"]["city"],
                         J0["now"]["cond"]["txt"], J0["now"]["tmp"],
                         J0["now"]["vis"])
@@ -239,11 +237,14 @@ namespace DevTest.测试1
         //}
         private void enableC(bool f)
         {
-            meMain.Enabled = f ? true : false;
-            me0.Enabled = f ? true : false;
-            me1.Enabled = f ? true : false;
-            me2.Enabled = f ? true : false;
-            me3.Enabled = f ? true : false;
+            foreach (Control i in panel0.Controls)
+            {
+                i.Enabled = f ? true : false;
+            }
+            foreach (Control i in panel1.Controls)
+            {
+                i.Enabled = f ? true : false;
+            }
         }
         private void iniControl(WeatherInfo info)
         {
@@ -260,43 +261,39 @@ namespace DevTest.测试1
 
             meMain.Text = Environment.NewLine + info.City + Environment.NewLine + info.ZhiShu;
 
-            
-            me0.Text = info.Weather4Days[0].Date + Environment.NewLine;
-            me0.Text += info.Weather4Days[0].Sunrise + Environment.NewLine;
-            me0.Text += info.Weather4Days[0].Sunset + Environment.NewLine;
+            me0.Text = info.Weather4Days[0].Date + Environment.NewLine + Environment.NewLine;
             me0.Text += info.Weather4Days[0].Weather + Environment.NewLine;
             me0.Text += info.Weather4Days[0].Wind + Environment.NewLine;
             me0.Text += info.Weather4Days[0].Temperature + Environment.NewLine;
+            me0.Text += info.Weather4Days[0].Sunrise + Environment.NewLine;
+            me0.Text += info.Weather4Days[0].Sunset + Environment.NewLine;
             img0A.Appearance.Image = info.Weather4Days[0].DayP;
             img0B.Appearance.Image = info.Weather4Days[0].Nightp;
 
-
-            me1.Text = info.Weather4Days[1].Date + Environment.NewLine;
-            me1.Text += info.Weather4Days[1].Sunrise + Environment.NewLine;
-            me1.Text += info.Weather4Days[1].Sunset + Environment.NewLine;
+            me1.Text = info.Weather4Days[1].Date + Environment.NewLine + Environment.NewLine;
             me1.Text += info.Weather4Days[1].Weather + Environment.NewLine;
             me1.Text += info.Weather4Days[1].Wind + Environment.NewLine;
             me1.Text += info.Weather4Days[1].Temperature + Environment.NewLine;
+            me1.Text += info.Weather4Days[1].Sunrise + Environment.NewLine;
+            me1.Text += info.Weather4Days[1].Sunset + Environment.NewLine;
             img1A.Appearance.Image = info.Weather4Days[1].DayP;
             img1B.Appearance.Image = info.Weather4Days[1].Nightp;
 
-
-            me2.Text = info.Weather4Days[2].Date + Environment.NewLine;
-            me2.Text += info.Weather4Days[2].Sunrise + Environment.NewLine;
-            me2.Text += info.Weather4Days[2].Sunset + Environment.NewLine;
+            me2.Text = info.Weather4Days[2].Date + Environment.NewLine + Environment.NewLine;
             me2.Text += info.Weather4Days[2].Weather + Environment.NewLine;
             me2.Text += info.Weather4Days[2].Wind + Environment.NewLine;
             me2.Text += info.Weather4Days[2].Temperature + Environment.NewLine;
+            me2.Text += info.Weather4Days[2].Sunrise + Environment.NewLine;
+            me2.Text += info.Weather4Days[2].Sunset + Environment.NewLine;
             img2A.Appearance.Image = info.Weather4Days[2].DayP;
             img2B.Appearance.Image = info.Weather4Days[2].Nightp;
 
-
-            me3.Text = info.Weather4Days[3].Date + Environment.NewLine;
-            me3.Text += info.Weather4Days[3].Sunrise + Environment.NewLine;
-            me3.Text += info.Weather4Days[3].Sunset + Environment.NewLine;
+            me3.Text = info.Weather4Days[3].Date + Environment.NewLine + Environment.NewLine;
             me3.Text += info.Weather4Days[3].Weather + Environment.NewLine;
             me3.Text += info.Weather4Days[3].Wind + Environment.NewLine;
             me3.Text += info.Weather4Days[3].Temperature + Environment.NewLine;
+            me3.Text += info.Weather4Days[3].Sunrise + Environment.NewLine;
+            me3.Text += info.Weather4Days[3].Sunset + Environment.NewLine;
             img3A.Appearance.Image = info.Weather4Days[3].DayP;
             img3B.Appearance.Image = info.Weather4Days[3].Nightp;
 

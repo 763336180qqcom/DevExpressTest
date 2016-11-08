@@ -22,15 +22,5 @@ namespace DevTest.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.webxml.com.cn/WebServices/WeatherWS.asmx")]
-        public string DevTest_CN_GetWeather_WeatherWS {
-            get {
-                return ((string)(this["DevTest_CN_GetWeather_WeatherWS"]));
-            }
-        }
     }
 }
