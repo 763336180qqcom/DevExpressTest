@@ -120,7 +120,7 @@
             this.btn保存.Text = "保存";
             this.btn保存.Click += new System.EventHandler(this.btn保存_Click);
             // 
-            // frm编辑合约
+            // frmEditHY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,9 +132,9 @@
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.dte开始时间);
             this.Controls.Add(this.dte结束时间);
-            this.Name = "frm编辑合约";
+            this.Name = "frmEditHY";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm编辑合约";
+            this.Text = "编辑合约";
             this.Load += new System.EventHandler(this.frm编辑合约_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt名称.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dte开始时间.Properties.CalendarTimeProperties)).EndInit();

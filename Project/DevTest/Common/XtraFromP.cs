@@ -17,7 +17,7 @@ namespace DevTest.Common
             LoadFirst = true;
             InitializeComponent();
         }
-     //   public static DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+        //   public static DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel();
         public static string sSelectedTabName;
         public static string sCurrentWindowText;
         public static string sFormText;
@@ -92,8 +92,8 @@ namespace DevTest.Common
         private void XtraFormP_Load(object sender, EventArgs e)
         {
             splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DevTest.WaitForm1), true, true) { ClosingDelay = 500 };
-            DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = "Coffee";
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = "Visual Studio 2013 Light";
         }
-     
+
     }
 }

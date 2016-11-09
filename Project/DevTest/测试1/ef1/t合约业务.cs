@@ -1,4 +1,4 @@
-namespace DevTest.测试2
+namespace DevTest.测试1.ef1
 {
     using System;
     using System.Collections.Generic;
@@ -11,7 +11,7 @@ namespace DevTest.测试2
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public t合约业务()
         {
-            t费用收入 = new HashSet<t费用收入>();
+            t费用收入 = new HashSet<DevTest.测试1.ef1.t费用收入>();
         }
 
         [Key]
@@ -47,6 +47,6 @@ namespace DevTest.测试2
         public byte[] stamp { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<t费用收入> t费用收入 { get; set; }
+        public virtual ICollection<DevTest.测试1.ef1.t费用收入> t费用收入 { get; set; }
     }
 }

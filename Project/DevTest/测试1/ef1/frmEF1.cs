@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace DevTest.测试2
+namespace DevTest.测试1.ef1
 {
     public partial class frmEF1 : XtraFormC
     {
@@ -89,7 +89,7 @@ namespace DevTest.测试2
         }
         private void findFY()
         {
-            using (var DBContext = new EF1ModelContext())
+            using (var DBContext = new DevTest.测试1.ef1.EF1ModelContext())
             {
                 str = new StringBuilder();
 
@@ -122,7 +122,7 @@ namespace DevTest.测试2
         }
         private void addEF1()
         {
-            using (var DBContext = new EF1ModelContext())
+            using (var DBContext = new DevTest.测试1.ef1.EF1ModelContext())
             {
                 var fy = new t费用收入()
                 {
@@ -157,7 +157,7 @@ namespace DevTest.测试2
         }
         private void deleteEF1()
         {
-            using (var DBContext = new EF1ModelContext())
+            using (var DBContext = new DevTest.测试1.ef1.EF1ModelContext())
             {
                 bool f = false;
                 foreach (var i in DBContext.t合约业务)
@@ -176,7 +176,7 @@ namespace DevTest.测试2
         }
         private void updateEF1JE()
         {
-            using (var DBContext = new EF1ModelContext())
+            using (var DBContext = new DevTest.测试1.ef1.EF1ModelContext())
             {
                 var hys = DBContext.t合约业务.Where(w => w.名称 == "aEF");
                 {

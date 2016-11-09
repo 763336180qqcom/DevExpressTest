@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace DevTest.测试2
+namespace DevTest.测试1.ef1
 {
     partial class frmEF1
     {

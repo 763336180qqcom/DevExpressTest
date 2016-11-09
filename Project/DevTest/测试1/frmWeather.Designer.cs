@@ -413,8 +413,10 @@
             this.me2.Properties.AllowFocused = false;
             this.me2.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.me2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.me2.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.me2.Properties.Appearance.Options.UseBackColor = true;
             this.me2.Properties.Appearance.Options.UseFont = true;
+            this.me2.Properties.Appearance.Options.UseForeColor = true;
             this.me2.Properties.Appearance.Options.UseTextOptions = true;
             this.me2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.me2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;

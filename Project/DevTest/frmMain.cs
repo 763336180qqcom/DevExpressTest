@@ -1,11 +1,11 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Skins;
+using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.ButtonPanel;
 using DevExpress.XtraNavBar;
 using DevExpress.XtraPrinting.Preview;
 using DevExpress.XtraReports.UI;
 using DevTest.Common;
 using DevTest.测试1;
-using DevTest.测试2;
 using System;
 using System.Windows.Forms;
 
@@ -28,7 +28,11 @@ namespace DevTest
             sFormText = this.Text;
             StartPosition = FormStartPosition.CenterScreen;
             this.WindowState = FormWindowState.Maximized;
-            navBarWeather_LinkClicked(null, null);
+            navBarChart_LinkClicked(null, null);
+            foreach (SkinContainer c in SkinManager.Default.Skins)
+            {
+                cmbUI.Items.Add(c.SkinName);
+            }
         }
         private void midPageChangedEventHandler(object sender, EventArgs e)
         {
@@ -149,13 +153,19 @@ namespace DevTest
             LoadFrm(new frmVerCode());
         }
 
-        private void navBarEF1_LinkClicked(object sender, NavBarLinkEventArgs e)
-        {
-
-        }
         private void navBarEF_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
-            LoadFrm(new frmEF1());
+            LoadFrm(new DevTest.测试1.ef1.frmEF1());
+        }
+
+        private void cmbUI_SelectedValueChanged(object sender, EventArgs e)
+        {
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = (sender as ComboBoxEdit).SelectedItem.ToString();
+        }
+
+        private void navBarChart_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            LoadFrm(new frmCharts());
         }
     }
 }

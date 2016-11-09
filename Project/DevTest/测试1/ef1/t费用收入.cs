@@ -1,4 +1,4 @@
-namespace DevTest.测试2
+namespace DevTest.测试1.ef1
 {
     using System;
     using System.Collections.Generic;
@@ -25,6 +25,6 @@ namespace DevTest.测试2
 
         public int 状态 { get; set; }
 
-        public virtual t合约业务 t合约业务 { get; set; }
+        public virtual DevTest.测试1.ef1.t合约业务 t合约业务 { get; set; }
     }
 }
