@@ -1,13 +1,19 @@
 ﻿using DevExpress.Utils;
 using DevExpress.XtraCharts;
+using DevExpress.XtraEditors;
 using DevTest.Common;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,8 +21,11 @@ namespace DevTest.测试1
 {
     public partial class frmCharts : XtraFormC
     {
+        private delegate void DAfterIniData();
+        private delegate void DThreadError(string error);
         private DataTable mDT = null;
-        private List<Color> colorList = new List<Color>() { Color.Red, Color.Gray, Color.Tomato, Color.Blue, Color.Green };
+        private DataTable mDTNew = null;
+        private List<Color> colorList = new List<Color>() { Color.Green, Color.Red, Color.Purple, Color.Blue };
         public frmCharts()
         {
             InitializeComponent();
@@ -24,99 +33,129 @@ namespace DevTest.测试1
 
         private void frmCharts_Load(object sender, EventArgs e)
         {
-            iniData();
-            iniChart();
-
+            try
+            {
+                new Thread(new ThreadStart(iniData)).Start();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+            // iniData()
+            
         }
         private void iniData()
         {
-            mDT = new DataTable();
-            mDT.Columns.Add(new DataColumn("类型"));
-            mDT.Columns.Add(new DataColumn("2005-1月", typeof(decimal)));
-            mDT.Columns.Add(new DataColumn("2005-2月", typeof(decimal)));
-            mDT.Columns.Add(new DataColumn("2005-3月", typeof(decimal)));
-            mDT.Columns.Add(new DataColumn("2005-4月", typeof(decimal)));
-            mDT.Columns.Add(new DataColumn("2005-5月", typeof(decimal)));
-            mDT.Columns.Add(new DataColumn("2005-6月", typeof(decimal)));
+            try
+            {
+                Uri u = new Uri("http://apis.baidu.com/heweather/weather/free?city=shanghai");
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(u);
+                request.Timeout = 30720;
+                request.Headers.Add("apikey", "a55d9829dc642857afef37284f5b4a29");
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-            mDT.Rows.Add(new object[] { "员工人数", 437, 437, 414, 397, 387, 378 });
-            mDT.Rows.Add(new object[] { "人均月薪", 3964, 3961, 3979, 3974, 3967, 3972 });
-            mDT.Rows.Add(new object[] { "成本TEU", 3104, 1339, 3595.8, 3154.5, 2499.8, 3026 });
-            mDT.Rows.Add(new object[] { "人均生产率", 7.1, 3.06, 8.69, 7.95, 6.46, 8.01 });
-            mDT.Rows.Add(new object[] { "占2005年3月人数比例", 1.06, 1.06, 1, 0.96, 0.93, 0.91 });
-
+                string jResult = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                JObject jRoot = (JObject)JsonConvert.DeserializeObject(jResult);
+                JToken jo = jRoot["HeWeather data service 3.0"][0];
+                if (jo["status"].ToString().Equals("ok"))
+                {
+                    mDT = new DataTable();
+                    mDT.Columns.Add("日期", typeof(string));
+                    mDT.Columns.Add("最高温度", typeof(Int32));
+                    mDT.Columns.Add("最低温度", typeof(Int32));
+                    mDT.Columns.Add("相对湿度(%)", typeof(Int32));
+                    mDT.Columns.Add("能见度(km)", typeof(Int32));
+                    mDT.Columns.Add("风速(km/h)", typeof(Int32));
+                    foreach (JToken joo in jo["daily_forecast"])
+                    {
+                        mDT.Rows.Add(new object[] { Convert.ToDateTime(joo["date"]).ToString("MM月dd日"), joo["tmp"]["max"], joo["tmp"]["min"], joo["hum"], joo["vis"], joo["wind"]["spd"] });
+                    }
+                        DAfterIniData d = new DAfterIniData(iniChart);
+                        this.Invoke(d);
+                }
+                else
+                    throw new CustomException(jo["status"].ToString());
+            }
+            catch (Exception ex)
+            {
+                DThreadError d = new DThreadError(threadError);
+                this.Invoke(d, ex.Message);
+            }
         }
+        private void threadError(string error)
+        {
+            XtraMessageBox.Show(error);
+        }
+
         private void iniChart()
         {
-
-            #region Series
-            //创建几个图形的对象
-            Series series1 = CreateSeries("员工人数", ViewType.Line, mDT, 0);
-            Series series2 = CreateSeries("人均月薪", ViewType.Line, mDT, 1);
-            Series series3 = CreateSeries("成本TEU", ViewType.Line, mDT, 2);
-            Series series4 = CreateSeries("人均生产率", ViewType.Line, mDT, 3);
-            Series series5 = CreateSeries("占2005年3月人数比例", ViewType.Line, mDT, 4);
-            #endregion
-
-            List<Series> list = new List<Series>() { series1, series2, series3, series4, series5 };
-            chartControl1.Series.AddRange(list.ToArray());
-            chartControl1.Legend.Visibility = DefaultBoolean.False;
-            chartControl1.SeriesTemplate.LabelsVisibility = DefaultBoolean.True;
-
-            for (int i = 0; i < list.Count; i++)
+            try
             {
-                list[i].View.Color = colorList[i];
+                gridControl1.DataSource = mDT;
 
-                CreateAxisY(list[i]);
+                Series sTmpMax = CreateSeries("最高温度℃", ViewType.Line, mDT, 1);
+                Series sTmpMin = CreateSeries("最低温度℃", ViewType.Line, mDT, 2);
+                Series sHum = CreateSeries("相对湿度(%)", ViewType.Line, mDT, 3);
+                Series sWindSc = CreateSeries("风速(km/h)", ViewType.Line, mDT, 5);
+
+                List<Series> list = new List<Series>() { sWindSc, sTmpMax, sTmpMin, sHum };
+                chartControl1.Series.AddRange(list.ToArray());
+                chartControl1.Legend.Visibility = DefaultBoolean.True;
+                chartControl1.Legend.Antialiasing = true;
+                chartControl1.Legend.Font = new Font("微软雅黑",9f,FontStyle.Bold);
+                for (int i = 0; i < list.Count; i++)
+                {
+                    list[i].View.Color = colorList[i];
+                    if (i != 0)
+                        CreateAxisY(list[i]);
+                }
             }
-        }
-        /// <summary>
-        /// 根据数据创建一个图形展现
-        /// </summary>
-        /// <param name="caption">图形标题</param>
-        /// <param name="viewType">图形类型</param>
-        /// <param name="dt">数据DataTable</param>
-        /// <param name="rowIndex">图形数据的行序号</param>
-        /// <returns></returns>
-        private Series CreateSeries(string caption, ViewType viewType, DataTable dt, int rowIndex)
-        {
-            Series series = new Series(caption, viewType);
-            for (int i = 1; i < dt.Columns.Count; i++)
+            catch (Exception e)
             {
-                string argument = dt.Columns[i].ColumnName;//参数名称
-                decimal value = (decimal)dt.Rows[rowIndex][i];//参数值
+                XtraMessageBox.Show(e.Message);
+            }
+
+        }
+        private Series CreateSeries(string name, ViewType viewType, DataTable dt, int colIndexOfInfo)
+        {
+            Series series = new Series(name, viewType);
+            for (int i = 0; i < dt.Columns.Count; i++)
+            {
+                string argument = dt.Rows[i]["日期"].ToString();
+                Object value = null;
+                if (name.Equals("日期"))
+                    value = dt.Rows[i][colIndexOfInfo];
+                else
+                    value = Convert.ToInt32(dt.Rows[i][colIndexOfInfo]);
                 series.Points.Add(new SeriesPoint(argument, value));
             }
-
-            //必须设置ArgumentScaleType的类型，否则显示会转换为日期格式，导致不是希望的格式显示
-            //也就是说，显示字符串的参数，必须设置类型为ScaleType.Qualitative
             series.ArgumentScaleType = ScaleType.Qualitative;
-            series.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;//显示标注标签
+            series.LabelsVisibility = DefaultBoolean.True;//显示折点信息
 
             return series;
         }
-        /// <summary>
-        /// 创建图表的第二坐标系
-        /// </summary>
-        /// <param name="series">Series对象</param>
-        /// <returns></returns>
         private SecondaryAxisY CreateAxisY(Series series)
         {
-            SecondaryAxisY myAxis = new SecondaryAxisY(series.Name);
-            ((XYDiagram)chartControl1.Diagram).SecondaryAxesY.Add(myAxis);
-            ((LineSeriesView)series.View).AxisY = myAxis;
-            myAxis.Title.Text = series.Name;
-            myAxis.Title.Alignment = StringAlignment.Far; //顶部对齐
-            myAxis.Title.Visibility = DefaultBoolean.True; //显示标题
-            myAxis.Title.Font = new Font("宋体", 9.0f);
-
-            Color color = series.View.Color;//设置坐标的颜色和图表线条颜色一致
-
-            myAxis.Title.TextColor = color;
-            myAxis.Label.TextColor = color;
-            myAxis.Color = color;
-
-            return myAxis;
+            SecondaryAxisY sa = new SecondaryAxisY(series.Name);
+            ((XYDiagram)chartControl1.Diagram).SecondaryAxesY.Add(sa);
+            ((LineSeriesView)series.View).AxisY = sa;
+            sa.Title.Text = series.Name;
+            sa.Title.Antialiasing = true;
+            sa.Title.Alignment = StringAlignment.Far; 
+            sa.Title.Visibility = DefaultBoolean.True; 
+            sa.Title.Font = new Font("微软雅黑", 10f);
+            sa.Label.Angle = 10;
+            sa.Label.Font = new Font("微软雅黑", 10f);
+            sa.Thickness = 2;
+            sa.Tickmarks.CrossAxis = false;
+            sa.Tickmarks.Length = 4;
+            sa.Tickmarks.MinorVisible = true;
+            sa.Tickmarks.MinorLength = 2;
+            //数字颜色和刻度条颜色
+            sa.Title.TextColor = series.View.Color;
+            sa.Label.TextColor = series.View.Color;
+            sa.Color = series.View.Color;
+            return sa;
         }
     }
 }
