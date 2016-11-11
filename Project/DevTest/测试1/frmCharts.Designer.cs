@@ -6,7 +6,14 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl3;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
+        private DevExpress.XtraCharts.ChartControl lineChart;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraCharts.ChartControl BarChart;
+        private DevExpress.XtraCharts.ChartControl PieChart;
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -21,7 +28,6 @@
         }
 
         #region Windows Form Designer generated code
-
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -30,21 +36,21 @@
         {
             this.splitContainerControl3 = new DevExpress.XtraEditors.SplitContainerControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
-            this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
+            this.lineChart = new DevExpress.XtraCharts.ChartControl();
+            this.BarChart = new DevExpress.XtraCharts.ChartControl();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.chartControl3 = new DevExpress.XtraCharts.ChartControl();
+            this.PieChart = new DevExpress.XtraCharts.ChartControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).BeginInit();
             this.splitContainerControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lineChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BarChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PieChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -75,32 +81,32 @@
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.chartControl1);
+            this.splitContainerControl1.Panel1.Controls.Add(this.lineChart);
             this.splitContainerControl1.Panel1.Text = "Panel1";
-            this.splitContainerControl1.Panel2.Controls.Add(this.chartControl2);
+            this.splitContainerControl1.Panel2.Controls.Add(this.BarChart);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1035, 373);
             this.splitContainerControl1.SplitterPosition = 733;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
-            // chartControl1
+            // lineChart
             // 
-            this.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartControl1.Location = new System.Drawing.Point(0, 0);
-            this.chartControl1.Name = "chartControl1";
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartControl1.Size = new System.Drawing.Size(733, 373);
-            this.chartControl1.TabIndex = 0;
+            this.lineChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lineChart.Location = new System.Drawing.Point(0, 0);
+            this.lineChart.Name = "lineChart";
+            this.lineChart.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.lineChart.Size = new System.Drawing.Size(733, 373);
+            this.lineChart.TabIndex = 0;
             // 
-            // chartControl2
+            // BarChart
             // 
-            this.chartControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartControl2.Location = new System.Drawing.Point(0, 0);
-            this.chartControl2.Name = "chartControl2";
-            this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartControl2.Size = new System.Drawing.Size(290, 373);
-            this.chartControl2.TabIndex = 0;
+            this.BarChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BarChart.Location = new System.Drawing.Point(0, 0);
+            this.BarChart.Name = "BarChart";
+            this.BarChart.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.BarChart.Size = new System.Drawing.Size(290, 373);
+            this.BarChart.TabIndex = 0;
             // 
             // splitContainerControl2
             // 
@@ -110,7 +116,7 @@
             this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl2.Name = "splitContainerControl2";
-            this.splitContainerControl2.Panel1.Controls.Add(this.chartControl3);
+            this.splitContainerControl2.Panel1.Controls.Add(this.PieChart);
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.gridControl1);
             this.splitContainerControl2.Panel2.Text = "Panel2";
@@ -119,14 +125,14 @@
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
             // 
-            // chartControl3
+            // PieChart
             // 
-            this.chartControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartControl3.Location = new System.Drawing.Point(0, 0);
-            this.chartControl3.Name = "chartControl3";
-            this.chartControl3.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartControl3.Size = new System.Drawing.Size(484, 287);
-            this.chartControl3.TabIndex = 0;
+            this.PieChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PieChart.Location = new System.Drawing.Point(0, 0);
+            this.PieChart.Name = "PieChart";
+            this.PieChart.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.PieChart.Size = new System.Drawing.Size(484, 287);
+            this.PieChart.TabIndex = 0;
             // 
             // gridControl1
             // 
@@ -148,6 +154,7 @@
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsCustomization.AllowSort = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.OptionsView.ShowIndicator = false;
             // 
             // frmCharts
             // 
@@ -157,16 +164,16 @@
             this.Controls.Add(this.splitContainerControl3);
             this.Name = "frmCharts";
             this.Text = "图表";
-            this.Load += new System.EventHandler(this.frmCharts_Load);
+            this.Shown += new System.EventHandler(this.frmCharts_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).EndInit();
             this.splitContainerControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lineChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BarChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PieChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
@@ -174,13 +181,6 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl3;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraCharts.ChartControl chartControl1;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraCharts.ChartControl chartControl2;
-        private DevExpress.XtraCharts.ChartControl chartControl3;
+
     }
 }

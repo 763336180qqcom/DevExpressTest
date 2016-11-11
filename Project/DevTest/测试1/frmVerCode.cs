@@ -87,7 +87,7 @@ namespace DevTest.测试1
                 }
             }
             byte[] bs = mCodeCreator.CreateImage(mCodeStr);
-            Bitmap org = Image.FromStream(Util.bytesToStream(bs)) as Bitmap;
+            Bitmap org = Image.FromStream(Util.BytesToStream(bs)) as Bitmap;
 
             if (mLineNum > 0)
             {

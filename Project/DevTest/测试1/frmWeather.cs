@@ -166,8 +166,8 @@ namespace DevTest.测试1
                         WeatherInfoA childInfo = new WeatherInfoA()
                         {
                             Date = jooo["date"].ToString(),
-                            DayP = Util.getImageFromNet(string.Format("http://files.heweather.com/cond_icon/{0}.png", jooo["cond"]["code_d"])),
-                            Nightp = Util.getImageFromNet(string.Format("http://files.heweather.com/cond_icon/{0}.png", jooo["cond"]["code_n"])),
+                            DayP = Util.GetImageFromNet(string.Format("http://files.heweather.com/cond_icon/{0}.png", jooo["cond"]["code_d"])),
+                            Nightp = Util.GetImageFromNet(string.Format("http://files.heweather.com/cond_icon/{0}.png", jooo["cond"]["code_n"])),
                             Wind = string.Format("{0}，{1}级", jooo["wind"]["dir"], jooo["wind"]["sc"]),
                             Weather = string.Format("白天天气：{0}{1}夜间天气：{2}", jooo["cond"]["txt_d"], Environment.NewLine, jooo["cond"]["txt_n"]),
                             Temperature = string.Format("温度：{0}℃~{1}℃", jooo["tmp"]["max"], jooo["tmp"]["min"]),

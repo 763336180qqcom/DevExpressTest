@@ -69,7 +69,7 @@ namespace DevTest.测试1
         private void editMenuClick(object sender, EventArgs e)
         {
             int[] selectedRows = gv信息列表.GetSelectedRows();
-            Util.quickSort(selectedRows);
+            Util.QuickSort(selectedRows);
             for (int i = selectedRows.Length - 1; i >= 0; i--)
             {
                 sDt收入费用.Rows.RemoveAt(selectedRows[i]);

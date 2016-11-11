@@ -34,7 +34,7 @@ namespace DevTest
         [DllImport("user32.dll")]
         static extern bool ReleaseDC(IntPtr hWnd, IntPtr hDc);
         #endregion
-
+        private static Random sRand = new Random();
         public static HashSet<string> childs = new HashSet<string>();
         public static bool IsDecimal(string str)
         {
@@ -152,7 +152,7 @@ namespace DevTest
         #endregion
 
         #region 复制单元格
-        public static void createCopyCellItem(GridView gv)
+        public static void CreateCopyCellItem(GridView gv)
         {
             gv.PopupMenuShowing += new PopupMenuShowingEventHandler(popupMenuShowingEventHandler_Copy);
         }
@@ -174,7 +174,7 @@ namespace DevTest
             TipForm.getInstance().shortTip("导出成功！", 800);
         }
         #endregion
-        private static void quick_sort(int[] s, int l, int r)
+        private static void Quick_sort(int[] s, int l, int r)
         {
             if (l < r)
             {
@@ -193,19 +193,19 @@ namespace DevTest
                         s[j--] = s[i];
                 }
                 s[i] = x;
-                quick_sort(s, l, i - 1); // 递归调用   
-                quick_sort(s, i + 1, r);
+                Quick_sort(s, l, i - 1); // 递归调用   
+                Quick_sort(s, i + 1, r);
             }
         }
-        public static void quickSort(int[] s)
+        public static void QuickSort(int[] s)
         {
-            quick_sort(s, 0, s.Length - 1);
+            Quick_sort(s, 0, s.Length - 1);
         }
 
         /// <summary>
         /// ImageName->img文件夹内的图片
         /// </summary>
-        public static Bitmap getImage(string picName)
+        public static Bitmap GetWeatherImage(string picName)
         {
             FileStream fs = File.OpenRead(Application.StartupPath.Replace("\\bin\\Debug", "\\img\\weather\\" + picName)); //OpenRead
             int filelength = (int)fs.Length; //获得文件长度 
@@ -216,7 +216,7 @@ namespace DevTest
             Bitmap bit = new Bitmap(result);
             return bit;
         }
-        public static Bitmap getImageFromNet(string url)
+        public static Bitmap GetImageFromNet(string url)
         {
             try
             {
@@ -237,12 +237,12 @@ namespace DevTest
             }
         }
 
-        public static Stream bytesToStream(byte[] bs)
+        public static Stream BytesToStream(byte[] bs)
         {
             return new MemoryStream(bs);
         }
 
-        public static byte[] streamToBytes(Stream sm)
+        public static byte[] StreamToBytes(Stream sm)
         {
             byte[] bs = new byte[sm.Length];
             sm.Read(bs, 0, bs.Length);
@@ -289,7 +289,7 @@ namespace DevTest
                 }
             return ss.ToString();
         }
-        private static Random rand = new Random();
+
         /// <summary>
         /// 此函数为生成指定数目的汉字
         /// </summary>
@@ -301,18 +301,31 @@ namespace DevTest
             StringBuilder charArrary = new StringBuilder();
             for (int i = 0; i < charLen; i++)
             {
-                area = rand.Next(16, 30);
+                area = sRand.Next(16, 30);
                 if (area == 55)//第55区只有89个字符
                 {
-                    code = rand.Next(1, 90);
+                    code = sRand.Next(1, 90);
                 }
                 else
                 {
-                    code = rand.Next(1, 94);
+                    code = sRand.Next(1, 94);
                 }
                 charArrary.Append(Encoding.GetEncoding("GB2312").GetString(new byte[] { Convert.ToByte(area + 160), Convert.ToByte(code + 160) }));
             }
             return charArrary.ToString();
         }
+        public static Color GetRandomColor()
+        {
+            int r = sRand.Next(256);
+            int g = sRand.Next(256);
+            int b = (r + g > 400) ? 0 : 400 - r - g;
+            b = (b > 255) ? 255 : b;
+            return Color.FromArgb(r, g, b);
+        }
+        public static Color GetRandomSysColor()
+        {
+            return Color.FromKnownColor((KnownColor)sRand.Next(1, 167));
+        }
+
     }
 }

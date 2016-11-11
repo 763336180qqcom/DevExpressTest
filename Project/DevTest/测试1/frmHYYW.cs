@@ -43,7 +43,7 @@ namespace DevTest
             gv_Fy.BestFitColumns();
             gv_Fy.ExpandAllGroups();
 
-            Util.createCopyCellItem(gvHY);
+            Util.CreateCopyCellItem(gvHY);
             Util.createExportToExcelItem(gvHY);
             gvHY.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(createEditMenuPop);
             gvHY.ClearSelection();

@@ -189,7 +189,6 @@
     <Compile Include="Entity\IPInfo.cs" />
     <Compile Include="Entity\PCDName.cs" />
     <Compile Include="Entity\Province.cs" />
-    <Compile Include="Entity\TQChart.cs" />
     <Compile Include="Entity\WeatherInfo.cs" />
     <Compile Include="Entity\WeatherInfoA.cs" />
     <Compile Include="测试1\frmCharts.cs">
