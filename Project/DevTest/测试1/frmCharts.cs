@@ -62,6 +62,8 @@ namespace DevTest.测试1
                     mDT.Columns.Add("相对湿度(%)", typeof(int));
                     mDT.Columns.Add("风向", typeof(string));
                     mDT.Columns.Add("风速(km/h)", typeof(int));
+                    mDT.Columns.Add("温差", typeof(int));
+                    mDT.Columns["温差"].Expression = "最高温度℃-最低温度℃";
                     foreach (JToken joo in jo["daily_forecast"])
                     {
                         mDT.Rows.Add(new object[] { Convert.ToDateTime(joo["date"]).ToString("MM月dd日"), joo["tmp"]["max"], joo["tmp"]["min"], joo["hum"], joo["wind"]["dir"], joo["wind"]["spd"] });
@@ -92,6 +94,10 @@ namespace DevTest.测试1
                 for (int i = 0; i < chartList.Count; i++)
                 {
                     ChartControl chart = chartList[i];
+                    chart.Legend.Visibility = DefaultBoolean.True;//右边标注框
+                    chart.Legend.Antialiasing = true;
+                    chart.Legend.Font = new Font("微软雅黑", 9f, FontStyle.Bold);
+                    chart.Legend.Border.Color = Color.Black;
                     if (i < 2)
                     {
                         ViewType t = ViewType.Line;
@@ -107,10 +113,6 @@ namespace DevTest.测试1
                         chart.Series.AddRange(ss.ToArray());
                         chart.EmptyChartText.Text = "数据为空！";
 
-                        chart.Legend.Visibility = DefaultBoolean.True;//右边标注框
-                        chart.Legend.Antialiasing = true;
-                        chart.Legend.Font = new Font("微软雅黑", 9f, FontStyle.Bold);
-                        chart.Legend.Border.Color = Color.Black;
                         chart.Legend.Direction = LegendDirection.TopToBottom;
                         chart.Legend.MarkerSize = new Size(40, 40);
                         chart.Legend.UseCheckBoxes = true;
@@ -139,8 +141,8 @@ namespace DevTest.测试1
                         DTNew.Columns.Add("风向", typeof(string));
                         DTNew.Columns.Add("出现次数", typeof(int));
 
-                        var queryResult = from dr in mDT.AsEnumerable()
-                                          group dr by new { STRDir = dr.Field<string>("风向") } into ig
+                        var queryResult = from Drs in mDT.AsEnumerable()
+                                          group Drs by new { STRDir = Drs.Field<string>("风向") } into ig
                                           select new { ig.Key.STRDir, COUNT = ig.Count(dr1 => dr1.Field<string>("风向").Length > 0) };
 
                         if (queryResult.ToList().Count > 0)
@@ -173,7 +175,6 @@ namespace DevTest.测试1
                         sWindDir.ArgumentScaleType = ScaleType.Qualitative;
                         sWindDir.ValueScaleType = ScaleType.Numerical;
                         sWindDir.ShowInLegend = true;
-
                         chart.Series.Add(sWindDir);
                     }
                 }
