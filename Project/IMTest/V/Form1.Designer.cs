@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -305,28 +306,28 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1182, 84);
+            this.barDockControlTop.Size = new System.Drawing.Size(1206, 85);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 562);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1182, 28);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 646);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1206, 27);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 84);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 478);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 85);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 561);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1182, 84);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 478);
+            this.barDockControlRight.Location = new System.Drawing.Point(1206, 85);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 561);
             // 
             // barButtonItem1
             // 
@@ -453,10 +454,10 @@
             // 
             this.gc1.Controls.Add(this.splitContainerControl1);
             this.gc1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gc1.Location = new System.Drawing.Point(0, 84);
+            this.gc1.Location = new System.Drawing.Point(0, 85);
             this.gc1.MinimumSize = new System.Drawing.Size(200, 0);
             this.gc1.Name = "gc1";
-            this.gc1.Size = new System.Drawing.Size(250, 478);
+            this.gc1.Size = new System.Drawing.Size(250, 561);
             this.gc1.TabIndex = 4;
             this.gc1.Text = "列表";
             // 
@@ -470,71 +471,73 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.treeLeftBot);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(246, 455);
+            this.splitContainerControl1.Size = new System.Drawing.Size(246, 538);
             this.splitContainerControl1.SplitterPosition = 212;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
             // treeLeftTop
             // 
+            this.treeLeftTop.Appearance.VertLine.BackColor = System.Drawing.Color.Gray;
+            this.treeLeftTop.Appearance.VertLine.Options.UseBackColor = true;
             this.treeLeftTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeLeftTop.Location = new System.Drawing.Point(0, 0);
             this.treeLeftTop.Name = "treeLeftTop";
-            this.treeLeftTop.OptionsView.ShowHorzLines = false;
-            this.treeLeftTop.OptionsView.ShowVertLines = false;
+            this.treeLeftTop.OptionsView.ShowIndicator = false;
             this.treeLeftTop.Size = new System.Drawing.Size(246, 212);
             this.treeLeftTop.TabIndex = 0;
+            this.treeLeftTop.TreeLevelWidth = 15;
             // 
             // treeLeftBot
             // 
             this.treeLeftBot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeLeftBot.Location = new System.Drawing.Point(0, 0);
             this.treeLeftBot.Name = "treeLeftBot";
-            this.treeLeftBot.Size = new System.Drawing.Size(246, 231);
+            this.treeLeftBot.Size = new System.Drawing.Size(246, 321);
             this.treeLeftBot.TabIndex = 0;
             // 
             // groupControl1
             // 
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(250, 84);
+            this.groupControl1.Location = new System.Drawing.Point(250, 85);
             this.groupControl1.MinimumSize = new System.Drawing.Size(180, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(200, 478);
+            this.groupControl1.Size = new System.Drawing.Size(200, 561);
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "列表";
             // 
             // groupControl2
             // 
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl2.Location = new System.Drawing.Point(450, 84);
+            this.groupControl2.Location = new System.Drawing.Point(450, 85);
             this.groupControl2.MinimumSize = new System.Drawing.Size(180, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(200, 478);
+            this.groupControl2.Size = new System.Drawing.Size(200, 561);
             this.groupControl2.TabIndex = 6;
             this.groupControl2.Text = "列表";
             // 
             // groupControl3
             // 
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(650, 84);
+            this.groupControl3.Location = new System.Drawing.Point(650, 85);
             this.groupControl3.MinimumSize = new System.Drawing.Size(300, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(532, 478);
+            this.groupControl3.Size = new System.Drawing.Size(556, 561);
             this.groupControl3.TabIndex = 7;
             // 
             // panelControl1
             // 
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 84);
+            this.panelControl1.Location = new System.Drawing.Point(0, 85);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1182, 478);
+            this.panelControl1.Size = new System.Drawing.Size(1206, 561);
             this.panelControl1.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 590);
+            this.ClientSize = new System.Drawing.Size(1206, 673);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
