@@ -28,7 +28,7 @@ namespace IMTest
                     DevExpress.UserSkins.BonusSkins.Register();
                     DevExpress.Skins.SkinManager.EnableFormSkins();
 
-                    Application.Run(new IMTest.V.Form1());
+                    Application.Run(new V.Form1());
                 }
                 else
                 {

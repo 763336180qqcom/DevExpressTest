@@ -49,6 +49,7 @@
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barLargeButtonItem2 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barLargeButtonItem3 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barLargeButtonItem4 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -71,26 +72,50 @@
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem5 = new DevExpress.XtraBars.BarStaticItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
             this.gc1 = new DevExpress.XtraEditors.GroupControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.treeLeftTop = new DevExpress.XtraTreeList.TreeList();
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.treeLeftBot = new DevExpress.XtraTreeList.TreeList();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.gc2 = new DevExpress.XtraEditors.GroupControl();
+            this.treeMid = new DevExpress.XtraTreeList.TreeList();
+            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.comboBoxEdit3 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.gc3 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.gc4 = new DevExpress.XtraEditors.GroupControl();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.treeRight = new DevExpress.XtraTreeList.TreeList();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc1)).BeginInit();
             this.gc1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeLeftTop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeLeftBot)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc2)).BeginInit();
+            this.gc2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.treeMid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc3)).BeginInit();
+            this.gc3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc4)).BeginInit();
+            this.gc4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.treeRight)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -138,9 +163,11 @@
             this.barHeaderItem1,
             this.barStaticItem4,
             this.barStaticItem5,
-            this.barStaticItem6});
+            this.barStaticItem6,
+            this.barButtonItem11,
+            this.barLargeButtonItem4});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 38;
+            this.barManager1.MaxItemId = 40;
             this.barManager1.StatusBar = this.bar3;
             this.barManager1.TransparentEditors = true;
             // 
@@ -275,7 +302,8 @@
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem3)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem4)});
             this.bar1.OptionsBar.DrawBorder = false;
             this.bar1.Text = "Custom 4";
             // 
@@ -301,33 +329,44 @@
             this.barLargeButtonItem3.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // barLargeButtonItem4
+            // 
+            this.barLargeButtonItem4.Caption = "Test";
+            this.barLargeButtonItem4.Id = 39;
+            this.barLargeButtonItem4.Name = "barLargeButtonItem4";
+            this.barLargeButtonItem4.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1206, 85);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlTop.Size = new System.Drawing.Size(1158, 84);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 646);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1206, 27);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 605);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1158, 28);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 85);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 561);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 84);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 521);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1206, 85);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 561);
+            this.barDockControlRight.Location = new System.Drawing.Point(1158, 84);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 521);
             // 
             // barButtonItem1
             // 
@@ -441,6 +480,13 @@
             this.barStaticItem5.Name = "barStaticItem5";
             this.barStaticItem5.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "Test";
+            this.barButtonItem11.Id = 38;
+            this.barButtonItem11.Name = "barButtonItem11";
+            this.barButtonItem11.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
             // barSubItem3
             // 
             this.barSubItem3.Caption = "功能菜单";
@@ -452,12 +498,15 @@
             // 
             // gc1
             // 
+            this.gc1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.gc1.Controls.Add(this.splitContainerControl1);
             this.gc1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gc1.Location = new System.Drawing.Point(0, 85);
-            this.gc1.MinimumSize = new System.Drawing.Size(200, 0);
+            this.gc1.Location = new System.Drawing.Point(0, 84);
+            this.gc1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gc1.MinimumSize = new System.Drawing.Size(175, 0);
             this.gc1.Name = "gc1";
-            this.gc1.Size = new System.Drawing.Size(250, 561);
+            this.gc1.ShowCaption = false;
+            this.gc1.Size = new System.Drawing.Size(219, 521);
             this.gc1.TabIndex = 4;
             this.gc1.Text = "列表";
             // 
@@ -465,103 +514,301 @@
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(2, 21);
+            this.splitContainerControl1.Location = new System.Drawing.Point(2, 2);
+            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.treeLeftTop);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.treeLeftBot);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(246, 538);
-            this.splitContainerControl1.SplitterPosition = 212;
+            this.splitContainerControl1.Size = new System.Drawing.Size(215, 517);
+            this.splitContainerControl1.SplitterPosition = 229;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
             // treeLeftTop
             // 
-            this.treeLeftTop.Appearance.VertLine.BackColor = System.Drawing.Color.Gray;
-            this.treeLeftTop.Appearance.VertLine.Options.UseBackColor = true;
+            this.treeLeftTop.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.treeLeftTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeLeftTop.FixedLineWidth = 12;
             this.treeLeftTop.Location = new System.Drawing.Point(0, 0);
+            this.treeLeftTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeLeftTop.Name = "treeLeftTop";
+            this.treeLeftTop.OptionsBehavior.Editable = false;
+            this.treeLeftTop.OptionsMenu.EnableColumnMenu = false;
+            this.treeLeftTop.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.treeLeftTop.OptionsView.ShowIndicator = false;
-            this.treeLeftTop.Size = new System.Drawing.Size(246, 212);
+            this.treeLeftTop.SelectImageList = this.imageCollection1;
+            this.treeLeftTop.Size = new System.Drawing.Size(215, 229);
             this.treeLeftTop.TabIndex = 0;
-            this.treeLeftTop.TreeLevelWidth = 15;
+            this.treeLeftTop.TreeLevelWidth = 12;
+            this.treeLeftTop.UseDisabledStatePainter = false;
+            this.treeLeftTop.CustomDrawNodeCell += new DevExpress.XtraTreeList.CustomDrawNodeCellEventHandler(this.treeLeftTop_CustomDrawNodeCell);
+            this.treeLeftTop.CustomDrawNodeImages += new DevExpress.XtraTreeList.CustomDrawNodeImagesEventHandler(this.treeLeftTop_CustomDrawNodeImages);
+            // 
+            // imageCollection1
+            // 
+            this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
+            this.imageCollection1.InsertGalleryImage("customer_16x16.png", "office2013/people/customer_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/people/customer_16x16.png"), 0);
+            this.imageCollection1.Images.SetKeyName(0, "customer_16x16.png");
+            this.imageCollection1.InsertGalleryImage("employee_16x16.png", "office2013/people/employee_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/people/employee_16x16.png"), 1);
+            this.imageCollection1.Images.SetKeyName(1, "employee_16x16.png");
+            this.imageCollection1.InsertGalleryImage("mobilephone_16x16.png", "devav/contacts/mobilephone_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("devav/contacts/mobilephone_16x16.png"), 2);
+            this.imageCollection1.Images.SetKeyName(2, "mobilephone_16x16.png");
             // 
             // treeLeftBot
             // 
+            this.treeLeftBot.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.treeLeftBot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeLeftBot.Location = new System.Drawing.Point(0, 0);
+            this.treeLeftBot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeLeftBot.Name = "treeLeftBot";
-            this.treeLeftBot.Size = new System.Drawing.Size(246, 321);
-            this.treeLeftBot.TabIndex = 0;
+            this.treeLeftBot.OptionsBehavior.Editable = false;
+            this.treeLeftBot.OptionsMenu.EnableColumnMenu = false;
+            this.treeLeftBot.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.treeLeftBot.OptionsView.AllowGlyphSkinning = true;
+            this.treeLeftBot.OptionsView.FocusRectStyle = DevExpress.XtraTreeList.DrawFocusRectStyle.RowFocus;
+            this.treeLeftBot.OptionsView.ShowIndicator = false;
+            this.treeLeftBot.Size = new System.Drawing.Size(215, 276);
+            this.treeLeftBot.TabIndex = 1;
+            this.treeLeftBot.TreeLevelWidth = 12;
             // 
-            // groupControl1
+            // gc2
             // 
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(250, 85);
-            this.groupControl1.MinimumSize = new System.Drawing.Size(180, 0);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(200, 561);
-            this.groupControl1.TabIndex = 5;
-            this.groupControl1.Text = "列表";
+            this.gc2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.gc2.Controls.Add(this.treeMid);
+            this.gc2.Controls.Add(this.comboBoxEdit2);
+            this.gc2.Controls.Add(this.labelControl2);
+            this.gc2.Controls.Add(this.comboBoxEdit3);
+            this.gc2.Controls.Add(this.labelControl3);
+            this.gc2.Controls.Add(this.comboBoxEdit1);
+            this.gc2.Controls.Add(this.labelControl1);
+            this.gc2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gc2.Location = new System.Drawing.Point(219, 84);
+            this.gc2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gc2.MinimumSize = new System.Drawing.Size(158, 0);
+            this.gc2.Name = "gc2";
+            this.gc2.ShowCaption = false;
+            this.gc2.Size = new System.Drawing.Size(175, 521);
+            this.gc2.TabIndex = 5;
+            this.gc2.Text = "列表";
             // 
-            // groupControl2
+            // treeMid
             // 
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl2.Location = new System.Drawing.Point(450, 85);
-            this.groupControl2.MinimumSize = new System.Drawing.Size(180, 0);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(200, 561);
-            this.groupControl2.TabIndex = 6;
-            this.groupControl2.Text = "列表";
+            this.treeMid.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.treeMid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeMid.Location = new System.Drawing.Point(2, 119);
+            this.treeMid.Name = "treeMid";
+            this.treeMid.OptionsBehavior.Editable = false;
+            this.treeMid.OptionsFind.AllowFindPanel = true;
+            this.treeMid.OptionsFind.FindMode = DevExpress.XtraTreeList.FindMode.Always;
+            this.treeMid.OptionsMenu.EnableColumnMenu = false;
+            this.treeMid.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.treeMid.OptionsView.ShowIndicator = false;
+            this.treeMid.Size = new System.Drawing.Size(171, 400);
+            this.treeMid.TabIndex = 9;
+            this.treeMid.TreeLevelWidth = 12;
             // 
-            // groupControl3
+            // comboBoxEdit2
             // 
-            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(650, 85);
-            this.groupControl3.MinimumSize = new System.Drawing.Size(300, 0);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(556, 561);
-            this.groupControl3.TabIndex = 7;
+            this.comboBoxEdit2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboBoxEdit2.Location = new System.Drawing.Point(2, 99);
+            this.comboBoxEdit2.MenuManager = this.barManager1;
+            this.comboBoxEdit2.Name = "comboBoxEdit2";
+            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit2.Properties.Items.AddRange(new object[] {
+            "姓名1",
+            "姓名2",
+            "姓名3",
+            "姓名4",
+            "姓名5"});
+            this.comboBoxEdit2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.comboBoxEdit2.Size = new System.Drawing.Size(171, 20);
+            this.comboBoxEdit2.TabIndex = 8;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl2.Location = new System.Drawing.Point(2, 80);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.labelControl2.Size = new System.Drawing.Size(171, 19);
+            this.labelControl2.TabIndex = 7;
+            this.labelControl2.Text = "筛选依据";
+            // 
+            // comboBoxEdit3
+            // 
+            this.comboBoxEdit3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboBoxEdit3.Location = new System.Drawing.Point(2, 60);
+            this.comboBoxEdit3.MenuManager = this.barManager1;
+            this.comboBoxEdit3.Name = "comboBoxEdit3";
+            this.comboBoxEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit3.Size = new System.Drawing.Size(171, 20);
+            this.comboBoxEdit3.TabIndex = 5;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl3.Location = new System.Drawing.Point(2, 41);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.labelControl3.Size = new System.Drawing.Size(171, 19);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "查找";
+            // 
+            // comboBoxEdit1
+            // 
+            this.comboBoxEdit1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboBoxEdit1.Location = new System.Drawing.Point(2, 21);
+            this.comboBoxEdit1.MenuManager = this.barManager1;
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
+            "中文",
+            "英文"});
+            this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.comboBoxEdit1.Size = new System.Drawing.Size(171, 20);
+            this.comboBoxEdit1.TabIndex = 1;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl1.Location = new System.Drawing.Point(2, 2);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.labelControl1.Size = new System.Drawing.Size(171, 19);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "语言类型";
+            // 
+            // gc3
+            // 
+            this.gc3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.gc3.Controls.Add(this.treeRight);
+            this.gc3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gc3.Location = new System.Drawing.Point(394, 84);
+            this.gc3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gc3.MinimumSize = new System.Drawing.Size(158, 0);
+            this.gc3.Name = "gc3";
+            this.gc3.ShowCaption = false;
+            this.gc3.Size = new System.Drawing.Size(175, 521);
+            this.gc3.TabIndex = 6;
+            this.gc3.Text = "列表";
             // 
             // panelControl1
             // 
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 85);
+            this.panelControl1.Location = new System.Drawing.Point(0, 84);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1206, 561);
+            this.panelControl1.Size = new System.Drawing.Size(1158, 521);
             this.panelControl1.TabIndex = 12;
+            // 
+            // gc4
+            // 
+            this.gc4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gc4.Controls.Add(this.xtraTabControl1);
+            this.gc4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc4.Location = new System.Drawing.Point(569, 84);
+            this.gc4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gc4.MinimumSize = new System.Drawing.Size(262, 0);
+            this.gc4.Name = "gc4";
+            this.gc4.ShowCaption = false;
+            this.gc4.Size = new System.Drawing.Size(589, 521);
+            this.gc4.TabIndex = 7;
+            // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.Size = new System.Drawing.Size(589, 521);
+            this.xtraTabControl1.TabIndex = 10;
+            //this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            //this.xtraTabPage1,
+            //this.xtraTabPage2});
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(587, 493);
+            this.xtraTabPage1.Text = "xtraTabPage1";
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(583, 489);
+            this.xtraTabPage2.Text = "xtraTabPage2";
+            // 
+            // treeRight
+            // 
+            this.treeRight.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.treeRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeRight.Location = new System.Drawing.Point(2, 2);
+            this.treeRight.Name = "treeRight";
+            this.treeRight.OptionsBehavior.Editable = false;
+            this.treeRight.OptionsFind.AllowFindPanel = true;
+            this.treeRight.OptionsFind.FindMode = DevExpress.XtraTreeList.FindMode.Always;
+            this.treeRight.OptionsMenu.EnableColumnMenu = false;
+            this.treeRight.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.treeRight.OptionsView.ShowIndicator = false;
+            this.treeRight.Size = new System.Drawing.Size(171, 517);
+            this.treeRight.TabIndex = 10;
+            this.treeRight.TreeLevelWidth = 12;
+            this.treeRight.DoubleClick += new System.EventHandler(this.treeRight_DoubleClick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1206, 673);
-            this.Controls.Add(this.groupControl3);
-            this.Controls.Add(this.groupControl2);
-            this.Controls.Add(this.groupControl1);
+            this.ClientSize = new System.Drawing.Size(1158, 633);
+            this.Controls.Add(this.gc4);
+            this.Controls.Add(this.gc3);
+            this.Controls.Add(this.gc2);
             this.Controls.Add(this.gc1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "主窗体";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc1)).EndInit();
             this.gc1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.treeLeftTop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeLeftBot)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc2)).EndInit();
+            this.gc2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.treeMid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc3)).EndInit();
+            this.gc3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc4)).EndInit();
+            this.gc4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.treeRight)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -609,15 +856,29 @@
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem4;
         private DevExpress.XtraBars.BarStaticItem barStaticItem5;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.GroupControl gc2;
         private DevExpress.XtraEditors.GroupControl gc1;
-        private DevExpress.XtraEditors.GroupControl groupControl3;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.GroupControl gc3;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraTreeList.TreeList treeLeftTop;
-        private DevExpress.XtraTreeList.TreeList treeLeftBot;
         private DevExpress.XtraBars.BarStaticItem barStaticItem6;
         private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraTreeList.TreeList treeLeftBot;
+        private DevExpress.Utils.ImageCollection imageCollection1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem4;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit3;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraTreeList.TreeList treeMid;
+        private DevExpress.XtraEditors.GroupControl gc4;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraTreeList.TreeList treeRight;
     }
 }
 
